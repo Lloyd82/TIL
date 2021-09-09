@@ -1,5 +1,5 @@
 Today i Learned
-- makedown basic
-- git basic
-- github basic & how to use
-- TIL how to use
+    + makedown basic
+    + git basic
+    + github basic & how to use
+    + TIL how to use
