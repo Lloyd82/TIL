@@ -1,0 +1,25 @@
+package day10;
+
+class OverB {
+  void show() {
+    System.out.println("부모 클래스의 메서드 show");
+  }
+  
+  void parent() {
+    System.out.println("부모 클레스에만 있는 메서드 parent()");
+  }
+}
+
+class SubOverB extends OverB{
+  
+  
+  
+}
+public class OverrideExam2 {
+
+  public static void main(String[] args) {
+    
+
+  }
+
+}

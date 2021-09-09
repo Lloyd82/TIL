@@ -1,0 +1,76 @@
+package memo;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import Address.AddressDTO;
+import utility.DBClose;
+import utility.Open;
+
+public class MemoDAO {
+
+  public boolean create(MemoDTO dto) {
+    boolean flag = false;
+    Connection con = Open.getConnection();
+    PreparedStatement pstmt = null;
+    StringBuffer sql = new StringBuffer();
+
+    sql.append("INSERT INTO memo(name, content, pass) ");
+    sql.append("VALUES(?,?,?)");
+
+    try {
+      pstmt = con.prepareStatement(sql.toString());
+      pstmt.setString(1, dto.getName());
+      pstmt.setString(2, dto.getContent());
+      pstmt.setString(3, dto.getPass());
+
+      int cnt = pstmt.executeUpdate();
+
+      if (cnt > 0)
+        flag = true;
+
+    } catch (SQLException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    } finally {
+      DBClose.close(pstmt, con);
+    }
+
+    return flag;
+
+  }
+
+  public MemoDTO read(int memonum) {
+    MemoDTO dto = null;
+    Connection con = Open.getConnection();
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+    StringBuffer sql = new StringBuffer();
+    // TODO Auto-generated method stub
+    sql.append("SELECT memonum, name, content, pass FROM address");
+    sql.append("where memonum  = ? ");
+    
+    try {
+      pstmt = con.prepareStatement(sql.toString());
+      pstmt.setInt(1, memonum);
+
+      rs = pstmt.executeQuery();
+
+      if (rs.next()) {
+        dto = new MemoDTO();
+        dto.setMemonum(rs.getInt("memonum")); // rs에서 꺼내와서 DTO에 저장
+        dto.setName(rs.getString("name"));
+        dto.setContent(rs.getString("content"));
+        dto.setPass(rs.getString("pass"));
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+      DBClose.close(rs, pstmt, con);
+    }
+    
+    return dto;
+  }
+}

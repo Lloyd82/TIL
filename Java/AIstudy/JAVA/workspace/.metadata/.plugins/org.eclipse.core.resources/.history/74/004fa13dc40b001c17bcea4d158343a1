@@ -1,0 +1,10 @@
+package utility;
+
+import java.sql.PreparedStatement;
+
+public class DBClose {
+  
+  public static void close(PreparedStatement.pstmt,  Connection con) {
+
+}
+}

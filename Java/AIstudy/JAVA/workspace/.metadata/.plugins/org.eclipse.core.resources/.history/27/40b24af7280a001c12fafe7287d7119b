@@ -1,0 +1,23 @@
+package day07.Test;
+import java.util.*;
+
+public class BoxingUnboxingTest {
+  public static void main(String[] args) {
+    Vector d = new Vector(); // Generics
+    d.add(2.0);// boxing 
+    d.add(3.2);
+    d.add(7.7);
+    d.add(9.5);
+    d.add(1.3);
+    prints(d);
+  }
+
+  public static void prints(Vector<Double> di) {
+    int num = di.size();
+    double dou = 0;
+    for (int j = 0; j < num; j++) {
+      dou += di.get(j);
+    } 
+    System.out.println(di);
+  }
+}

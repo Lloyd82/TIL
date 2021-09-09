@@ -1,0 +1,19 @@
+package day09;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+
+public class SelectprepDB {
+
+  public static void main(String[] args) {
+    String url = "jdbc:mysql://localhost:3306/javadb?useUnicode=true&characterEncoding=utf8";
+    String driver = "org.gjt.mm.mysql.Driver";
+    Connection con = null; // 디비 연결 객체
+    PreparedStatement pstmt = null; // sql문 전송객체
+    ResultSet rs = null; // select 문을 전송한후 실행된 결과 갑을 받는 자바 클래스
+
+  }
+
+}

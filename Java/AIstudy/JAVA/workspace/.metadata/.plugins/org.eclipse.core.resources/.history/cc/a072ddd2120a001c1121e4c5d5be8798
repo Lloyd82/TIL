@@ -1,0 +1,21 @@
+package day07;
+
+import java.util.HashMap;
+
+public class MapTest {
+
+  public static void main(String[] args) {
+    HashMap<K, V> list = new HashMap();
+    list.put(0, "lee");
+    list.cleat();
+    list.put();
+    list.put();
+    list.put();
+    list.put();
+    list.put();
+    
+    // TODO Auto-generated method stub
+
+  }
+
+}

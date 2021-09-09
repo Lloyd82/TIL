@@ -1,0 +1,21 @@
+package Address;
+
+public class AddrassTEST {
+
+  public static void main(String[] args) {
+    AddressDAO dao = new AddressDAO();
+    create(dao);
+
+  }
+  private static void create(AddressDAO dao) {
+    AddressDTO dto = new AddressDTO(0,"이길동","010-999-9999","서울")
+    if(dao.create(dto)) {
+      p("레코드 생성 성공");
+    }else {
+      p("레코드 생성 실패");
+    }
+    private static void p(String str) {
+      System.out.println(str);
+    }
+  }
+}

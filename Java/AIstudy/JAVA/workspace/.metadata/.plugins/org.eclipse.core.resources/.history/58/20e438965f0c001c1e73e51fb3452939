@@ -1,0 +1,41 @@
+package memo;
+
+public class MemoTEST {
+
+  public static void main(String[] args) {
+    MemoDAO dao = new MemoDAO();
+    Create(dao);
+//    read(dao);
+//    update(dao);
+//    delete(dao);
+//    list(dao);
+    // TODO Auto-generated method stub
+
+  }
+
+  private static void list(MemoDAO dao) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  private static void delete(MemoDAO dao) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  private static void update(MemoDAO dao) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  private static void read(MemoDAO dao) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  private static void Create(MemoDAO dao) {
+    // TODO Auto-generated method stub
+    
+  }
+
+}

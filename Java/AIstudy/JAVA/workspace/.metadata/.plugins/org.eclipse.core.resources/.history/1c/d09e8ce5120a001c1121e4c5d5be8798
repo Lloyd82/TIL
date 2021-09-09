@@ -1,0 +1,25 @@
+package day07;
+
+import java.util.HashMap;
+
+public class MapTest {
+
+  public static void main(String[] args) {
+    HashMap map = new HashMap();
+    list.put("0", "lee");
+    list.cleat();
+    list.put("1","cho"); 
+    list.put("2","kim"); 
+    list.put("3","chung");
+    list.put("4","min"); 
+    list.put("3","jung");
+    System.out.println(list.size());//size() 
+    System.out.println(list.containsKey("3")); 
+    list.remove("2"); 
+    System.out.println(list.size()); 
+    
+    // TODO Auto-generated method stub
+
+  }
+
+}
