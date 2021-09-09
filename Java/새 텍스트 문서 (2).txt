@@ -1,0 +1,59 @@
+
+java       		1. 프로그래밍의 대표적인 언어
+		2. 객체지향 언어 변수자료형이 반드시 선언되어야함 컴파일 과정을 거침(소스 코드를 자바 바이트 코드로 변환)
+		3. jvm이라는 가상면선을 이용, 그로인해 운영체제 종류 상관없이 대부분의 시스템에서 실행 가능
+
+java script	1. 웹프로그래밍을 위한 프로토타입 기반의 스크립트 언어 
+		2. 클래스 개념이 없으며 프로토 타입 이 있기 떄문에 프로토 타입 기반 언어라고 불림
+		3. HATML, 상호작용성과 동적 시각 효과를 나타내기위해 필요한 객채기반 스크립트 언어
+		4 변수 자료를 선언하지 않아도 브라우저가 자동으로 파악
+		5. 인터프리터 언어로써 컴파일 과정을 거치지 않는다
+		  +interpreter 사람이 이해 가능한 고급언어로 작성된 코드를 하나씩 해석하여 실행시키는 방법을 말함
+
+java & java script -	1. 컴파일과정이 다름
+		2. Java는 서버측 언어, Java script는 클라이언트용 언어
+		3. Node.js가 등장하면서 자바 스크립트를 이용한 서버와 클라이언트 개발이 가능해짐
+
+JDK - Java Development Kit, 중심은 Java Compiler
+
+Python - 객체지향 프로그래밍 툴
+
+c&c++
+
+PHP
+
+HTML
+
+jQuery - Element를 선택하는 방법과 선택된 엘리먼트들을 효율적 제어가 가능하게하는 다양한 수단제공하는 JAVAscript library
+
+Apache HADOOP 	(High-Availability Distributed Object-Oriented Platform)
+		+Yahoo! 에서 개발 배포
+		  availability 이용성,유용성,가용성
+		  distribute 나눔,분배,분포,유통
+		  oriented 지향,경향,위주
+		+ 동향 맵리듀스(Mapreduce)가 변화되어 다음세대 기술인 Storm, Spark, Flink 등오로 변형
+
+spring frame work	애플리케이션 개발에 바탕이 되는 템플릿 같은 역할을 하는 클레스들과 인터페이스의 집합
+                        
+		+애플리케이션을 구축할때 모든 애플리케이션의 공통적인 부분 제공
+
+jsp ( java server pages)  -  java  소스 코드들  html에 삽입하여 웹 애플리케이션 개발하는 기술
+                            
+		+Trand : html속  java로 기술한 비지니스 로직을 따로 분리
+		
+		+Ex : Asp(ASP.net으로 넘어가는 추세)
+                               C++기반의 PHP( 세계적으로 많이 사용하나 국내에선 사용빈도 낮음)
+
+Front end - 시스템을 사용하는 화면을 만드는 기술 (
+		+Ex : 웹 페이지를 그리는 기술 - 디자인 감 인터페이스난 사용자 경험에 관심 필요
+		       
+		       필요기술 : HTML5, JAVA script, CSS
+
+Back end - 화면에서 입력한 값을 데이터 베이스를 활용, 처리하여 되돌려 줌 or 배치성으로 주기적인 작업을 처, 서버쪽 통칭
+	
+		+Ex : 정적 콘텐츠(화면 레이아웃, 이미지 등)를 제외한 동적콘텐츠(상확에 따라 값이 변경)를 생성
+
+		       필요기술 : JAVA script, Spring frame Work
+
+Full stack - Front와 Back을 통칭(Libero)
+ 

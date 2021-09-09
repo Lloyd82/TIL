@@ -1,0 +1,23 @@
+자바 11버전에선 jre 없어짐
+
+http://lectureblue.pe.kr/ >교보제 java 탭 pw - james
+
+CLASSPATH 는 라이브러리를 가져다씀
+
+※ 설치 
+- JAVA_HOME : C:\Program Files\Java\jdk1.8.0_151 (자바설치위치)
+- CLASSPATH : .;%JAVA_HOME%\lib\tools.jar 
+- Path : %JAVA_HOME%\bin;기존패스 (제작자인 제임스 고슬링이 견본으로 사용할수있는 소스 제공)
+
+ .; > 현제 내가 실행하는 위치로부터 사용(의미)
+
+플랫폼이란? cpu + os
+
+☆자바란? 정의 숙지
+
+고급언어중 객체 지향 언어를 사용하는 프로그레밍 언어
+
+-소스 : 프로그래밍 언어로 작성된 텍스트 파일
+
+-컴파일 : 소스 파일을 컴퓨터가 이해할 수 있는 기계어로 만드는 과정
+

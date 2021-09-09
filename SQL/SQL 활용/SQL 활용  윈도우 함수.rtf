@@ -1,0 +1,781 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset129 \'b8\'bc\'c0\'ba \'b0\'ed\'b5\'f1;}}
+{\colortbl ;\red0\green77\blue187;\red0\green176\blue80;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs20\lang18 [01] \'bf\'f8\'b5\'b5\'bf\'ec \'c7\'d4\'bc\'f6\par
+\par
+1. WINDOW FUNCTION \'b0\'b3\'bf\'e4\par
+- \'c7\'e0\'b0\'fa \'c7\'e0\'b0\'a3\'c0\'c7 \'b0\'fc\'b0\'e8\'b8\'a6 \'bd\'b1\'b0\'d4 \'c1\'a4\'c0\'c7\'c7\'cf\'b1\'e2 \'c0\'a7\'c7\'d8 \'b8\'b8\'b5\'e7 \'c7\'d4\'bc\'f6\'b0\'a1 \'b9\'d9\'b7\'ce WINDOW FUNCTION\'c0\'cc\'b4\'d9.\par
+- \'c0\'a9\'b5\'b5\'bf\'ec \'c7\'d4\'bc\'f6\'b8\'a6 \'c8\'b0\'bf\'eb\'c7\'cf\'b8\'e9 \'ba\'b9\'c0\'e2\'c7\'d1 \'c7\'c1\'b7\'ce\'b1\'d7\'b7\'a5\'c0\'bb \'c7\'cf\'b3\'aa\'c0\'c7 SQL \'b9\'ae\'c0\'e5\'c0\'b8\'b7\'ce \'bd\'b1\'b0\'d4 \'c7\'d8\'b0\'e1\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+- \'ba\'d0\'bc\'ae \'c7\'d4\'bc\'f6(ANALYTIC FUNCTION)\'b3\'aa \'bc\'f8\'c0\'a7 \'c7\'d4\'bc\'f6(RANK FUNCTION)\'b7\'ce\'b5\'b5 \'be\'cb\'b7\'c1\'c1\'ae \'c0\'d6\'b4\'c2\par
+  \'c0\'a9\'b5\'b5\'bf\'ec \'c7\'d4\'bc\'f6\'b4\'c2 \'b5\'a5\'c0\'cc\'c5\'cd\'bf\'fe\'be\'ee\'c7\'cf\'bf\'ec\'bd\'ba\'bf\'a1\'bc\'ad \'b9\'df\'c0\'fc\'c7\'d1 \'b1\'e2\'b4\'c9\'c0\'cc\'b4\'d9.\par
+- WINDOW \'c7\'d4\'bc\'f6\'b4\'c2 \'c1\'df\'c3\'b8(NEST)\'c7\'d8\'bc\'ad \'bb\'e7\'bf\'eb\'c7\'cf\'c1\'f6\'b4\'c2 \'b8\'f8\'c7\'cf\'c1\'f6\'b8\'b8, \'bc\'ad\'ba\'ea\'c4\'f5\'b8\'ae\'bf\'a1\'bc\'ad\'b4\'c2 \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+\par
+\'a1\'e1 \'bf\'f8\'b5\'b5\'bf\'ec \'c7\'d4\'bc\'f6 \'c1\'be\'b7\'f9\par
+1. \'b1\'d7\'b7\'ec \'b3\'bb \'bc\'f8\'c0\'a7(RANK) \'b0\'fc\'b7\'c3 \'c7\'d4\'bc\'f6 RANK, DENSE_RANK, ROW_NUMBER\par
+2. \'b1\'d7\'b7\'ec \'b3\'bb \'c1\'fd\'b0\'e8(AGGREGATE) \'b0\'fc\'b7\'c3 \'c7\'d4\'bc\'f6 SUM, MAX, MIN, AVG, COUNT\par
+    OVER\'c0\'fd \'b3\'bb\'c0\'c7 ORDER BY\'b1\'b8\'b9\'ae\'c0\'ba \'c1\'f6\'bf\'f8\'c7\'cf\'c1\'f6 \'be\'ca\'b4\'c2\'b4\'d9.\par
+3. \'b1\'d7\'b7\'ec \'b3\'bb \'c7\'e0 \'bc\'f8\'bc\'ad \'b0\'fc\'b7\'c3\'c7\'d4\'bc\'f6 FIRST_VALUE, LAST_VALUE, LAG, LEAD\par
+4. \'b1\'d7\'b7\'ec \'b3\'bb \'ba\'f1\'c0\'b2 \'b0\'fc\'b7\'c3 \'c7\'d4\'bc\'f6 CUME_DIST, PERCENT_RANK, NTILE, RATIO_TO_REPORT\par
+5. \'bc\'b1\'c7\'fc \'ba\'d0\'bc\'ae\'c0\'bb \'c6\'f7\'c7\'d4\'c7\'d1 \'c5\'eb\'b0\'e8\'ba\'d0\'bc\'ae \'b0\'fc\'b7\'c3 \'c7\'d4\'bc\'f6 \par
+\par
+\'a1\'e1 WINDOW FUNCTION SYNTAX\par
+- WINDOW \'c7\'d4\'bc\'f6\'bf\'a1\'b4\'c2 OVER \'b9\'ae\'b1\'b8\'b0\'a1 \'c5\'b0\'bf\'f6\'b5\'e5\'b7\'ce \'c7\'ca\'bc\'f6 \'c6\'f7\'c7\'d4\'b5\'c8\'b4\'d9.\par
+\par
+ SELECT WINDOW_FUNCTION (ARGUMENTS)\par
+ \cf1 OVER\cf0  ( [PARTITION BY \'c4\'ae\'b7\'b3] [ORDER BY \'c0\'fd] [WINDOWING \'c0\'fd] )  \par
+ FROM \'c5\'d7\'c0\'cc\'ba\'ed \'b8\'ed;\par
+ \par
+- WINDOW_FUNCTION : \'b1\'e2\'c1\'b8\'bf\'a1 \'bb\'e7\'bf\'eb\'c7\'cf\'b4\'f8 \'c7\'d4\'bc\'f6\'b5\'b5 \'c0\'d6\'b0\'ed, \'bb\'f5\'b7\'d3\'b0\'d4 WINDOW \'c7\'d4\'bc\'f6\'bf\'eb\'c0\'b8\'b7\'ce\par
+                                 \'c3\'df\'b0\'a1\'b5\'c8 \'c7\'d4\'bc\'f6\'b5\'b5 \'c0\'d6\'b4\'d9.\par
+- ARGUMENTS (\'c0\'ce\'bc\'f6)  : \'c7\'d4\'bc\'f6\'bf\'a1 \'b5\'fb\'b6\'f3 0 ~ N\'b0\'b3\'c0\'c7 \'c0\'ce\'bc\'f6\'b0\'a1 \'c1\'f6\'c1\'a4\'b5\'c9 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+- PARTITION BY \'c0\'fd  : \'c0\'fc\'c3\'bc \'c1\'fd\'c7\'d5\'c0\'bb \'b1\'e2\'c1\'d8\'bf\'a1 \'c0\'c7\'c7\'d8 \'bc\'d2\'b1\'d7\'b7\'ec\'c0\'b8\'b7\'ce \'b3\'aa\'b4\'ad \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+- ORDER BY \'c0\'fd : \'be\'ee\'b6\'b2 \'c7\'d7\'b8\'f1\'bf\'a1 \'b4\'eb\'c7\'d8 \'bc\'f8\'c0\'a7\'b8\'a6 \'c1\'f6\'c1\'a4\'c7\'d2 \'c1\'f6 ORDER BY \'c0\'fd\'c0\'bb \'b1\'e2\'bc\'fa\'c7\'d1\'b4\'d9.\par
+- WINDOWING \'c0\'fd : WINDOWING \'c0\'fd\'c0\'ba \'c7\'d4\'bc\'f6\'c0\'c7 \'b4\'eb\'bb\'f3\'c0\'cc \'b5\'c7\'b4\'c2 \'c7\'e0 \'b1\'e2\'c1\'d8\'c0\'c7 \'b9\'fc\'c0\'a7\'b8\'a6\par
+                          \'b0\'ad\'b7\'c2\'c7\'cf\'b0\'d4 \'c1\'f6\'c1\'a4\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+  \par
+- ROWS\'b4\'c2 \'b9\'b0\'b8\'ae\'c0\'fb\'c0\'ce \'b0\'e1\'b0\'fa \'c7\'e0\'c0\'c7 \'bc\'f6\'b8\'a6, RANGE\'b4\'c2 \'b3\'ed\'b8\'ae\'c0\'fb\'c0\'ce \'b0\'aa\'bf\'a1 \'c0\'c7\'c7\'d1 \'b9\'fc\'c0\'a7\'b8\'a6 \'b3\'aa\'c5\'b8\'b3\'bb\'b4\'c2\'b5\'a5,\par
+  \'b5\'d1 \'c1\'df\'c0\'c7 \'c7\'cf\'b3\'aa\'b8\'a6 \'bc\'b1\'c5\'c3\'c7\'d8\'bc\'ad \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+  \par
+ \par
+\par
+2. \'b1\'d7\'b7\'ec \'b3\'bb \'bc\'f8\'c0\'a7 \'c7\'d4\'bc\'f6\par
+(1) RANK \'c7\'d4\'bc\'f6                                               \cf2\'a1\'e9\lang1042\'c4\'ae\'b7\'b3\cf0\lang18\par
+- RANK \'c7\'d4\'bc\'f6\'b4\'c2 ORDER BY\'b8\'a6 \'c6\'f7\'c7\'d4\'c7\'d1 QUERY \'b9\'ae\'bf\'a1\'bc\'ad \'c6\'af\'c1\'a4 \'c7\'d7\'b8\'f1\'bf\'a1 \'b4\'eb\'c7\'d1 \'bc\'f8\'c0\'a7\'b8\'a6 \'b1\'b8\'c7\'cf\'b4\'c2 \'c7\'d4\'bc\'f6\par
+- \'c0\'cc\'b6\'a7 \'c6\'af\'c1\'a4 \'b9\'fc\'c0\'a7(PARTITION) \'b3\'bb\'bf\'a1\'bc\'ad \'bc\'f8\'c0\'a7\'b8\'a6 \'b1\'b8\'c7\'d2 \'bc\'f6\'b5\'b5 \'c0\'d6\'b0\'ed \'c0\'fc\'c3\'bc \'b5\'a5\'c0\'cc\'c5\'cd\'bf\'a1 \'b4\'eb\'c7\'d1\par
+  \'bc\'f8\'c0\'a7\'b8\'a6 \'b1\'b8\'c7\'d2 \'bc\'f6\'b5\'b5 \'c0\'d6\'b4\'d9.\par
+- \'b5\'bf\'c0\'cf\'c7\'d1 \'b0\'aa\'bf\'a1 \'b4\'eb\'c7\'d8\'bc\'ad\'b4\'c2 \'b5\'bf\'c0\'cf\'c7\'d1 \'bc\'f8\'c0\'a7\'b8\'a6 \'ba\'ce\'bf\'a9\'c7\'cf\'b0\'d4 \'b5\'c8\'b4\'d9.\par
+\par
+[\'bb\'e7\'bf\'f8]\'bb\'e7\'bf\'f8 \'b5\'a5\'c0\'cc\'c5\'cd\'bf\'a1\'bc\'ad \'b1\'de\'bf\'a9\'b0\'a1 \'b3\'f4\'c0\'ba \'bc\'f8\'bc\'ad\'bf\'cd JOB \'ba\'b0\'b7\'ce \'b1\'de\'bf\'a9\'b0\'a1 \'b3\'f4\'c0\'ba \'bc\'f8\'bc\'ad\'b8\'a6 \'b0\'b0\'c0\'cc\par
+       \'c3\'e2\'b7\'c2\'c7\'d1\'b4\'d9.\par
+\par
+  SELECT  JOB, ENAME, SAL,\par
+             RANK( ) OVER (ORDER BY SAL DESC) ALL_RANK,\par
+             RANK( ) OVER (PARTITION BY JOB ORDER BY SAL DESC) JOB_RANK\par
+    FROM EMP;\par
+\par
+JOB                  ENAME                 SAL   ALL_RANK   JOB_RANK\par
+------------------ -------------------- ---------- ---------- ----------\par
+PRESIDENT          KING                   5000          1          1\par
+ANALYST            FORD                   3000          2          1\par
+ANALYST            SCOTT                  3000          2          1\par
+MANAGER          JONES                  2975           4          1\par
+MANAGER          BLAKE                   2850          5          2\par
+MANAGER          CLARK                   2450          6          3\par
+SALESMAN         ALLEN                   1600           7          1\par
+SALESMAN         TURNER                 1500           8          2\par
+CLERK                MILLER                  1300           9          1\par
+SALESMAN         WARD                    1250         10          3\par
+SALESMAN         MARTIN                  1250         10          3\par
+CLERK                ADAMS                  1100         12          2\par
+CLERK                JAMES                     950         13          3\par
+CLERK                SMITH                     800         14          4\par
+\par
+ \par
+- \'be\'f7\'b9\'ab \'b1\'b8\'ba\'d0\'c0\'cc \'be\'f8\'b4\'c2 ALL_RANK \'c4\'ae\'b7\'b3\'bf\'a1\'bc\'ad FORD\'bf\'cd SCOTT, WARD\'bf\'cd MARTIN\'c0\'ba\par
+  \'b5\'bf\'c0\'cf\'c7\'d1 SALARY\'c0\'cc\'b9\'c7\'b7\'ce \'b0\'b0\'c0\'ba \'bc\'f8\'c0\'a7\'b8\'a6 \'ba\'ce\'bf\'a9\'c7\'d1\'b4\'d9.\par
+- \'be\'f7\'b9\'ab\'b8\'a6 PARTITION\'c0\'b8\'b7\'ce \'b1\'b8\'ba\'d0\'c7\'d1 JOB_RANK\'c0\'c7 \'b0\'e6\'bf\'ec \'b0\'b0\'c0\'ba \'be\'f7\'b9\'ab \'b3\'bb \'b9\'fc\'c0\'a7\'bf\'a1\'bc\'ad\'b8\'b8\par
+  \'bc\'f8\'c0\'a7\'b8\'a6 \'ba\'ce\'bf\'a9\'c7\'d1\'b4\'d9.\par
+- ORDER BY SAL DESC \'c1\'b6\'b0\'c7\'b0\'fa PARTITION BY JOB \'c1\'b6\'b0\'c7\'c0\'cc \'c3\'e6\'b5\'b9\'c0\'cc \'b3\'b5\'b1\'e2 \'b6\'a7\'b9\'ae\'bf\'a1\par
+  JOB \'ba\'b0\'b7\'ce\'b4\'c2 \'c1\'a4\'b7\'c4\'c0\'cc \'b5\'c7\'c1\'f6 \'be\'ca\'b0\'ed, ORDER BY SAL DESC \'c1\'b6\'b0\'c7\'c0\'b8\'b7\'ce \'c1\'a4\'b7\'c4\'c0\'cc \'b5\'c7\'be\'fa\'b4\'d9.\par
+\par
+\par
+[\'bf\'b9\'c1\'a6] \'be\'d5\'c0\'c7 SQL\'b9\'ae\'c0\'c7 \'b0\'e1\'b0\'fa\'b4\'c2 JOB\'b0\'fa SALARY \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce \'c1\'a4\'b7\'c4\'c0\'cc \'b5\'c7\'be\'ee\'c0\'d6\'c1\'f6 \'be\'ca\'b4\'d9.\par
+        \'bb\'f5\'b7\'ce\'bf\'ee SQL\'bf\'a1\'bc\'ad\'b4\'c2 \'c0\'fc\'c3\'bc SALARY \'bc\'f8\'c0\'a7\'b8\'a6 \'b1\'b8\'c7\'cf\'b4\'c2 ALL_RANK \'c4\'ae\'b7\'b3\'c0\'ba \'c1\'a6\'bf\'dc\'c7\'cf\'b0\'ed,\par
+        \'be\'f7\'b9\'ab\'ba\'b0\'b7\'ce SALARY \'bc\'f8\'bc\'ad\'b8\'a6 \'b1\'b8\'c7\'cf\'b4\'c2 JOB_RANK\'b8\'b8 \'be\'cb\'be\'c6\'ba\'b8\'b5\'b5\'b7\'cf \'c7\'d1\'b4\'d9.\par
+\par
+ SELECT   JOB, ENAME, SAL,\par
+             RANK() OVER (PARTITION BY JOB ORDER BY SAL DESC) JOB_RANK\par
+   FROM  EMP;\par
+\par
+JOB                 ENAME                 SAL      JOB_RANK\par
+------------------ -------------------- ---------- ----------\par
+ANALYST          FORD                       3000          1\par
+ANALYST          SCOTT                      3000          1\par
+CLERK              MILLER                     1300          1\par
+CLERK              ADAMS                    1100          2\par
+CLERK              JAMES                       950          3\par
+CLERK              SMITH                       800          4\par
+MANAGER        JONES                      2975          1\par
+MANAGER        BLAKE                      2850          2\par
+MANAGER        CLARK                      2450          3\par
+PRESIDENT       KING                        5000          1\par
+SALESMAN       ALLEN                      1600          1\par
+SALESMAN       TURNER                    1500          2\par
+SALESMAN       MARTIN                    1250          3\par
+SALESMAN       WARD                      1250          3\par
+\par
+ \par
+- \'be\'f7\'b9\'ab\'ba\'b0\'b7\'ce SALARY \'bc\'f8\'bc\'ad\'b8\'a6 \'b1\'b8\'c7\'cf\'b4\'c2 JOB_RANK\'b8\'b8 \'bb\'e7\'bf\'eb\'c7\'d1 \'b0\'e6\'bf\'ec \'c6\'c4\'c6\'bc\'bc\'c7\'c0\'c7 \'b1\'e2\'c1\'d8\'c0\'cc \'b5\'c8\par
+   JOB\'b0\'fa SALARY \'ba\'b0\'b7\'ce \'c1\'a4\'b7\'c4\'c0\'cc \'b5\'c7\'be\'ee \'c0\'d6\'b4\'c2 \'b0\'cd\'c0\'bb \'be\'cb \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+\par
+\par
+(2) DENSE_RANK \'c7\'d4\'bc\'f6\par
+- DENSE_RANK \'c7\'d4\'bc\'f6\'b4\'c2 RANK \'c7\'d4\'bc\'f6\'bf\'cd \'c0\'af\'bb\'e7\'c7\'cf\'b3\'aa, \'b5\'bf\'c0\'cf\'c7\'d1 \'bc\'f8\'c0\'a7\'b8\'a6 \'c7\'cf\'b3\'aa\'c0\'c7 \'b0\'c7\'bc\'f6\'b7\'ce\par
+  \'c3\'eb\'b1\'de\'c7\'cf\'b4\'c2 \'b0\'cd\'c0\'cc \'b4\'d9\'b8\'a5 \'c1\'a1\'c0\'cc\'b4\'d9.\par
+\par
+[\'bf\'b9\'c1\'a6] \'bb\'e7\'bf\'f8\'b5\'a5\'c0\'cc\'c5\'cd\'bf\'a1\'bc\'ad \'b1\'de\'bf\'a9\'b0\'a1 \'b3\'f4\'c0\'ba \'bc\'f8\'bc\'ad\'bf\'cd, \'b5\'bf\'c0\'cf\'c7\'d1 \'bc\'f8\'c0\'a7\'b8\'a6 \'c7\'cf\'b3\'aa\'c0\'c7 \'b5\'ee\'bc\'f6\'b7\'ce \'b0\'a3\'c1\'d6\'c7\'d1\par
+        \'b0\'e1\'b0\'fa\'b5\'b5 \'b0\'b0\'c0\'cc \'c3\'e2\'b7\'c2\'c7\'d1\'b4\'d9.\par
+\par
+SELECT   JOB, ENAME, SAL,\par
+            RANK( ) OVER (ORDER BY SAL DESC) AS RK ,\par
+            DENSE_RANK( ) OVER (ORDER BY SAL DESC) AS DK\par
+   FROM EMP;\par
+\par
+JOB                 ENAME                       SAL         RK         DK\par
+------------------ -------------------- ---------- ---------- ----------\par
+PRESIDENT        KING                       5000          1          1\par
+ANALYST          FORD                       3000          2          2\par
+ANALYST          SCOTT                      3000          2          2\par
+MANAGER        JONES                      2975          4          3\par
+MANAGER        BLAKE                      2850          5          4\par
+MANAGER        CLARK                      2450          6          5\par
+SALESMAN       ALLEN                      1600          7          6\par
+SALESMAN       TURNER                    1500          8          7\par
+CLERK             MILLER                     1300          9          8\par
+SALESMAN       WARD                      1250         10          9\par
+SALESMAN       MARTIN                    1250         10          9\par
+CLERK              ADAMS                    1100         12         10\par
+CLERK              JAMES                       950         13         11\par
+CLERK              SMITH                       800         14         12\par
+\par
+- FORD\'bf\'cd SCOTT, WARD\'bf\'cd MARTIN\'c0\'ba \'b5\'bf\'c0\'cf\'c7\'d1 SALARY\'c0\'cc\'b9\'c7\'b7\'ce RANK\'bf\'cd DENSE_RANK \par
+  \'bf\'a1\'bc\'ad \'b8\'f0\'b5\'ce \'b0\'b0\'c0\'ba \'bc\'f8\'c0\'a7\'b8\'a6 \'ba\'ce\'bf\'a9\'c7\'d1\'b4\'d9.\par
+- RANK\'bf\'cd DENSE_RANK\'c0\'c7 \'c2\'f7\'c0\'cc\'b4\'c2 FORD\'bf\'cd SCOTT\'c0\'c7 \'b4\'d9\'c0\'bd \'bc\'f8\'c0\'a7\'c0\'ce JONES\'c0\'c7 \'b0\'e6\'bf\'ec RANK\'b4\'c2\par
+  4\'b5\'ee\'c0\'b8\'b7\'ce DENSE_RANK\'b4\'c2 3\'b5\'ee\'c0\'b8\'b7\'ce \'c7\'a5\'bd\'c3\'b5\'c7\'be\'ee \'c0\'d6\'b4\'d9. WARD\'bf\'cd MARTIN\'c0\'c7 \'b4\'d9\'c0\'bd \'bc\'f8\'c0\'a7\'c0\'ce\par
+  ADAMS\'c0\'c7 \'b0\'e6\'bf\'ec RANK\'b4\'c2 12\'b5\'ee\'c0\'b8\'b7\'ce DENSE_RANK\'b4\'c2 10\'b5\'ee\'c0\'b8\'b7\'ce \'c7\'a5\'bd\'c3\'b5\'c7\'be\'ee \'c0\'d6\'b4\'d9.\par
+\par
+\par
+\par
+(3) ROW_NUMBER \'c7\'d4\'bc\'f6\par
+- ROW_NUMBER \'c7\'d4\'bc\'f6\'b4\'c2 RANK\'b3\'aa DENSE_RANK \'c7\'d4\'bc\'f6\'b0\'a1 \'b5\'bf\'c0\'cf\'c7\'d1 \'b0\'aa\'bf\'a1 \'b4\'eb\'c7\'d8\'bc\'ad\'b4\'c2 \'b5\'bf\'c0\'cf\'c7\'d1\par
+  \'bc\'f8\'c0\'a7\'b8\'a6 \'ba\'ce\'bf\'a9\'c7\'cf\'b4\'c2\'b5\'a5 \'b9\'dd\'c7\'d8, \'b5\'bf\'c0\'cf\'c7\'d1 \'b0\'aa\'c0\'cc\'b6\'f3\'b5\'b5 \'b0\'ed\'c0\'af\'c7\'d1 \'bc\'f8\'c0\'a7\'b8\'a6 \'ba\'ce\'bf\'a9\'c7\'d1\'b4\'d9.\par
+\par
+[\'bf\'b9\'c1\'a6]\'bb\'e7\'bf\'f8\'b5\'a5\'c0\'cc\'c5\'cd\'bf\'a1\'bc\'ad \'b1\'de\'bf\'a9\'b0\'a1 \'b3\'f4\'c0\'ba \'bc\'f8\'bc\'ad\'bf\'cd, \'b5\'bf\'c0\'cf\'c7\'d1 \'bc\'f8\'c0\'a7\'b8\'a6 \'c0\'ce\'c1\'a4\'c7\'cf\'c1\'f6 \'be\'ca\'b4\'c2 \'b5\'ee\'bc\'f6\'b5\'b5 \'b0\'b0\'c0\'cc\par
+        \'c3\'e2\'b7\'c2\'c7\'d1\'b4\'d9.\par
+\par
+SELECT   JOB, ENAME, SAL,\par
+            RANK( ) OVER (ORDER BY SAL DESC) AS RK,\par
+            ROW_NUMBER() OVER (ORDER BY SAL DESC) AS RN\par
+   FROM EMP;\par
+\par
+ \par
+\par
+JOB                 ENAME                       SAL         RK         RN\par
+------------------ -------------------- ---------- ---------- ----------\par
+PRESIDENT        KING                       5000          1          1\par
+ANALYST          FORD                       3000          2          2\par
+ANALYST          SCOTT                      3000          2          3\par
+MANAGER        JONES                      2975          4          4\par
+MANAGER        BLAKE                      2850          5          5\par
+MANAGER        CLARK                      2450          6          6\par
+SALESMAN       ALLEN                      1600          7          7\par
+SALESMAN       TURNER                    1500          8          8\par
+CLERK             MILLER                     1300          9          9\par
+SALESMAN       WARD                      1250         10        10\par
+SALESMAN       MARTIN                    1250         10        11\par
+CLERK              ADAMS                    1100         12        12\par
+CLERK              JAMES                       950         13        13\par
+CLERK              SMITH                       800         14        14\par
+ \par
+- FORD\'bf\'cd SCOTT, WARD\'bf\'cd MARTIN\'c0\'ba \'b5\'bf\'c0\'cf\'c7\'d1 SALARY\'c0\'cc\'b9\'c7\'b7\'ce RANK\'b4\'c2 \'b0\'b0\'c0\'ba \'bc\'f8\'c0\'a7\'b8\'a6\par
+  \'ba\'ce\'bf\'a9\'c7\'df\'c1\'f6\'b8\'b8, ROW_NUMBER\'c0\'c7 \'b0\'e6\'bf\'ec \'b5\'bf\'c0\'cf\'c7\'d1 \'bc\'f8\'c0\'a7\'b8\'a6 \'b9\'e8\'c1\'a6\'c7\'cf\'b1\'e2 \'c0\'a7\'c7\'d8 \'c0\'af\'b4\'cf\'c5\'a9\'c7\'d1 \'bc\'f8\'c0\'a7\'b8\'a6\par
+  \'c1\'a4\'c7\'d1\'b4\'d9.\par
+- \'c0\'a7 \'b0\'e6\'bf\'ec\'b4\'c2 \'b0\'b0\'c0\'ba SALARY\'bf\'a1\'bc\'ad\'b4\'c2 \'be\'ee\'b6\'b2 \'bc\'f8\'bc\'ad\'b0\'a1 \'c1\'a4\'c7\'d8\'c1\'fa\'c1\'f6 \'be\'cb \'bc\'f6 \'be\'f8\'b4\'d9.\par
+  (Oracle\'c0\'c7 \'b0\'e6\'bf\'ec rowid\'b0\'a1 \'c0\'fb\'c0\'ba \'c7\'e0\'c0\'cc \'b8\'d5\'c0\'fa \'b3\'aa\'bf\'c2\'b4\'d9)\par
+- \'c0\'cc \'ba\'ce\'ba\'d0\'c0\'ba \'b5\'a5\'c0\'cc\'c5\'cd\'ba\'a3\'c0\'cc\'bd\'ba \'ba\'b0\'b7\'ce \'c6\'b2\'b8\'b0 \'b0\'e1\'b0\'fa\'b0\'a1 \'b3\'aa\'bf\'c3 \'bc\'f6 \'c0\'d6\'c0\'b8\'b9\'c7\'b7\'ce, \'b8\'b8\'c0\'cf \'b5\'bf\'c0\'cf \'b0\'aa\'bf\'a1 \'b4\'eb\'c7\'d1\par
+  \'bc\'f8\'bc\'ad\'b1\'ee\'c1\'f6 \'b0\'fc\'b8\'ae\'c7\'cf\'b0\'ed \'bd\'cd\'c0\'b8\'b8\'e9 ROW_NUMBER( ) OVER (ORDER BY SAL DESC, ENAME)\par
+  \'b0\'b0\'c0\'cc ORDER BY \'c0\'fd\'c0\'bb \'c0\'cc\'bf\'eb\'c7\'d8 \'c3\'df\'b0\'a1\'c0\'fb\'c0\'ce \'c1\'a4\'b7\'c4 \'b1\'e2\'c1\'d8\'c0\'bb \'c1\'a4\'c0\'c7\'c7\'d8\'be\'df \'c7\'d1\'b4\'d9.\par
+\par
+\par
+\par
+3. \'c0\'cf\'b9\'dd \'c1\'fd\'b0\'e8 \'c7\'d4\'bc\'f6\par
+(1) SUM \'c7\'d4\'bc\'f6\par
+- SUM \'c7\'d4\'bc\'f6\'b8\'a6 \'c0\'cc\'bf\'eb\'c7\'d8 \'c6\'c4\'c6\'bc\'bc\'c7\'ba\'b0 \'c0\'a9\'b5\'b5\'bf\'ec\'c0\'c7 \'c7\'d5\'c0\'bb \'b1\'b8\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+[\'bf\'b9\'c1\'a6] \'b0\'b0\'c0\'ba \'b8\'c5\'b4\'cf\'c0\'fa\'b8\'a6 \'b5\'ce\'b0\'ed \'c0\'d6\'b4\'c2 \'bb\'e7\'bf\'f8\'b5\'e9\'c0\'c7 SALARY \'c7\'d5\'c0\'bb \'b1\'b8\'c7\'d1\'b4\'d9.\par
+        PARTITION BY MGR \'b1\'b8\'b9\'ae\'c0\'bb \'c5\'eb\'c7\'d8 \'b8\'c5\'b4\'cf\'c0\'fa\'ba\'b0\'b7\'ce \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6 \'c6\'c4\'c6\'bc\'bc\'c7\'c8\'ad \'c7\'d1\'b4\'d9.\par
+\par
+SELECT   MGR, ENAME, SAL,\par
+            SUM(SAL) OVER (PARTITION BY MGR) MGR_SUM\par
+ FROM   EMP;\par
+ \par
+\par
+       MGR ENAME                  SAL          MGR_SUM\par
+---------- --------------------      ----------   ----------\par
+      7566 FORD                       3000       6000\par
+      7566 SCOTT                      3000       6000\par
+      7698 JAMES                       950       6550\par
+      7698 ALLEN                      1600       6550\par
+      7698 WARD                      1250       6550\par
+      7698 TURNER                    1500       6550\par
+      7698 MARTIN                    1250       6550\par
+      7782 MILLER                     1300       1300\par
+      7788 ADAMS                    1100       1100\par
+      7839 BLAKE                      2850       8275\par
+      7839 JONES                      2975       8275\par
+      7839 CLARK                      2450       8275\par
+      7902 SMITH                       800        800\par
+              KING                       5000       5000\par
+\par
+ \par
+\par
+ \par
+\par
+[\'b9\'ae\'c1\'a6]OVER \'c0\'fd \'b3\'bb\'bf\'a1 ORDER BY \'c0\'fd\'c0\'bb \'c3\'df\'b0\'a1\'c7\'d8 \'c6\'c4\'c6\'bc\'bc\'c7 \'b3\'bb \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6 \'c1\'a4\'b7\'c4\'c7\'cf\'b0\'ed \'c0\'cc\'c0\'fc\par
+       SALARY \'b5\'a5\'c0\'cc\'c5\'cd\'b1\'ee\'c1\'f6\'c0\'c7 \'b4\'a9\'c0\'fb\'b0\'aa\'c0\'bb \'c3\'e2\'b7\'c2\'c7\'d1\'b4\'d9.\par
+       RANGE UNBOUNDED PRECEDING \'b4\'c2 \'c7\'f6\'c0\'e7 \'c7\'e0\'c0\'bb \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce \'c6\'c4\'c6\'bc\'bc\'c7 \'b3\'bb\'c0\'c7\par
+       \'c3\'b9 \'b9\'f8\'c2\'b0 \'c7\'e0\'b1\'ee\'c1\'f6\'c0\'c7 \'b9\'fc\'c0\'a7\'b8\'a6 \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9.\par
+\par
+SELECT  MGR, ENAME, SAL,\par
+           SUM(SAL) OVER (PARTITION BY MGR ORDER BY SAL\par
+                                  RANGE UNBOUNDED PRECEDING) AS MGR_SUM\par
+ FROM  EMP ;\par
+ \par
+\par
+       MGR ENAME                 SAL    MGR_SUM\par
+---------- -------------------- ---------- ----------\par
+      7566 SCOTT                     3000       6000\par
+      7566 FORD                      3000       6000\par
+      7698 JAMES                      950        950\par
+      7698 WARD                     1250       3450  -- *\par
+      7698 MARTIN                   1250       3450  -- * \par
+      7698 TURNER                   1500       4950\par
+      7698 ALLEN                     1600       6550\par
+      7782 MILLER                    1300       1300\par
+      7788 ADAMS                   1100       1100\par
+      7839 CLARK                     2450       2450\par
+      7839 BLAKE                     2850       5300\par
+      7839 JONES                     2975       8275\par
+      7902 SMITH                      800        800\par
+             KING                       5000       5000\par
+\par
+ \par
+- * \'c7\'a5\'bd\'c3\'b5\'c8 7698-WARD\'bf\'cd 7698-MARTIN\'c0\'c7 \'b1\'de\'bf\'a9\'b0\'a1 \'b0\'b0\'c0\'b8\'b9\'c7\'b7\'ce, \'b0\'b0\'c0\'ba ORDER\'b7\'ce\par
+  \'c3\'eb\'b1\'de\'c7\'cf\'bf\'a9 950+1250+1250=3450\'c0\'c7 \'b0\'aa\'c0\'cc \'b5\'c7\'be\'fa\'b4\'d9.\par
+- 7698-TURNER\'c0\'c7 \'b0\'e6\'bf\'ec 950+1250+1250+1500=4950\'c0\'c7 \'b4\'a9\'c0\'fb\'c7\'d5\'c0\'bb \'b0\'a1\'c1\'f8\'b4\'d9.\par
+\par
+\par
+(2) MAX \'c7\'d4\'bc\'f6\par
+- MAX \'c7\'d4\'bc\'f6\'b8\'a6 \'c0\'cc\'bf\'eb\'c7\'d8 \'c6\'c4\'c6\'bc\'bc\'c7\'ba\'b0 \'c0\'a9\'b5\'b5\'bf\'ec\'c0\'c7 \'c3\'d6\'b4\'eb\'b0\'aa\'c0\'bb \'b1\'b8\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+[\'bf\'b9\'c1\'a6]\'b0\'b0\'c0\'ba \'b8\'c5\'b4\'cf\'c0\'fa\'b8\'a6 \'b5\'ce\'b0\'ed \'c0\'d6\'b4\'c2 \'bb\'e7\'bf\'f8\'b5\'e9\'c0\'c7 SALARY \'c1\'df\par
+       \'c3\'d6\'b4\'eb\'b0\'aa\'c0\'bb \'b0\'b0\'c0\'cc \'b1\'b8\'c7\'d1\'b4\'d9.\par
+\par
+SELECT  MGR, ENAME, SAL,\par
+           MAX(SAL) OVER (PARTITION BY MGR) AS MGR_MAX\par
+ FROM  EMP;\par
+\par
+- \'c6\'c4\'c6\'bc\'bc\'c7 \'b3\'bb\'c0\'c7 \'c3\'d6\'b4\'eb\'b0\'aa\'c0\'bb \'c6\'c4\'c6\'bc\'bc\'c7 \'b3\'bb \'b8\'f0\'b5\'e7 \'c7\'e0\'bf\'a1\'bc\'ad MGR_MAX\'b6\'f3\'b4\'c2 \'c4\'ae\'b7\'b3 \'b0\'aa\'c0\'b8\'b7\'ce\par
+  \'b0\'a1\'c1\'f8\'b4\'d9.\par
+\par
+       MGR ENAME                  SAL   MGR_MAX\par
+---------- -------------------- ---------- ----------\par
+      7566 FORD                       3000       3000\par
+      7566 SCOTT                      3000       3000\par
+      7698 JAMES                       950       1600\par
+      7698 ALLEN                      1600       1600\par
+      7698 WARD                      1250       1600\par
+      7698 TURNER                    1500       1600\par
+      7698 MARTIN                    1250       1600\par
+      7782 MILLER                     1300       1300\par
+      7788 ADAMS                    1100       1100\par
+      7839 BLAKE                      2850       2975\par
+      7839 JONES                      2975       2975\par
+      7839 CLARK                      2450       2975\par
+      7902 SMITH                       800        800\par
+              KING                       5000       5000\par
+\par
+\par
+ \par
+[\'bf\'b9\'c1\'a6] INLINE VIEW\'b8\'a6 \'c0\'cc\'bf\'eb\'c7\'d8 \'c6\'c4\'c6\'bc\'bc\'c7\'ba\'b0 \'c3\'d6\'b4\'eb\'b0\'aa\'c0\'bb \'b0\'a1\'c1\'f8 \'c7\'e0\'b8\'b8\par
+       \'c3\'df\'c3\'e2\'c7\'d2 \'bc\'f6\'b5\'b5 \'c0\'d6\'b4\'d9.\par
+\par
+SELECT  MGR, ENAME, SAL\par
+  FROM (SELECT MGR, ENAME, SAL,\par
+                      MAX(SAL) OVER (PARTITION BY MGR) AS MAX_SAL\par
+            FROM EMP)\par
+WHERE  SAL = MAX_SAL ;\par
+ \par
+\par
+- MGR 7566\'c0\'c7 SCOTT, FORD\'b4\'c2 \'b0\'b0\'c0\'ba \'c3\'d6\'b4\'eb\'b0\'aa\'c0\'bb \'b0\'a1\'c1\'f6\'b9\'c7\'b7\'ce,\par
+  WHERE SAL = IV_MAX_SAL \'c1\'b6\'b0\'c7\'bf\'a1 \'c0\'c7\'c7\'d8 \'b5\'ce\'b0\'c7 \'b8\'f0\'b5\'ce \'c3\'df\'c3\'e2\'b5\'c7\'be\'fa\'b4\'d9.\par
+ \par
+\par
+       MGR ENAME                  SAL\par
+---------- -------------------- ----------\par
+      7566 FORD                     3000\par
+      7566 SCOTT                    3000\par
+      7698 ALLEN                    1600\par
+      7782 MILLER                   1300\par
+      7788 ADAMS                  1100\par
+      7839 JONES                    2975\par
+      7902 SMITH                     800\par
+             KING                      5000\par
+\par
+\par
+[\'bf\'b9\'c1\'a6]\'bc\'ba\'b4\'c9 \'c0\'fa\'c7\'cf \'b9\'ae\'c1\'a6 \'c7\'d8\'b0\'e1\'c0\'bb \'c0\'a7\'c7\'d8 \'c6\'c4\'c6\'bc\'bc\'c7\'ba\'b0 \'c3\'d6\'b4\'eb\'b0\'aa\'c0\'bb \'b0\'a1\'c1\'f8 \'c7\'e0\'b8\'b8 \'c3\'df\'c3\'e2\'c7\'d2 \'b6\'a7\'b4\'c2\par
+        \'be\'c6\'b7\'a1\'c3\'b3\'b7\'b3 \'bc\'f8\'c0\'a7 \'c7\'d4\'bc\'f6\'b8\'a6 \'bb\'e7\'bf\'eb\'c7\'d1\'b4\'d9.\par
+\par
+SELECT  MGR, ENAME, SAL \par
+  FROM (SELECT MGR, ENAME, SAL, \par
+                      RANK () OVER (PARTITION BY MGR ORDER BY SAL DESC) AS SAL_RK \par
+            FROM EMP) \par
+ WHERE  SAL_RK = 1;\par
+\par
+(3) MIN \'c7\'d4\'bc\'f6\par
+- MIN \'c7\'d4\'bc\'f6\'b8\'a6 \'c0\'cc\'bf\'eb\'c7\'d8 \'c6\'c4\'c6\'bc\'bc\'c7\'ba\'b0 \'c0\'a9\'b5\'b5\'bf\'ec\'c0\'c7 \'c3\'d6\'bc\'d2\'b0\'aa\'c0\'bb \'b1\'b8\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+[\'bf\'b9\'c1\'a6] \'b0\'b0\'c0\'ba \'b8\'c5\'b4\'cf\'c0\'fa\'b8\'a6 \'b5\'ce\'b0\'ed \'c0\'d6\'b4\'c2 \'bb\'e7\'bf\'f8\'b5\'e9\'c0\'bb \'c0\'d4\'bb\'e7\'c0\'cf\'c0\'da\'b8\'a6 \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce \'c1\'a4\'b7\'c4\'c7\'cf\'b0\'ed,\par
+        SALARY \'c3\'d6\'bc\'d2\'b0\'aa\'c0\'bb \'b0\'b0\'c0\'cc \'b1\'b8\'c7\'d1\'b4\'d9.\par
+\par
+ SELECT   MGR, ENAME, HIREDATE, SAL,\par
+             MIN(SAL) OVER(PARTITION BY MGR ORDER BY HIREDATE) AS MGR_MIN\par
+  FROM   EMP;\par
+\par
+ \par
+\par
+       MGR ENAME              HIREDATE        SAL    MGR_MIN\par
+---------- --------------------  --------       ---------- ----------\par
+      7566 FORD                 81/12/03       3000       3000\par
+      7566 SCOTT                87/07/13       3000       3000\par
+      7698 ALLEN                81/02/20       1600       1600\par
+      7698 WARD                81/02/22       1250       1250\par
+      7698 TURNER              81/09/08       1500       1250\par
+      7698 MARTIN              81/09/28       1250       1250\par
+      7698 JAMES                81/12/03        950        950\par
+      7782 MILLER               82/01/23       1300       1300\par
+      7788 ADAMS              87/07/13       1100       1100\par
+      7839 JONES                81/04/02       2975       2975\par
+      7839 BLAKE                81/05/01       2850       2850\par
+      7839 CLARK                81/06/09       2450       2450\par
+      7902 SMITH                80/12/17        800        800\par
+             KING                  81/11/17       5000       5000\par
+\par
+ \par
+(4) AVG \'c7\'d4\'bc\'f6\par
+\par
+- AVG \'c7\'d4\'bc\'f6\'bf\'cd \'c6\'c4\'c6\'bc\'bc\'c7\'ba\'b0 ROWS \'c0\'a9\'b5\'b5\'bf\'ec\'b8\'a6 \'c0\'cc\'bf\'eb\'c7\'d8 \'bf\'f8\'c7\'cf\'b4\'c2 \'c1\'b6\'b0\'c7\'bf\'a1 \'b8\'c2\'b4\'c2 \'b5\'a5\'c0\'cc\'c5\'cd\'bf\'a1\par
+  \'b4\'eb\'c7\'d1 \'c5\'eb\'b0\'e8\'b0\'aa\'c0\'bb \'b1\'b8\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+[\'bf\'b9\'c1\'a6]EMP \'c5\'d7\'c0\'cc\'ba\'ed\'bf\'a1\'bc\'ad \'b0\'b0\'c0\'ba \'b8\'c5\'b4\'cf\'c0\'fa\'b8\'a6 \'b5\'ce\'b0\'ed \'c0\'d6\'b4\'c2 \'bb\'e7\'bf\'f8\'b5\'e9\'c0\'c7 \'c6\'f2\'b1\'d5 SALARY\'b8\'a6 \'b1\'b8\'c7\'cf\'b4\'c2\'b5\'a5,\par
+       \'c1\'b6\'b0\'c7\'c0\'ba \'b0\'b0\'c0\'ba \'b8\'c5\'b4\'cf\'c0\'fa \'b3\'bb\'bf\'a1\'bc\'ad \'c0\'da\'b1\'e2 \'b9\'d9\'b7\'ce \'be\'d5\'c0\'c7 \'bb\'e7\'b9\'f8\'b0\'fa \'b9\'d9\'b7\'ce \'b5\'da\'c0\'c7 \'bb\'e7\'b9\'f8\'c0\'ce \'c1\'f7\'bf\'f8\'b8\'b8\'c0\'bb\par
+       \'b4\'eb\'bb\'f3\'c0\'b8\'b7\'ce \'c7\'d1\'b4\'d9.\par
+\par
+ \par
+\par
+SELECT   MGR, ENAME, HIREDATE, SAL,\par
+            ROUND (AVG(SAL) OVER (PARTITION BY MGR ORDER BY HIREDATE\par
+                                              ROWS BETWEEN 1 PRECEDING\par
+                                                             AND 1 FOLLOWING)) AS MGR_AVG\par
+ FROM  EMP;\par
+\par
+       MGR ENAME         HIREDATE    SAL  MGR_AVG\par
+---------- ----------------- -------- ---------- ----------\par
+      7566 FORD           81/12/03       3000       3000\par
+      7566 SCOTT          87/07/13       3000       3000\par
+      7698 ALLEN          81/02/20       1600       1425\par
+      7698 WARD          81/02/22       1250       1450\par
+      7698 TURNER        81/09/08       1500       1333\par
+      7698 MARTIN        81/09/28       1250       1233\par
+      7698 JAMES          81/12/03        950       1100\par
+      7782 MILLER         82/01/23       1300       1300\par
+      7788 ADAMS         87/07/13       1100       1100\par
+      7839 JONES          81/04/02       2975       2913\par
+      7839 BLAKE           81/05/01       2850       2758\par
+      7839 CLARK          81/06/09       2450       2650\par
+      7902 SMITH          80/12/17        800        800\par
+             KING            81/11/17       5000       5000\par
+\par
+- ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING \'b4\'c2 \'c7\'f6\'c0\'e7 \'c7\'e0\'c0\'bb \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce\par
+  \'c6\'c4\'c6\'bc\'bc\'c7 \'b3\'bb\'bf\'a1\'bc\'ad \'be\'d5\'c0\'c7 \'c7\'d1 \'b0\'c7, \'c7\'f6\'c0\'e7 \'c7\'e0, \'b5\'da\'c0\'c7 \'c7\'d1 \'b0\'c7\'c0\'bb \'b9\'fc\'c0\'a7\'b7\'ce \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9.\par
+  (ROWS\'b4\'c2 \'c7\'f6\'c0\'e7 \'c7\'e0\'c0\'c7 \'be\'d5\'b5\'da \'b0\'c7\'bc\'f6\'b8\'a6 \'b8\'bb\'c7\'cf\'b4\'c2 \'b0\'cd\'c0\'d3)\par
+ \par
+\par
+- ALLEN\'c0\'c7 \'b0\'e6\'bf\'ec \'c6\'c4\'c6\'bc\'bc\'c7 \'b3\'bb\'bf\'a1\'bc\'ad \'c3\'b9 \'b9\'f8\'c2\'b0 \'b5\'a5\'c0\'cc\'c5\'cd\'b7\'ce \'be\'d5\'c0\'c7 \'c7\'d1 \'b0\'c7\'c0\'ba \'c6\'f2\'b1\'d5\'b0\'aa \'c1\'fd\'b0\'e8\par
+  \'b4\'eb\'bb\'f3\'c0\'cc \'be\'f8\'b4\'d9. \'c6\'f2\'b1\'d5\'b0\'aa \'c1\'fd\'b0\'e8 \'b4\'eb\'bb\'f3\'c0\'ba \'ba\'bb\'c0\'ce\'c0\'c7 \'b5\'a5\'c0\'cc\'c5\'cd\'bf\'cd \'b5\'da\'c0\'c7 \'c7\'d1 \'b0\'c7\'c0\'b8\'b7\'ce \'c6\'f2\'b1\'d5\'b0\'aa\'c0\'bb\par
+  \'b1\'b8\'c7\'d1\'b4\'d9. (1600 + 1250) / 2 = 1425\'c0\'c7 \'b0\'aa\'c0\'bb \'b0\'a1\'c1\'f8\'b4\'d9.\par
+- TURNER\'c0\'c7 \'b0\'e6\'bf\'ec \'be\'d5\'c0\'c7 \'c7\'d1\'b0\'c7\'b0\'fa, \'ba\'bb\'c0\'ce\'c0\'c7 \'b5\'a5\'c0\'cc\'c5\'cd\'bf\'cd, \'b5\'da\'c0\'c7 \'c7\'d1 \'b0\'c7\'c0\'b8\'b7\'ce \'c6\'f2\'b1\'d5\'b0\'aa\'c0\'bb \'b1\'b8\'c7\'d1\'b4\'d9.\par
+  (1250 + 1500 + 1250) / 3 = 1333\'c0\'c7 \'b0\'aa\'c0\'bb \'b0\'a1\'c1\'f8\'b4\'d9.\par
+- JAMES\'c0\'c7 \'b0\'e6\'bf\'ec \'c6\'c4\'c6\'bc\'bc\'c7 \'b3\'bb\'bf\'a1\'bc\'ad \'b8\'b6\'c1\'f6\'b8\'b7 \'b5\'a5\'c0\'cc\'c5\'cd\'b7\'ce \'b5\'da\'c0\'c7 \'c7\'d1 \'b0\'c7\'c0\'bb \'c1\'a6\'bf\'dc\'c7\'d1, \'be\'d5\'c0\'c7 \'c7\'d1 \'b0\'c7\'b0\'fa\par
+  \'ba\'bb\'c0\'ce\'c0\'c7 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6 \'b0\'a1\'c1\'f6\'b0\'ed \'c6\'f2\'b1\'d5\'b0\'aa\'c0\'bb \'b1\'b8\'c7\'d1\'b4\'d9. (1250 + 950) / 2 = 1100\'c0\'c7 \'b0\'aa\'c0\'bb \'b0\'a1\'c1\'f8\'b4\'d9.\par
+\par
+\par
+(5) COUNT \'c7\'d4\'bc\'f6\par
+- COUNT \'c7\'d4\'bc\'f6\'bf\'cd \'c6\'c4\'c6\'bc\'bc\'c7\'ba\'b0 ROWS \'c0\'a9\'b5\'b5\'bf\'ec\'b8\'a6 \'c0\'cc\'bf\'eb\'c7\'d8 \'bf\'f8\'c7\'cf\'b4\'c2 \'c1\'b6\'b0\'c7\'bf\'a1 \'b8\'c2\'b4\'c2 \'b5\'a5\'c0\'cc\'c5\'cd\'bf\'a1 \'b4\'eb\'c7\'d1\par
+  \'c5\'eb\'b0\'e8\'b0\'aa\'c0\'bb \'b1\'b8\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+[\'bf\'b9\'c1\'a6] \'bb\'e7\'bf\'f8\'b5\'e9\'c0\'bb \'b1\'de\'bf\'a9 \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce \'c1\'a4\'b7\'c4\'c7\'cf\'b0\'ed, \'ba\'bb\'c0\'ce\'c0\'c7 \'b1\'de\'bf\'a9\'ba\'b8\'b4\'d9 50 \'c0\'fb\'b0\'c5\'b3\'aa 150  \'b8\'b9\'c0\'ba \'b1\'de\'bf\'a9\'b8\'a6\par
+        \'b9\'de\'b4\'c2 \'c0\'ce\'bf\'f8\'bc\'f6\'b8\'a6 \'c3\'e2\'b7\'c2\'c7\'cf\'b6\'f3.\par
+\par
+SELECT  ENAME, SAL,\par
+           COUNT(*) OVER (ORDER BY SAL\par
+                                  RANGE BETWEEN 50 PRECEDING\par
+                                                   AND 150 FOLLOWING) AS EMP_CNT\par
+ FROM  EMP;\par
+\par
+\par
+ENAME                 SAL    EMP_CNT\par
+\par
+-------------------- ---------- -----------------------\par
+SMITH                      800          2 -- 750 ~ 950\par
+JAMES                      950          2 -- 900 ~ 1100\par
+ADAMS                   1100          3 --1050 ~ 1250  -- *\par
+WARD                     1250          3 -- 1200 ~ 1400\par
+MARTIN                   1250          3 -- 1200 ~ 1400\par
+MILLER                    1300          3\par
+TURNER                   1500          2\par
+ALLEN                     1600          1\par
+CLARK                      2450          1\par
+BLAKE                      2850          4\par
+JONES                      2975          3\par
+SCOTT                      3000          3\par
+FORD                       3000          3\par
+KING                        5000          1\par
+\par
+- RANGE BETWEEN 50 PRECEDING AND 150 FOLLOWING \'b4\'c2 \'c7\'f6\'c0\'e7 \'c7\'e0\'c0\'c7 \'b1\'de\'bf\'a9\'b0\'aa\'c0\'bb\par
+  \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce \'b1\'de\'bf\'a9\'b0\'a1 -50\'bf\'a1\'bc\'ad +150\'c0\'c7 \'b9\'fc\'c0\'a7 \'b3\'bb\'bf\'a1 \'c6\'f7\'c7\'d4\'b5\'c8 \'b8\'f0\'b5\'e7 \'c7\'e0\'c0\'cc \'b4\'eb\'bb\'f3\'c0\'cc \'b5\'c8\'b4\'d9.\par
+ (RANGE\'b4\'c2 \'c7\'f6\'c0\'e7 \'c7\'e0\'c0\'c7 \'b5\'a5\'c0\'cc\'c5\'cd \'b0\'aa\'c0\'bb \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce \'be\'d5\'b5\'da \'b5\'a5\'c0\'cc\'c5\'cd \'b0\'aa\'c0\'c7 \'b9\'fc\'c0\'a7\'b8\'a6 \'c7\'a5\'bd\'c3\'c7\'cf\'b4\'c2 \'b0\'cd\'c0\'d3)\par
+\par
+- \'c0\'a7 SQL \'b9\'ae\'c0\'e5\'c0\'ba \'c6\'c4\'c6\'bc\'bc\'c7\'c0\'cc \'c1\'f6\'c1\'a4\'b5\'c7\'c1\'f6 \'be\'ca\'be\'d2\'c0\'b8\'b9\'c7\'b7\'ce \'b8\'f0\'b5\'e7 \'b0\'c7\'bc\'f6\'b8\'a6 \'b4\'eb\'bb\'f3\'c0\'b8\'b7\'ce -50 ~ +150\par
+  \'b1\'e2\'c1\'d8\'bf\'a1 \'b8\'c2\'b4\'c2\'c1\'f6 \'b0\'cb\'bb\'e7\'c7\'cf\'b0\'d4 \'b5\'c8\'b4\'d9.\par
+- ORDER BY SAL\'b7\'ce \'c1\'a4\'b7\'c4\'c0\'cc \'b5\'c7\'be\'ee \'c0\'d6\'c0\'b8\'b9\'c7\'b7\'ce \'ba\'f1\'b1\'b3 \'bf\'ac\'bb\'ea\'c0\'cc \'bd\'ac\'bf\'f6\'c1\'f8\'b4\'d9. * \'c7\'a5\'bd\'c3\'b5\'c8 ADAMS\'c0\'c7\par
+  \'b0\'e6\'bf\'ec \'c0\'da\'b1\'e2\'b0\'a1 \'b0\'a1\'c1\'f6\'b0\'ed \'c0\'d6\'b4\'c2 SALARY 1100\'c0\'bb \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce -50\'bf\'a1\'bc\'ad +150\'b1\'ee\'c1\'f6 \'b0\'aa\'c0\'bb \'b0\'a1\'c1\'f8\par
+  1050\'bf\'a1\'bc\'ad 1250\'b1\'ee\'c1\'f6\'c0\'c7 \'b0\'aa\'c0\'bb \'b0\'a1\'c1\'f8 MARTIN(1250), ADAMS(1100), WARD(1250) 3\'b8\'ed\'c0\'c7\par
+  \'b5\'a5\'c0\'cc\'c5\'cd \'b0\'c7\'bc\'f6\'b8\'a6 \'b1\'b8\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+\par
+\par
+4. \'b1\'d7\'b7\'ec \'b3\'bb \'c7\'e0 \'bc\'f8\'bc\'ad \'c7\'d4\'bc\'f6\par
+(1) FIRST_VALUE \'c7\'d4\'bc\'f6\par
+- FIRST_VALUE \'c7\'d4\'bc\'f6\'b8\'a6 \'c0\'cc\'bf\'eb\'c7\'d8 \'c6\'c4\'c6\'bc\'bc\'c7\'ba\'b0 \'c0\'a9\'b5\'b5\'bf\'ec\'bf\'a1\'bc\'ad \'b0\'a1\'c0\'e5 \'b8\'d5\'c0\'fa \'b3\'aa\'bf\'c2 \'b0\'aa\'c0\'bb \'b1\'b8\'c7\'d1\'b4\'d9. \par
+\par
+[\'bf\'b9\'c1\'a6]\'ba\'ce\'bc\'ad\'ba\'b0 \'c1\'f7\'bf\'f8\'b5\'e9\'c0\'bb \'bf\'ac\'ba\'c0\'c0\'cc \'b3\'f4\'c0\'ba \'bc\'f8\'bc\'ad\'ba\'ce\'c5\'cd \'c1\'a4\'b7\'c4\'c7\'cf\'b0\'ed, \'c6\'c4\'c6\'bc\'bc\'c7 \'b3\'bb\'bf\'a1\'bc\'ad \'b0\'a1\'c0\'e5 \'b8\'d5\'c0\'fa\par
+        \'b3\'aa\'bf\'c2 \'b0\'aa\'c0\'bb \'c3\'e2\'b7\'c2\'c7\'d1\'b4\'d9.\par
+\par
+SELECT  DEPTNO, ENAME, SAL,\par
+           FIRST_VALUE(ENAME) OVER (PARTITION BY DEPTNO ORDER BY SAL DESC\par
+                                                 ROWS UNBOUNDED PRECEDING) AS ENAME_FV\par
+ FROM  EMP;\par
+ \par
+\par
+DEPTNO ENAME              SAL      ENAME_FV\par
+------- -------------------- ---------- --------------------\par
+     10 KING                       5000 KING\par
+     10 CLARK                     2450 KING\par
+     10 MILLER                    1300 KING\par
+     20 SCOTT                     3000 SCOTT  -- *\par
+     20 FORD                      3000 SCOTT  -- *\par
+     20 JONES                     2975 SCOTT\par
+     20 ADAMS                   1100 SCOTT\par
+     20 SMITH                      800 SCOTT\par
+     30 BLAKE                     2850 BLAKE\par
+     30 ALLEN                     1600 BLAKE\par
+     30 TURNER                   1500 BLAKE\par
+     30 MARTIN                   1250 BLAKE\par
+     30 WARD                     1250 BLAKE\par
+     30 JAMES                      950 BLAKE\par
+\par
+\par
+- ROWS UNBOUNDED PRECEDING\'b4\'c2 \'c7\'f6\'c0\'e7 \'c7\'e0\'c0\'bb \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce \'c6\'c4\'c6\'bc\'bc\'c7 \'b3\'bb\'c0\'c7 \'c3\'b9 \'b9\'f8\'c2\'b0\par
+  \'c7\'e0\'b1\'ee\'c1\'f6\'c0\'c7 \'b9\'fc\'c0\'a7\'b8\'a6 \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9.\par
+\par
+- FIRST_VALUE\'b4\'c2 \'b4\'d9\'b8\'a5 \'c7\'d4\'bc\'f6\'bf\'cd \'b4\'de\'b8\'ae \'b0\'f8\'b5\'bf \'b5\'ee\'bc\'f6\'b8\'a6 \'c0\'ce\'c1\'a4\'c7\'cf\'c1\'f6 \'be\'ca\'b0\'ed \'c3\'b3\'c0\'bd \'b3\'aa\'bf\'c2 \'c7\'e0\'b8\'b8\'c0\'bb\par
+  \'c3\'b3\'b8\'ae\'c7\'d1\'b4\'d9.\par
+\par
+- \'c0\'a7\'c3\'b3\'b7\'b3 \'b0\'f8\'b5\'bf \'b5\'ee\'bc\'f6\'b0\'a1 \'c0\'d6\'c0\'bb \'b0\'e6\'bf\'ec\'bf\'a1 \'c0\'c7\'b5\'b5\'c0\'fb\'c0\'b8\'b7\'ce \'bc\'bc\'ba\'ce \'c7\'d7\'b8\'f1\'c0\'bb \'c1\'a4\'b7\'c4\'c7\'cf\'b0\'ed \'bd\'cd\'b4\'d9\'b8\'e9 \'ba\'b0\'b5\'b5\'c0\'c7\par
+  \'c1\'a4\'b7\'c4 \'c1\'b6\'b0\'c7\'c0\'bb \'b0\'a1\'c1\'f8 INLINE VIEW\'b8\'a6 \'bb\'e7\'bf\'eb\'c7\'cf\'b0\'c5\'b3\'aa, OVER () \'b3\'bb\'c0\'c7 ORDER BY \'c0\'fd\'bf\'a1 \'c4\'ae\'b7\'b3\'c0\'bb\par
+  \'c3\'df\'b0\'a1\'c7\'d8\'be\'df \'c7\'d1\'b4\'d9.\par
+ \par
+\par
+[\'bf\'b9\'c1\'a6] \'be\'d5\'c0\'c7 SQL \'b9\'ae\'c0\'e5\'bf\'a1\'bc\'ad \'b0\'b0\'c0\'ba \'b0\'aa\'c0\'bb \'b0\'a1\'c1\'f8 FIRST_VALUE\'b8\'a6 \'c3\'b3\'b8\'ae\'c7\'cf\'b1\'e2 \'c0\'a7\'c7\'d8 ORDER BY\par
+        \'c1\'a4\'b7\'c4 \'c1\'b6\'b0\'c7\'c0\'bb \'c3\'df\'b0\'a1\'c7\'d1\'b4\'d9.\par
+\par
+SELECT  DEPTNO, ENAME, SAL, \par
+           FIRST_VALUE(ENAME) OVER (PARTITION BY DEPTNO ORDER BY SAL DESC , ENAME\par
+                                                 ROWS UNBOUNDED PRECEDING) AS ENAME_FV\par
+ FROM  EMP; \par
+\par
+DEPTNO ENAME                 SAL   ENAME_FV\par
+------- -------------------- ---------- --------------------\par
+     10 KING                       5000 KING\par
+     10 CLARK                     2450 KING\par
+     10 MILLER                    1300 KING\par
+     20 FORD                      3000 FORD\par
+     20 SCOTT                     3000 FORD\par
+     20 JONES                     2975 FORD\par
+     20 ADAMS                    1100 FORD\par
+     20 SMITH                       800 FORD\par
+     30 BLAKE                      2850 BLAKE\par
+     30 ALLEN                      1600 BLAKE\par
+     30 TURNER                    1500 BLAKE\par
+     30 MARTIN                    1250 BLAKE\par
+     30 WARD                      1250 BLAKE\par
+     30 JAMES                       950 BLAKE\par
+ \par
+\par
+- \'b0\'b0\'c0\'ba \'ba\'ce\'bc\'ad \'b3\'bb\'bf\'a1 \'c3\'d6\'b0\'ed \'b1\'de\'bf\'a9\'b8\'a6 \'b9\'de\'b4\'c2 \'bb\'e7\'b6\'f7\'c0\'cc \'b5\'d1 \'c0\'d6\'b4\'c2 \'b0\'e6\'bf\'ec\'b8\'a6 \'b4\'eb\'ba\'f1\'c7\'d8\'bc\'ad \'c0\'cc\'b8\'a7\'c0\'bb \'b5\'ce \'b9\'f8\'c2\'b0\par
+  \'c1\'a4\'b7\'c4 \'c1\'b6\'b0\'c7\'c0\'b8\'b7\'ce \'c3\'df\'b0\'a1\'c7\'d1\'b4\'d9.\par
+\par
+- \'ba\'ce\'bc\'ad\'b9\'f8\'c8\'a3 20\'c0\'c7 \'c3\'d6\'b0\'ed \'b1\'de\'bf\'a9\'c0\'da\'b0\'a1 \'c0\'cc\'c0\'fc\'c0\'c7 SCOTT \'b0\'aa\'bf\'a1\'bc\'ad ASCII \'c4\'da\'b5\'e5\'b0\'a1 \'c0\'fb\'c0\'ba \'b0\'aa\'c0\'ce FORD\'b7\'ce\par
+  \'ba\'af\'b0\'e6 \'b5\'c8 \'b0\'cd\'c0\'bb \'c8\'ae\'c0\'ce\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+\par
+\par
+(2) LAST_VALUE \'c7\'d4\'bc\'f6\par
+- LAST_VALUE \'c7\'d4\'bc\'f6\'b8\'a6 \'c0\'cc\'bf\'eb\'c7\'d8 \'c6\'c4\'c6\'bc\'bc\'c7\'ba\'b0 \'c0\'a9\'b5\'b5\'bf\'ec\'bf\'a1\'bc\'ad \'b0\'a1\'c0\'e5 \'b3\'aa\'c1\'df\'bf\'a1 \'b3\'aa\'bf\'c2 \'b0\'aa\'c0\'bb \'b1\'b8\'c7\'d1\'b4\'d9. \par
+\par
+[\'bf\'b9\'c1\'a6]\'ba\'ce\'bc\'ad\'ba\'b0 \'c1\'f7\'bf\'f8\'b5\'e9\'c0\'bb \'bf\'ac\'ba\'c0\'c0\'cc \'b3\'f4\'c0\'ba \'bc\'f8\'bc\'ad\'ba\'ce\'c5\'cd \'c1\'a4\'b7\'c4\'c7\'cf\'b0\'ed, \'c6\'c4\'c6\'bc\'bc\'c7 \'b3\'bb\'bf\'a1\'bc\'ad \'b0\'a1\'c0\'e5 \'b8\'b6\'c1\'f6\'b8\'b7\'bf\'a1\par
+       \'b3\'aa\'bf\'c2 \'b0\'aa\'c0\'bb \'c3\'e2\'b7\'c2\'c7\'d1\'b4\'d9.\par
+\par
+SELECT  DEPTNO, ENAME, SAL,\par
+           LAST_VALUE(ENAME) OVER (PARTITION BY DEPTNO ORDER BY SAL DESC\par
+                                                ROWS BETWEEN CURRENT ROW\par
+                                                                AND UNBOUNDED FOLLOWING) \par
+            AS ENAME_LV\par
+  FROM  EMP;\par
+\par
+DEPTNO ENAME                 SAL  ENAME_LV\par
+------- -------------------- ---------- --------------------\par
+\par
+     10 KING                       5000 MILLER\par
+     10 CLARK                     2450 MILLER\par
+     10 MILLER                    1300 MILLER\par
+     20 SCOTT                     3000 SMITH\par
+     20 FORD                      3000 SMITH\par
+     20 JONES                     2975 SMITH\par
+     20 ADAMS                    1100 SMITH\par
+     20 SMITH                       800 SMITH\par
+     30 BLAKE                      2850 JAMES\par
+     30 ALLEN                      1600 JAMES\par
+     30 TURNER                    1500 JAMES\par
+     30 MARTIN                    1250 JAMES\par
+     30 WARD                       1250 JAMES\par
+     30 JAMES                        950 JAMES\par
+\par
+- ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING \'c0\'ba \'c7\'f6\'c0\'e7 \'c7\'e0\'c0\'bb\par
+  \'c6\'f7\'c7\'d4\'c7\'d8\'bc\'ad \'c6\'c4\'c6\'bc\'bc\'c7 \'b3\'bb\'c0\'c7 \'b8\'b6\'c1\'f6\'b8\'b7 \'c7\'e0\'b1\'ee\'c1\'f6\'c0\'c7 \'b9\'fc\'c0\'a7\'b8\'a6 \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9.\par
+\par
+- LAST_VALUE\'b4\'c2 \'b0\'f8\'b5\'bf \'b5\'ee\'bc\'f6\'b8\'a6 \'c0\'ce\'c1\'a4\'c7\'cf\'c1\'f6 \'be\'ca\'b0\'ed \'b0\'a1\'c0\'e5 \'b3\'aa\'c1\'df\'bf\'a1 \'b3\'aa\'bf\'c2\'c7\'e0\'b8\'b8\'c0\'bb \'c3\'b3\'b8\'ae\'c7\'d1\'b4\'d9.\par
+\par
+- \'b0\'f8\'b5\'bf \'b5\'ee\'bc\'f6\'b0\'a1 \'c0\'d6\'c0\'bb \'b0\'e6\'bf\'ec\'b8\'a6 \'c0\'c7\'b5\'b5\'c0\'fb\'c0\'b8\'b7\'ce \'c1\'a4\'b7\'c4\'c7\'cf\'b0\'ed \'bd\'cd\'b4\'d9\'b8\'e9 \'ba\'b0\'b5\'b5\'c0\'c7 \'c1\'a4\'b7\'c4 \'c1\'b6\'b0\'c7\'c0\'bb \'b0\'a1\'c1\'f8\par
+   INLINE VIEW\'b8\'a6 \'bb\'e7\'bf\'eb\'c7\'cf\'b0\'c5\'b3\'aa, OVER () \'b3\'bb\'c0\'c7 ORDER BY \'c1\'b6\'b0\'c7\'bf\'a1 \'c4\'ae\'b7\'b3\'c0\'bb \'c3\'df\'b0\'a1\'c7\'d8\'be\'df \'c7\'d1\'b4\'d9.\par
+ \par
+\par
+(3) LAG \'c7\'d4\'bc\'f6\par
+- LAG \'c7\'d4\'bc\'f6\'b8\'a6 \'c0\'cc\'bf\'eb\'c7\'d8 \'c6\'c4\'c6\'bc\'bc\'c7\'ba\'b0 \'c0\'a9\'b5\'b5\'bf\'ec\'bf\'a1\'bc\'ad \'c0\'cc\'c0\'fc \'b8\'ee \'b9\'f8\'c2\'b0 \'c7\'e0\'c0\'c7 \'b0\'aa\'c0\'bb \'b0\'a1\'c1\'ae\'bf\'c3 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+[\'bf\'b9\'c1\'a6]\'c1\'f7\'bf\'f8\'b5\'e9\'c0\'bb \'c0\'d4\'bb\'e7\'c0\'cf\'c0\'da\'b0\'a1 \'ba\'fc\'b8\'a5 \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce \'c1\'a4\'b7\'c4\'c0\'bb \'c7\'cf\'b0\'ed, \'ba\'bb\'c0\'ce\'ba\'b8\'b4\'d9 \'c0\'d4\'bb\'e7\'c0\'cf\'c0\'da\'b0\'a1 \'c7\'d1 \'b8\'ed \'be\'d5\'bc\'b1\par
+       \'bb\'e7\'bf\'f8\'c0\'c7 \'b1\'de\'bf\'a9\'b8\'a6 \'ba\'bb\'c0\'ce\'c0\'c7 \'b1\'de\'bf\'a9\'bf\'cd \'c7\'d4\'b2\'b2 \'c3\'e2\'b7\'c2\'c7\'d1\'b4\'d9.\par
+\par
+SELECT  ENAME, HIREDATE, SAL,\par
+           LAG(SAL) OVER (ORDER BY HIREDATE)  AS LAG_SAL\par
+  FROM  EMP\par
+ WHERE  JOB = 'SALESMAN' ;\par
+ \par
+\par
+ENAME               HIREDAT     SAL  LAG_SAL\par
+-------------------- -------- ---------- ----------\par
+ALLEN                81/02/20       1600\par
+WARD                81/02/22       1250       1600\par
+TURNER              81/09/08       1500       1250\par
+MARTIN              81/09/28       1250       1500\par
+ \par
+[\'bf\'b9\'c1\'a6] LAG \'c7\'d4\'bc\'f6\'b4\'c2 3\'b0\'b3\'c0\'c7 ARGUMENTS \'b1\'ee\'c1\'f6 \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+        \'b5\'ce \'b9\'f8\'c2\'b0 \'c0\'ce\'c0\'da\'b4\'c2 \'b8\'ee \'b9\'f8\'c2\'b0 \'be\'d5\'c0\'c7 \'c7\'e0\'c0\'bb \'b0\'a1\'c1\'ae\'bf\'c3\'c1\'f6 \'b0\'e1\'c1\'a4\'c7\'cf\'b4\'c2 \'b0\'cd\'c0\'cc\'b0\'ed (DEFAULT 1),\par
+        \'bc\'bc \'b9\'f8\'c2\'b0 \'c0\'ce\'c0\'da\'b4\'c2 \'b0\'a1\'c1\'ae\'bf\'c3 \'b5\'a5\'c0\'cc\'c5\'cd\'b0\'a1 \'be\'f8\'be\'ee NULL \'b0\'aa\'c0\'cc \'b5\'e9\'be\'ee\'bf\'c0\'b4\'c2 \'b0\'e6\'bf\'ec, \'b4\'d9\'b8\'a5 \'b0\'aa\'c0\'b8\'b7\'ce \'b9\'d9\'b2\'d9\'be\'ee\par
+        \'c1\'d9 \'bc\'f6 \'c0\'d6\'b4\'d9. \'b0\'e1\'b0\'fa\'c0\'fb\'c0\'b8\'b7\'ce NVL\'c0\'cc\'b3\'aa ISNULL \'b1\'e2\'b4\'c9\'b0\'fa \'b0\'b0\'b4\'d9.\par
+\par
+SELECT   ENAME, HIREDATE, SAL,\par
+            LAG(SAL, 2, 0) OVER (ORDER BY HIREDATE) AS LAG_SAL\par
+  FROM  EMP\par
+WHERE   JOB = 'SALESMAN';\par
+\par
+- LAG(SAL, 2, 0)\'c0\'c7 \'b1\'e2\'b4\'c9\'c0\'ba \'b5\'ce \'c7\'e0 \'be\'d5\'c0\'c7 SALARY\'b8\'a6 \'b0\'a1\'c1\'ae\'bf\'c0\'b0\'ed, \'b0\'a1\'c1\'ae\'bf\'c3 \'b0\'aa\'c0\'cc \'be\'f8\'b4\'c2 \'b0\'e6\'bf\'ec\'b4\'c2\par
+  0\'c0\'b8\'b7\'ce \'c3\'b3\'b8\'ae\'c7\'d1\'b4\'d9.\par
+\par
+ENAME              HIREDATE      SAL   LAG_SAL\par
+-------------------- --------    ---------- ----------\par
+ALLEN                81/02/20       1600          0\par
+WARD                81/02/22       1250          0\par
+TURNER              81/09/08       1500      1600\par
+MARTIN              81/09/28       1250      1250\par
+ \par
+\par
+\par
+(4) LEAD \'c7\'d4\'bc\'f6\par
+\par
+- LEAD \'c7\'d4\'bc\'f6\'b8\'a6 \'c0\'cc\'bf\'eb\'c7\'d8 \'c6\'c4\'c6\'bc\'bc\'c7\'ba\'b0 \'c0\'a9\'b5\'b5\'bf\'ec\'bf\'a1\'bc\'ad \'c0\'cc\'c8\'c4 \'b8\'ee \'b9\'f8\'c2\'b0 \'c7\'e0\'c0\'c7 \'b0\'aa\'c0\'bb \'b0\'a1\'c1\'ae\'bf\'c3 \'bc\'f6 \'c0\'d6\'b4\'d9. \par
+\par
+[\'bf\'b9\'c1\'a6] \'c1\'f7\'bf\'f8\'b5\'e9\'c0\'bb \'c0\'d4\'bb\'e7\'c0\'cf\'c0\'da\'b0\'a1 \'ba\'fc\'b8\'a5 \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce \'c1\'a4\'b7\'c4\'c0\'bb \'c7\'cf\'b0\'ed, \'b9\'d9\'b7\'ce \'b4\'d9\'c0\'bd\'bf\'a1 \'c0\'d4\'bb\'e7\'c7\'d1 \'c0\'ce\'b7\'c2\'c0\'c7\par
+         \'c0\'d4\'bb\'e7\'c0\'cf\'c0\'da\'b8\'a6 \'c7\'d4\'b2\'b2 \'c3\'e2\'b7\'c2\'c7\'d1\'b4\'d9.\par
+\par
+SELECT  ENAME, HIREDATE,\par
+           LEAD(HIREDATE, 1) OVER (ORDER BY HIREDATE) AS LEAD_HIREDATE\par
+  FROM EMP\par
+WHERE  JOB = 'SALESMAN';\par
+ \par
+\par
+ENAME                HIREDATE   LEAD_HIR\par
+--------------------  -----------   -----------\par
+ALLEN                 81/02/20    81/02/22\par
+WARD                 81/02/22    81/09/08\par
+TURNER               81/09/08    81/09/28\par
+MARTIN               81/09/28\par
+ \par
+\par
+- LEAD \'c7\'d4\'bc\'f6\'b4\'c2 3\'b0\'b3\'c0\'c7 ARGUMENTS \'b1\'ee\'c1\'f6 \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'c2\'b5\'a5,\par
+  \'b5\'ce \'b9\'f8\'c2\'b0 \'c0\'ce\'c0\'da\'b4\'c2 \'b8\'ee \'b9\'f8\'c2\'b0 \'c8\'c4\'c0\'c7 \'c7\'e0\'c0\'bb \'b0\'a1\'c1\'ae\'bf\'c3\'c1\'f6 \'b0\'e1\'c1\'a4\'c7\'cf\'b4\'c2 \'b0\'cd\'c0\'cc\'b0\'ed (DEFAULT 1),\par
+  \'bc\'bc \'b9\'f8\'c2\'b0 \'c0\'ce\'c0\'da\'b4\'c2 \'b0\'a1\'c1\'ae\'bf\'c3 \'b5\'a5\'c0\'cc\'c5\'cd\'b0\'a1 \'be\'f8\'be\'ee  NULL \'b0\'aa\'c0\'cc \'b5\'e9\'be\'ee\'bf\'c0\'b4\'c2 \'b0\'e6\'bf\'ec \'b4\'d9\'b8\'a5 \'b0\'aa\'c0\'b8\'b7\'ce\par
+  \'b9\'d9\'b2\'d9\'be\'ee \'c1\'d9 \'bc\'f6 \'c0\'d6\'b4\'d9. \'b0\'e1\'b0\'fa\'c0\'fb\'c0\'b8\'b7\'ce NVL\'c0\'cc\'b3\'aa ISNULL \'b1\'e2\'b4\'c9\'b0\'fa \'b0\'b0\'b4\'d9.\par
+\par
+\par
+5. \'b1\'d7\'b7\'ec \'b3\'bb \'ba\'f1\'c0\'b2 \'c7\'d4\'bc\'f6\par
+(1) RATIO_TO_REPORT \'c7\'d4\'bc\'f6\par
+ - RATIO_TO_REPORT \'c7\'d4\'bc\'f6\'b8\'a6 \'c0\'cc\'bf\'eb\'c7\'d8 \'c6\'c4\'c6\'bc\'bc\'c7 \'b3\'bb \'c0\'fc\'c3\'bc SUM(\'c4\'ae\'b7\'b3)\'b0\'aa\'bf\'a1 \'b4\'eb\'c7\'d1 \'c7\'e0\'ba\'b0\par
+   \'c4\'ae\'b7\'b3 \'b0\'aa\'c0\'c7 \'b9\'e9\'ba\'d0\'c0\'b2\'c0\'bb \'bc\'d2\'bc\'f6\'c1\'a1\'c0\'b8\'b7\'ce \'b1\'b8\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+ - \'b0\'e1\'b0\'fa \'b0\'aa\'c0\'ba > 0 & <= 1 \'c0\'c7 \'b9\'fc\'c0\'a7\'b8\'a6 \'b0\'a1\'c1\'f8\'b4\'d9.\par
+ - \'b0\'b3\'ba\'b0 RATIO\'c0\'c7 \'c7\'d5\'c0\'bb \'b1\'b8\'c7\'cf\'b8\'e9 1\'c0\'cc \'b5\'c8\'b4\'d9. \par
+\par
+[\'bf\'b9\'c1\'a6] JOB\'c0\'cc SALESMAN\'c0\'ce \'bb\'e7\'bf\'f8\'b5\'e9\'c0\'bb \'b4\'eb\'bb\'f3\'c0\'b8\'b7\'ce \'c0\'fc\'c3\'bc \'b1\'de\'bf\'a9\'bf\'a1\'bc\'ad \'ba\'bb\'c0\'ce\'c0\'cc \'c2\'f7\'c1\'f6\'c7\'cf\'b4\'c2\par
+        \'ba\'f1\'c0\'b2\'c0\'bb \'c3\'e2\'b7\'c2\'c7\'d1\'b4\'d9.\par
+\par
+SELECT  ENAME, SAL,\par
+           ROUND(RATIO_TO_REPORT(SAL) OVER (), 2) AS SAL_RR \par
+  FROM EMP\par
+ WHERE JOB = 'SALESMAN';\par
+\par
+ENAME                   SAL     SAL_RR\par
+-------------------- ---------- ----------\par
+ALLEN                      1600        .29 -- 1600/5600\par
+WARD                      1250        .22 -- 1250/5600\par
+MARTIN                    1250        .22 -- 1250/5600\par
+TURNER                    1500        .27 -- 1500/5600\par
+ \par
+- \'bd\'c7\'c7\'e0 \'b0\'e1\'b0\'fa\'bf\'a1\'bc\'ad \'c0\'fc\'c3\'bc \'b0\'aa\'c0\'ba 1650 + 1250 + 1250 + 1500 = 5600\'c0\'cc \'b5\'c7\'b0\'ed,\par
+  RATIO_TO_REPORT \'c7\'d4\'bc\'f6 \'bf\'ac\'bb\'ea\'c0\'c7 \'ba\'d0\'b8\'f0\'b7\'ce \'bb\'e7\'bf\'eb\'b5\'c8\'b4\'d9.\par
+ \'b1\'d7\'b8\'ae\'b0\'ed \'b0\'b3\'ba\'b0 RATIO\'c0\'c7 \'c0\'fc\'c3\'bc \'c7\'d5\'c0\'bb \'b1\'b8\'c7\'cf\'b8\'e9 1\'c0\'cc \'b5\'c7\'b4\'c2 \'b0\'cd\'c0\'bb \'c8\'ae\'c0\'ce\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+ 0.29 + 0.22 + 0.22 + 0.27 = 1\par
+ \par
+\par
+\par
+(2) PERCENT_RANK \'c7\'d4\'bc\'f6\par
+- PERCENT_RANK \'c7\'d4\'bc\'f6\'b8\'a6 \'c0\'cc\'bf\'eb\'c7\'d8 \'c6\'c4\'c6\'bc\'bc\'c7\'ba\'b0 \'c0\'a9\'b5\'b5\'bf\'ec\'bf\'a1\'bc\'ad \'c1\'a6\'c0\'cf \'b8\'d5\'c0\'fa \'b3\'aa\'bf\'c0\'b4\'c2 \'b0\'cd\'c0\'bb 0\'c0\'b8\'b7\'ce,\par
+  \'c1\'a6\'c0\'cf \'b4\'ca\'b0\'d4 \'b3\'aa\'bf\'c0\'b4\'c2 \'b0\'cd\'c0\'bb 1\'b7\'ce \'c7\'cf\'bf\'a9, \'b0\'aa\'c0\'cc \'be\'c6\'b4\'d1 \'c7\'e0\'c0\'c7 \'bc\'f8\'bc\'ad\'ba\'b0 \'b9\'e9\'ba\'d0\'c0\'b2\'c0\'bb \'b1\'b8\'c7\'d1\'b4\'d9.\par
+- \'b0\'e1\'b0\'fa \'b0\'aa\'c0\'ba >= 0 & <= 1 \'c0\'c7 \'b9\'fc\'c0\'a7\'b8\'a6 \'b0\'a1\'c1\'f8\'b4\'d9.\par
+\par
+[\'bf\'b9\'c1\'a6] \'b0\'b0\'c0\'ba \'ba\'ce\'bc\'ad \'bc\'d2\'bc\'d3 \'bb\'e7\'bf\'f8\'b5\'e9\'c0\'c7 \'c1\'fd\'c7\'d5\'bf\'a1\'bc\'ad \'ba\'bb\'c0\'ce\'c0\'c7 \'b1\'de\'bf\'a9\'b0\'a1 \'bc\'f8\'bc\'ad\'bb\'f3 \'b8\'ee \'b9\'f8\'c2\'b0 \'c0\'a7\'c4\'a1\'c2\'eb\'bf\'a1\par
+        \'c0\'d6\'b4\'c2\'c1\'f6 0\'b0\'fa 1 \'bb\'e7\'c0\'cc\'c0\'c7 \'b0\'aa\'c0\'b8\'b7\'ce \'c3\'e2\'b7\'c2\'c7\'d1\'b4\'d9.\par
+\par
+SELECT  DEPTNO, ENAME, SAL,\par
+           PERCENT_RANK() OVER (PARTITION BY DEPTNO ORDER BY SAL DESC) AS PR\par
+FROM   EMP;\par
+ \par
+\par
+DEPTNO ENAME                SAL         PR\par
+------- -------------------- ---------- ----------\par
+     10 KING                        5000         0\par
+     10 CLARK                      2450         .5\par
+     10 MILLER                     1300          1\par
+     20 SCOTT                      3000          0\par
+     20 FORD                       3000          0\par
+     20 JONES                      2975         .5\par
+     20 ADAMS                     1100         .75\par
+     20 SMITH                       800          1\par
+     30 BLAKE                      2850          0\par
+     30 ALLEN                      1600         .2\par
+     30 TURNER                    1500         .4\par
+     30 MARTIN                    1250         .6\par
+     30 WARD                      1250         .6\par
+     30 JAMES                       950          1\par
+ \par
+- DEPTNO 10\'c0\'c7 \'b0\'e6\'bf\'ec 3\'b0\'c7\'c0\'cc\'b9\'c7\'b7\'ce \'b1\'b8\'b0\'a3\'c0\'ba 2\'b0\'b3\'b0\'a1 \'b5\'c8\'b4\'d9.\par
+  0\'b0\'fa 1 \'bb\'e7\'c0\'cc\'b8\'a6 2\'b0\'b3\'c0\'c7 \'b1\'b8\'b0\'a3\'c0\'b8\'b7\'ce \'b3\'aa\'b4\'a9\'b8\'e9 0, 0.5, 1\'c0\'cc \'b5\'c8\'b4\'d9.\par
+- DEPTNO 20\'c0\'c7 \'b0\'e6\'bf\'ec 5\'b0\'c7\'c0\'cc\'b9\'c7\'b7\'ce \'b1\'b8\'b0\'a3\'c0\'ba 4\'b0\'b3\'b0\'a1 \'b5\'c8\'b4\'d9.\par
+  0\'b0\'fa 1 \'bb\'e7\'c0\'cc\'b8\'a6 4\'b0\'b3\'c0\'c7 \'b1\'b8\'b0\'a3\'c0\'b8\'b7\'ce \'b3\'aa\'b4\'a9\'b8\'e9 0, 0.25, 0.5, 0.75, 1\'c0\'cc \'b5\'c8\'b4\'d9.\par
+- DEPTNO 30\'c0\'c7 \'b0\'e6\'bf\'ec 6\'b0\'c7\'c0\'cc\'b9\'c7\'b7\'ce \'b1\'b8\'b0\'a3\'c0\'ba 5\'b0\'b3\'b0\'a1 \'b5\'c8\'b4\'d9.\par
+  0\'b0\'fa 1 \'bb\'e7\'c0\'cc\'b8\'a6 5\'b0\'b3\'c0\'c7 \'b1\'b8\'b0\'a3\'c0\'b8\'b7\'ce \'b3\'aa\'b4\'a9\'b8\'e9 0, 0.2, 0.4, 0.6, 0.8, 1\'c0\'cc \'b5\'c8\'b4\'d9.\par
+- SCOTT, FORD\'bf\'cd WARD, MARTIN\'c0\'c7 \'b0\'e6\'bf\'ec ORDER BY SAL DESC \'b1\'b8\'b9\'ae\'bf\'a1 \'c0\'c7\'c7\'d8 \'b1\'de\'bf\'a9\'b0\'a1\par
+  \'b0\'b0\'c0\'b8\'b9\'c7\'b7\'ce \'b0\'b0\'c0\'ba ORDER\'b7\'ce \'c3\'eb\'b1\'de\'c7\'d1\'b4\'d9.\par
+\par
+\par
+(3) CUME_DIST \'c7\'d4\'bc\'f6\par
+- CUME_DIST \'c7\'d4\'bc\'f6\'b8\'a6 \'c0\'cc\'bf\'eb\'c7\'d8 \'c6\'c4\'c6\'bc\'bc\'c7\'ba\'b0 \'c0\'a9\'b5\'b5\'bf\'ec\'c0\'c7 \'c0\'fc\'c3\'bc\'b0\'c7\'bc\'f6\'bf\'a1\'bc\'ad \'c7\'f6\'c0\'e7 \'c7\'e0\'ba\'b8\'b4\'d9 \'c0\'db\'b0\'c5\'b3\'aa\par
+  \'b0\'b0\'c0\'ba \'b0\'c7\'bc\'f6\'bf\'a1 \'b4\'eb\'c7\'d1 \'b4\'a9\'c0\'fb\'b9\'e9\'ba\'d0\'c0\'b2\'c0\'bb \'b1\'b8\'c7\'d1\'b4\'d9.\par
+- \'b0\'e1\'b0\'fa \'b0\'aa\'c0\'ba > 0 & <= 1 \'c0\'c7 \'b9\'fc\'c0\'a7\'b8\'a6 \'b0\'a1\'c1\'f8\'b4\'d9. \par
+\par
+[\'bf\'b9\'c1\'a6] \'b0\'b0\'c0\'ba \'ba\'ce\'bc\'ad \'bc\'d2\'bc\'d3 \'bb\'e7\'bf\'f8\'b5\'e9\'c0\'c7 \'c1\'fd\'c7\'d5\'bf\'a1\'bc\'ad \'ba\'bb\'c0\'ce\'c0\'c7 \'b1\'de\'bf\'a9\'b0\'a1 \'b4\'a9\'c0\'fb \'bc\'f8\'bc\'ad\'bb\'f3 \'b8\'ee \'b9\'f8\'c2\'b0 \'c0\'a7\'c4\'a1\'c2\'eb\'bf\'a1\par
+        \'c0\'d6\'b4\'c2\'c1\'f6 0\'b0\'fa 1 \'bb\'e7\'c0\'cc\'c0\'c7 \'b0\'aa\'c0\'b8\'b7\'ce \'c3\'e2\'b7\'c2\'c7\'d1\'b4\'d9.\par
+\par
+SELECT  DEPTNO, ENAME, SAL,\par
+           CUME_DIST() OVER (PARTITION BY DEPTNO ORDER BY SAL DESC) AS CD\par
+FROM  EMP;\par
+ \par
+\par
+DEPTNO ENAME              SAL         CD\par
+------- -------------------- ----------  ----------\par
+     10 KING                       5000          .333333333\par
+     10 CLARK                     2450          .666666667\par
+     10 MILLER                    1300          1\par
+     20 SCOTT                      3000         .4 --*\par
+     20 FORD                       3000         .4 --*\par
+     20 JONES                      2975         .6\par
+     20 ADAMS                    1100         .8\par
+     20 SMITH                       800          1\par
+     30 BLAKE                      2850         .166666667\par
+     30 ALLEN                      1600         .333333333\par
+     30 TURNER                    1500         .5\par
+     30 MARTIN                    1250         .833333333 --**\par
+     30 WARD                      1250         .833333333 --**\par
+     30 JAMES                       950          1\par
+ \par
+- DEPTNO\'b0\'a1 10\'c0\'ce \'b0\'e6\'bf\'ec \'c0\'a9\'b5\'b5\'bf\'ec\'b0\'a1 \'c0\'fc\'c3\'bc 3\'b0\'c7\'c0\'cc\'b9\'c7\'b7\'ce 0.3333 \'b4\'dc\'c0\'a7\'c0\'c7 \'b0\'a3\'b0\'dd\'c0\'bb \'b0\'a1\'c1\'f8\'b4\'d9.\par
+  \'c1\'ef, 0.3333, 0.6667, 1\'c0\'c7 \'b0\'aa\'c0\'cc \'b5\'c8\'b4\'d9.\par
+- DEPTNO\'b0\'a1 20\'c0\'ce \'b0\'e6\'bf\'ec \'c0\'a9\'b5\'b5\'bf\'ec\'b0\'a1 \'c0\'fc\'c3\'bc 5\'b0\'c7\'c0\'cc\'b9\'c7\'b7\'ce 0.2000 \'b4\'dc\'c0\'a7\'c0\'c7 \'b0\'a3\'b0\'dd\'c0\'bb \'b0\'a1\'c1\'f8\'b4\'d9.\par
+  \'c1\'ef, 0.2000, 0.4000, 0.6000, 0.8000, 1\'c0\'c7 \'b0\'aa\'c0\'cc \'b5\'c8\'b4\'d9.\par
+- DEPTNO\'b0\'a1 30\'c0\'ce \'b0\'e6\'bf\'ec \'c0\'a9\'b5\'b5\'bf\'ec\'b0\'a1 \'c0\'fc\'c3\'bc 6\'b0\'c7\'c0\'cc\'b9\'c7\'b7\'ce 0.1667 \'b4\'dc\'c0\'a7\'c0\'c7 \'b0\'a3\'b0\'dd\'c0\'bb \'b0\'a1\'c1\'f8\'b4\'d9.\par
+ \'c1\'ef, 0.1667, 0.3333, 0.5000, 0.6667, 0.8333, 1\'c0\'c7 \'b0\'aa\'c0\'cc \'b5\'c8\'b4\'d9.\par
+- * \'c7\'a5\'bd\'c3\'b0\'a1 \'c0\'d6\'b4\'c2 SCOTT, FORD\'bf\'cd ** \'c7\'a5\'bd\'c3\'b0\'a1 \'c0\'d6\'b4\'c2 WARD, MARTIN\'c0\'c7 \'b0\'e6\'bf\'ec\par
+  ORDER BY SAL\'bf\'a1 \'c0\'c7\'c7\'d8 SAL \'c0\'cc \'b0\'b0\'c0\'b8\'b9\'c7\'b7\'ce \'b0\'b0\'c0\'ba ORDER\'b7\'ce \'c3\'eb\'b1\'de\'c7\'d1\'b4\'d9.\par
+- \'b4\'d9\'b8\'a5 WINDOW \'c7\'d4\'bc\'f6\'c0\'c7 \'b0\'e6\'bf\'ec \'b5\'bf\'c0\'cf \'bc\'f8\'bc\'ad\'b8\'e9 \'be\'d5 \'c7\'e0\'c0\'c7 \'c7\'d4\'bc\'f6 \'b0\'e1\'b0\'fa \'b0\'aa\'c0\'bb \'b5\'fb\'b8\'a3\'b4\'c2\'b5\'a5,\par
+  CUME_DIST\'c0\'c7 \'b0\'e6\'bf\'ec\'b4\'c2 \'b5\'bf\'c0\'cf \'bc\'f8\'bc\'ad\'b8\'e9 \'b5\'da \'c7\'e0\'c0\'c7 \'c7\'d4\'bc\'f6 \'b0\'e1\'b0\'fa\'b0\'aa\'c0\'bb \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce \'c7\'d1\'b4\'d9.\par
+\par
+\par
+(4) NTILE \'c7\'d4\'bc\'f6\par
+- NTILE \'c7\'d4\'bc\'f6\'b8\'a6 \'c0\'cc\'bf\'eb\'c7\'d8 \'c6\'c4\'c6\'bc\'bc\'c7\'ba\'b0 \'c0\'fc\'c3\'bc \'b0\'c7\'bc\'f6\'b8\'a6 ARGUMENT \'b0\'aa\'c0\'b8\'b7\'ce N \'b5\'ee\'ba\'d0\'c7\'d1\par
+  \'b0\'e1\'b0\'fa\'b8\'a6 \'b1\'b8\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+[\'bf\'b9\'c1\'a6]\'c0\'fc\'c3\'bc \'bb\'e7\'bf\'f8\'c0\'bb \'b1\'de\'bf\'a9\'b0\'a1 \'b3\'f4\'c0\'ba \'bc\'f8\'bc\'ad\'b7\'ce \'c1\'a4\'b7\'c4\'c7\'cf\'b0\'ed, \'b1\'de\'bf\'a9\'b8\'a6 \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce 4\'b0\'b3\'c0\'c7\par
+        \'b1\'d7\'b7\'ec\'c0\'b8\'b7\'ce \'ba\'d0\'b7\'f9\'c7\'d1\'b4\'d9.\par
+\par
+SELECT ENAME, SAL,\par
+          NTILE(4) OVER (ORDER BY SAL DESC) AS NT\par
+ FROM EMP;\par
+\par
+\par
+ENAME                     SAL         NT\par
+-------------------- ---------- ----------\par
+\par
+KING                       5000          1\par
+FORD                      3000          1\par
+SCOTT                     3000          1\par
+JONES                      2975          1\par
+BLAKE                      2850          2\par
+CLARK                      2450          2\par
+ALLEN                      1600          2\par
+TURNER                   1500          2\par
+MILLER                     1300          3\par
+WARD                      1250          3\par
+MARTIN                    1250          3\par
+ADAMS                     1100          4\par
+JAMES                        950          4\par
+SMITH                        800          4\par
+ \par
+- \'c0\'a7 \'bf\'b9\'c1\'a6\'bf\'a1\'bc\'ad NTILE(4)\'c0\'c7 \'c0\'c7\'b9\'cc\'b4\'c2 14\'b8\'ed\'c0\'c7 \'c6\'c0\'bf\'f8\'c0\'bb 4\'b0\'b3 \'c1\'b6\'b7\'ce \'b3\'aa\'b4\'ab\'b4\'d9\'b4\'c2 \'c0\'c7\'b9\'cc\'c0\'cc\'b4\'d9.\par
+- \'c0\'fc\'c3\'bc 14\'b8\'ed\'c0\'bb 4\'b0\'b3\'c0\'c7 \'c1\'fd\'c7\'d5\'c0\'b8\'b7\'ce \'b3\'aa\'b4\'a9\'b8\'e9 \'b8\'f2\'c0\'cc 3\'b8\'ed, \'b3\'aa\'b8\'d3\'c1\'f6\'b0\'a1 2\'b8\'ed\'c0\'cc \'b5\'c8\'b4\'d9.\par
+  \'b3\'aa\'b8\'d3\'c1\'f6 \'b5\'ce \'b8\'ed\'c0\'ba \'be\'d5\'c0\'c7 \'c1\'b6\'ba\'ce\'c5\'cd \'c7\'d2\'b4\'e7\'c7\'d1\'b4\'d9.\par
+  \'c1\'ef, 4\'b8\'ed + 4\'b8\'ed + 3\'b8\'ed + 3\'b8\'ed\'c0\'b8\'b7\'ce \'c1\'b6\'b8\'a6 \'b3\'aa\'b4\'a9\'b0\'d4 \'b5\'c8\'b4\'d9.\par
+}
+ 

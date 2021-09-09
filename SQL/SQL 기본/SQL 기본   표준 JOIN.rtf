@@ -1,0 +1,777 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset129 \'b8\'bc\'c0\'ba \'b0\'ed\'b5\'f1;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs24\lang18 [01] \'c7\'a5\'c1\'d8\'c1\'b6\'c0\'ce\par
+\par
+1. FROM \'c0\'fd JOIN \'c7\'fc\'c5\'c2\par
+\'a1\'e1 ANSI/ISO SQL\'bf\'a1\'bc\'ad \'c7\'a5\'bd\'c3\'c7\'cf\'b4\'c2 FROM \'c0\'fd\'c0\'c7 JOIN \'c7\'fc\'c5\'c2\par
+- INNER JOIN \par
+- NATURAL JOIN \par
+- USING \'c1\'b6\'b0\'c7\'c0\'fd \par
+- ON \'c1\'b6\'b0\'c7\'c0\'fd \par
+- CROSS JOIN \par
+- OUTER JOIN\par
+\par
+- ANSI/ISO SQL \'c7\'a5\'c1\'d8\'b9\'e6\'bd\'c4\'c0\'c7 \'c1\'b6\'c0\'ce \'b9\'ae\'b9\'fd\'c0\'ba WHERE\'c0\'fd\'bf\'a1 \'c1\'b6\'c0\'ce \'c1\'b6\'b0\'c7\'c0\'bb \'b1\'e2\'bc\'fa\'c7\'cf\'b4\'c2\par
+  \'c0\'fc\'c5\'eb\'b9\'e6\'bd\'c4\'b0\'fa \'b4\'de\'b8\'ae, JOIN \'c7\'fc\'bd\'c4\'c0\'bb  FROM\'c0\'fd\'bf\'a1 \'b8\'ed\'bd\'c3\'c0\'fb\'c0\'b8\'b7\'ce \'c1\'a4\'c0\'c7 \'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+- ANSI/ISO SQL\'c0\'c7 \'c7\'a5\'c1\'d8\'b9\'e6\'bd\'c4\'c0\'c7 JOIN\'c0\'ba ON\'c1\'b6\'b0\'c7\'c0\'fd\'c0\'bb \'c5\'eb\'c7\'d8 JOIN \'c1\'b6\'b0\'c7\'b0\'fa \'b5\'a5\'c0\'cc\'c5\'cd\par
+  \'c1\'a6\'c7\'d1 \'c1\'b6\'b0\'c7\'c0\'bb \'ba\'d0\'b8\'ae\'c7\'d8 \'b1\'e2\'bc\'fa\'c7\'d1\'b4\'d9.\par
+ \par
+\par
+2. INNER JOIN\par
+- INNER JOIN\'c0\'ba OUTER(\'bf\'dc\'ba\'ce) JOIN\'b0\'fa \'b4\'eb\'ba\'f1\'c7\'cf\'bf\'a9 \'b3\'bb\'ba\'ce JOIN\'c0\'cc\'b6\'f3\'b0\'ed \'c7\'cf\'b8\'e7\par
+  JOIN \'c1\'b6\'b0\'c7\'bf\'a1\'bc\'ad \'b5\'bf\'c0\'cf\'c7\'d1 \'b0\'aa\'c0\'cc \'c0\'d6\'b4\'c2 \'c7\'e0\'b8\'b8 \'b9\'dd\'c8\'af\'c7\'d1\'b4\'d9.\par
+- INNER JOIN \'c7\'a5\'bd\'c3\'b4\'c2 \'b1\'d7 \'b5\'bf\'be\'c8 WHERE \'c0\'fd\'bf\'a1\'bc\'ad \'bb\'e7\'bf\'eb\'c7\'cf\'b4\'f8 JOIN \'c1\'b6\'b0\'c7\'c0\'bb \par
+  \ul FROM \'c0\'fd\'bf\'a1\'bc\'ad \'c1\'a4\'c0\'c7\'c7\'cf\'b0\'da\'b4\'d9\'b4\'c2 \'c7\'a5\'bd\'c3\ulnone\'c0\'cc\'b9\'c7\'b7\'ce USING \'c1\'b6\'b0\'c7\'c0\'fd\'c0\'cc\'b3\'aa ON \'c1\'b6\'b0\'c7\'c0\'fd\'c0\'bb\par
+  \'c7\'ca\'bc\'f6\'c0\'fb\'c0\'b8\'b7\'ce \'bb\'e7\'bf\'eb\'c7\'d8\'be\'df \'c7\'d1\'b4\'d9.\par
+\par
+[\'bf\'b9\'c1\'a6] \'bb\'e7\'bf\'f8 \'b9\'f8\'c8\'a3\'bf\'cd \'bb\'e7\'bf\'f8 \'c0\'cc\'b8\'a7, \'bc\'d2\'bc\'d3\'ba\'ce\'bc\'ad \'c4\'da\'b5\'e5\'bf\'cd \'bc\'d2\'bc\'d3\'ba\'ce\'bc\'ad \'c0\'cc\'b8\'a7\'c0\'bb \'c3\'a3\'be\'c6\'ba\'bb\'b4\'d9.\par
+\par
+- WHERE\'c0\'fd JOIN \'c1\'b6\'b0\'c7\par
+SELECT EMP.DEPTNO, EMPNO, ENAME, DNAME\par
+FROM EMP, DEPT\par
+WHERE EMP.DEPTNO = DEPT.DEPTNO;\par
+\par
+- FROM \'c0\'fd JOIN \'c1\'b6\'b0\'c7\par
+SELECT EMP.DEPTNO, EMPNO, ENAME, DNAME\par
+FROM EMP INNER JOIN DEPT\par
+ON EMP.DEPTNO = DEPT.DEPTNO;\par
+\par
+- INNER\'b4\'c2 JOIN\'c0\'c7 \'b5\'f0\'c6\'fa\'c6\'ae \'bf\'c9\'bc\'c7\'c0\'b8\'b7\'ce \'be\'c6\'b7\'a1 SQL\'b9\'ae\'b0\'fa \'b0\'b0\'c0\'cc \'bb\'fd\'b7\'ab \'b0\'a1\'b4\'c9\'c7\'cf\'b4\'d9.\par
+SELECT EMP.DEPTNO, EMPNO, ENAME, DNAME\par
+FROM EMP JOIN DEPT\par
+ON EMP.DEPTNO = DEPT.DEPTNO;\par
+\par
+ \par
+\par
+3. NATURAL JOIN\par
+- NATURAL JOIN\'c0\'ba \'b5\'ce \'c5\'d7\'c0\'cc\'ba\'ed \'b0\'a3\'c0\'c7 \'b5\'bf\'c0\'cf\'c7\'d1 \'c0\'cc\'b8\'a7\'c0\'bb \'b0\'ae\'b4\'c2 \'b8\'f0\'b5\'e7 \'c4\'ae\'b7\'b3\'b5\'e9\'bf\'a1 \'b4\'eb\'c7\'d8\par
+  EQUI(=) JOIN\'c0\'bb \'bc\'f6\'c7\'e0\'c7\'d1\'b4\'d9.\par
+- NATURAL JOIN\'c0\'cc \'b8\'ed\'bd\'c3\'b5\'c7\'b8\'e9, \'c3\'df\'b0\'a1\'b7\'ce USING \'c1\'b6\'b0\'c7\'c0\'fd, ON \'c1\'b6\'b0\'c7\'c0\'fd, WHERE \'c0\'fd\'bf\'a1\'bc\'ad\par
+  JOIN \'c1\'b6\'b0\'c7\'c0\'bb \'c1\'a4\'c0\'c7\'c7\'d2 \'bc\'f6 \'be\'f8\'b4\'d9. \par
+\par
+[\'bf\'b9\'c1\'a6] \'bb\'e7\'bf\'f8 \'b9\'f8\'c8\'a3\'bf\'cd \'bb\'e7\'bf\'f8 \'c0\'cc\'b8\'a7, \'bc\'d2\'bc\'d3\'ba\'ce\'bc\'ad \'b9\'f8\'c8\'a3\'bf\'cd \'bc\'d2\'bc\'d3\'ba\'ce\'bc\'ad \'c0\'cc\'b8\'a7\'c0\'bb \'c3\'a3\'be\'c6\'ba\'bb\'b4\'d9.\par
+\par
+SELECT  A.EMPNO, A.ENAME, DEPTNO,B.DNAME\par
+FROM EMP A NATURAL JOIN DEPT B;\par
+\par
+     EMPNO ENAME           DEPTNO DNAME\par
+---------- -------------------- ---------- ----------------------------\par
+      7782 CLARK                        10 ACCOUNTING\par
+      7839 KING                         10 ACCOUNTING\par
+      7934 MILLER                       10 ACCOUNTING\par
+      7566 JONES                        20 RESEARCH\par
+      7902 FORD                         20 RESEARCH\par
+      7876 ADAMS                        20 RESEARCH\par
+      7369 SMITH                        20 RESEARCH\par
+      7788 SCOTT                        20 RESEARCH\par
+      7521 WARD                         30 SALES\par
+      7844 TURNER                       30 SALES\par
+      7499 ALLEN                        30 SALES\par
+      7900 JAMES                        30 SALES\par
+      7698 BLAKE                        30 SALES\par
+      7654 MARTIN                       30 SALES\par
+ \par
+ \par
+- \'b5\'ce \'b0\'b3\'c0\'c7 \'c5\'d7\'c0\'cc\'ba\'ed\'c0\'c7 \'b0\'f8\'c5\'eb \'c4\'ae\'b7\'b3 DEPTNO\'c0\'bb \'c0\'da\'b5\'bf\'c0\'b8\'b7\'ce \'c0\'ce\'bd\'c4\'c7\'d8 JOIN\'c3\'b3\'b8\'ae\'c7\'d1\'b4\'d9.\par
+- NATURAL JOIN\'bf\'a1\'bc\'ad \'b0\'f8\'c5\'eb \'c4\'ae\'b7\'b3\'c0\'ba ALIAS\'b3\'aa \'c5\'d7\'c0\'cc\'ba\'ed \'b8\'ed\'b0\'fa \'b0\'b0\'c0\'ba \par
+  \'c1\'a2\'b5\'ce\'bb\'e7\'b8\'a6 \'ba\'d9\'c0\'cf \'bc\'f6 \'be\'f8\'b4\'d9.\par
+- \'b1\'d7\'bf\'dc \'c4\'c3\'b7\'b3\'c0\'ba ALIAS\'b3\'aa \'c5\'d7\'c0\'cc\'ba\'ed \'b8\'ed\'b0\'fa \'b0\'b0\'c0\'ba \'c1\'a2\'b5\'ce\'bb\'e7\'b8\'a6 \'ba\'d9\'c0\'cf \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+ \par
+\par
+SELECT EMP.DEPTNO, EMPNO, ENAME, DNAME\par
+FROM EMP\par
+NATURAL JOIN DEPT;\par
+ERROR: NATURAL JOIN\'bf\'a1 \'bb\'e7\'bf\'eb\'b5\'c8 \'bf\'ad\'c0\'ba \'bd\'c4\'ba\'b0\'c0\'da\'b8\'a6 \'b0\'a1\'c1\'fa \'bc\'f6 \'be\'f8\'c0\'bd\par
+ \par
+\par
+- NATURAL JOIN\'c0\'ba JOIN\'bf\'a1 \'bb\'e7\'bf\'eb\'b5\'c8 \'b0\'f8\'c5\'eb \'c4\'ae\'b7\'b3\'c0\'bb \'c7\'cf\'b3\'aa\'b7\'ce \'c3\'b3\'b8\'ae\'c7\'d1\'b4\'d9.\par
+[\'bf\'b9\'c1\'a6] '*' \'c3\'b3\'b7\'b3 \'ba\'b0\'b5\'b5\'c0\'c7 \'c4\'c3\'b7\'b3 \'bc\'f8\'bc\'ad\'b8\'a6 \'c1\'f6\'c1\'a4\'c7\'cf\'c1\'f6 \'be\'ca\'c0\'b8\'b8\'e9 NATURAL JOIN\'c0\'c7\par
+        \'b1\'e2\'c1\'d8\'c4\'c3\'b7\'b3(\'b0\'f8\'c5\'eb)\'c0\'cc \'b8\'d5\'c0\'fa \'c3\'e2\'b7\'c2\'b5\'c8\'b4\'d9. \'c1\'b6\'c0\'ce\'bf\'a1 \'bb\'e7\'bf\'eb\'b5\'c8 \'b0\'b0\'c0\'ba \'c0\'cc\'b8\'a7\'c0\'c7 \'c4\'ae\'b7\'b3\'c0\'ba\par
+        \'c7\'cf\'b3\'aa\'b8\'b8 \'c3\'e2\'b7\'c2\'b5\'b5\'b5\'c8\'b4\'d9 (DEPTNO)\par
+\par
+ SELECT *\par
+ FROM EMP NATURAL JOIN DEPT;\par
+\par
+\fs16 10 7782\tab CLARK\tab MANAGER  \tab 7839\tab 81/06/09\tab 2450\tab     ACCOUNTING\tab NEW YORK\par
+10 7839\tab KING\tab PRESIDENT\tab\tab 81/11/17\tab 5000\tab     ACCOUNTING\tab NEW YORK\par
+10 7934\tab MILLER\tab CLERK\tab\tab 7782\tab 82/01/23\tab 1300\tab     ACCOUNTING\tab NEW YORK\par
+20 7566\tab JONES\tab MANAGER\tab 7839\tab 81/04/02\tab 2975\tab     RESEARCH\tab DALLAS\par
+20 7902\tab FORD\tab ANALYST\tab\tab 7566\tab 81/12/03\tab 3000\tab     RESEARCH\tab DALLAS\par
+20 7876\tab ADAMS\tab CLERK\tab\tab 7788\tab 87/07/13\tab 1100\tab     RESEARCH\tab DALLAS\par
+20 7369\tab SMITH\tab CLERK\tab\tab 7902\tab 80/12/17\tab 800\tab     RESEARCH\tab DALLAS\par
+20 7788\tab SCOTT\tab ANALYST\tab\tab 7566\tab 87/07/13\tab 3000\tab     RESEARCH\tab DALLAS\par
+30 7521\tab WARD\tab SALESMAN\tab 7698\tab 81/02/22\tab 1250   500   SALES\tab\tab CHICAGO\par
+\fs24\par
+-  INNER JOIN\'c0\'c7 \'b0\'e6\'bf\'ec\'b4\'c2 \'c3\'b9 \'b9\'f8\'c2\'b0 \'c5\'d7\'c0\'cc\'ba\'ed, \'b5\'ce \'b9\'f8\'c2\'b0 \'c5\'d7\'c0\'cc\'ba\'ed\'c0\'c7 \'c4\'ae\'b7\'b3 \'bc\'f8\'bc\'ad\'b4\'eb\'b7\'ce \'b5\'a5\'c0\'cc\'c5\'cd\'b0\'a1\par
+   \'c3\'e2\'b7\'c2\'b5\'c8\'b4\'d9. NATURAL JOIN\'c0\'ba JOIN\'bf\'a1 \'bb\'e7\'bf\'eb\'b5\'c8 \'b0\'b0\'c0\'ba \'c0\'cc\'b8\'a7\'c0\'c7 \'c4\'ae\'b7\'b3\'c0\'bb \'c7\'cf\'b3\'aa\'b7\'ce \'c3\'b3\'b8\'ae\'c7\'cf\'c1\'f6\'b8\'b8,\par
+   INNER JOIN\'c0\'ba \'ba\'b0\'b0\'b3\'c0\'c7 \'c4\'ae\'b7\'b3\'c0\'b8\'b7\'ce \'c7\'a5\'bd\'c3\'c7\'d1\'b4\'d9.\par
+\par
+ SELECT *\par
+ FROM EMP INNER JOIN DEPT\par
+ ON EMP.DEPTNO = DEPT.DEPTNO;\par
+\par
+\fs16 7782\tab CLARK\tab MANAGER   7839\tab 81/06/09\tab 2450\tab 10\tab 10\tab ACCOUNTING\tab NEW YORK\par
+7839\tab KING\tab PRESIDENT\tab 81/11/17\tab 5000\tab 10\tab 10\tab ACCOUNTING\tab NEW YORK\par
+7934\tab MILLER\tab CLERK\tab    7782\tab 82/01/23\tab 1300\tab 10\tab 10\tab ACCOUNTING\tab NEW YORK\par
+7566\tab JONES\tab MANAGER  7839\tab 81/04/02\tab 2975\tab 20\tab 20\tab RESEARCH\tab DALLAS\par
+7902\tab FORD\tab ANALYST\tab 7566\tab 81/12/03\tab 3000\tab\tab 20\tab 20\tab RESEARCH\tab DALLAS\par
+7876\tab ADAMS\tab CLERK\tab 7788\tab 87/07/13\tab 1100\tab\tab 20\tab 20\tab RESEARCH\tab DALLAS\par
+7369\tab SMITH\tab CLERK\tab 7902\tab 80/12/17\tab 800\tab\tab 20\tab 20\tab RESEARCH\tab DALLAS\par
+7788\tab SCOTT\tab ANALYST\tab 7566\tab 87/07/13\tab 3000\tab\tab 20\tab 20\tab RESEARCH\tab DALLAS\par
+7521\tab WARD\tab SALESMAN\tab 7698\tab 81/02/22\tab 1250\tab 500\tab 30\tab 30\tab SALES\tab CHICAGO\par
+7844\tab TURNER\tab SALESMAN\tab 7698\tab 81/09/08\tab 1500\tab 0\tab 30\tab 30\tab SALES\tab CHICAGO\par
+\fs24  \par
+\par
+[\'bf\'b9\'c1\'a6] NATURAL JOIN\'b0\'fa INNER JOIN\'c0\'c7 \'c2\'f7\'c0\'cc\'b8\'a6 \'c0\'da\'bc\'bc\'c8\'f7 \'bc\'b3\'b8\'ed\'c7\'cf\'b1\'e2 \'c0\'a7\'c7\'d8 \par
+        DEPT_TEMP \'c5\'d7\'c0\'cc\'ba\'ed\'c0\'bb \'c0\'d3\'bd\'c3\'b7\'ce \'b8\'b8\'b5\'e7\'b4\'d9.\par
+\par
+CREATE TABLE DEPT_TEMP AS SELECT * FROM DEPT;\par
+\par
+ \par
+UPDATE DEPT_TEMP SET DNAME = 'CONSULTING'\par
+WHERE DNAME = 'RESEARCH';\par
+\par
+UPDATE DEPT_TEMP SET DNAME = 'MARKETING'\par
+WHERE DNAME = 'SALES';\par
+\par
+COMMIT\par
+\par
+SELECT * FROM DEPT_TEMP;\par
+\par
+    DEPTNO DNAME                        LOC\par
+---------- ---------------------------- --------------------------\par
+        10 ACCOUNTING                  NEW YORK\par
+        20 CONSULTING                               DALLAS\par
+        30 MARKETING                    CHICAGO\par
+        40 OPERATIONS                   BOSTON\par
+\par
+ \par
+- \'ba\'ce\'bc\'ad\'b9\'f8\'c8\'a3 20\'b0\'fa 30\'c0\'c7 DNAME\'c0\'cc 'CONSULTING'\'bf\'cd 'MARKETING'\'c0\'b8\'b7\'ce\par
+  \'ba\'af\'b0\'e6\'b5\'c8 \'b0\'cd\'c0\'bb \'c8\'ae\'c0\'ce\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+\par
+\par
+[\'bf\'b9\'c1\'a6] \'bc\'bc \'b0\'b3\'c0\'c7 \'c4\'ae\'b7\'b3\'b8\'ed\'c0\'cc \'b8\'f0\'b5\'ce \'b0\'b0\'c0\'ba DEPT\'bf\'cd DEPT_TEMP \'c5\'d7\'c0\'cc\'ba\'ed\'c0\'bb\par
+         NATURAL [INNER] JOIN\'c0\'b8\'b7\'ce \'bc\'f6\'c7\'e0\'c7\'d1\'b4\'d9.\par
+\par
+- INNER\'b4\'c2 DEFAULT \'bf\'c9\'bc\'c7\'c0\'b8\'b7\'ce \'bb\'fd\'b7\'ab\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+ \par
+\par
+SELECT *\par
+FROM DEPT NATURAL INNER JOIN DEPT_TEMP;\par
+ \par
+\par
+    DEPTNO DNAME                        LOC\par
+---------- ---------------------------- --------------------------\par
+        10 ACCOUNTING                   NEW YORK\par
+        40 OPERATIONS                    BOSTON\par
+ \par
+\par
+- \'c0\'a7 SQL\'c0\'c7 \'b0\'e6\'bf\'ec DNAME\'c0\'c7 \'b3\'bb\'bf\'eb\'c0\'cc \'b9\'d9\'b2\'ef \'ba\'ce\'bc\'ad\'b9\'f8\'c8\'a3 20, 30\'c0\'c7 \'b5\'a5\'c0\'cc\'c5\'cd\'b4\'c2\par
+  \'bd\'c7\'c7\'e0 \'b0\'e1\'b0\'fa\'bf\'a1\'bc\'ad \'c1\'a6\'bf\'dc\'b5\'c8\'b4\'d9.\par
+\par
+\par
+[\'bf\'b9\'c1\'a6]\'b4\'d9\'c0\'bd\'bf\'a1\'b4\'c2 \'b0\'b0\'c0\'ba \'c1\'b6\'b0\'c7\'c0\'cc\'c1\'f6\'b8\'b8 \'c3\'e2\'b7\'c2 \'c4\'ae\'b7\'b3\'bf\'a1\'bc\'ad \'c2\'f7\'c0\'cc\'b0\'a1 \'b3\'aa\'b4\'c2 \'c0\'cf\'b9\'dd\'c0\'fb\'c0\'ce\par
+        INNER JOIN\'c0\'bb \'bc\'f6\'c7\'e0\'c7\'d1\'b4\'d9.\par
+\par
+SELECT *\par
+FROM DEPT A JOIN DEPT_TEMP B\par
+ON  A.DEPTNO = B.DEPTNO\par
+AND A.DNAME = B.DNAME\par
+AND A.LOC = B.LOC;\par
+\par
+\par
+ \par
+DEPTNO  DNAME                        LOC              DEPTNO   DNAME                LOC\par
+-------     ---------------------------- ---------------------- -------------  ------------------- -----------------------\par
+    10     ACCOUNTING            NEW YO               10          ACCOUNTING      NEW YORK\par
+    40     OPERATIONS            BOSTON                40         OPERATIONS        BOSTON\par
+ \par
+\par
+\par
+- NATURAL JOIN\'c0\'ba JOIN\'bf\'a1 \'bb\'e7\'bf\'eb\'b5\'c8 \'b0\'b0\'c0\'ba \'c0\'cc\'b8\'a7\'c0\'c7 \'c4\'ae\'b7\'b3\'c0\'bb \'c7\'cf\'b3\'aa\'b7\'ce \'c3\'b3\'b8\'ae\'c7\'cf\'c1\'f6\'b8\'b8,\par
+  INNER JOIN\'c0\'c7 \'b0\'e6\'bf\'ec\'b4\'c2 2\'b0\'b3\'c0\'c7 \'c4\'ae\'b7\'b3\'c0\'b8\'b7\'ce \'c7\'a5\'bd\'c3\'b5\'c8\'b4\'d9.\par
+\par
+\par
+\par
+4. USING \'c1\'b6\'b0\'c7\'c0\'fd\par
+- NATURAL JOIN\'bf\'a1\'bc\'ad\'b4\'c2 \'b0\'b0\'c0\'ba \'c0\'cc\'b8\'a7\'c0\'bb \'b0\'a1\'c1\'f8 \'b8\'f0\'b5\'e7 \'c4\'c3\'b7\'b3\'b5\'e9\'bf\'a1 \'b4\'eb\'c7\'d8 JOIN\'c0\'cc \'c0\'cc\'b7\'e7\'be\'ee\'c1\'f8\'b4\'d9.\par
+- FROM \'c0\'fd\'c0\'c7 USING \'c1\'b6\'b0\'c7\'c0\'fd\'c0\'bb \'c0\'cc\'bf\'eb\'c7\'cf\'b8\'e9 \'b0\'b0\'c0\'ba \'c0\'cc\'b8\'a7\'c0\'bb \'b0\'a1\'c1\'f8 \'c4\'ae\'b7\'b3\'b5\'e9 \'c1\'df\'bf\'a1\'bc\'ad \'bf\'f8\'c7\'cf\'b4\'c2\par
+  \'c4\'ae\'b7\'b3\'bf\'a1 \'b4\'eb\'c7\'d8\'bc\'ad\'b8\'b8 \'bc\'b1\'c5\'c3\'c0\'fb\'c0\'b8\'b7\'ce EQUI JOIN\'c0\'bb \'c7\'d2 \'bc\'f6\'b0\'a1 \'c0\'d6\'b4\'d9. \par
+\par
+[\'bf\'b9\'c1\'a6] \'bc\'bc \'b0\'b3\'c0\'c7 \'c4\'ae\'b7\'b3\'b8\'ed\'c0\'cc \'b8\'f0\'b5\'ce \'b0\'b0\'c0\'ba DEPT\'bf\'cd DEPT_TEMP \'c5\'d7\'c0\'cc\'ba\'ed\'c0\'bb DEPTNO \'c4\'ae\'b7\'b3\'c0\'bb\par
+        \'c0\'cc\'bf\'eb\'c7\'d1 [INNER] JOIN\'c0\'c7 USING \'c1\'b6\'b0\'c7\'c0\'fd\'b7\'ce \'bc\'f6\'c7\'e0\'c7\'d1\'b4\'d9.\par
+\par
+SELECT *\par
+FROM DEPT JOIN DEPT_TEMP \par
+USING (DEPTNO);\par
+ \par
+\par
+    DEPTNO DNAME                        LOC                        DNAME                        LOC\par
+---------- ---------------------------- -------------------------- ---------------------------- --------------------------\par
+        10 ACCOUNTING                 NEW YORK              ACCOUNTING        NEW YORK\par
+        20 RESEARCH                     DALLAS                   CONSULTING       DALLAS\par
+        30 SALES                             CHICAGO                 MARKETING           CHICAGO\par
+        40 OPERATIONS                 BOSTON                  OPERATIONS         BOSTON\par
+\par
+ \par
+\par
+-  * \'c3\'b3\'b7\'b3 \'ba\'b0\'b5\'b5\'c0\'c7 \'c4\'ae\'b7\'b3 \'bc\'f8\'bc\'ad\'b8\'a6 \'c1\'f6\'c1\'a4\'c7\'cf\'c1\'f6 \'be\'ca\'c0\'b8\'b8\'e9 USING \'c1\'b6\'b0\'c7\'c0\'fd\'c0\'c7 \'b1\'e2\'c1\'d8\'c0\'cc \'b5\'c7\'b4\'c2 \'c4\'ae\'b7\'b3\par
+   \'c0\'cc \'b4\'d9\'b8\'a5\'c4\'ae\'b7\'b3\'ba\'b8\'b4\'d9 \'b8\'d5\'c0\'fa \'c3\'e2\'b7\'c2\'b5\'c8\'b4\'d9.\par
+-  USING \'c1\'b6\'b0\'c7\'c0\'fd\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'d1 JOIN\'bf\'a1\'bc\'ad\'b4\'c2 \'b0\'b0\'c0\'ba \'c0\'cc\'b8\'a7\'c0\'c7 \'c4\'ae\'b7\'b3\'c0\'bb \'c7\'cf\'b3\'aa\'b7\'ce \'c3\'b3\'b8\'ae\'c7\'d1\'b4\'d9.\par
+\par
+\par
+[\'bf\'b9\'c1\'a6] USING \'c1\'b6\'b0\'c7\'c0\'fd\'c0\'bb \'c0\'cc\'bf\'eb\'c7\'d1 EQUI JOIN\'bf\'a1\'bc\'ad\'b5\'b5 NATURAL JOIN\'b0\'fa \'b8\'b6\'c2\'f9\'b0\'a1\'c1\'f6\'b7\'ce\par
+        JOIN \'c4\'ae\'b7\'b3\'bf\'a1 \'b4\'eb\'c7\'d8\'bc\'ad\'b4\'c2 ALIAS\'b3\'aa \'c5\'d7\'c0\'cc\'ba\'ed \'c0\'cc\'b8\'a7\'b0\'fa \'b0\'b0\'c0\'ba \'c1\'a2\'b5\'ce\'bb\'e7\'b8\'a6 \'ba\'d9\'c0\'cf \'bc\'f6 \'be\'f8\'b4\'d9.\par
+        (DEPT.DEPTNO \'a1\'e6 DEPTNO)\par
+\par
+ \par
+\par
+SELECT  A.DEPTNO,  A.DNAME,  A.LOC, B.DNAME, B.LOC\par
+FROM DEPT A JOIN DEPT_TEMP B\par
+USING (DEPTNO);\par
+ERROR: USING \'c0\'fd\'c0\'c7 \'bf\'ad \'ba\'ce\'ba\'d0\'c0\'ba \'bd\'c4\'ba\'b0\'c0\'da\'b8\'a6 \'b0\'a1\'c1\'fa \'bc\'f6 \'be\'f8\'c0\'bd\par
+\par
+SELECT DEPTNO, A.DNAME,  A.LOC, B.DNAME, B.LOC\par
+FROM DEPT A JOIN DEPT_TEMP B\par
+USING (DEPTNO);\par
+\par
+DEPTNO DNAME                     LOC                        DNAME                        LOC\par
+---------- ---------------------------- -------------------------- ---------------------------- --------------------------\par
+        10 ACCOUNTING           NEW YORK              ACCOUNTING         NEW YORK\par
+        20 RESEARCH               DALLAS                    CONSULTING        DALLAS\par
+        30 SALES                        CHICAGO                 MARKETING           CHICAGO\par
+        40 OPERATIONS            BOSTON                   OPERATIONS          BOSTON\par
+\par
+[\'bf\'b9\'c1\'a6] DEPT\'bf\'cd DEPT_TEMP \'c5\'d7\'c0\'cc\'ba\'ed\'c0\'c7 \'c0\'cf\'ba\'ce \'b5\'a5\'c0\'cc\'c5\'cd \'b3\'bb\'bf\'eb\'c0\'cc \'ba\'af\'b0\'e6\'b5\'c7\'be\'fa\'b4\'f8\par
+        DNAME \'c4\'ae\'b7\'b3\'c0\'bb \'c1\'b6\'c0\'ce \'c1\'b6\'b0\'c7\'c0\'b8\'b7\'ce [INNER] JOIN\'c0\'c7 USING \'c1\'b6\'b0\'c7\'c0\'fd\'c0\'bb \'bc\'f6\'c7\'e0\'c7\'d1\'b4\'d9.\par
+\par
+SELECT *\par
+FROM DEPT JOIN DEPT_TEMP \par
+USING (DNAME);\par
+\par
+ \par
+\par
+DNAME                    DEPTNO LOC                       DEPTNO LOC\par
+---------------------------- ---------- -------------------------- ---------- --------------------------\par
+ACCOUNTING                  10  NEW YORK                       10 NEW YORK\par
+OPERATIONS                    40 BOSTON                           40 BOSTON\par
+\par
+ \par
+- USING\'bf\'a1 \'bb\'e7\'bf\'eb\'b5\'c8 DNAME\'c0\'cc \'c3\'b9 \'b9\'f8\'c2\'b0 \'c4\'ae\'b7\'b3\'c0\'b8\'b7\'ce \'c3\'e2\'b7\'c2\'b5\'c8 \'b0\'cd\'b0\'fa \'c7\'d4\'b2\'b2, JOIN \'c1\'b6\'b0\'c7\'bf\'a1\par
+  \'c2\'fc\'bf\'a9\'c7\'cf\'c1\'f6 \'be\'ca\'c0\'ba DEPTNO\'bf\'cd LOC\'b0\'a1 2\'b0\'b3\'c0\'c7 \'c4\'ae\'b7\'b3\'c0\'b8\'b7\'ce \'c7\'a5\'bd\'c3\'b5\'c8 \'b0\'cd\'c0\'bb \'be\'cb \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+\par
+[\'bf\'b9\'c1\'a6]\'bc\'bc \'b0\'b3\'c0\'c7 \'c4\'ae\'b7\'b3\'b8\'ed\'c0\'cc \'b8\'f0\'b5\'ce \'b0\'b0\'c0\'ba DEPT\'bf\'cd DEPT_TEMP \'c5\'d7\'c0\'cc\'ba\'ed\'c0\'bb LOC\'bf\'cd DEPTNO\par
+        2\'b0\'b3 \'c4\'ae\'b7\'b3\'c0\'bb \'c0\'cc\'bf\'eb\'c7\'d1 [INNER] JOIN\'c0\'c7 USING \'c1\'b6\'b0\'c7\'c0\'fd\'b7\'ce \'bc\'f6\'c7\'e0\'c7\'d1\'b4\'d9.\par
+\par
+ \par
+\par
+SELECT *\par
+FROM DEPT JOIN DEPT_TEMP \par
+USING (LOC, DEPTNO);\par
+\par
+LOC                        DEPTNO DNAME                    DNAME\par
+-------------------------- ---------- ---------------------------- ----------------------------\par
+NEW YORK                    10 ACCOUNTING            ACCOUNTING\par
+DALLAS                          20 RESEARCH                CONSULTING\par
+CHICAGO                       30 SALES                        MARKETING\par
+BOSTON                         40 OPERATIONS            OPERATIONS\par
+\par
+ \par
+- USING\'bf\'a1 \'bb\'e7\'bf\'eb\'b5\'c8 LOC, DEPTNO\'b0\'a1 \'c3\'b9 \'b9\'f8\'c2\'b0, \'b5\'ce \'b9\'f8\'c2\'b0 \'c4\'ae\'b7\'b3\'c0\'b8\'b7\'ce \'c3\'e2\'b7\'c2\'b5\'c7\'b0\'ed,\par
+  JOIN \'c1\'b6\'b0\'c7\'bf\'a1 \'c2\'fc\'bf\'a9\'c7\'cf\'c1\'f6 \'be\'ca\'c0\'ba DNAME \'c4\'ae\'b7\'b3\'c0\'ba 2\'b0\'b3\'c0\'c7 \'c4\'ae\'b7\'b3\'c0\'b8\'b7\'ce \'c7\'a5\'bd\'c3\'b5\'c8\'b4\'d9.\par
+\par
+\par
+[\'bf\'b9\'c1\'a6] DEPTNO, DNAME 2\'b0\'b3\'c0\'c7 \'c4\'ae\'b7\'b3\'c0\'bb \'c0\'cc\'bf\'eb\'c7\'d1 [INNER] JOIN\'c0\'c7 USING \'c1\'b6\'b0\'c7\'c0\'fd\'b7\'ce\par
+        \'bc\'f6\'c7\'e0\'c7\'d1\'b4\'d9.\par
+\par
+SELECT *\par
+FROM DEPT JOIN DEPT_TEMP \par
+USING (DEPTNO, DNAME);\par
+ \par
+\par
+ DEPTNO DNAME          LOC              LOC\par
+ ------- --------------- ---------------- -----------\par
+     10 ACCOUNTING    NEW YORK   NEW YORK\par
+     40 OPERATIONS     BOSTON       BOSTON\par
+\par
+\par
+ \par
+- USING\'bf\'a1 \'bb\'e7\'bf\'eb\'b5\'c8 DEPTNO, DNAME\'c0\'cc \'c3\'b9 \'b9\'f8\'c2\'b0, \'b5\'ce \'b9\'f8\'c2\'b0 \'c4\'ae\'b7\'b3\'c0\'b8\'b7\'ce \'c3\'e2\'b7\'c2\'b5\'c8 \'b0\'cd\'b0\'fa\par
+  \'c7\'d4\'b2\'b2, JOIN \'c1\'b6\'b0\'c7\'bf\'a1 \'c2\'fc\'bf\'a9\'c7\'cf\'c1\'f6 \'be\'ca\'c0\'ba LOC\'b0\'a1 2\'b0\'b3\'c0\'c7 \'c4\'ae\'b7\'b3\'c0\'b8\'b7\'ce \'c7\'a5\'bd\'c3\'b5\'c8 \'b0\'cd\'c0\'bb \'be\'cb \'bc\'f6 \'c0\'d6\'b4\'d9\par
+ \par
+\par
+\par
+5. ON \'c1\'b6\'b0\'c7\'c0\'fd\par
+- \'c1\'b6\'c0\'ce \'bc\'ad\'bc\'fa\'ba\'ce(ON \'c1\'b6\'b0\'c7\'c0\'fd)\'bf\'cd \'ba\'f1 \'c1\'b6\'c0\'ce \'bc\'ad\'bc\'fa\'ba\'ce(WHERE \'c1\'b6\'b0\'c7\'c0\'fd)\'b8\'a6 \'ba\'d0\'b8\'ae\'c7\'d8 \'c0\'cc\'c7\'d8\'b0\'a1 \par
+  \'bd\'ac\'bf\'ec\'b8\'e7, \'c4\'ae\'b7\'b3\'b8\'ed\'c0\'cc \'b4\'d9\'b8\'a3\'b4\'f5\'b6\'f3\'b5\'b5 \'c1\'b6\'c0\'ce \'c1\'b6\'b0\'c7\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+[\'bf\'b9\'c1\'a6]\'bb\'e7\'bf\'f8 \'c5\'d7\'c0\'cc\'ba\'ed\'b0\'fa \'ba\'ce\'bc\'ad \'c5\'d7\'c0\'cc\'ba\'ed\'bf\'a1\'bc\'ad \'bb\'e7\'bf\'f8 \'b9\'f8\'c8\'a3\'bf\'cd \'bb\'e7\'bf\'f8 \'c0\'cc\'b8\'a7, \'bc\'d2\'bc\'d3\'ba\'ce\'bc\'ad \'c4\'da\'b5\'e5,\par
+        \'bc\'d2\'bc\'d3\'ba\'ce\'bc\'ad \'c0\'cc\'b8\'a7\'c0\'bb \'c3\'e2\'b7\'c2\'c7\'d1\'b4\'d9.\par
+\par
+SELECT E.EMPNO, E.ENAME, E.DEPTNO, D.DNAME\par
+FROM EMP E JOIN DEPT D\par
+ON (E.DEPTNO = D.DEPTNO);\par
+\par
+- NATURAL JOIN\'c0\'c7 JOIN \'c1\'b6\'b0\'c7\'c0\'ba \'b1\'e2\'ba\'bb\'c0\'fb\'c0\'b8\'b7\'ce \'b0\'b0\'c0\'ba \'c0\'cc\'b8\'a7\'c0\'bb \'b0\'a1\'c1\'f8 \'b8\'f0\'b5\'e7 \'c4\'ae\'b7\'b3\'b5\'e9\'bf\'a1 \'b4\'eb\'c7\'d1\par
+  \'b5\'bf\'b5\'ee \'c1\'b6\'b0\'c7\'c0\'cc\'c1\'f6\'b8\'b8, \'c0\'d3\'c0\'c7\'c0\'c7 JOIN \'c1\'b6\'b0\'c7\'c0\'bb \'c1\'f6\'c1\'a4\'c7\'cf\'b0\'c5\'b3\'aa, \'c0\'cc\'b8\'a7\'c0\'cc \'b4\'d9\'b8\'a5 \'c4\'ae\'b7\'b3\'b8\'ed\'c0\'bb JOIN\par
+  \'c1\'b6\'b0\'c7\'c0\'b8\'b7\'ce \'bb\'e7\'bf\'eb\'c7\'cf\'b0\'c5\'b3\'aa, JOIN \'c4\'ae\'b7\'b3\'c0\'bb \'b8\'ed\'bd\'c3\'c7\'cf\'b1\'e2 \'c0\'a7\'c7\'d8\'bc\'ad\'b4\'c2 ON \'c1\'b6\'b0\'c7\'c0\'fd\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'d1\'b4\'d9.\par
+\par
+- ON \'c1\'b6\'b0\'c7\'c0\'fd\'bf\'a1 \'bb\'e7\'bf\'eb\'b5\'c8 \'b0\'fd\'c8\'a3\'b4\'c2 \'bf\'c9\'bc\'c7 \'bb\'e7\'c7\'d7\'c0\'cc\'b4\'d9. \par
+- USING \'c1\'b6\'b0\'c7\'c0\'fd\'c0\'bb \'c0\'cc\'bf\'eb\'c7\'d1 JOIN\'bf\'a1\'bc\'ad\'b4\'c2 JOIN \'c4\'ae\'b7\'b3\'bf\'a1 \'b4\'eb\'c7\'d8\'bc\'ad ALIAS\'b3\'aa \'c5\'d7\'c0\'cc\'ba\'ed \'b8\'ed\'b0\'fa\par
+  \'b0\'b0\'c0\'ba \'c1\'a2\'b5\'ce\'bb\'e7\'b8\'a6 \'bb\'e7\'bf\'eb\'c7\'cf\'b8\'e9 SYNTAX \'bf\'a1\'b7\'af\'b0\'a1 \'b9\'df\'bb\'fd\'c7\'d1\'b4\'d9.\par
+- ON \'c1\'b6\'b0\'c7\'c0\'fd\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'d1 \'c1\'b6\'c0\'ce\'c0\'c7 \'b0\'e6\'bf\'ec\'b4\'c2 \'c0\'cc\'b8\'a7\'c0\'cc \'b0\'b0\'c0\'ba \'c4\'ae\'b7\'b3\'b5\'e9\'bf\'a1 \'b4\'eb\'c7\'d8 ALIAS\'b3\'aa\par
+  \'c5\'d7\'c0\'cc\'ba\'ed \'b8\'ed\'b0\'fa \'b0\'b0\'c0\'ba \'c1\'a2\'b5\'ce\'bb\'e7\'b8\'a6 \'bb\'e7\'bf\'eb\'c7\'cf\'bf\'a9 SELECT\'bf\'a1 \'bb\'e7\'bf\'eb\'b5\'c7\'b4\'c2 \'c4\'ae\'b7\'b3\'c0\'bb \'b3\'ed\'b8\'ae\'c0\'fb\'c0\'b8\'b7\'ce\par
+  \'b8\'ed\'c8\'ae\'c7\'cf\'b0\'d4 \'c1\'f6\'c1\'a4\'c7\'d8\'c1\'d6\'be\'ee\'be\'df \'c7\'d1\'b4\'d9. (DEPTNO \'a1\'e6 E.DEPTNO) \par
+- ON \'c1\'b6\'b0\'c7\'c0\'fd\'c0\'ba WHERE \'c0\'fd\'c0\'c7 JOIN \'c1\'b6\'b0\'c7\'b0\'fa \'b0\'b0\'c0\'ba \'b1\'e2\'b4\'c9\'c0\'bb \'c7\'cf\'b8\'e9\'bc\'ad\'b5\'b5, \'b8\'ed\'bd\'c3\'c0\'fb\'c0\'b8\'b7\'ce\par
+  JOIN\'c0\'c7 \'c1\'b6\'b0\'c7\'c0\'bb \'b1\'b8\'ba\'d0\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+- FROM \'c0\'fd\'bf\'a1 \'c5\'d7\'c0\'cc\'ba\'ed\'c0\'cc \'b8\'b9\'c0\'cc \'bb\'e7\'bf\'eb\'b5\'c9 \'b0\'e6\'bf\'ec \'b4\'d9\'bc\'d2 \'ba\'b9\'c0\'e2\'c7\'cf\'b0\'d4 \'ba\'b8\'bf\'a9 \'b0\'a1\'b5\'b6\'bc\'ba\'c0\'cc \'b6\'b3\'be\'ee\'c1\'f6\'b4\'c2\par
+  \'b4\'dc\'c1\'a1\'c0\'cc \'c0\'d6\'b4\'d9.\par
+\par
+(1) WHERE \'c0\'fd\'b0\'fa\'c0\'c7 \'c8\'a5\'bf\'eb\par
+[\'bf\'b9\'c1\'a6] ON\'c1\'b6\'b0\'c7\'c0\'fd\'b0\'fa WHERE \'b0\'cb\'bb\'f6 \'c1\'b6\'b0\'c7\'c0\'ba \'c3\'e6\'b5\'b9 \'be\'f8\'c0\'cc \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+        \'ba\'ce\'bc\'ad\'b9\'f8\'c8\'a3 30\'c0\'ce \'ba\'ce\'bc\'ad\'c0\'c7 \'bc\'d2\'bc\'d3 \'bb\'e7\'bf\'f8 \'c0\'cc\'b8\'a7 \'b9\'d7 \'bc\'d2\'bc\'d3 \'ba\'ce\'bc\'ad\'b9\'f8\'c8\'a3, \'ba\'ce\'bc\'ad\'b9\'f8\'c8\'a3, \par
+        \'ba\'ce\'bc\'ad\'c0\'cc\'b8\'a7\'c0\'bb \'c3\'a3\'be\'c6\'ba\'bb\'b4\'d9.\par
+\par
+SELECT A.ENAME, A.DEPTNO, B.DEPTNO, B.DNAME\par
+ FROM EMP A JOIN DEPT B\par
+    ON  B.DEPTNO = A.DEPTNO\par
+WHERE B.DEPTNO = 30;\par
+\par
+ENAME               DEPTNO  DEPTNO DNAME\par
+\par
+-------------------- ---------- ---------- ----------------------------\par
+ALLEN                         30         30 SALES\par
+WARD                         30         30 SALES\par
+MARTIN                       30         30 SALES\par
+BLAKE                         30         30 SALES\par
+TURNER                       30         30 SALES\par
+JAMES                         30         30 SALES\par
+\par
+\par
+(2) ON \'c1\'b6\'b0\'c7\'c0\'fd + \'b5\'a5\'c0\'cc\'c5\'cd \'b0\'cb\'c1\'f5 \'c1\'b6\'b0\'c7 \'c3\'df\'b0\'a1\par
+- ON \'c1\'b6\'b0\'c7\'c0\'fd\'bf\'a1 JOIN \'c1\'b6\'b0\'c7\'bf\'dc\'bf\'a1\'b5\'b5 \'b5\'a5\'c0\'cc\'c5\'cd \'b0\'cb\'bb\'f6 \'c1\'b6\'b0\'c7\'c0\'bb \'c3\'df\'b0\'a1\'c7\'d2 \'bc\'f6 \'c0\'d6\'c0\'b8\'b3\'aa,\par
+  \'b0\'cb\'bb\'f6\'c1\'b6\'b0\'c7 \'b8\'f1\'c0\'fb\'c0\'ce \'b0\'e6\'bf\'ec\'b4\'c2 WHERE\'c0\'fd \'bb\'e7\'bf\'eb\'c0\'bb \'b1\'c7\'b0\'ed\'c7\'d1\'b4\'d9.\par
+- \'b4\'d9\'b8\'b8, \'be\'c6\'bf\'ec\'c5\'cd \'c1\'b6\'c0\'ce\'bf\'a1\'bc\'ad \'c1\'b6\'c0\'ce\'c0\'c7 \'b4\'eb\'bb\'f3\'c0\'bb \'c1\'a6\'be\'c8\'c7\'cf\'b1\'e2 \'c0\'a7\'c7\'d1 \'b8\'f1\'c0\'fb\'c0\'b8\'b7\'ce \'bb\'e7\'bf\'eb\'b5\'c7\'b4\'c2\par
+  \'c3\'df\'b0\'a1 \'c1\'b6\'b0\'c7\'c0\'ce \'b0\'e6\'bf\'ec\'b4\'c2 ON\'c0\'fd\'bf\'a1 \'c7\'a5\'b1\'e2\'c7\'d8\'be\'df \'c7\'d1\'b4\'d9.\par
+\par
+[\'bf\'b9\'c1\'a6] \'b8\'c5\'b4\'cf\'c0\'fa \'bb\'e7\'bf\'f8\'b9\'f8\'c8\'a3 7698\'b9\'f8\'c0\'ce \'bb\'e7\'bf\'f8\'b5\'e9\'c0\'c7 \'c0\'cc\'b8\'a7, \'b8\'c5\'b4\'cf\'c0\'fa \'bb\'e7\'bf\'f8\'b9\'f8\'c8\'a3, \par
+         \'bc\'d2\'bc\'d3 \'ba\'ce\'bc\'ad\'b9\'f8\'c8\'a3, \'ba\'ce\'bc\'ad \'c0\'cc\'b8\'a7\'c0\'bb \'c3\'a3\'be\'c6\'ba\'bb\'b4\'d9.\par
+\par
+SELECT A.ENAME, A.MGR,  A.DEPTNO, B.DNAME\par
+ FROM EMP A JOIN DEPT B\par
+    ON B.DEPTNO = A.DEPTNO\par
+  AND A.MGR = 7698;\par
+\par
+SELECT A.ENAME, A.MGR,  A.DEPTNO, B.DNAME\par
+ FROM EMP A JOIN DEPT B\par
+    ON B.DEPTNO = A.DEPTNO\par
+WHERE A.MGR = 7698;\par
+\par
+ \par
+ENAME                    MGR DEPTNO DNAME\par
+-------------------- ---------- ---------- ------------------\par
+ALLEN                      7698         30 SALES\par
+WARD                      7698         30 SALES\par
+MARTIN                    7698         30 SALES\par
+TURNER                    7698         30 SALES\par
+JAMES                      7698         30 SALES\par
+\par
+\par
+(3) ON \'c1\'b6\'b0\'c7\'c0\'fd \'bf\'b9\'c1\'a6\par
+\par
+[\'bf\'b9\'c1\'a6]\'c6\'c0\'b0\'fa \'b0\'e6\'b1\'e2\'c0\'e5 \'c5\'d7\'c0\'cc\'ba\'ed\'c0\'bb \'b0\'e6\'b1\'e2\'c0\'e5ID\'b7\'ce \'c1\'b6\'c0\'ce\'c7\'d8 \'c6\'c0\'c0\'cc\'b8\'a7, \'b0\'e6\'b1\'e2\'c0\'e5ID,\par
+       \'b0\'e6\'b1\'e2\'c0\'e5\'b8\'ed\'c0\'bb \'c3\'a3\'be\'c6\'ba\'bb\'b4\'d9.\par
+\par
+SELECT A.TEAM_NAME, A.STADIUM_ID, B.STADIUM_NAME\par
+  FROM TEAM A JOIN STADIUM B\par
+      ON B.STADIUM_ID = A.STADIUM_ID\par
+ORDER BY A.STADIUM_ID;\par
+\par
+- \'b5\'ce \'c5\'d7\'c0\'cc\'ba\'ed\'bf\'a1 STADIUM_ID\'b0\'a1 \'b0\'f8\'c5\'eb \'c4\'ae\'b7\'b3\'c0\'cc\'b1\'e2 \'b6\'a7\'b9\'ae\'bf\'a1\par
+  USING \'c1\'b6\'b0\'c7\'c0\'fd\'b7\'ce \'b1\'b8\'c7\'f6\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.(\'b0\'e1\'b0\'fa \'b5\'bf\'c0\'cf)\par
+\par
+    SELECT   A.TEAM_NAME, STADIUM_ID, B.STADIUM_NAME\par
+     FROM  TEAM A JOIN STADIUM B\par
+     USING  (STADIUM_ID)\par
+ORDER BY  STADIUM_ID;\par
+\par
+\par
+\par
+TEAM_NAME     STADIUM_ID STADIUM_NAME\par
+-------------------- ----------   ------------------------------\par
+\'b1\'a4\'c1\'d6\'bb\'f3\'b9\'ab             A02         \'b1\'a4\'c1\'d6\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'b0\'ad\'bf\'f8FC               A03         \'b0\'ad\'b8\'aa\'c1\'be\'c7\'d5\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'c1\'a6\'c1\'d6\'c0\'af\'b3\'aa\'c0\'cc\'c6\'bc\'b5\'e5FC A04         \'c1\'a6\'c1\'d6\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'b4\'eb\'b1\'b8FC               A05         \'b4\'eb\'b1\'b8\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'c0\'af\'b3\'aa\'c0\'cc\'c6\'bc\'b5\'e5          B01         \'c0\'ce\'c3\'b5\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'c0\'cf\'c8\'ad\'c3\'b5\'b8\'b6             B02         \'bc\'ba\'b3\'b2\'c1\'be\'c7\'d5\'bf\'ee\'b5\'bf\'c0\'e5\par
+\'bb\'ef\'bc\'ba\'ba\'ed\'b7\'e7\'c0\'ae\'c1\'ee       B04         \'bc\'f6\'bf\'f8\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5\par
+FC\'bc\'ad\'bf\'ef               B05         \'bc\'ad\'bf\'ef\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'be\'c6\'c0\'cc\'c6\'c4\'c5\'a9             C02        \'ba\'ce\'bb\'ea\'be\'c6\'bd\'c3\'be\'c6\'b5\'e5\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'bf\'ef\'bb\'ea\'c7\'f6\'b4\'eb             C04        \'bf\'ef\'bb\'ea\'b9\'ae\'bc\'f6\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'b0\'e6\'b3\'b2FC               C05        \'c3\'a2\'bf\'f8\'c1\'be\'c7\'d5\'bf\'ee\'b5\'bf\'c0\'e5\par
+\'bd\'ba\'c6\'bf\'b7\'af\'bd\'ba             C06        \'c6\'f7\'c7\'d7\'bd\'ba\'c6\'bf\'be\'df\'b5\'e5\par
+\'b5\'e5\'b7\'a1\'b0\'ef\'c1\'ee             D01        \'b1\'a4\'be\'e7\'c0\'fc\'bf\'eb\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'bd\'c3\'c6\'bc\'c1\'f0                D02        \'b4\'eb\'c0\'fc\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'c7\'f6\'b4\'eb\'b8\'f0\'c5\'cd\'bd\'ba          D03        \'c0\'fc\'c1\'d6\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5\par
+\par
+\par
+[\'bf\'b9\'c1\'a6]\'c6\'c0\'b0\'fa \'b0\'e6\'b1\'e2\'c0\'e5 \'c5\'d7\'c0\'cc\'ba\'ed\'c0\'bb \'c6\'c0ID\'b7\'ce \'c1\'b6\'c0\'ce\'c7\'d8 \'c6\'c0\'c0\'cc\'b8\'a7, \'c6\'c0ID, \'b0\'e6\'b1\'e2\'c0\'e5\'b8\'ed\'c0\'bb \par
+        \'c3\'a3\'be\'c6\'ba\'bb\'b4\'d9.\'b0\'e6\'b1\'e2\'c0\'e5(STADIUM)\'bf\'a1\'b4\'c2 \'c6\'c0ID\'b0\'a1 HOMETEAM_ID \'b7\'ce \par
+        \'c7\'a5\'bd\'c3\'b5\'c8\'b4\'d9.\par
+\par
+SELECT A.TEAM_NAME, A.TEAM_ID, B.STADIUM_NAME\par
+  FROM TEAM A JOIN STADIUM B\par
+      ON B.HOMETEAM_ID = A.TEAM_ID\par
+ORDER BY A.TEAM_ID;\par
+\par
+\par
+TEAM_NAME       TEAM_ID STADIUM_NAME\par
+-------------------- ---------- ------------------------------\par
+\'bf\'ef\'bb\'ea\'c7\'f6\'b4\'eb             K01        \'bf\'ef\'bb\'ea\'b9\'ae\'bc\'f6\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'bb\'ef\'bc\'ba\'ba\'ed\'b7\'e7\'c0\'ae\'c1\'ee       K02        \'bc\'f6\'bf\'f8\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'bd\'ba\'c6\'bf\'b7\'af\'bd\'ba             K03        \'c6\'f7\'c7\'d7\'bd\'ba\'c6\'bf\'be\'df\'b5\'e5\par
+\'c0\'af\'b3\'aa\'c0\'cc\'c6\'bc\'b5\'e5          K04        \'c0\'ce\'c3\'b5\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'c7\'f6\'b4\'eb\'b8\'f0\'c5\'cd\'bd\'ba          K05        \'c0\'fc\'c1\'d6\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'be\'c6\'c0\'cc\'c6\'c4\'c5\'a9             K06        \'ba\'ce\'bb\'ea\'be\'c6\'bd\'c3\'be\'c6\'b5\'e5\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'b5\'e5\'b7\'a1\'b0\'ef\'c1\'ee             K07        \'b1\'a4\'be\'e7\'c0\'fc\'bf\'eb\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'c0\'cf\'c8\'ad\'c3\'b5\'b8\'b6             K08        \'bc\'ba\'b3\'b2\'c1\'be\'c7\'d5\'bf\'ee\'b5\'bf\'c0\'e5\par
+FC\'bc\'ad\'bf\'ef               K09        \'bc\'ad\'bf\'ef\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'bd\'c3\'c6\'bc\'c1\'f0               K10        \'b4\'eb\'c0\'fc\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'b0\'e6\'b3\'b2FC               K11        \'c3\'a2\'bf\'f8\'c1\'be\'c7\'d5\'bf\'ee\'b5\'bf\'c0\'e5\par
+\'b1\'a4\'c1\'d6\'bb\'f3\'b9\'ab             K12        \'b1\'a4\'c1\'d6\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'b0\'ad\'bf\'f8FC               K13        \'b0\'ad\'b8\'aa\'c1\'be\'c7\'d5\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'c1\'a6\'c1\'d6\'c0\'af\'b3\'aa\'c0\'cc\'c6\'bc\'b5\'e5FC K14        \'c1\'a6\'c1\'d6\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5\par
+\'b4\'eb\'b1\'b8FC               K15        \'b4\'eb\'b1\'b8\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5\par
+\par
+- \'c0\'a7 SQL\'c0\'ba TEAM_ID\'bf\'cd HOMETEAM_ID \'b6\'f3\'b4\'c2 \'b4\'d9\'b8\'a5 \'c0\'cc\'b8\'a7\'c0\'c7 \'c4\'ae\'b7\'b3\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'cf\'b1\'e2\par
+  \'b6\'a7\'b9\'ae\'bf\'a1 USING \'c1\'b6\'b0\'c7\'c0\'fd\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'be\'f8\'b4\'d9.\par
+\par
+(4) \'b4\'d9\'c1\'df \'c5\'d7\'c0\'cc\'ba\'ed \'c1\'b6\'c0\'ce\par
+\par
+[\'bf\'b9\'c1\'a6]\'bb\'e7\'bf\'f8\'b0\'fa DEPT\'c5\'d7\'c0\'cc\'ba\'ed\'c0\'c7 \'bc\'d2\'bc\'d3 \'ba\'ce\'bc\'ad\'b8\'ed, DEPT_TEMP \'c5\'d7\'c0\'cc\'ba\'ed\'c0\'c7 \'b9\'d9\'b2\'ef \'ba\'ce\'bc\'ad\'b8\'ed\par
+       \'c1\'a4\'ba\'b8\'b8\'a6 \'c3\'e2\'b7\'c2\'c7\'d1\'b4\'d9.\par
+SELECT A.EMPNO, A.DEPTNO, B.DNAME, C.DNAME  AS NEW_DNAME\par
+  FROM EMP A JOIN DEPT B\par
+     ON B.DEPTNO = A.DEPTNO\par
+           JOIN DEPT_TEMP C\par
+      ON C.DEPTNO = B.DEPTNO;\par
+\par
+- \'c0\'a7 SQL\'c0\'ba \'c0\'fc\'c5\'eb\'c0\'fb\'c0\'ce \'b9\'e6\'bd\'c4\'c0\'c7 WHERE \'c0\'fd\'c0\'c7 INNER JOIN\'c0\'b8\'b7\'ce \'b1\'b8\'c7\'f6\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9\par
+\par
+SELECT A.EMPNO, A.DEPTNO, B.DNAME, C.DNAME  AS NEW_DNAME\par
+  FROM EMP A , DEPT B, DEPT_TEMP C\par
+WHERE B.DEPTNO = A.DEPTNO\par
+    AND C.DEPTNO = B.DEPTNO;\par
+\par
+    EMPNO     DEPTNO DNAME            NEW_DNAME\par
+---------- ---------- ---------------------------- ----------------------------\par
+      7369         20 RESEARCH                CONSULTING\par
+      7499         30 SALES                        MARKETING\par
+      7521         30 SALES                        MARKETING\par
+      7566         20 RESEARCH                CONSULTING\par
+      7654         30 SALES                        MARKETING\par
+      7698         30 SALES                        MARKETING\par
+      7782         10 ACCOUNTING            ACCOUNTING\par
+      7788         20 RESEARCH                CONSULTING\par
+      7839         10 ACCOUNTING           ACCOUNTING\par
+      7844         30 SALES                        MARKETING\par
+      7876         20 RESEARCH               CONSULTING\par
+      7900         30 SALES                        MARKETING\par
+      7902         20 RESEARCH                CONSULTING\par
+      7934         10 ACCOUNTING           ACCOUNTING\par
+\par
+[\'bf\'b9\'c1\'a6]GK\'c6\'f7\'c1\'f6\'bc\'c7 \'bc\'b1\'bc\'f6\'c0\'c7 \'bf\'ac\'b0\'ed\'c1\'f6\'b8\'ed, \'c6\'c0\'b8\'ed, \'b1\'b8\'c0\'e5\'b8\'ed\'c0\'bb \'c3\'e2\'b7\'c2\'c7\'d1\'b4\'d9.\par
+SELECT A.PLAYER_NAME AS \'bc\'b1\'bc\'f6\'b8\'ed, A.POSITION AS \'c6\'f7\'c1\'f6\'bc\'c7,\par
+          B.REGION_NAME AS \'bf\'ac\'b0\'ed\'c1\'f6\'b8\'ed, B.TEAM_NAME AS \'c6\'c0\'b8\'ed,\par
+          C.STADIUM_NAME AS \'b1\'b8\'c0\'e5\'b8\'ed\par
+  FROM PLAYER A  JOIN TEAM B\par
+     ON B.TEAM_ID = A.TEAM_ID\par
+           JOIN STADIUM C\par
+     ON C.STADIUM_ID = B.STADIUM_ID\par
+WHERE A.POSITION = 'GK'\par
+ORDER BY \'bc\'b1\'bc\'f6\'b8\'ed;\par
+ \par
+- \'c0\'a7 SQL\'c0\'ba \'c0\'fc\'c5\'eb\'c0\'fb\'c0\'ce \'b9\'e6\'bd\'c4\'c0\'c7 WHERE \'c0\'fd\'c0\'c7 INNER JOIN\'c0\'b8\'b7\'ce \'b1\'b8\'c7\'f6\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+SELECT A.PLAYER_NAME AS \'bc\'b1\'bc\'f6\'b8\'ed, A.POSITION AS \'c6\'f7\'c1\'f6\'bc\'c7,\par
+          B.REGION_NAME AS \'bf\'ac\'b0\'ed\'c1\'f6\'b8\'ed, B.TEAM_NAME AS \'c6\'c0\'b8\'ed,\par
+          C.STADIUM_NAME AS \'b1\'b8\'c0\'e5\'b8\'ed\par
+  FROM PLAYER A , TEAM B, STADIUM C\par
+WHERE A.POSITION = 'GK'\par
+    AND B.TEAM_ID = A.TEAM_ID\par
+    AND C.STADIUM_ID = B.STADIUM_ID\par
+ORDER BY \'bc\'b1\'bc\'f6\'b8\'ed;\par
+\par
+\par
+\par
+\par
+\par
+[\'bf\'b9\'c1\'a6] \'c8\'a8\'c6\'c0\'c0\'cc 3\'c1\'a1 \'c0\'cc\'bb\'f3 \'c2\'f7\'c0\'cc\'b7\'ce \'bd\'c2\'b8\'ae\'c7\'d1 \'b0\'e6\'b1\'e2\'c0\'c7 \'b0\'e6\'b1\'e2\'c0\'e5 \'c0\'cc\'b8\'a7, \'b0\'e6\'b1\'e2 \'c0\'cf\'c1\'a4, \'c8\'a8\'c6\'c0 \'c0\'cc\'b8\'a7\'b0\'fa \par
+        \'bf\'f8\'c1\'a4\'c6\'c0 \'c0\'cc\'b8\'a7 \'c1\'a4\'ba\'b8 \'c3\'e2\'b7\'c2\par
+\par
+SELECT B.STADIUM_NAME, B.STADIUM_ID, A.SCHE_DATE, C.TEAM_NAME,\par
+          D.TEAM_NAME, A.HOME_SCORE, A.AWAY_SCORE\par
+ FROM  SCHEDULE A JOIN STADIUM B\par
+     ON B.STADIUM_ID = A.STADIUM_ID\par
+          JOIN TEAM C\par
+     ON C.TEAM_ID = A.HOMETEAM_ID\par
+          JOIN TEAM D\par
+     ON D.TEAM_ID = A.AWAYTEAM_ID\par
+WHERE A.HOME_SCORE >= A.AWAY_SCORE + 3;\par
+\par
+- \'c0\'fc\'c5\'eb\'c0\'fb \'b9\'e6\'bd\'c4\'c0\'ce WHERE \'c0\'fd\'c0\'c7 INNER JOIN\'c0\'b8\'b7\'ce \'b1\'b8\'c7\'f6\'c7\'d1\'b4\'d9.\par
+SELECT B.STADIUM_NAME, B.STADIUM_ID, A.SCHE_DATE, C.TEAM_NAME,\par
+          D.TEAM_NAME, A.HOME_SCORE, A.AWAY_SCORE\par
+ FROM  SCHEDULE A , STADIUM B, TEAM C, TEAM D\par
+WHERE A.HOME_SCORE >= A.AWAY_SCORE + 3\par
+    AND B.STADIUM_ID = A.STADIUM_ID\par
+    AND C.TEAM_ID = A.HOMETEAM_ID\par
+    AND D.TEAM_ID = A.AWAYTEAM_ID;\par
+\par
+\par
+ \par
+6. CROSS JOIN\par
+- CROSS JOIN\'c0\'ba PRODUCT\'c0\'c7 \'b0\'b3\'b3\'e4\'c0\'b8\'b7\'ce \'c5\'d7\'c0\'cc\'ba\'ed \'b0\'a3 JOIN \'c1\'b6\'b0\'c7\'c0\'cc \'be\'f8\'b4\'c2 \'b0\'e6\'bf\'ec\par
+  \'bb\'fd\'b1\'e6 \'bc\'f6 \'c0\'d6\'b4\'c2 \'b8\'f0\'b5\'e7 \'b5\'a5\'c0\'cc\'c5\'cd\'c0\'c7 \'c1\'b6\'c7\'d5\'c0\'bb \'b8\'bb\'c7\'d1\'b4\'d9.\par
+- \'b5\'ce \'b0\'b3\'c0\'c7 \'c5\'d7\'c0\'cc\'ba\'ed\'bf\'a1 \'b4\'eb\'c7\'d1 CARTESIAN PRODUCT \'b6\'c7\'b4\'c2 CROSS PRODUCT\'bf\'cd\par
+  \'b0\'b0\'c0\'ba \'c7\'a5\'c7\'f6\'c0\'b8\'b7\'ce, \'b0\'e1\'b0\'fa\'b4\'c2 \'be\'e7\'c2\'ca \'c1\'fd\'c7\'d5\'c0\'c7 M*N \'b0\'c7\'c0\'c7 \'b5\'a5\'c0\'cc\'c5\'cd \'c1\'b6\'c7\'d5\'c0\'cc \'b9\'df\'bb\'fd\'c7\'d1\'b4\'d9.\par
+ \par
+\par
+[\'bf\'b9\'c1\'a6] \'bb\'e7\'bf\'f8, \'ba\'ce\'bc\'ad \'c5\'d7\'c0\'cc\'ba\'ed\'c0\'bb CROSS JOIN \'c7\'cf\'bf\'a9 \'bb\'e7\'bf\'f8 \'c0\'cc\'b8\'a7, \'bc\'d2\'bc\'d3\'ba\'ce\'bc\'ad \'c0\'cc\'b8\'a7\'c0\'bb\par
+        \'c1\'b6\'c8\'b8\'c7\'d1\'b4\'d9.\par
+ - \'b8\'f0\'b5\'e7 \'bb\'e7\'bf\'f8 \'b0\'a2\'b0\'a2\'c0\'ba DEPT\'c0\'c7 \'b8\'f0\'b5\'e7 \'ba\'ce\'bc\'ad\'b8\'ed\'b0\'fa \'bf\'ac\'b0\'e1\'b5\'c5\'bc\'ad 4\'b9\'f8\'c0\'c7 \'c1\'b6\'c7\'d5\'c0\'cc \'c3\'e2\'b7\'c2\'b5\'c8\'b4\'d9.\par
+\par
+ SELECT A.ENAME, B.DNAME\par
+ FROM EMP A CROSS JOIN DEPT B\par
+ ORDER BY ENAME;\par
+\par
+ENAME                DNAME\par
+-------------------- ----------------------------\par
+ADAMS                SALES\par
+ADAMS                RESEARCH\par
+ADAMS                OPERATIONS\par
+ADAMS                ACCOUNTING\par
+ALLEN                 OPERATIONS\par
+ALLEN                 RESEARCH\par
+ALLEN                 ACCOUNTING\par
+ALLEN                 SALES\par
+BLAKE                 SALES\par
+BLAKE                 OPERATIONS\par
+BLAKE                 RESEARCH\par
+BLAKE                 ACCOUNTING\par
+CLARK                SALES\par
+CLARK                RESEARCH\par
+\par
+[\'bf\'b9\'c1\'a6] NATURAL JOIN\'c0\'ba WHERE \'c0\'fd\'bf\'a1\'bc\'ad \'c1\'b6\'c0\'ce \'c1\'b6\'b0\'c7\'c0\'bb \'c3\'df\'b0\'a1\'c7\'d2 \'bc\'f6 \'be\'f8\'c1\'f6\'b8\'b8, CROSS JOIN\'b4\'c2 \par
+        WHERE \'c0\'fd\'bf\'a1 \'c1\'b6\'c0\'ce \'c1\'b6\'b0\'c7\'c0\'bb \'c3\'df\'b0\'a1 \'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9. \'b1\'d7\'b7\'af\'b3\'aa, \par
+        CROSS JOIN\'c0\'c7 WHERE \'c0\'fd\'bf\'a1 JOIN \'c1\'b6\'b0\'c7\'c0\'bb \'c3\'df\'b0\'a1\'c7\'cf\'b8\'e9 INNER JOIN\'b0\'fa \'b0\'b0\'c0\'ba \'b0\'e1\'b0\'fa\'b8\'a6\par
+        \'be\'f2\'b1\'e2 \'b6\'a7\'b9\'ae\'bf\'a1 CROSS JOIN\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'cf\'b4\'c2 \'c0\'c7\'b9\'cc\'b0\'a1 \'be\'f8\'be\'ee\'c1\'f8\'b4\'d9.\par
+\par
+ \par
+\par
+ SELECT A.ENAME, B.DNAME\par
+ FROM EMP A CROSS JOIN DEPT B\par
+ WHERE B.DEPTNO = A.DEPTNO;\par
+\par
+ \'c0\'a7 SQL\'b0\'fa \'be\'c6\'b7\'a1 SQL\'c0\'ba \'b0\'b0\'c0\'ba \'b0\'e1\'b0\'fa\'b8\'a6 \'be\'f2\'b4\'c2\'b4\'d9.\par
+\par
+ SELECT A.ENAME, B.DNAME \par
+ FROM EMP A INNER JOIN DEPT B \par
+    ON A.DEPTNO = B.DEPTNO;\par
+ \par
+ENAME                DNAME\par
+-------------------- ----------------------------\par
+CLARK                ACCOUNTING\par
+KING                  ACCOUNTING\par
+MILLER               ACCOUNTING\par
+JONES                RESEARCH\par
+FORD                 RESEARCH\par
+ADAMS               RESEARCH\par
+SMITH                RESEARCH\par
+SCOTT                RESEARCH\par
+WARD                SALES\par
+TURNER              SALES\par
+ALLEN                SALES\par
+JAMES                SALES\par
+BLAKE                SALES\par
+MARTIN              SALES\par
+\par
+ \par
+- \'c1\'a4\'bb\'f3\'c0\'fb\'c0\'ce \'b5\'a5\'c0\'cc\'c5\'cd \'b8\'f0\'b5\'a8\'c0\'cc\'b6\'f3\'b8\'e9 CROSS PRODUCT\'b0\'a1 \'c7\'ca\'bf\'e4\'c7\'d1 \'b0\'e6\'bf\'ec\'b4\'c2 \'b8\'b9\'c1\'f6 \'be\'ca\'c1\'f6\'b8\'b8,\par
+  \'b0\'a3\'c8\'a4 \'c6\'a9\'b4\'d7\'c0\'cc\'b3\'aa \'b8\'ae\'c6\'f7\'c6\'ae\'b8\'a6 \'c0\'db\'bc\'ba\'c7\'cf\'b1\'e2 \'c0\'a7\'c7\'d8 \'b0\'ed\'c0\'c7\'c0\'fb\'c0\'b8\'b7\'ce \'bb\'e7\'bf\'eb\'c7\'cf\'b4\'c2 \'b0\'e6\'bf\'ec\'b0\'a1 \'c0\'d6\'c0\'bb \'bc\'f6 \'c0\'d6\'b4\'d9. \par
+\par
+ \par
+\par
+7. OUTER JOIN\par
+\'a1\'e1 \'c0\'fc\'c5\'eb\'c0\'fb\'c0\'ce \'b9\'e6\'bd\'c4\'c0\'c7 \'c1\'b6\'c0\'ce \'b9\'ae\'b9\'fd \'b9\'ae\'c1\'a6\'c1\'a1\par
+ - \'c1\'b6\'c0\'ce \'c4\'c3\'b7\'b3 \'b5\'da\'bf\'a1 '(+)' \'b8\'a6 \'c7\'a5\'bd\'c3\par
+ - \'c1\'b6\'c0\'ce \'c1\'b6\'b0\'c7\'b0\'fa WHERE\'c0\'fd \'b0\'cb\'bb\'f6\'c1\'b6\'b0\'c7\'c0\'c7 \'b1\'b8\'ba\'d0\'c0\'cc \'ba\'d2\'b8\'ed\'c8\'ae\par
+ - IN\'c0\'cc\'b3\'aa OR \'bf\'ac\'bb\'ea\'bd\'c3 \'bf\'a1\'b7\'af\'b9\'df\'bb\'fd\par
+ - '(+)'\'b0\'a1 \'b4\'a9\'b6\'f4\'bd\'c3 \'c1\'b6\'c0\'ce \'b9\'d7 \'b0\'cb\'bb\'f6 \'c1\'b6\'b0\'c7 \'c1\'b8\'c0\'e7 \'bd\'c3 OUTTER JOIN\'c0\'cc \'be\'c6\'b4\'d1 INNER JOIN\'c0\'b8\'b7\'ce\par
+   \'bc\'f6\par
+- FULL OUTER JOIN \'b9\'cc\'c1\'f6\'bf\'f8 \par
+ \par
+\'a2\'ba ANSI/ISO SQL \'c7\'a5\'c1\'d8 \'b9\'e6\'bd\'c4\'c0\'c7 OUTTER JOIN\'b9\'ae\'b9\'fd\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'cf\'b8\'e9 \'c0\'a7\'c0\'c7 \'b9\'ae\'c1\'a6\'c1\'a1\'c0\'bb \'c7\'d8\'b0\'e1\'c7\'d1\'b4\'d9.\par
+\par
+(1) LEFT OUTER JOIN\par
+\par
+- \'c1\'b6\'c0\'ce \'bc\'f6\'c7\'e0\'bd\'c3 \'b8\'d5\'c0\'fa \'c7\'a5\'b1\'e2\'b5\'c8 \'c1\'c2\'c3\'f8 \'c5\'d7\'c0\'cc\'ba\'ed\'bf\'a1 \'c7\'d8\'b4\'e7\'c7\'cf\'b4\'c2 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6 \'b8\'d5\'c0\'fa \'c0\'d0\'c0\'ba \'c8\'c4,\par
+  \'b3\'aa\'c1\'df \'c7\'a5\'b1\'e2\'b5\'c8 \'bf\'ec\'c3\'f8 \'c5\'d7\'c0\'cc\'ba\'ed\'bf\'a1\'bc\'ad JOIN \'b4\'eb\'bb\'f3 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6 \'c0\'d0\'be\'ee \'bf\'c2\'b4\'d9.\par
+- \'c1\'ef, Table A\'bf\'cd B\'b0\'a1 \'c0\'d6\'c0\'bb \'b6\'a7(Table 'A'\'b0\'a1 \'b1\'e2\'c1\'d8\'c0\'cc \'b5\'ca), A\'bf\'cd B\'b8\'a6 \'ba\'f1\'b1\'b3\'c7\'d8\'bc\'ad B\'c0\'c7 JOIN\par
+  \'c4\'ae\'b7\'b3\'bf\'a1 \'b0\'b0\'c0\'ba \'b0\'aa\'c0\'cc \'c0\'d6\'c0\'b8\'b8\'e9 \'b1\'d7 \'c7\'d8\'b4\'e7 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6 \'b0\'a1\'c1\'ae\'bf\'c0\'b0\'ed, \'b0\'b0\'c0\'ba \'b0\'aa\'c0\'cc \'be\'f8\'b4\'c2 \'b0\'e6\'bf\'ec\'bf\'a1\'b4\'c2\par
+  B \'c5\'d7\'c0\'cc\'ba\'ed\'bf\'a1\'bc\'ad \'b0\'a1\'c1\'ae\'bf\'c0\'b4\'c2 \'c4\'ae\'b7\'b3\'b5\'e9\'c0\'ba NULL \'b0\'aa\'c0\'b8\'b7\'ce \'c3\'a4\'bf\'ee\'b4\'d9.\par
+- LEFT JOIN\'c0\'b8\'b7\'ce OUTER \'c5\'b0\'bf\'f6\'b5\'e5\'b8\'a6 \'bb\'fd\'b7\'ab\'c7\'d8\'bc\'ad \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+[\'bf\'b9\'c1\'a6]STADIUM\'bf\'a1 \'b5\'ee\'b7\'cf\'b5\'c8 \'b0\'e6\'b1\'e2\'c0\'e5 \'c1\'df\'bf\'a1\'b4\'c2 \'c8\'a8\'c6\'c0\'c0\'cc \'be\'f8\'b4\'c2 \'b0\'e6\'b1\'e2\'c0\'e5\'b5\'b5 \'c0\'d6\'b4\'d9. STADIUM\'b0\'fa TEAM\'c0\'bb\par
+       JOIN \'c7\'cf\'b5\'c7 \'c8\'a8\'c6\'c0\'c0\'cc \'be\'f8\'b4\'c2 \'b0\'e6\'b1\'e2\'c0\'e5\'c0\'c7 \'c1\'a4\'ba\'b8\'b5\'b5 \'b0\'b0\'c0\'cc \'c3\'e2\'b7\'c2\'c7\'d1\'b4\'d9.\par
+\par
+SELECT A.STADIUM_NAME, A.STADIUM_ID, A.SEAT_COUNT, A.HOMETEAM_ID,\par
+          B.TEAM_NAME\par
+ FROM STADIUM A LEFT OUTER JOIN TEAM B\par
+    ON  B.TEAM_ID =  A.HOMETEAM_ID\par
+ORDER BY A.HOMETEAM_ID;\par
+\par
+- OUTER \'c5\'b0\'bf\'f6\'b5\'e5\'b4\'c2 \'bb\'fd\'b7\'ab \'b0\'a1\'b4\'c9\'c7\'cf\'b4\'d9.\par
+\par
+SELECT A.STADIUM_NAME, A.STADIUM_ID, A.SEAT_COUNT, A.HOMETEAM_ID,\par
+          B.TEAM_NAME\par
+ FROM STADIUM A LEFT JOIN TEAM B\par
+    ON  B.TEAM_ID =  A.HOMETEAM_ID\par
+ORDER BY A.HOMETEAM_ID;\par
+\par
+ \par
+\par
+STADIUM_NAME     STADIUM_ID  SEAT_COUNT HOMETEAM_ID     TEAM_NAME\par
+-----------------------    ----------      ----------  -------------------- --------------------\par
+\'bf\'ef\'bb\'ea\'b9\'ae\'bc\'f6\'b0\'e6\'b1\'e2\'c0\'e5                C04         46102       K01                 \'bf\'ef\'bb\'ea\'c7\'f6\'b4\'eb\par
+\'bc\'f6\'bf\'f8\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5             B04         50000       K02                 \'bb\'ef\'bc\'ba\'ba\'ed\'b7\'e7\'c0\'ae\'c1\'ee\par
+\'c6\'f7\'c7\'d7\'bd\'ba\'c6\'bf\'be\'df\'b5\'e5                   C06         25000       K03                 \'bd\'ba\'c6\'bf\'b7\'af\'bd\'ba\par
+\'c0\'ce\'c3\'b5\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5              B01        35000       K04                  \'c0\'af\'b3\'aa\'c0\'cc\'c6\'bc\'b5\'e5\par
+\'c0\'fc\'c1\'d6\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5              D03        28000      K05                  \'c7\'f6\'b4\'eb\'b8\'f0\'c5\'cd\'bd\'ba\par
+\'ba\'ce\'bb\'ea\'be\'c6\'bd\'c3\'be\'c6\'b5\'e5\'b0\'e6\'b1\'e2\'c0\'e5           C02        30000      K06                  \'be\'c6\'c0\'cc\'c6\'c4\'c5\'a9\par
+\'b1\'a4\'be\'e7\'c0\'fc\'bf\'eb\'b0\'e6\'b1\'e2\'c0\'e5                 D01       20009       K07                  \'b5\'e5\'b7\'a1\'b0\'ef\'c1\'ee\par
+\'bc\'ba\'b3\'b2\'c1\'be\'c7\'d5\'bf\'ee\'b5\'bf\'c0\'e5                 B02        27000      K08                  \'c0\'cf\'c8\'ad\'c3\'b5\'b8\'b6\par
+\'bc\'ad\'bf\'ef\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5              B05        66806      K09                  FC\'bc\'ad\'bf\'ef\par
+\'b4\'eb\'c0\'fc\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5              D02        41000      K10                  \'bd\'c3\'c6\'bc\'c1\'f0\par
+\'c3\'a2\'bf\'f8\'c1\'be\'c7\'d5\'bf\'ee\'b5\'bf\'c0\'e5                 C05        27085      K11                  \'b0\'e6\'b3\'b2FC\par
+\'b1\'a4\'c1\'d6\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5              A02        40245      K12                  \'b1\'a4\'c1\'d6\'bb\'f3\'b9\'ab\par
+\'b0\'ad\'b8\'aa\'c1\'be\'c7\'d5\'b0\'e6\'b1\'e2\'c0\'e5                 A03        33000      K13                  \'b0\'ad\'bf\'f8FC\par
+\'c1\'a6\'c1\'d6\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5              A04        42256      K14                  \'c1\'a6\'c1\'d6\'c0\'af\'b3\'aa\'c0\'cc\'c6\'bc\'b5\'e5FC\par
+\'b4\'eb\'b1\'b8\'bf\'f9\'b5\'e5\'c4\'c5\'b0\'e6\'b1\'e2\'c0\'e5              A05        66422      K15                  \'b4\'eb\'b1\'b8FC\par
+\'b4\'eb\'b1\'b8\'bd\'c3\'b9\'ce\'b0\'e6\'b1\'e2\'c0\'e5                 F0          30000\par
+\'ba\'ce\'bb\'ea\'bd\'c3\'b9\'ce\'b0\'e6\'b1\'e2\'c0\'e5                 F02        30000\par
+\'c0\'cf\'bb\'ea\'b0\'e6\'b1\'e2\'c0\'e5                      F03         20000\par
+\'b8\'b6\'bb\'ea\'b0\'e6\'b1\'e2\'c0\'e5                      F04         20000\par
+\'be\'c8\'be\'e7\'b0\'e6\'b1\'e2\'c0\'e5                      F05         20000\par
+\par
+\par
+- INNER JOIN\'c0\'cc\'b6\'f3\'b8\'e9 \'c8\'a8\'c6\'c0\'c0\'cc \'b9\'e8\'c1\'a4\'b5\'c8 \'b0\'e6\'b1\'e2\'c0\'e5\'b8\'b8 \'c3\'e2\'b7\'c2 \'b5\'c7\'be\'fa\'b0\'da\'c1\'f6\'b8\'b8,\par
+  LEFT OUTER JOIN\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'cf\'bf\'b4\'b1\'e2 \'b6\'a7\'b9\'ae\'bf\'a1 \'c8\'a8\'c6\'c0\'c0\'cc \'be\'f8\'b4\'c2 \'c1\'a4\'ba\'b8\'b1\'ee\'c1\'f6 \'c3\'df\'b0\'a1\'b7\'ce \'c3\'e2\'b7\'c2\'b5\'c7\'be\'fa\'b4\'d9.\par
+\par
+\par
+\par
+(2) RIGHT OUTER JOIN\par
+- LEFT JOIN\'b0\'fa \'b9\'dd\'b4\'eb\'b7\'ce \'bf\'ec\'c3\'f8 \'c5\'d7\'c0\'cc\'ba\'ed\'c0\'cc \'b1\'e2\'c1\'d8\'c0\'cc \'b5\'c7\'be\'ee \'b0\'e1\'b0\'fa \'bb\'fd\'bc\'ba\par
+- TABLE A\'bf\'cd B\'b0\'a1 \'c0\'d6\'c0\'bb \'b6\'a7(TABLE 'B'\'b0\'a1 \'b1\'e2\'c1\'d8\'c0\'cc \'b5\'ca), A\'bf\'cd B\'b8\'a6 \'ba\'f1\'b1\'b3\'c7\'d8\'bc\'ad A\'c0\'c7 JOIN \'c4\'ae\'b7\'b3\'bf\'a1\'bc\'ad\par
+  \'b0\'b0\'c0\'ba \'b0\'aa\'c0\'cc \'c0\'d6\'c0\'bb \'b6\'a7 \'b1\'d7 \'c7\'d8\'b4\'e7 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6 \'b0\'a1\'c1\'ae\'bf\'c0\'b0\'ed, A\'c0\'c7 JOIN \'c4\'ae\'b7\'b3\'bf\'a1\'bc\'ad \'b0\'b0\'c0\'ba \'b0\'aa\'c0\'cc \'be\'f8\'b4\'c2 \'b0\'e6\'bf\'ec\'bf\'a1\'b4\'c2\par
+  A \'c5\'d7\'c0\'cc\'ba\'ed\'bf\'a1\'bc\'ad \'b0\'a1\'c1\'ae\'bf\'c0\'b4\'c2 \'c4\'ae\'b7\'b3\'b5\'e9\'c0\'ba NULL \'b0\'aa\'c0\'b8\'b7\'ce \'c3\'a4\'bf\'ee\'b4\'d9.\par
+- RIGHT JOIN\'c0\'b8\'b7\'ce OUTER \'c5\'b0\'bf\'f6\'b5\'e5\'b8\'a6 \'bb\'fd\'b7\'ab\'c7\'d8\'bc\'ad \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+[\'bf\'b9\'c1\'a6]DEPT\'bf\'a1 \'b5\'ee\'b7\'cf\'b5\'c8 \'ba\'ce\'bc\'ad \'c1\'df\'bf\'a1\'b4\'c2 \'bb\'e7\'bf\'f8\'c0\'cc \'be\'f8\'b4\'c2 \'ba\'ce\'bc\'ad\'b5\'b5 \'c0\'d6\'b4\'d9.\par
+       DEPT\'bf\'cd EMP\'b8\'a6 \'c1\'b6\'c0\'ce\'c7\'cf\'b5\'c7 \'bb\'e7\'bf\'f8\'c0\'cc \'be\'f8\'b4\'c2 \'ba\'ce\'bc\'ad \'c1\'a4\'ba\'b8\'b5\'b5 \'b0\'b0\'c0\'cc \'c3\'e2\'b7\'c2\'c7\'cf\'b5\'b5\'b7\'cf \'c7\'d1\'b4\'d9.\par
+\par
+SELECT E.ENAME, D.DEPTNO, D.DNAME\par
+ FROM EMP E RIGHT OUTER JOIN DEPT D\par
+     ON E.DEPTNO = D.DEPTNO;\par
+\par
+- OUTER\'b4\'c2 \'bb\'fd\'b7\'ab \'b0\'a1\'b4\'c9\'c7\'d1 \'c5\'b0\'bf\'f6\'b5\'e5\'c0\'cc\'b9\'c7\'b7\'ce \'be\'c6\'b7\'a1 SQL\'c0\'ba \'b0\'b0\'c0\'ba \'b0\'e1\'b0\'fa\'b8\'a6 \'be\'f2\'c0\'bb \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+SELECT E.ENAME, D.DEPTNO, D.DNAME, D.LOC\par
+FROM EMP E RIGHT JOIN DEPT D\par
+ON E.DEPTNO = D.DEPTNO;\par
+ \par
+\par
+ENAME               DEPTNO DNAME\par
+-------------------- ---------- ----------------------------\par
+CLARK                        10 ACCOUNTING\par
+KING                          10 ACCOUNTING\par
+MILLER                       10 ACCOUNTING\par
+JONES                        20 RESEARCH\par
+FORD                         20 RESEARCH\par
+ADAMS                       20 RESEARCH\par
+SMITH                        20 RESEARCH\par
+SCOTT                        20 RESEARCH\par
+WARD                        30 SALES\par
+TURNER                      30 SALES\par
+ALLEN                        30 SALES\par
+JAMES                        30 SALES\par
+BLAKE                         30 SALES\par
+MARTIN                      30 SALES\par
+ \par
+\par
+                                 40 OPERATIONS\par
+ \par
+\par
+- \'bb\'e7\'bf\'f8\'c0\'cc \'b9\'e8\'c1\'a4\'b5\'c7\'c1\'f6 \'be\'ca\'c0\'ba \'ba\'ce\'bc\'ad\'b9\'f8\'c8\'a3 40 OPERATIONS\'ba\'ce\'bc\'ad\'c0\'c7 LOC \'c1\'a4\'ba\'b8\'b5\'b5 \'c3\'e2\'b7\'c2\'b5\'c7\'be\'fa\'b4\'d9.\par
+\par
+ \par
+(3) FULL OUTER JOIN\par
+- \'c1\'b6\'c0\'ce \'bc\'f6\'c7\'e0\'bd\'c3 \'c1\'c2\'c3\'f8, \'bf\'ec\'c3\'f8 \'c5\'d7\'c0\'cc\'ba\'ed\'c0\'c7 \'b8\'f0\'b5\'e7 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6 \'c0\'d0\'be\'ee JOIN\'c7\'d8 \'b0\'e1\'b0\'fa\'bb\'fd\'bc\'ba\par
+- TABLE A\'bf\'cd B\'b0\'a1 \'c0\'d6\'c0\'bb \'b6\'a7(TABLE 'A', 'B' \'b8\'f0\'b5\'ce \'b1\'e2\'c1\'d8\'c0\'cc \'b5\'ca), RIGHT OUTER JOIN\'b0\'fa\par
+  LEFT OUTER JOIN\'c0\'c7 \'b0\'e1\'b0\'fa\'b8\'a6 \'c7\'d5\'c1\'fd\'c7\'d5\'c0\'b8\'b7\'ce \'c3\'b3\'b8\'ae\'c7\'d1 \'b0\'e1\'b0\'fa\'bf\'cd \'b5\'bf\'c0\'cf\'c7\'cf\'b4\'d9.\par
+- FULL JOIN\'c0\'c7 OUTER \'c5\'b0\'bf\'f6\'b5\'e5\'b8\'a6 \'bb\'fd\'b7\'ab\'c7\'d8\'bc\'ad \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+[\'bf\'b9\'c1\'a6]DEPT \'c5\'d7\'c0\'cc\'ba\'ed\'b0\'fa DEPT_TEMP \'c5\'d7\'c0\'cc\'ba\'ed\'c0\'c7 FULL OUTER JOIN \'bb\'e7\'b7\'ca\'b8\'a6 \'b8\'b8\'b5\'e9\'b1\'e2 \'c0\'a7\'c7\'d8\par
+       DEPT_TEMP\'c0\'c7 DEPTNO\'b8\'a6 \'bc\'f6\'c1\'a4\'c7\'d1\'b4\'d9.\par
+       DEPT_TEMP \'c5\'d7\'c0\'cc\'ba\'ed\'c0\'c7 \'bb\'f5\'b7\'ce\'bf\'ee DEPTNO \'b5\'a5\'c0\'cc\'c5\'cd\'b4\'c2 DETP \'c5\'d7\'c0\'cc\'ba\'ed\'c0\'c7 DEPTNO\'bf\'cd\par
+       2\'b0\'c7\'c0\'ba \'b5\'bf\'c0\'cf\'c7\'cf\'b0\'ed 2\'b0\'c7\'c0\'ba \'bb\'f5\'b7\'ce\'bf\'ee DEPTNO\'b0\'a1 \'bb\'fd\'bc\'ba\'b5\'c8\'b4\'d9.\par
+\par
+\par
+UPDATE DEPT_TEMP\par
+SET DEPTNO = DEPTNO + 20;\par
+\par
+COMMIT;\par
+\par
+SELECT *\par
+ FROM DEPT_TEMP;\par
+ \par
+\par
+    DEPTNO DNAME                        LOC\par
+---------- ---------------------------- --------------------------\par
+        30 ACCOUNTING                  NEW YORK\par
+        40 CONSULTING                   DALLAS\par
+        50 MARKETING                    CHICAGO\par
+        60 OPERATIONS                   BOSTON\par
+\par
+ \par
+[\'bf\'b9\'c1\'a6]DEPTNO \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce DEPT\'bf\'cd DEPT_TEMP \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6 FULL OUTER JOIN\'c0\'b8\'b7\'ce\par
+       \'c3\'e2\'b7\'c2\'c7\'d1\'b4\'d9.\par
+ \par
+\par
+SELECT *\par
+ FROM DEPT A FULL OUTER JOIN DEPT_TEMP B\par
+     ON A.DEPTNO = B.DEPTNO;\par
+\par
+- OUTER\'b4\'c2 \'bb\'fd\'b7\'ab \'b0\'a1\'b4\'c9\'c7\'d1 \'c5\'b0\'bf\'f6\'b5\'e5\'c0\'cc\'b9\'c7\'b7\'ce \'be\'c6\'b7\'a1 SQL\'c0\'ba \'b0\'b0\'c0\'ba \'b0\'e1\'b0\'fa\'b8\'a6 \'be\'f2\'c0\'bb \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+SELECT * \par
+ FROM DEPT A FULL JOIN DEPT_TEMP B\par
+     ON A.DEPTNO = B.DEPTNO;\par
+\par
+ DEPTNO DNAME                LOC              DEPTNO DNAME             LOC\par
+  ----------- -------------------- ---------------------  ----------- -------------------- --------------------------\par
+          30  SALES               CHICAGO                30  ACCOUNTING   NEW YORK\par
+          40  OPERATIONS    BOSTON                 40  CONSULTING    DALLAS\par
+                                                                            50  MARKETING     CHICAGO\par
+                                                                            60  OPERATIONS    BOSTON\par
+          10  ACCOUNTING   NEW YORK\par
+          20 RESEARCH       DALLAS\par
+ \par
+- INNER JOIN\'c0\'cc\'b6\'f3\'b8\'e9 \'ba\'ce\'bc\'ad\'b9\'f8\'c8\'a3\'b0\'a1 \'b5\'bf\'c0\'cf\'c7\'d1 30, 40 \'ba\'ce\'bc\'ad\'c0\'c7 2\'b0\'b3 \'c1\'a4\'ba\'b8\'b8\'b8 \'c3\'e2\'b7\'c2\'b5\'c8\'b4\'d9.\par
+- FULL OUTER JOIN\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'cf\'bf\'a9 DEPT \'c5\'d7\'c0\'cc\'ba\'ed\'bf\'a1\'b8\'b8 \'c0\'d6\'b4\'c2 \'ba\'ce\'bc\'ad\'b9\'f8\'c8\'a3 10, 20\'c0\'c7\'ba\'ce\'bc\'ad\'bf\'cd\par
+  DEPT_TEMP \'c5\'d7\'c0\'cc\'ba\'ed\'bf\'a1\'b8\'b8 \'c0\'d6\'b4\'c2 \'ba\'ce\'bc\'ad\'b9\'f8\'c8\'a3 50, 60\'c0\'c7 \'ba\'ce\'bc\'ad \'c1\'a4\'ba\'b8\'b1\'ee\'c1\'f6 \'b0\'b0\'c0\'cc \'c3\'e2\'b7\'c2\'b5\'c8\'b4\'d9.\par
+}
+ 
