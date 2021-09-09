@@ -1,4 +1,4 @@
-Today i Learned
+Today I Learned
     + makedown basic
     + git basic
     + github basic & how to use
