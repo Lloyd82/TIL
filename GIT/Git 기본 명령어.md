@@ -127,6 +127,8 @@ git merge <branch> 병합
 
 + merge commit case =>머지하는 상황에서 발생하는 커밋
 
++ git mergetool 외부 머지 헬퍼 실행 문제 발생시 사용
+
   
 
 
