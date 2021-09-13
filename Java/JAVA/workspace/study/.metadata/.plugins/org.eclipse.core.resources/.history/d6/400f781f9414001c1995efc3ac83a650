@@ -1,0 +1,23 @@
+package test;
+
+public class Test02 {
+
+  public static void main(String[] args) {
+    double arr[] = { 1.5, 1.6, 1.7, 1.8, 1.9 };
+
+    double max = arr[0];
+    double min = arr[0];
+
+    for (int d = 0; d < arr.length; d++) {
+      if (max < arr[d]) {
+        max = arr[d];
+      }
+      if (min < arr[d]) {
+        min = arr[d];
+      }
+
+      System.out.println(max);
+      System.out.println(min);
+    }
+  }
+}

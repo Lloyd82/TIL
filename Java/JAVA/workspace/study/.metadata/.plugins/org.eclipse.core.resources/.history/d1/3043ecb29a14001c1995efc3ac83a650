@@ -1,0 +1,17 @@
+package test;
+
+public class Test03 {
+
+  public static void main(String[] args) {
+    int Arr[] = { -23, 6, 53, 78, -27 };
+    
+    for (int i = 0; i < Arr.length; i++) {
+      if (Arr[i] < 0) {
+        Arr[i] *= -1;
+        System.out.println(Arr[i]);
+      } else {
+        System.out.println(Arr[i]);
+      }
+    }
+  }
+}
