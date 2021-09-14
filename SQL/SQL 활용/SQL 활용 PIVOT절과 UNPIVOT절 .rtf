@@ -1,0 +1,236 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset129 \'b8\'bc\'c0\'ba \'b0\'ed\'b5\'f1;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs24\lang18 [01] PIVOT\'c0\'fd\'b0\'fa UNPIVOT\'c0\'fd\par
+\par
+1. \'b0\'b3\'bf\'e4\par
+- PIVOT\'c0\'ba \'c8\'b8\'c0\'fc\'bd\'c3\'c5\'b2\'b4\'d9\'b4\'c2 \'c0\'c7\'b9\'cc\'b8\'a6 \'b0\'ae\'b0\'ed \'c0\'d6\'b4\'d9.PIVOT\'c0\'fd\'c0\'ba \'c7\'e0\'c0\'bb \'bf\'ad\'b7\'ce \'c8\'b8\'c0\'fc\'bd\'c3\'c5\'b0\line   \'b0\'ed, UNPIVOT\'c0\'fd\'c0\'ba \'bf\'ad\'c0\'bb \'c7\'e0\'c0\'b8\'b7\'ce \'c8\'b8\'c0\'fc\'bd\'c3\'c5\'b2\'b4\'d9.\par
+\par
+2. PIVOT \'c0\'fd\par
+- PIVOT \'c0\'fd\'c0\'ba \'c7\'e0\'c0\'bb \'bf\'ad\'b7\'ce \'c0\'fc\'c8\'af\'c7\'d1\'b4\'d9. PIVOT\'c0\'fd\'c0\'c7 \'b1\'b8\'b9\'ae\'c0\'ba \'be\'c6\'b7\'a1\'bf\'cd \'b0\'b0\'b4\'d9.\par
+\par
+PIVOT [XML]\par
+          (AGGREGATE_FUNCTION (EXPR) [[AS] ALIAS]\par
+        [, AGGREGATE_FUNCTION (EXPR) [[AS] ALIAS]]....\par
+         FOR \{COLUMN | (COLUMN [, COLUMN]....)\}\par
+         IN (\{\{\{EXPR | (EXPR [, EXPR]... )\} [[AS] ALIAS]\} ....\par
+             | SUBQUERY\par
+             | ANY [, ANY] ....\par
+             \})\par
+         )\par
+\par
+ - AGGREGATE_FUNCTION\'c0\'ba \'c1\'fd\'b0\'e8\'c7\'d2 \'bf\'ad\'c0\'bb \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9.\par
+ - FOR \'c0\'fd\'c0\'ba PIVOT\'c7\'d2 \'bf\'ad\'c0\'bb \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9.\par
+ - IN \'c0\'fd\'c0\'ba PIVOT\'c7\'d2 \'bf\'ad \'b0\'aa\'c0\'bb \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9.\par
+\par
+[\'bf\'b9\'c1\'a6] PIVOT\'c0\'fd \'bb\'e7\'bf\'eb, PIVOT\'c0\'fd\'c0\'ba \'c1\'fd\'b0\'e8\'c7\'d4\'bc\'f6\'bf\'cd FOR\'c0\'fd\'bf\'a1 \'c1\'f6\'c1\'a4\'b5\'c7\'c1\'f6 \'be\'ca\'c0\'ba\line         \'bf\'ad\'c0\'bb \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce \'c1\'fd\'b0\'e8\'b5\'c7\'b1\'e2 \'b6\'a7\'b9\'ae\'bf\'a1 \'c0\'ce\'b6\'f3\'c0\'ce \'ba\'e4\'b8\'a6 \'c5\'eb\'c7\'d8 \'bb\'e7\'bf\'eb\'c7\'d2 \'bf\'ad\'c0\'bb\line         \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9.\par
+\par
+  SELECT  * \par
+      FROM  (SELECT JOB, DEPTNO, SAL FROM EMP)\par
+      PIVOT  (SUM (SAL) FOR DEPTNO IN (10, 20, 30))\par
+  ORDER BY 1;\par
+\par
+JOB                        \tab 10         \tab 20         \tab 30\par
+------------------ \tab\tab ---------- \tab ---------- \tab ----------\par
+ANALYST                            \tab\tab 6000\par
+CLERK                   \tab 1300       \tab 1900        \tab 950\par
+MANAGER              \tab 2450       \tab 2975       \tab 2850\par
+PRESIDENT             \tab 5000\par
+SALESMAN                                        \tab\tab 5600\par
+\par
+[\'bf\'b9\'c1\'a6]\'b4\'d9\'c0\'bd \'c4\'f5\'b8\'ae\'b4\'c2 \'c0\'ce\'b6\'f3\'c0\'ce \'ba\'e4\'bf\'a1 YYYY \'c7\'a5\'c7\'f6\'bd\'c4\'c0\'bb \'c3\'df\'b0\'a1\'c7\'d1\'b4\'d9. \'c7\'e0 \'b1\'d7\'b7\'ec\'bf\'a1 \line\tab YYYY \'c7\'a5\'c7\'f6\'bd\'c4\'c0\'cc \'c3\'df\'b0\'a1\'b5\'c8 \'b0\'cd\'c0\'bb \'c8\'ae\'c0\'ce\'c7\'d1\'b4\'d9.\par
+\par
+ SELECT  *\par
+   FROM  (SELECT  TO_CHAR(HIREDATE, 'YYYY') AS YYYY, JOB, \tab\tab      DEPTNO, SAL FROM  EMP)\par
+   PIVOT  (SUM(SAL) FOR DEPTNO IN (10, 20, 30))\par
+ORDER BY  1, 2;\par
+\par
+YYYY     JOB                        10         20         30\par
+-------- ------------------ ---------- ---------- ----------\par
+1980     CLERK                                800\par
+1981     ANALYST                           3000\par
+1981     CLERK                                              950\par
+1981     MANAGER            2450       2975       2850\par
+1981     PRESIDENT           5000\par
+1981     SALESMAN                                      5600\par
+1982     CLERK                 1300\par
+1987     ANALYST                           3000\par
+1987     CLERK                               1100\par
+\par
+ \par
+[\'bf\'b9\'c1\'a6] \'c1\'fd\'b0\'e8\'c7\'d4\'bc\'f6\'bf\'cd IN\'c0\'fd\'bf\'a1 \'ba\'b0\'c4\'aa\'c0\'bb \'c1\'f6\'c1\'a4\'c7\'df\'b4\'d9. \'ba\'b0\'c4\'aa\'c0\'bb \'c1\'f6\'c1\'a4\'c7\'cf\'b8\'e9 \'b0\'e1\'b0\'fa \'c1\'fd\'c7\'d5\'c0\'c7\line          \'bf\'ad \'b8\'ed\'c0\'cc \'ba\'af\'b0\'e6\'b5\'c8\'b4\'d9.\par
+\par
+SELECT * \par
+   FROM (SELECT JOB, DEPTNO, SAL FROM EMP)\par
+   PIVOT (SUM (SAL) AS SAL FOR DEPTNO IN \line\tab     (10 AS D10, 20 AS D20, 30 AS D30) )\par
+ORDER BY 1;\par
+\par
+JOB                \tab D10_SAL   \tab D20_SAL  \tab D30_SAL\par
+------------------ ---------- ---------- ----------\par
+ANALYST                           \tab 6000\par
+CLERK              \tab 1300       \tab 1900        \tab 950\par
+MANAGER          \tab 2450       \tab 2975       \tab 2850\par
+PRESIDENT         \tab 5000\par
+SALESMAN                                      \tab 5600\par
+\par
+\par
+[\'bf\'b9\'c1\'a6] SELECT \'c0\'fd\'bf\'a1 \'ba\'ce\'bf\'a9\'b5\'c8 \'bf\'ad \'b8\'ed\'c0\'bb \'c1\'f6\'c1\'a4\'c7\'cf\'b8\'e9 \'c7\'ca\'bf\'e4\'c7\'d1 \'bf\'ad\'b8\'b8 \'c1\'b6\'c8\'b8\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+   SELECT  JOB, D20_SAL\par
+    FROM  (SELECT JOB, DEPTNO, SAL FROM EMP)\par
+    PIVOT  (SUM(SAL) AS SAL FOR DEPTNO IN (10 AS D10, 20 AS D20, \tab       30 AS D30))\par
+   WHERE  D20_SAL > 2500\par
+ORDER BY  1;\par
+\par
+JOB                 D20_SAL\par
+------------------ ----------\par
+ANALYST               6000\par
+MANAGER             2975\par
+\par
+[\'bf\'b9\'c1\'a6] PIVOT \'c0\'fd\'c0\'ba \'b4\'d9\'bc\'f6\'c0\'c7 \'c1\'fd\'b0\'e8\'c7\'d4\'bc\'f6\'b8\'a6 \'c1\'f6\'bf\'f8\'c7\'d1\'b4\'d9. SUM, COUNT \'c7\'d4\'bc\'f6\'b8\'a6\line\tab\'bb\'e7\'bf\'eb\'c7\'df\'b4\'d9\par
+\par
+SELECT   * \par
+   FROM  (SELECT JOB, DEPTNO, SAL FROM EMP)\par
+   PIVOT  ( SUM(SAL) AS SAL, COUNT(*) AS CNT\par
+              FOR DEPTNO IN (10 AS D10, 20 AS D20))\par
+ORDER BY 1;\par
+\par
+JOB                 D10_SAL  D10_CNT D20_SAL D20_CNT\par
+------------------ ---------- ---------- ---------- ----------\par
+ANALYST                                0       6000          2\par
+CLERK                    1300          1       1900          2\par
+MANAGER              2450          1       2975          1\par
+PRESIDENT             5000          1                        0\par
+SALESMAN                             0                        0\par
+\par
+\par
+[\'bf\'b9\'c1\'a6] FOR \'c0\'fd\'bf\'a1\'b5\'b5 \'b4\'d9\'bc\'f6\'c0\'c7 \'bf\'ad\'c0\'bb \'b1\'e2\'bc\'fa\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9. IN\'c0\'fd\'bf\'a1 \'b4\'d9\'c1\'df \'bf\'ad \'bb\'e7\'bf\'eb.\par
+\par
+ SELECT  *\par
+   FROM    (SELECT  TO_CHAR(HIREDATE, 'YYYY') AS YYYY, JOB, \tab\tab\tab DEPTNO, SAL FROM  EMP)\par
+   PIVOT    (SUM(SAL) AS SAL, COUNT(*) AS CNT \line                 FOR (DEPTNO, JOB) IN ((10,'ANALYST') AS D10A,\line\tab        (10,'CLERK') AS D10C, (20, 'ANALYST') AS D20A,\line\tab        (20,'CLERK') AS D20C))\par
+ORDER BY  1;\par
+\fs18 YYYY     D10A_SAL  D10A_CNT D10C_SAL D10C_CNT D20A_SAL D20A_CNT D20C_SAL D20C_CNT\par
+-------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------\par
+1980                         0                        0                       0        800          1\par
+1981                         0                        0       3000          1                       0\par
+1982                         0       1300           1                       0                       0\par
+1987                         0                        0       3000          1       1100         1\par
+\fs24\par
+\par
+[\'bf\'b9\'c1\'a6] PIVOT \'c0\'fd\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'be\'f8\'b4\'c2 \'b0\'e6\'bf\'ec \'c1\'fd\'b0\'e8\'c7\'d4\'bc\'f6\'bf\'cd CASE \'c7\'a5\'c7\'f6\'bd\'c4\'c0\'b8\'b7\'ce PIVOT\'c0\'bb \'bc\'f6\'c7\'e0\par
+SELECT    JOB,\par
+             SUM (CASE DEPTNO WHEN 10 THEN SAL END) AS D10_SAL ,\par
+             SUM (CASE DEPTNO WHEN 20 THEN SAL END) AS D20_SAL ,\par
+             SUM (CASE DEPTNO WHEN 30 THEN SAL END) AS D30_SAL \par
+  FROM  EMP\par
+ GROUP BY JOB\par
+ ORDER BY JOB;\par
+ \par
+JOB                \tab D10_SAL    \tab D20_SAL \tab D30_SAL\par
+------------------ ---------- ---------- ----------\par
+ANALYST                           \tab 6000\par
+CLERK                    1300     \tab 1900        \tab 950\par
+MANAGER              2450     \tab 2975      \tab 2850\par
+PRESIDENT             5000\par
+SALESMAN                                       \tab 5600\par
+ \par
+\par
+\par
+3. UNPIVOT\par
+- UNPIVOT\'c0\'fd\'c0\'ba PIVOT\'c0\'fd\'b0\'fa \'b9\'dd\'b4\'eb\'b7\'ce \'bf\'ad\'c0\'cc \'c7\'e0\'c0\'b8\'b7\'ce \'c0\'fc\'c8\'af\'b5\'c8\'b4\'d9. UNPIVOT \'c0\'fd\'c0\'c7 \'b1\'b8\'b9\'ae\'c0\'cc\'b4\'d9.\par
+UNPIVOT [\{INCLUDE | EXCLUDE\} NULLS]\line              (\{COLUMN | (COLUMN [, COL]....)\}\line              FOR \{COLUMN | (COLUMN [, COL]....)\}\line              IN (\{COLUMN | (COLUMN [, COL]....)\} \line\tab     [AS \{LITERAL | (LITERAL [, LITERAL] ....)\}]\line             [, \{COLUMN | (COLUMN [, COL]....)\} [AS \{LITERAL | (LITERAL [, LITERAL] ....)\}]].......\par
+                )\par
+         )\par
+ - UNPIVOT COLUMNE \'c0\'fd\'c0\'ba UNPIVOT\'b5\'c8 \'b0\'aa\'c0\'cc \'b5\'e9\'be\'ee\'b0\'a5 \'bf\'ad\'c0\'bb \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9.\par
+ - FOR \'c0\'fd\'c0\'ba UNPIVOT\'b5\'c8 \'b0\'aa\'c0\'bb \'bc\'b3\'b8\'ed\'c7\'d2 \'b0\'aa\'c0\'cc \'b5\'e9\'be\'ee\'b0\'a5 \'bf\'ad\'c0\'bb \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9.\par
+ - IN \'c0\'fd\'c0\'ba UNPIVOT\'c7\'d2 \'bf\'ad \'bc\'b3\'b8\'ed\'c7\'d2 \'b0\'aa\'c0\'c7 \'b8\'ae\'c5\'cd\'b7\'b2 \'b0\'aa\'c0\'bb \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9.\par
+\par
+[\'bf\'b9\'c1\'a6] \'bd\'c7\'bd\'c0\'c0\'bb \'c0\'a7\'c7\'d8 \'c5\'d7\'c0\'cc\'ba\'ed \'bb\'fd\'bc\'ba\'c7\'cf\'b1\'e2\par
+ \par
+DROP TABLE T1 PURGE;\par
+CREATE TABLE T1 AS\par
+SELECT   JOB, D10_SAL, D20_SAL, D10_CNT, D20_CNT\par
+  FROM  (SELECT JOB, DEPTNO, SAL FROM EMP WHERE JOB IN \tab    \tab     ('ANALYST','CLERK'))\par
+  PIVOT  (SUM(SAL) AS SAL, COUNT(*) AS CNT FOR DEPTNO IN\line\tab     (10 AS D10, 20 AS D20));\par
+ \par
+SQL> SELECT * FROM T1 ORDER BY JOB;\par
+ \par
+JOB                 D10_SAL  D20_SAL  D10_CNT D20_CNT\par
+------------------ ---------- ---------- ---------- ----------\par
+ANALYST                             6000          0          2\par
+CLERK                    1300       1900          1          2\par
+\par
+\par
+[\'bf\'b9\'c1\'a6] UNPIVOT\'c0\'fd\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'cf\'bf\'a9 D10_SAL, D20_SAL \'bf\'ad\'c0\'cc \'c7\'e0\'c0\'b8\'b7\'ce \'c0\'fc\'c8\'af\'b5\'c8\'b4\'d9.\par
+\par
+   SELECT  JOB, DEPTNO, SAL\par
+    FROM  T1\par
+ UNPIVOT (SAL FOR DEPTNO IN (D10_SAL, D20_SAL))\par
+ORDER BY 1, 2;\par
+\par
+\par
+JOB                  DEPTNO          SAL\par
+------------------ -------------- ----------\par
+ANALYST          D20_SAL            6000\par
+CLERK              D10_SAL            1300\par
+CLERK              D20_SAL            1900\par
+\par
+\par
+[\'bf\'b9\'c1\'a6] IN\'c0\'fd\'bf\'a1 \'ba\'b0\'c4\'aa\'c0\'bb \'c1\'f6\'c1\'a4\'c7\'cf\'b8\'e9 FOR\'c0\'fd\'bf\'a1 \'c1\'f6\'c1\'a4\'c7\'d1 \'bf\'ad\'c0\'c7 \'b0\'aa\'c0\'bb \'ba\'af\'b0\'e6\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+        10, 20\'c0\'b8\'b7\'ce \'ba\'af\'b0\'e6\'c7\'d1\'b4\'d9.\par
+\par
+SELECT    JOB, DEPTNO, SAL\par
+   FROM  T1\par
+UNPIVOT (SAL FOR DEPTNO IN (D10_SAL AS 10, D20_SAL AS 20))\par
+ORDER BY 1, 2;\par
+ \par
+JOB               DEPTNO      \tab SAL\par
+------------------ ------- \tab ----------\par
+ANALYST       \tab 20       \tab 6000\par
+CLERK               \tab 10      \tab 1300\par
+CLERK                \tab 20      \tab 1900\par
+\par
+[\'bf\'b9\'c1\'a6] INCLUDE NULLS \'b1\'e2\'bc\'fa\'c7\'cf\'b8\'e9 UNPIVOT\'b5\'c8 \'bf\'ad\'c0\'c7 \'b0\'aa\'c0\'cc \'b3\'ce\'c0\'ce \'c7\'e0\'b5\'b5 \'b0\'e1\'b0\'fa\'bf\'a1\par
+        \'c6\'f7\'c7\'d4\'b5\'c8\'b4\'d9.\par
+\par
+SELECT    JOB, DEPTNO, SAL\par
+   FROM  T1\par
+UNPIVOT INCLUDE NULLS (SAL FOR DEPTNO IN (D10_SAL AS 10, D20_SAL AS 20))\par
+ORDER BY 1, 2;\par
+\par
+JOB               DEPTNO      SAL\par
+------------------ ------- ----------\par
+ANALYST               10       \par
+ANALYST               20       6000\par
+CLERK                   10       1300\par
+CLERK                   20       1900\par
+\par
+\par
+[\'bf\'b9\'c1\'a6] FOR \'c0\'fd\'bf\'a1 \'b4\'d9\'bc\'f6\'c0\'c7 \'bf\'ad, IN \'c0\'fd\'bf\'a1 \'b4\'d9\'bc\'f6\'c0\'c7 \'ba\'b0\'c4\'aa\'c0\'bb \'c1\'f6\'c1\'a4\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+SELECT     *\par
+    FROM  T1\par
+ UNPIVOT ((SAL,CNT) \line                 FOR DEPTNO IN ((D10_SAL, D10_CNT) AS 10 , (D20_SAL, \tab\tab D20_CNT) AS 20))\par
+ORDER BY 1, 2;\par
+\par
+\par
+JOB                DEPTNO      SAL      CNT\par
+------------------ ------- ---------- ----------\par
+ANALYST               10                       0\par
+ANALYST               20       6000          2\par
+CLERK                   10       1300          1\par
+CLERK                   20       1900          2\par
+\par
+SELECT     *\par
+    FROM  T1\par
+ UNPIVOT ((SAL,CNT) \line                 FOR (DEPTNO, DNAME) IN ((D10_SAL, D10_CNT) \line\tab\tab AS (10 , 'ACCOUNTING'), (D20_SAL, D20_CNT)\line\tab         AS (20, 'RESEARCH' )))\par
+ORDER BY 1, 2;\par
+\par
+JOB                DEPTNO DNAME                  SAL      \tab\tab CNT\par
+------------------ ------- -------------------- \tab ---------- \tab ----------\par
+ANALYST               10 ACCOUNTING           (NULL)    \tab     \tab 0\par
+ANALYST               20 RESEARCH                 6000     \tab\tab 2\par
+CLERK                   10 ACCOUNTING            1300         \tab 1\par
+CLERK                   20 RESEARCH                 1900         \tab 2\par
+}
+ 
