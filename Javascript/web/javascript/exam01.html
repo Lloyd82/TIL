@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="utility.js"></script>
+    <style type="text/css">
+        *{
+            font-family : gulim;
+            font-size : 22px;
+        }
+    </style>
+</head>
+<body>
+    <h2>성적처리</h2>
+    <hr>
+        <script type="text/javascript">
+            // 국어, 영어, 수학 점수 입력받기
+                let kuk = prompt("국어 점수를 입력하세요...", 0); // 문자열로 처리됨.
+                let eng = prompt("영어 점수를 입력하세요...", 0);
+                let mat = prompt("수학 점수를 입력하세요...", 0);
+                
+                // 총점과 평균을 출력하는 예제를 작성하세요
+                let tot = parseInt(kuk) + parseInt(eng) + parseInt(mat);
+                let avg = tot / 3;
+                
+                let star = '';
+                for (let i=1; i <= avg/10; i++){
+                star = star + '★';
+                }
+                
+                document.write("<TABLE width='50%' border='1'>");
+                document.write("<TR><TH>점수</TH></TR>");
+                document.write("<TR><TD>국어: "+kuk+"</TD></TR>");
+                document.write("<TR><TD>영어: "+eng+"</TD></TR>");
+                document.write("<TR><TD>수학: "+mat+"</TD></TR>");
+                document.write("<TR><TD>총점: "+tot+"</TD></TR>");
+                document.write("<TR><TD>평균: "+avg+"</TD></TR>");
+                document.write("<TR><TD>평가: "+star+"</TD></TR>");
+                document.write("</TABLE>");
+
+
+        </script>
+
+
+
+
+</body>
+    
+    
+
+</html>

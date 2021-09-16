@@ -1,0 +1,360 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset129 \'b8\'bc\'c0\'ba \'b0\'ed\'b5\'f1;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs24\lang18 [01] javascript\par
+  - 1995\'b3\'e2 Netscape\'c0\'c7 \'ba\'ea\'b7\'a3\'b5\'e7 \'be\'c6\'c0\'cc\'c5\'a9\'bf\'a1 \'c0\'c7\'c7\'d8 \'b8\'f0\'c4\'ab\'b8\'a6 \'b0\'b3\'b9\'df, \'c8\'c4\'bf\'a1 LiveScript\'b7\'ce\line     \'ba\'af\'b0\'e6 \'b5\'c7\'be\'fa\'c0\'b8\'b8\'e7 \'c3\'d6\'c1\'be\'c0\'fb\'c0\'b8\'b7\'ce JavaScript\'b7\'ce \'c1\'f6\'c1\'a4\'b5\'c7\'be\'fa\'b4\'d9. \par
+ \par
+ - HTML\'b0\'fa Server Script(\'b9\'e9\'be\'d8\'b5\'e5) \'bb\'e7\'c0\'cc\'bf\'a1\'bc\'ad \'c1\'a2\'bc\'d3\'c0\'da\'c0\'c7 \'b8\'b6\'bf\'ec\'bd\'ba \'c5\'ac\'b8\'af, \'c5\'b0\'ba\'b8\'b5\'e5 \'c0\'d4\line    \'b7\'c2\'b5\'ee \'c0\'cc\'ba\'a5\'c6\'ae \'c3\'b3\'b8\'ae\'b8\'a6 \'c1\'d6\'b7\'ce \'b4\'e3\'b4\'e7\'c7\'d1\'b4\'d9.\par
+ \par
+  HTML + CSS <---> Javascript <---> \'b9\'e9\'be\'d8\'b5\'e5\line          \fs20\'c3\'e2\'b7\'c2                 \'b5\'bf\'c0\'db/\'c0\'cc\'ba\'a5\'c6\'ae      \'b5\'a5\'c0\'cc\'c5\'cd\'ba\'a3\'c0\'cc\'bd\'ba \'c1\'a2\'bc\'d3 \'c3\'b3\'b8\'ae(Oracle, MySQL...)\par
+\fs24    \par
+ - Javascript\'b4\'c2 Ajax \'c5\'eb\'bd\'c5\'c0\'bb \'c0\'cc\'bf\'eb\'c7\'cf\'bf\'a9 \'bc\'ad\'b9\'f6\'bf\'cd \'c5\'c2\'b1\'d7\'b4\'dc\'c0\'a7\'b7\'ce(JSP\'b4\'c2 \'c6\'e4\'c0\'cc\'c1\'f6\'b4\'dc\'c0\'a7\line    \'c5\'eb\'bd\'c5, \'c6\'e4\'c0\'cc\'c1\'f6\'b4\'dc\'c0\'a7 \'c0\'cc\'b5\'bf) \'ba\'f1\'b5\'bf\'b1\'e2 \'c5\'eb\'bd\'c5\'c0\'cc \'b0\'a1\'b4\'c9\'c7\'cf\'b8\'e7, jQuery\'b7\'ce Framework\'c8\'ad\line    \'b5\'c7\'be\'ee \'b9\'df\'c0\'fc\'b5\'c7\'be\'ee \'bb\'e7\'bf\'eb\'c7\'d1\'b4\'d9.\par
+ - \'bf\'e4\'c1\'f2\'c0\'ba Ajax \'c5\'eb\'bd\'c5\'c0\'c7 \'b0\'e1\'b0\'fa\'b8\'a6 SPA(Single Page Application)\'b7\'ce \'b1\'b8\'c7\'f6\'c7\'cf\'b1\'e2 \'c0\'a7\'c7\'d8\line     typescript, React\'b5\'ee \'c0\'bb \'bb\'e7\'bf\'eb \'c7\'d1\'b4\'d9.\par
+ - javascript \'c4\'da\'b5\'e5\'b4\'c2 Chrome(V8 \'bf\'a3\'c1\'f8, \'b0\'a1\'c0\'e5 \'b0\'ed\'bc\'d3), IE, FF\'b5\'ee\'c0\'c7 \'ba\'ea\'b7\'af\'bf\'ec\'c0\'fa\'b0\'a1 \'c3\'b3\'b8\'ae\par
+ - \'b8\'f0\'b5\'e7 \'ba\'ea\'b6\'f3\'bf\'ec\'c0\'fa\'b4\'c2 \'c7\'f6\'c0\'e7 ECMAScript 10 in 2019 \'b5\'ee \'c7\'a5\'c1\'d8\'c8\'ad\'b7\'ce \'c1\'a4\'c2\'f8\'b5\'c7\'be\'ee \'bb\'e7\'bf\'eb\par
+ - \'c2\'fc\'c1\'b6 \'bb\'e7\'c0\'cc\'c6\'ae : {{\field{\*\fldinst{HYPERLINK https://developer.mozilla.org/en-US/docs/Web/JavaScript }}{\fldrslt{https://developer.mozilla.org/en-US/docs/Web/JavaScript\ul0\cf0}}}}\f0\fs24\par
+  \par
+1. \'c0\'da\'b9\'d9\'bd\'ba\'c5\'a9\'b8\'b3\'c6\'ae \'bd\'c7\'c7\'e0\par
+ (1) JS \'b4\'c2 \'ba\'ea\'b6\'f3\'bf\'ec\'c0\'fa\'bf\'a1\'bc\'ad \'c8\'ae\'c0\'ce\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+ - Editplus \'c6\'ed\'c1\'fd\'b1\'e2\'bf\'a1\'bc\'ad test.html \'bb\'fd\'bc\'ba\'c7\'cf\'bf\'a9  web/javascript \'bf\'a1 \'c0\'fa\'c0\'e5\'c7\'d1\'b4\'d9.\par
+\par
+>>> test.html\par
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">\par
+<HTML>\par
+ <HEAD>\par
+  <TITLE> New Document </TITLE>\par
+  <META NAME="Generator" CONTENT="EditPlus">\par
+  <META NAME="Author" CONTENT="">\par
+  <META NAME="Keywords" CONTENT="">\par
+  <META NAME="Description" CONTENT="">\par
+ </HEAD>\par
+ \par
+ <BODY>\par
+  <script type='text/javascript'>console.log('Hello World!')</script>\par
+ </BODY>\par
+</HTML>\par
+\par
+ - \'ba\'ea\'b6\'f3\'bf\'ec\'c0\'fa(\'c5\'a9\'b7\'d2)\'b7\'ce \'bf\'ad\'b1\'e2\'c7\'cf\'bf\'a9 F12 \'bc\'b1\'c5\'c3\'c7\'cf\'bf\'a9 Console \'be\'c6\'b7\'a1 Hello World!\'b8\'a6 \'c8\'ae\'c0\'ce\'c7\'d1\'b4\'d9.\par
+\par
+\par
+\par
+(2) Text Editor \'ba\'f1\'c1\'d6\'be\'f3 \'bd\'ba\'c6\'a9\'b5\'f0\'bf\'c0 \'bc\'b3\'c4\'a1 \'b9\'d7 \'c8\'ae\'c0\'e5\'c7\'cf\'b1\'e2\par
+- {{\field{\*\fldinst{HYPERLINK https://code.visualstudio.com/download }}{\fldrslt{https://code.visualstudio.com/download\ul0\cf0}}}}\f0\fs24\par
+\par
+\par
+\par
+>>>\'c8\'bf\'c0\'b2\'c0\'fb\'c0\'ce \'c4\'da\'b5\'f9\'c0\'bb \'c0\'a7\'c7\'d1 Extentions\par
+- open in browser install : \'ba\'ea\'b6\'f3\'bf\'ec\'c0\'fa\'bf\'a1\'bc\'ad \'c8\'ae\'c0\'ce\par
+- Material Theme install -> set color theme -> darker high contrast \par
+- Material Icon Theme install \par
+- Prettier - Code formatter install -> \'be\'c6\'b7\'a1 \'ba\'ce\'ba\'d0 Manage -> Settings \'bc\'b1\'c5\'c3 -> \par
+    save \'b0\'cb\'bb\'f6 \'c8\'c4\par
+          Editor:Format On Save \'be\'c6\'b7\'a1 \'c3\'bc\'c5\'a9\par
+    prettier \'b0\'cb\'bb\'f6 \'c8\'c4\par
+          Prettier :Tab Width\par
+          Number of spaces it should use per tab\par
+          2 \'b7\'ce \'bc\'b3\'c1\'a4\par
+    Quote \'b0\'cb\'bb\'f6 \'c8\'c4 \par
+          Javascript;Preferences: Quote Style\par
+          .....\par
+          auto -> single\'b7\'ce \'ba\'af\'b0\'e6\par
+    \par
+    Typescript;Preferences: Quote Style\par
+          .....\par
+          auto -> single\'b7\'ce \'ba\'af\'b0\'e6\par
+- Bracket Pair Colorizer install : \'b0\'fd\'c8\'a3 \'bb\'f6\'b1\'f2 \'b4\'d9\'b8\'a3\'b0\'d4 \'c1\'f6\'c1\'a4\'b5\'ca\par
+- Indent Rainbow install : \'b5\'e9\'bf\'a9\'be\'b2\'b1\'e2\'b0\'a1 \'ba\'b8\'b1\'e2 \'c1\'c1\'b0\'d4 \'c7\'a5\'c7\'f6\'b5\'c8\'b4\'d9.\par
+- Auto Rename Tag install : html\'c0\'c7 \'be\'d5\'bf\'a1 \'c5\'c2\'b1\'d7\'b8\'a6 \'b9\'d9\'b2\'d9\'b8\'e9 \'b5\'da\'bf\'a1 \'b4\'dd\'b4\'c2 \'c5\'c2\'b1\'d7\'b5\'b5 \'b9\'d9\'b2\'d9\'be\'ee\'c1\'d8\'b4\'d9.\par
+- CSS Peek install : css \'c3\'a3\'b1\'e2 \'bd\'b1\'b0\'d4 \'c7\'d1\'b4\'d9. class\'c0\'c7 \'c0\'cc\'b8\'a7 \'c0\'a7\'bf\'a1\'bc\'ad Ctrl + \'c5\'ac\'b8\'af\'c7\'cf\'b8\'e9 style\'b7\'ce \'c0\'cc\'b5\'bf.\par
+- HTML CSS Support install : html\'bf\'a1\'bc\'ad css\'c0\'c7 \'c0\'da\'b5\'bf\'bf\'cf\'bc\'ba \'c0\'cc\'bf\'eb\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+- Live Server install : \'bc\'ad\'b9\'f6\'bb\'e7\'bf\'eb, html, css \'ba\'af\'b0\'e6\'bb\'e7\'c7\'d7\'c0\'bb \'c0\'fa\'c0\'e5\'c8\'c4 \'b9\'d9\'b7\'ce \'c0\'fb\'bf\'eb\'c7\'d8\'c1\'d8\'b4\'d9.\par
+        Manager -> Settings -> live server \'b0\'cb\'bb\'f6 -> Use local ip \'c3\'bc\'c5\'a9, Custom Browser : chrome\'bc\'b1\'c5\'c3\par
+       \par
+        html \'c6\'c4\'c0\'cf\'c0\'c7 Open with Live Server \'bc\'b1\'c5\'c3 \'c8\'c4 \'ba\'ea\'b6\'f3\'bf\'ec\'c0\'fa\'bf\'a1\'bc\'ad \'c8\'ae\'c0\'ce\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+\par
+(3) VSCode\'bf\'a1\'bc\'ad open folder \'bc\'b1\'c5\'c3\'c7\'cf\'bf\'a9 web/javascript\'c6\'fa\'b4\'f5 \'bc\'b1\'c5\'c3\'c7\'d1\'b4\'d9.\par
+- javascript \'bf\'b7\'c0\'c7 \'bb\'f5\'c6\'c4\'c0\'cf \'bc\'b1\'c5\'c3\'c7\'cf\'bf\'a9 index.html \'bb\'fd\'bc\'ba \'c8\'c4 \par
+  ! Tab\'c0\'bb \'b4\'ad\'b7\'af \'b1\'e2\'ba\'bbhtml \'c4\'da\'b5\'e5\'b8\'a6 \'bb\'fd\'bc\'ba\'c7\'d1\'b4\'d9.\par
+- index.html -> head -> script src='main.js'  \'c0\'db\'bc\'ba \'c8\'c4 \'ba\'ea\'b6\'f3\'bf\'ec\'c0\'fa\'bf\'a1\'bc\'ad \'c8\'ae\'c0\'ce\'c7\'d1\'b4\'d9. \par
+- \'c8\'ae\'c0\'ce\'b9\'e6\'b9\'fd : \'c6\'c4\'c0\'cf\'bc\'b1\'c5\'c3 \'bf\'c0\'b8\'a5\'c2\'ca \'b8\'b6\'bf\'ec\'bd\'ba Open in  Default Browser, Open with Live server\par
+\par
+>>> index.html\par
+<!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Document</title>\par
+    <script src="main.js"></script>\par
+</head>\par
+<body>\par
+    \par
+</body>\par
+</html>\par
+\par
+(5) async \'bf\'cd defer\par
+- html \'c7\'d1\'c1\'d9 \'c7\'d1\'c1\'d9 \'c0\'d0\'be\'ee\'b0\'a1\'b4\'c2\'b0\'cd\'c0\'bb parsing\'c0\'cc\'b6\'f3\'b0\'ed \'c7\'d1\'b4\'d9. \par
+- <script src='main.js'></script>\par
+   html parsing -> js \'b4\'d9\'bf\'ee\'b7\'ce\'b5\'e5 -> \'b4\'d9\'bd\'c3 html parsing -> js\'bd\'c7\'c7\'e0\par
+- <script async src='main.js'></script> \par
+   : \'ba\'b4\'b7\'c4\'b7\'ce html parsing\'b0\'fa js \'b4\'d9\'bf\'ee\'b7\'ce\'b5\'e5 \'b5\'c8\'b4\'d9 \'b1\'d7\'b7\'af\'b3\'aa \'b8\'d5\'c0\'fa js\'b0\'a1 \'b4\'d9\'bf\'ee\'b7\'ce\'b5\'e5 \'b5\'c7\'b8\'e9 \line      html parsing\'c0\'cc \'be\'c8\'b5\'c8 \'bb\'f3\'c5\'c2\'bf\'a1\'bc\'ad js\'b0\'a1 \'bd\'c7\'c7\'e0\'b5\'c9 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+    html parsing ->  html parsing \par
+    js \'b4\'d9\'bf\'ee\'b7\'ce\'b5\'e5   ->  js\'bd\'c7\'c7\'e0\par
+- <script defer src='main.js'></script>\par
+  : \'ba\'b4\'b7\'c4\'b7\'ce html parsing\'b0\'fa js \'b4\'d9\'bf\'ee\'b7\'ce\'b5\'e5 \'b5\'c8\'b4\'d9 \'b1\'d7\'b7\'af\'b3\'aa html parsing\'c0\'cc \'b8\'d5\'c0\'fa \'b5\'c7\'b0\'ed\line    \'b4\'d9\'bf\'ee\'b7\'ce\'b5\'e5\'b5\'c8 js \'b8\'a6 \'bc\'f8\'bc\'ad\'b4\'eb\'b7\'ce \'bd\'c7\'c7\'e0\'c7\'d1\'b4\'d9 \'b0\'a1\'c0\'e5 \'be\'c8\'c1\'a4\'c0\'fb\'c0\'ce \'b9\'e6\'b9\'fd\'c0\'cc\'b4\'d9.\par
+\par
+ \par
+\par
+ \par
+2. \'ba\'af\'bc\'f6\'c0\'c7 \'bc\'b1\'be\'f0\par
+ - \'ba\'af\'bc\'f6\'bf\'a1 \'c7\'d2\'b4\'e7\'b5\'c7\'b4\'c2 \'b5\'a5\'c0\'cc\'c5\'cd\'bf\'a1 \'b5\'fb\'b6\'f3 \'b5\'bf\'c0\'fb\'c0\'b8\'b7\'ce \'c5\'b8\'c0\'d4\'c0\'cc \'c7\'d2\'b4\'e7, \'c0\'da\'b9\'d9\'b4\'c2 \'c5\'b8\'c0\'d4\'c0\'cc \'c3\'b6\'c0\'fa \'b1\'b8\'ba\'d0.\par
+ - \'ba\'af\'bc\'f6 \'bc\'b1\'be\'f0\'bd\'c3 int\'b5\'ee\'c0\'c7 \'b5\'a5\'c0\'cc\'c5\'cd \'c5\'b8\'c0\'d4\'c0\'bb \'bc\'b1\'be\'f0\'c7\'cf\'c1\'f6 \'be\'ca\'b4\'c2\'b4\'d9.\par
+ - js \'c0\'db\'bc\'ba\'bd\'c3 \'c3\'b3\'c0\'bd\'ba\'ce\'ba\'d0\'bf\'a1 'use strict'; \'bd\'e1\'c1\'d6\'b8\'e9 js\'bf\'a1\'bc\'ad \'c0\'af\'bf\'ac\'c7\'d1(\'be\'c8\'c0\'fc\'c7\'cf\'c1\'f6 \'b8\'f8\'c7\'d1)\line   \'ba\'af\'bc\'f6 \'bc\'b1\'be\'f0\'b5\'ee\'c0\'bb \'c1\'bb\'b4\'f5 \'be\'c8\'c0\'fc(\'be\'f6\'b0\'dd)\'c7\'cf\'b0\'d4 \'b8\'b8\'b5\'e9\'be\'ee \'c1\'d8\'b4\'d9.\par
+ - var, let(\'b1\'c7\'c0\'e5) \'c0\'cc\'bf\'eb\'c7\'cf\'bf\'a9 \'bc\'b1\'be\'f0\par
+   let str = "message string";\par
+ - var\'b4\'c2 var \'bb\'e7\'bf\'eb\'c7\'cf\'c1\'f6 \'be\'ca\'b0\'ed \'bc\'b1\'be\'f0\'b5\'c8 \'b8\'f0\'b5\'e7 \'ba\'af\'bc\'f6\'b4\'c2 \'c0\'fc\'bf\'aa\'ba\'af\'bc\'f6, \'c7\'d4\'bc\'f6\'be\'c8\'bf\'a1\'bc\'ad \'bc\'b1\'be\'f0\'c7\'d8\line    \'b5\'b5 \'c0\'fc\'bf\'aa\'ba\'af\'bc\'f6\'b7\'ce \'b9\'d9\'b2\'f1 (\'b1\'c7\'c0\'e5 \'be\'c6\'b4\'d4)\par
+ - const\'b4\'c2 \'bc\'b1\'be\'f0\'b0\'fa \'c7\'d4\'b2\'b2 \'c7\'d2\'b4\'e7\'b5\'c8 \'b0\'aa\'c0\'cc \'ba\'af\'b0\'e6\'b5\'c7\'c1\'f6 \'b8\'f8\'c7\'d1\'b4\'d9.\par
+ \par
+ \par
+(1) Data Type\par
+ - \'c0\'da\'b9\'d9\'bd\'ba\'c5\'a9\'b8\'b3\'c6\'ae\'c0\'c7 \'b5\'a5\'c0\'cc\'c5\'cd\'c5\'b8\'c0\'d4\'c0\'ba \'c7\'cf\'b3\'aa\'c0\'c7 \'ba\'af\'bc\'f6\'bf\'a1 \'bf\'a9\'b7\'af\'b0\'a1\'c1\'f6 \'b5\'a5\'c0\'cc\'c5\'cd\'c7\'fc\'c0\'bb \'c0\'fa\'c0\'e5\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+   (Dynamic typing : dynamically typed language)\par
+\par
+\'a1\'e1 primitive - \'b4\'f5\'c0\'cc\'bb\'f3 \'c0\'db\'c0\'ba \'b4\'dc\'c0\'a7\'b7\'ce \'b3\'aa\'b4\'b2\'c1\'f6\'c1\'f6 \'be\'ca\'b4\'c2 \'c5\'b8\'c0\'d4, single item\par
+ - number: \'c1\'a4\'bc\'f6, \'bd\'c7\'bc\'f6, \'bc\'fd\'c0\'da 0\'c0\'b8\'b7\'ce \'bd\'c3\'c0\'db\'c7\'cf\'b4\'c2 8\'c1\'f8\'bc\'f6, 0x\'b7\'ce \'bd\'c3\'c0\'db\'c7\'cf\'b4\'c2 16\'c1\'f8\'bc\'f6\'b5\'ee\line    \'c0\'fa\'c0\'e5\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'c2 \'ba\'b9\'c7\'d5\'c0\'fb\'c0\'ce \'b5\'a5\'c0\'cc\'c5\'cd \'c5\'b8\'c0\'d4\'c0\'cc\'b4\'d9.\par
+ - string : " ` " , ''\'b8\'a6 \'c0\'cc\'bf\'eb\'c7\'d8\'bc\'ad \'b9\'ae\'c0\'da\'bf\'ad\'c0\'bb \'c7\'a5\'c7\'f6\'c7\'d1\'b4\'d9. \'b6\'c7\'c7\'d1 template literals\'b5\'b5 \line    \'b9\'ae\'c0\'da \'bf\'ad\'b7\'ce \'c7\'a5\'c7\'f6\'c7\'d1\'b4\'d9.   {{\field{\*\fldinst{HYPERLINK https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals }}{\fldrslt{https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals\ul0\cf0}}}}\f0\fs24\par
+  - boolean : true, false\'b8\'a6 \'b0\'aa\'c0\'b8\'b7\'ce \'b0\'a1\'c1\'f6\'b8\'e7, 0, null, undefined, NaN, '' \'b4\'c2 false\line    \'b7\'ce \'c7\'d8\'bc\'ae\'b5\'c7\'b0\'ed \'b1\'d7 \'bf\'dc\'c0\'c7 \'b0\'aa\'c0\'ba true\'b7\'ce \'c7\'d8\'bc\'ae\'b5\'c8\'b4\'d9.\par
+  - null : \'b5\'a5\'c0\'cc\'c5\'cd\'c0\'c7 \'c7\'fc\'bd\'c4\'c0\'cc \'be\'cb\'b7\'c1\'c1\'f6\'c1\'f6 \'be\'ca\'be\'d2\'b0\'c5\'b3\'aa \'b5\'a5\'c0\'cc\'c5\'cd\'b0\'a1 \'be\'f8\'c0\'bd\'c0\'bb \'b3\'aa\'c5\'b8\'b3\'bb\'b4\'c2\'b5\'a5 \line    \'bb\'e7\'bf\'eb\'c7\'d1\'b4\'d9.\par
+  - undefined: \'ba\'af\'bc\'f6\'b8\'a6 \'bc\'b1\'be\'f0\'c8\'c4 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6 \'c7\'d2\'b4\'e7\'c7\'cf\'c1\'f6 \'be\'ca\'c0\'ba \'b0\'e6\'bf\'ec \'b0\'ae\'b4\'c2 \'b0\'aa\'c0\'cc\'b4\'d9.\par
+ -  symbol : \'b0\'ed\'c0\'af\'c7\'d1 \'bd\'c4\'ba\'b0\'c0\'da\'b0\'a1 \'c7\'ca\'bf\'e4\'c7\'d2\'b6\'a7 \'bb\'e7\'bf\'eb\'c7\'d1\'b4\'d9. \'c3\'e2\'b7\'c2\'c7\'d2\'b6\'a7\'b4\'c2 description \line     \'bc\'d3\'bc\'ba\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'d8\'bc\'ad string\'c0\'b8\'b7\'ce \'ba\'af\'c8\'af\'c7\'d8\'be\'df \'c7\'d1\'b4\'d9.\par
+\'a1\'e1 object : single item\'c0\'bb \'b9\'ad\'be\'ee\'bc\'ad \'c7\'d1 \'b4\'dc\'c0\'a7\'b3\'aa box\'b7\'ce \'b0\'fc\'b8\'ae\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\'a1\'e1 function : \'c7\'d4\'bc\'f6\'b4\'c2 \'c0\'db\'be\'f7\'c0\'bb \'bc\'f6\'c7\'e0\'c7\'cf\'b0\'c5\'b3\'aa \'b0\'aa\'c0\'bb \'b0\'e8\'bb\'ea\'c7\'cf\'b4\'c2 \'b9\'ae\'c0\'e5 \'c1\'fd\'c7\'d5 \'b0\'b0\'c0\'ba \line    \'c0\'da\'b9\'d9\'bd\'ba\'c5\'a9\'b8\'b3\'c6\'ae \'c0\'fd\'c2\'f7 \'c7\'d4\'bc\'f6\'b8\'a6 \'bb\'e7\'bf\'eb\'c7\'cf\'b7\'c1\'b8\'e9 \'c7\'d4\'bc\'f6\'b8\'a6 \'c8\'a3\'c3\'e2\'c7\'cf\'b0\'ed\'c0\'da \'c7\'cf\'b4\'c2 \'b9\'fc\'c0\'a7 \line    \'b3\'bb\'bf\'a1\'bc\'ad \'c7\'d4\'bc\'f6\'b8\'a6 \'c1\'a4\'c0\'c7\'c7\'d8\'be\'df\'c7\'d1\'b4\'d9.\par
+\par
+ - \'c2\'fc\'c1\'b6\'bb\'e7\'c0\'cc\'c6\'ae\par
+ - \'c7\'d4\'bc\'f6 {{\field{\*\fldinst{HYPERLINK https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions }}{\fldrslt{https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions\ul0\cf0}}}}\f0\fs24\par
+ - \'c8\'ad\'bb\'ec\'c7\'a5 \'c7\'d4\'bc\'f6\par
+{{\field{\*\fldinst{HYPERLINK https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/Arrow_functions }}{\fldrslt{https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/Arrow_functions\ul0\cf0}}}}\f0\fs24\par
+    \par
+>>> index.html\par
+.........\par
+<script src="variable.js"></script>\par
+...........\par
+\par
+\par
+ \par
+>>> variable.js\par
+//1.use strict (added in ES 5)\par
+'use strict';\par
+//2.Variable \par
+//let (added in ES6)\par
+let name =  '\'c8\'ab';\par
+const maxNumber = 5;\par
+console.log(name);\par
+\par
+//3. Variable types\par
+let a = 12;\par
+let b = 12.1;\par
+console.log(`value:$\{a\}, type: $\{typeof a\}`)\par
+console.log(`value:$\{b\}, type: $\{typeof b\}`)\par
+\par
+const infinity = 1/0;\par
+const negativeInfinity = -1/0;\par
+const nAn = 'not a number' / 2;\par
+console.log(infinity);\par
+console.log(negativeInfinity);\par
+console.log(nAn)\par
+\par
+const char = 'c';\par
+const brendan = 'brendan';\par
+const greeting = 'hello' + 'brendan';\par
+console.log(`value: $\{greeting\}, type:$\{typeof greeting\}`)\par
+const helloBob = `hi $\{brendan\}!`;//template literals(string)\par
+console.log(`value: $\{helloBob\} type: $\{typeof helloBob\}`);\par
+console.log('value: ' + helloBob + ' type: '+typeof helloBob);\par
+\par
+const canRead = true;\par
+const test = 3 < 1;\par
+console.log(`value: $\{canRead\}, type: $\{typeof canRead\}`)\par
+console.log(`value: $\{test\}, type: $\{typeof test\}`)\par
+\par
+let nothing = null;\par
+console.log(`value: $\{nothing\}, type: $\{typeof nothing\}`)\par
+\par
+let x;\par
+console.log(`value: $\{x\}, type: $\{typeof x\}`)\par
+\par
+//symbol, create unique identifiers for objects\par
+const symbol1 = Symbol('id');\par
+const symbol2 = Symbol('id');\par
+console.log(symbol1 === symbol2)\par
+const gsymbol1 = Symbol.for('id');\par
+const gsymbol2 = Symbol.for('id');\par
+console.log(gsymbol1 === gsymbol2)\par
+console.log(`value: $\{symbol1.description\}, type: $\{typeof symbol1\}`)\par
+//Dynamic typing : dynamically typed language\par
+let text = 'hello';\par
+console.log(text.charAt(0)); //'h'\par
+console.log(`value: $\{text\}, type: $\{typeof text\}`);\par
+text = 1\par
+console.log(`value: $\{text\}, type: $\{typeof text\}`);\par
+text = '7' + 5; //+\'b6\'a7\'b9\'ab\'bf\'a1 5\'b0\'a1 \'b9\'ae\'c0\'da\'bf\'ad\'b7\'ce \'ba\'af\'c8\'af\par
+console.log(`value: $\{text\}, type: $\{typeof text\}`);\par
+text = '8' / '2'; //8,2\'b4\'c2 \'bc\'fd\'c0\'da\'b7\'ce \'ba\'af\'c8\'af\par
+console.log(`value: $\{text\}, type: $\{typeof text\}`);\par
+//console.log(text.charAt(0)); //\'bf\'c0\'b7\'f9\par
+\par
+//object \par
+const obj = \{name:'obj', age:20\}\par
+console.log(`name: $\{obj.name\}, age: $\{obj.age\}, type:$\{typeof obj\}`)\par
+ \par
+ \par
+ \par
+\par
+ \par
+ \par
+\par
+ \par
+3. Operator(\'bf\'ac\'bb\'ea\'c0\'da)\par
+(1) \'bb\'ea\'bc\'fa\'bf\'ac\'bb\'ea\par
+ - ! Tab (Emmet abbreviation)\par
+ \par
+>>> javascript/js.html\par
+-----------------------------------------------------------------------\par
+<!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Document</title>\par
+    <style type="text/css"> \par
+        *\{ \par
+          font-family: gulim; \par
+          font-size: 22px; \par
+        \} \par
+        </style> \par
+</head>\par
+<body>\par
+    <H2>\'bf\'ac\'bb\'ea\'c0\'da</H2>\par
+<HR>\par
+<script type="text/javascript">\par
+  var i = 10;\par
+  var j = 3;\par
+ \par
+  pl("\'b4\'f5\'c7\'cf\'b1\'e2: " + (i + j));\par
+  pl("\'bb\'a9\'b1\'e2: " + (i - j));\par
+  pl("\'b0\'f6\'c7\'cf\'b1\'e2: " + (i * j));\par
+  pl("\'b3\'aa\'b4\'a9\'b1\'e2: " + (i / j)); // \'c1\'a4\'bc\'f6/\'c1\'a4\'bc\'f6=\'bd\'c7\'bc\'f6 (*)\par
+  pl("\'b3\'aa\'b8\'d3\'c1\'f6: " + (i % j));\par
+ \par
+  function pl(str)\{\par
+    document.write(str + "<br><br>");\par
+  \}\par
+ \par
+</script>\par
+</body>\par
+</html>\par
+\par
+\par
+(2) String concatenation (+), \'bb\'ea\'bc\'fa\'bf\'ac\'bb\'ea, ++,  \'bf\'ac\'bb\'ea\'c8\'c4 \'c7\'d2\'b4\'e7\'bf\'ac\'bb\'ea, \'ba\'f1\'b1\'b3\'bf\'ac\'bb\'ea, \'b3\'ed\'b8\'ae\'bf\'ac\'bb\'ea, Equality\par
+- \'c1\'d6\'bc\'ae\'bb\'f6\'bb\'f3 \'ba\'af\'b0\'e6\'c7\'cf\'b4\'c2 \'b9\'e6\'b9\'fd\par
+- Manager->settings->.json\'b0\'cb\'bb\'f6 -> JSON:Schemas \'be\'c6\'b7\'a1  Edit in settings.json \'c5\'ac\'b8\'af\'c7\'cf\'bf\'a9 \'be\'c6\'b7\'a1 \'c4\'da\'b5\'e5 \'c3\'df\'b0\'a1\par
+.................\par
+   "editor.tokenColorCustomizations": \{\par
+        "comments": "#eeff00"\par
+    \},\par
+   "json.schemas": [\par
+ \par
+   ]\par
+\}\par
+>>> index.html\par
+...............\par
+    <script src='operator.js'></script>\par
+..............\par
+\par
+>>> operator.js\par
+console.log('my' + ' dog');\par
+console.log('1' + 2); // 2\'b4\'c2 \'b9\'ae\'c0\'da\'bf\'ad\'b7\'ce \'ba\'af\'c8\'af\par
+console.log(`string literals: 1 + 2 = $\{1 + 2\}`)\par
+ \par
+console.log( 1 + 1); \par
+console.log( 1 - 1);\par
+console.log( 1 / 1);\par
+console.log( 1 * 1);\par
+console.log( 5 % 2); //\'b3\'aa\'b8\'d3\'c1\'f6\par
+console.log( 2 ** 3); //\'b0\'c5\'b5\'ec\'c1\'a6\'b0\'f6\par
+ \par
+let counter = 2;\par
+const preIncrement = ++counter; //counter\'b0\'aa\'c0\'cc \'b8\'d5\'c0\'fa \'c1\'f5\'b0\'a1\'b5\'c8\'c8\'c4  \'c7\'d2\'b4\'e7\'b5\'c8\'b4\'d9.\par
+console.log(`preIncrement: $\{preIncrement\}, counter:$\{counter\}`);\par
+ \par
+const postIncrement = counter++; //\'c7\'d2\'b4\'e7\'b8\'d5\'c0\'fa \'b5\'c8\'c8\'c4  counter\'b0\'aa\'c0\'cc 1\'c1\'f5\'b0\'a1\'c7\'d1\'b4\'d9.\par
+console.log(`postIncrement: $\{postIncrement\}, counter:$\{counter\}`);\par
+ \par
+//\'bf\'ac\'bb\'ea \'c8\'c4 \'c7\'d2\'b4\'e7\'bf\'ac\'bb\'ea\par
+let x = 3;\line let y = 6;\par
+x += y; // x = x + y;\line x -= y;\line x /= y;\line x *= y;\par
+ \par
+//\'ba\'f1\'b1\'b3\'bf\'ac\'bb\'ea\par
+console.log(10 < 6);\par
+console.log(10 <= 6);\par
+console.log(10 > 6);\par
+console.log(10 >=6);\par
+ \par
+//\'b3\'ed\'b8\'ae \'bf\'ac\'bb\'ea  ||(or), &&(and), !(not)\par
+const value1 = true;\par
+const value2 = 4 < 2;\par
+ \par
+// or  \'bf\'ac\'bb\'ea (\'c3\'b9\'b9\'f8\'c2\'b0 \'b0\'aa\'c0\'cc true\'c0\'cc\'b8\'e9 \'b5\'da\'bf\'a1 \'b5\'ce\'b0\'b3\'b4\'c2 \'c8\'ae\'c0\'ce\'c7\'cf\'c1\'f6 \'be\'ca\'b4\'c2\'b4\'d9 check()\'c7\'d4\'bc\'f6 \'bd\'c7\'c7\'e0 \'be\'c8\'c7\'d4)\par
+console.log(`or: $\{value1 || value2 || check()\}`);\par
+ \par
+// and \'bf\'ac\'bb\'ea (check() \'c3\'b3\'b7\'b3 \'b3\'bb\'bf\'eb\'c0\'cc \'b1\'e4 \'b0\'e6\'bf\'ec \'b8\'b6\'c1\'f6\'b8\'b7 \'ba\'f1\'b1\'b3 \'ba\'ce\'ba\'d0\'bf\'a1 \'b3\'d6\'b4\'c2\'b0\'cd\'c0\'cc \'c1\'c1\'b4\'d9.)\par
+console.log(`and: $\{value1 && value2 && check()\}`); \par
+ \par
+//\'b0\'b4\'c3\'bc\'b0\'a1 \'b3\'ce \'c0\'ce\'c1\'f6 \'c8\'ae\'c0\'ce\'c8\'c4 \'b3\'ce\'c0\'cc \'be\'c8\'b4\'d2\'b0\'e6\'bf\'ec\'b8\'b8 \'b0\'b4\'c3\'bc\'c0\'c7 \'bc\'d3\'bc\'ba\'c0\'cc\'b3\'aa \'c7\'d4\'bc\'f6\'b8\'a6 \'c8\'a3\'c3\'e2\'c7\'d1\'b4\'d9.\par
+// if(nullableObject != null)\{\par
+//     nullableObject.something;\par
+// \}\par
+ \par
+function check()\{\par
+    for (let i = 0; i < 10; i++) \{\par
+        console.log('wating ?');\par
+    \}\par
+    return true;\par
+\}\par
+ \par
+// !(not)\par
+console.log(!value1)\par
+ \par
+ \par
+//Equality (==, ===)\par
+const stringfive = '5';\par
+const numberfive = 5;\par
+ \par
+//== loose equality, with type conversion (\'c5\'b8\'c0\'d4\'ba\'af\'c8\'af\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'d1 \'be\'e0\'c7\'d1 \'ba\'f1\'b1\'b3)\par
+console.log(stringfive == numberfive);\par
+console.log(stringfive != numberfive);\par
+ \par
+//=== strict equality, no type convrsion(\'c5\'b8\'c0\'d4\'ba\'af\'c8\'af\'c0\'bb \'c7\'cf\'c1\'f6 \'be\'ca\'b4\'c2 \'be\'f6\'b0\'dd\'c7\'d1 \'ba\'f1\'b1\'b3)\par
+console.log(stringfive === numberfive);\par
+console.log(stringfive !== numberfive);\par
+ \par
+// object equality by reference\par
+const js1 = \{name:'js'\};\par
+const js2 = \{name:'js'\};\par
+const js3 = js1;\par
+console.log(js1 == js2);\par
+console.log(js1 === js2)\par
+console.log(js1 === js3)\par
+\par
+//equality \'c8\'ae\'c0\'ce \par
+console.log(0 == false);\par
+console.log(0 === false);\par
+console.log('' == false);\par
+console.log('' === false);\par
+console.log(null == undefined);\par
+console.log(null === undefined);\par
+}
+ 

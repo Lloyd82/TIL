@@ -1,0 +1,444 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset129 \'b8\'bc\'c0\'ba \'b0\'ed\'b5\'f1;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs20\lang18 [01]CSS Float\par
+- \'b9\'ae\'bc\'ad\'bf\'a1 \'bb\'e7\'c1\'f8\'c0\'cc\'b3\'aa \'b1\'db\'b1\'d7\'b8\'b2\'c0\'bb \'bf\'de\'c2\'ca\'c0\'cc\'b3\'aa \'bf\'c0\'b8\'a5\'c2\'ca\'bf\'a1 \'b6\'e7\'be\'ee\'bc\'ad \'c1\'a4\'b7\'c4\'c7\'cf\'b0\'c5\'b3\'aa \'b0\'a2 \'b0\'b4\'c3\'bc\'b8\'a6 \'bf\'c0\'b8\'a5\'c2\'ca\'c0\'cc\'b3\'aa\par
+  \'bf\'de\'c2\'ca\'c0\'b8\'b7\'ce \'c1\'a4\'b7\'c4\'c7\'cf\'bf\'a9 \'b9\'ae\'bc\'ad\'b8\'a6 \'b9\'e8\'c4\'a1\'c7\'d1\'b4\'d9\par
+- float\'b4\'c2 left right none\'c0\'b8\'b7\'ce \'bc\'b3\'c1\'a4\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+- block\'c7\'fc \'bf\'e4\'bc\'d2\'bf\'a1\'b8\'b8 \'bb\'e7\'bf\'eb\'b5\'c8\'b4\'d9. \'bf\'b9) div, p, ol, ul, table, img ...\par
+- {{\field{\*\fldinst{HYPERLINK https://developer.mozilla.org/en-US/docs/Web/CSS/float }}{\fldrslt{https://developer.mozilla.org/en-US/docs/Web/CSS/float\ul0\cf0}}}}\f0\fs20\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+<head>\par
+<style>\par
+.thumbnail \{\par
+    float: left;\par
+    width: 110px;\par
+    height: 90px;\par
+    margin: 5px;\par
+\}\par
+</style>\par
+</head>\par
+<body>\par
+ \par
+<h3>Image Gallery</h3>\par
+<p>Try to resize the browser-window to see what happens when the images do not have enough room.</p>\par
+<img class="thumbnail" src="klematis_small.jpg" width="107" height="90">\par
+<img class="thumbnail" src="klematis2_small.jpg" width="107" height="80">\par
+<img class="thumbnail" src="klematis3_small.jpg" width="116" height="90">\par
+<img class="thumbnail" src="klematis4_small.jpg" width="120" height="90">\par
+<img class="thumbnail" src="klematis_small.jpg" width="107" height="90">\par
+<img class="thumbnail" src="klematis2_small.jpg" width="107" height="80">\par
+<img class="thumbnail" src="klematis3_small.jpg" width="116" height="90">\par
+<img class="thumbnail" src="klematis4_small.jpg" width="120" height="90">\par
+ \par
+</body>\par
+</html>\par
+\par
+  \par
+\par
+\par
+---------------------------------------------------------------------------------------------------------------------------------------------\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+<head>\par
+<style>\par
+.thumbnail \{\par
+    float: left;\par
+    width: 110px;\par
+    height: 90px;\par
+    margin: 5px;\par
+\}\par
+ \par
+.text_line \{\par
+    clear: both;\par
+    margin-bottom: 2px;\par
+\}\par
+</style>\par
+</head>\par
+<body>\par
+ \par
+<h3>Image Gallery</h3>\par
+<p>Try to resize the browser-window to see what happens when the images does not have enough room.</p>\par
+<img class="thumbnail" src="klematis_small.jpg" width="107" height="90">\par
+<img class="thumbnail" src="klematis2_small.jpg" width="107" height="80">\par
+<img class="thumbnail" src="klematis3_small.jpg" width="116" height="90">\par
+<img class="thumbnail" src="klematis4_small.jpg" width="120" height="90">\par
+ \par
+<h3 class="text_line">Second row</h3>\par
+<img class="thumbnail" src="klematis_small.jpg" width="107" height="90">\par
+<img class="thumbnail" src="klematis2_small.jpg" width="107" height="80">\par
+<img class="thumbnail" src="klematis3_small.jpg" width="116" height="90">\par
+<img class="thumbnail" src="klematis4_small.jpg" width="120" height="90">\par
+ \par
+</body>\par
+</html>\par
+ \par
+\par
+ \par
+\par
+\par
+[02] FlexBox\par
+- {{\field{\*\fldinst{HYPERLINK https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox }}{\fldrslt{https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox\ul0\cf0}}}}\f0\fs20\par
+- {{\field{\*\fldinst{HYPERLINK https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-properties }}{\fldrslt{https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-properties\ul0\cf0}}}}\f0\fs20\par
+- {{\field{\*\fldinst{HYPERLINK https://material.io/resources/color/#!/?view.left=0&view.right=0 }}{\fldrslt{https://material.io/resources/color/#!/?view.left=0&view.right=0\ul0\cf0}}}}\f0\fs20\par
+- Flexbox\'b4\'c2 box\'bf\'cd \'be\'c6\'c0\'cc\'c5\'db\'b5\'e9\'c0\'bb \'c7\'e0 \'b6\'c7\'b4\'c2 \'bf\'ad\'b7\'ce \'c0\'da\'c0\'af\'c0\'da\'c0\'e7\'b7\'ce \'b9\'e8\'c4\'a1\'bd\'c3\'c4\'d1\'c1\'d6\'b4\'c2 \'b9\'e6\'b9\'fd\'c0\'cc\'b4\'d9.\par
+- \'b9\'da\'bd\'ba\'b0\'a1 \'c4\'bf\'c1\'f6\'b8\'e9 \'b9\'da\'bd\'ba\'c0\'c7 \'b0\'f8\'b0\'a3\'c0\'bb \'be\'ee\'b6\'bb\'b0\'d4 \'b8\'c5\'b2\'e3\'be\'df \'b5\'c9\'c1\'f6 , \'b9\'da\'bd\'ba\'b0\'a1 \'c0\'db\'be\'c6\'c1\'f6\'b8\'e9 \'be\'c6\'c0\'cc\'c5\'db\'c0\'cc \par
+- \'be\'ee\'b6\'bb\'b0\'d4 \'c0\'db\'be\'c6\'c1\'ae\'bc\'ad \'c0\'af\'bf\'ac\'c7\'cf\'b0\'d4 \'b9\'da\'bd\'ba\'be\'c8\'bf\'a1\'bc\'ad \'b9\'e8\'c4\'a1\'b5\'c7\'b4\'c2\'c1\'f6 \'c0\'da\'c0\'af\'b7\'d3\'b0\'d4 \'c1\'a4\'c0\'c7\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+- \'c0\'a5 \'bb\'e7\'c0\'cc\'c6\'ae\'c0\'c7 layout\'c0\'bb \'bd\'b1\'b0\'d4\'b1\'b8\'bc\'ba\'c7\'d2 \'bc\'f6\'c0\'d6\'b4\'d9.\par
+- FlexBox\'b4\'c2 container\'bf\'a1 \'c0\'fb\'bf\'eb\'b5\'c7\'b4\'c2 \'bc\'d3\'bc\'ba\'b0\'fa \'b1\'d7\'be\'c8 item\'b5\'e9\'bf\'a1 \'c0\'fb\'bf\'eb\'b5\'c7\'b4\'c2 \'bc\'d3\'bc\'ba\'c0\'cc \'c0\'d6\'b4\'d9.\par
+- Container \'be\'c8 \'c7\'d7\'b8\'f1\'b5\'e9\'c0\'cc \'b0\'a1\'b7\'ce(left -> right)\'b7\'ce \'c1\'a4\'b7\'c4\'b5\'c7\'b8\'e9 main axis(\'b8\'de\'c0\'ce\'c3\'e0,\'c1\'df\'bd\'c9\'c3\'e0)\'c0\'ba \'bc\'f6\'c6\'f2\'c3\'e0\'c0\'cc \'b5\'c7\'b0\'ed\par
+  cross axis(\'b1\'b3\'c2\'f7\'c3\'e0,\'b9\'dd\'b4\'eb\'c3\'e0)\'c0\'ba \'bc\'f6\'c1\'f7\'c3\'e0\'c0\'cc \'b5\'c8\'b4\'d9. \par
+- Container \'be\'c8 \'c7\'d7\'b8\'f1\'b5\'e9\'c0\'cc \'bc\'bc\'b7\'ce(top -> bottom)\'b7\'ce \'c1\'a4\'b7\'c4\'b5\'c7\'b8\'e9 main axis(\'b8\'de\'c0\'ce\'c3\'e0,\'c1\'df\'bd\'c9\'c3\'e0)\'c0\'ba \'bc\'f6\'c1\'f7\'c3\'e0\'c0\'cc \'b5\'c7\'b0\'ed\par
+  cross axis(\'b1\'b3\'c2\'f7\'c3\'e0, \'b9\'dd\'b4\'eb\'c3\'e0)\'c0\'ba \'bc\'f6\'c6\'f2\'c3\'e0\'c0\'cc \'b5\'c8\'b4\'d9.\par
+\par
+1. flex container\par
+- \'ba\'ce\'b8\'f0(\'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca)\'bf\'a1 \'c0\'fb\'bf\'eb\'b5\'c7\'b4\'c2 \'bc\'d3\'bc\'ba\'c0\'cc\'b4\'d9.\par
+\par
+\par
+(1) display\par
+ - \'c7\'c3\'b7\'ba\'bd\'ba \'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca\'b8\'a6 \'c1\'a4\'c0\'c7\'c7\'cf\'b8\'e9\'bc\'ad \'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca\'c0\'c7 \'b8\'f0\'b5\'e7 \'be\'c6\'c0\'cc\'c5\'db\'bf\'a1 \'b4\'eb\'c7\'d8 \'c7\'c3\'b7\'ba\'bd\'ba \'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca\'b8\'a6\par
+   \'c8\'b0\'bc\'ba\'c8\'ad \'c7\'d1\'b4\'d9.\par
+\par
+   .container \{ display: flex;  \}\par
+\par
+\par
+(2) flex-direction\par
+- \'c7\'c3\'b7\'ba\'bd\'ba \'c7\'d7\'b8\'f1\'c0\'cc \'c7\'c3\'b7\'ba\'bd\'ba \'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca\'bf\'a1 \'b9\'e8\'c4\'a1\'b5\'c7\'b4\'c2 \'b9\'e6\'c7\'e2\'c0\'bb \'c1\'a4\'c0\'c7\'c7\'d1\'b4\'d9.\par
+- \'c7\'c3\'b7\'ba\'bd\'ba \'c7\'d7\'b8\'f1\'c0\'ba \'c1\'d6\'b7\'ce \'b0\'a1\'b7\'ce \'c7\'e0\'c0\'cc\'b3\'aa \'bc\'bc\'b7\'ce \'bf\'ad\'bf\'a1 \'b9\'e8\'c4\'a1\'b5\'c8\'b4\'d9.\par
+\par
+\par
+\par
+.container \{ flex-direction: row | row-reverse | column | column-reverse; \}\par
+\par
+\par
+(3) flex-wrap\par
+- \'b1\'e2\'ba\'bb\'c0\'fb\'c0\'b8\'b7\'ce \'c7\'c3\'b7\'ba\'bd\'ba \'c7\'d7\'b8\'f1\'c0\'ba \'c7\'d1 \'c1\'d9\'bf\'a1 \'b8\'c2\'c3\'df\'be\'ee\'c1\'f8\'b4\'d9.\par
+- wrap\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'cf\'b8\'e9 \'bf\'a9\'b7\'af\'c1\'d9\'bf\'a1 \'ba\'b8\'bf\'a9\'c1\'f6\'b5\'b5\'b7\'cf \'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+\par
+\par
+.container \{ flex-wrap: nowrap | wrap | wrap-reverse; \}\par
+\par
+\par
+(4) flex-flow\par
+-  flex-direction \'b9\'d7 flex-wrap\'b8\'a6 \'c7\'d4\'b2\'b2 \'c7\'c3\'b7\'ba\'bd\'ba \'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca\'c0\'c7 \'b1\'e2\'ba\'bb \'c3\'e0\'b0\'fa \'b1\'b3\'c2\'f7 \'c3\'e0\'c0\'bb \'c1\'a4\'c0\'c7\'c7\'d1\'b4\'d9.\par
+- \'b1\'e2\'ba\'bb\'b0\'aa\'c0\'ba row nowrap \'c0\'cc\'b4\'d9.\par
+\par
+.container \{ flex-flow: column wrap; \}\par
+\par
+\par
+(5) justify-content\par
+- main \'c3\'e0\'bf\'a1 \'b5\'fb\'b6\'f3 \'c1\'a4\'b7\'c4\'c7\'d1\'b4\'d9.\par
+- \'b3\'b2\'c0\'ba \'bf\'a9\'c0\'af\'b0\'f8\'b0\'a3\'c0\'bb \'ba\'d0\'bb\'ea\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+\par
+\par
+\par
+.container \{\par
+        justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly ; \}\par
+\par
+\par
+\par
+(6) align-items\par
+- \'c7\'f6\'c0\'e7 \'b6\'f3\'c0\'ce\'c0\'c7 \'b1\'b3\'c2\'f7 \'c3\'e0\'c0\'bb \'b5\'fb\'b6\'f3 \'c7\'c3\'b7\'ba\'bd\'ba \'c7\'d7\'b8\'f1\'c0\'cc \'b9\'e8\'c4\'a1\'b5\'c7\'b4\'c2 \'b9\'e6\'bd\'c4\'c0\'bb \'bc\'b1\'be\'f0\'c7\'d1\'b4\'d9.\par
+\par
+\par
+\par
+\par
+ .container \{\par
+  align-items: stretch | flex-start | flex-end | center | baseline ;\par
+\}\par
+ \par
+ (7) align-content\par
+ - justify-content\'b0\'a1 \'b1\'e2\'ba\'bb \'c3\'e0 \'b3\'bb\'bf\'a1\'bc\'ad \'b0\'b3\'ba\'b0 \'c7\'d7\'b8\'f1\'c0\'bb \'c1\'a4\'b7\'c4\'c7\'cf\'b4\'c2 \'b9\'e6\'b9\'fd\'b0\'fa \'ba\'f1\'bd\'c1\'c7\'cf\'b0\'d4 \'b1\'b3\'c2\'f7 \'c3\'e0\'bf\'a1 \'c3\'df\'b0\'a1 \'b0\'f8\'b0\'a3\'c0\'cc \'c0\'d6\'c0\'bb \'b6\'a7\par
+  \'c7\'c3\'b7\'ba\'bd\'ba \'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca\'c0\'c7 \'b6\'f3\'c0\'ce\'c0\'bb \'c1\'a4\'b7\'c4\'c7\'d1\'b4\'d9.\par
+\par
+\par
+\par
+.container \{\par
+  align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch ;\par
+ \}\par
+\par
+\par
+2. \'bd\'c7\'bd\'c0 - container \'bc\'d3\'bc\'ba\par
+\par
+(1) html\par
+<!DOCTYPE html>\par
+<html>\par
+<head>\par
+  <meta charset="utf-8">\par
+  <meta name="viewport" content="width=device-width">\par
+  <title>JS Bin</title>\par
+</head>\par
+<body>\par
+ <!--div.container>div.item.item$\{$\}*10 -->\par
+ <div class="container">\par
+   <div class="item item1">1</div>\par
+   <div class="item item2">2</div>\par
+   <div class="item item3">3</div>\par
+   <div class="item item4">4</div>\par
+   <div class="item item5">5</div>\par
+   <div class="item item6">6</div>\par
+   <div class="item item7">7</div>\par
+   <div class="item item8">8</div>\par
+   <div class="item item9">9</div>\par
+   <div class="item item10">10</div>\par
+<!--    <div class="item item1">1</div>\par
+   <div class="item item2">2</div>\par
+   <div class="item item3">3</div>\par
+   <div class="item item4">4</div>\par
+   <div class="item item5">5</div>\par
+   <div class="item item6">6</div>\par
+   <div class="item item7">7</div>\par
+   <div class="item item8">8</div>\par
+   <div class="item item9">9</div>\par
+   <div class="item item10">10</div> -->\par
+</div>\par
+</body>\par
+</html>\par
+\par
+(2) css\par
+\par
+/* .container \'c0\'c7 \'ba\'ce\'b8\'f0 */\par
+/*\par
+  body,html\{\par
+  height:100%;\par
+\}*/\par
+/*\par
+.container \{\par
+   background: beige;\par
+   height:100%;  /*\'ba\'ce\'b8\'f0 \'b3\'f4\'c0\'cc\'c0\'c7 100% \'c3\'a4\'bf\'ee\'b4\'d9\'b4\'c2 \'c0\'c7\'b9\'cc*/\par
+/*\} */\par
+\par
+/*100vh : \'ba\'ce\'b8\'f0(body,html)\'bf\'cd \'bb\'f3\'b0\'fc\'be\'f8\'c0\'cc \'ba\'e4\'c0\'c7 100% height\'b8\'a6 \'b4\'d9\'be\'b4\'b4\'d9\'b4\'c2 \'c0\'c7\'b9\'cc*/\par
+.container \{\par
+   background: beige;\par
+   height:100vh; \par
+   display : flex; /* flexbox \'bd\'c3\'c0\'db\'c0\'bb \'b3\'aa\'c5\'b8\'b3\'bf  \'be\'c6\'c0\'cc\'c5\'db \'b0\'a1\'b7\'ce \'c3\'e2\'b7\'c2(flex-direction:row :\'b1\'e2\'ba\'bb\'b0\'aa)*/\par
+   flex-direction:  row;  \par
+  /* flex-direction:  column; */\par
+  /* flex-direction:  row-reverse; */\par
+  /* flex-direction:  column-reverse; */\par
+  /* \'bd\'c7\'bd\'c0\'bd\'c3 item \'c3\'df\'b0\'a1\'c7\'d1\'b4\'d9. */\par
+  /* \'c7\'d1\'c1\'d9\'bf\'a1 \'b4\'d9\'ba\'b8\'bf\'a9\'c1\'dc , \'c8\'ad\'b8\'e9 \'b3\'d0\'c0\'cc\'c1\'d9\'c0\'cc\'b5\'b5 \'c7\'d1\'c1\'d9\'bf\'a1 \'ba\'b8\'c0\'d3*/\par
+  /*\'b1\'e2\'ba\'bb\'b0\'aa*/\par
+  /* flex-wrap:nowrap;  */\par
+  /* \'bf\'a9\'b7\'af\'c1\'d9\'b7\'ce \'ba\'b8\'c0\'d3 */ \par
+  flex-wrap:wrap; \par
+  \par
+  /* flex-flow:column nowrap; */\par
+  /* \'be\'c6\'c0\'cc\'c5\'db \'b9\'e8\'c4\'a1- item \'c1\'d9\'c0\'cc\'b0\'ed \'bd\'c7\'bd\'c0 \'b8\'ee\'b8\'ee \'ba\'ea\'b6\'f3\'bf\'ec\'c0\'fa\'bf\'a1\'bc\'ad \'bd\'c7\'c7\'e0\'be\'c8\'b5\'ca*/\par
+  /* justify-content : flex-start ; */\par
+  /* justify-content : space-around; */\par
+  /* \'b1\'d5\'b5\'ee\'c7\'cf\'b0\'d4 \'b0\'a3\'b0\'dd\'c0\'bb \'b8\'b8\'b5\'eb*/\par
+  /* justify-content : space-evenly; */ \par
+  /* justify-content : space-between; */ \par
+\}\par
+ \par
+.item \{\par
+  \par
+  width:40px;\par
+  height:40px\par
+  border: 1px solid black;\par
+\}\par
+ \par
+.item1 \{\par
+  background:#ef9a9a;\par
+\}\par
+.item2 \{\par
+  background:#f48fb1;\par
+\}\par
+.item3 \{\par
+  background:#ce93d8;\par
+\}\par
+.item4 \{\par
+  background:#b39ddb;\par
+\}\par
+.item5 \{\par
+  background:#90caf9;\par
+\}\par
+.item6 \{\par
+  background:#a5d6a7;\par
+\}\par
+.item7 \{\par
+  background:#e6ee9c;\par
+\}\par
+.item8 \{\par
+  background:#fff59d;\par
+\}\par
+.item9 \{\par
+  background:#ffcc80;\par
+\}\par
+.item10 \{\par
+  background:#ffab91;\par
+\}\par
+\par
+(3) output\par
+\par
+ \par
+\par
+3. flex items\par
+- \'c0\'da\'bd\'c4(\'c7\'d7\'b8\'f1)\'bf\'a1 \'c0\'fb\'bf\'eb\'b5\'c7\'b4\'c2 \'bc\'d3\'bc\'ba\'c0\'cc\'b4\'d9.\par
+- \'bd\'c7\'bd\'c0\'bd\'c3 item\'c0\'ba 3\'b0\'b3\'b8\'b8 \'b3\'b2\'b0\'dc\'b3\'f5\'b4\'c2\'b4\'d9. container display:flex,padding-top:100px\'b7\'ce \'bc\'b3\'c1\'a4\'c7\'d1\'b4\'d9.\par
+\par
+\par
+\par
+\par
+(1) order \par
+- \'b1\'e2\'ba\'bb\'c0\'fb\'c0\'b8\'b7\'ce \'c7\'c3\'b7\'ba\'bd\'ba \'c7\'d7\'b8\'f1\'c0\'ba \'bc\'d2\'bd\'ba \'bc\'f8\'bc\'ad\'b7\'ce \'b9\'e8\'c4\'a1\'b5\'c8\'b4\'d9. \'b1\'d7\'b7\'af\'b3\'aa order \'bc\'d3\'bc\'ba\'c0\'ba \'c7\'c3\'b7\'ba\'bd\'ba \'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca\'bf\'a1 \'b3\'aa\'c5\'b8\'b3\'aa\'b4\'c2\par
+  \'bc\'f8\'bc\'ad\'b8\'a6 \'ba\'af\'b0\'e6\'c7\'d1\'b4\'d9(\'b8\'b9\'c0\'cc \'bb\'e7\'bf\'eb\'b5\'c7\'c1\'f6 \'be\'ca\'c0\'bd)\par
+\par
+\par
+\par
+\par
+.item1\{\par
+  order: 3; /* default is 0 */\par
+\}\par
+\par
+.item2\{\par
+  order: 1; /* default is 0 */\par
+\}\par
+\par
+.item3\{\par
+  order: 2; /* default is 0 */\par
+\}\par
+\par
+(2) flex-grow\par
+- \'c7\'c3\'b7\'ba\'bd\'ba \'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca\'b0\'a1 \'c4\'bf\'c1\'fa\'b6\'a7 \'c7\'d7\'b8\'f1\'c0\'c7 \'bc\'b3\'c1\'a4\'b0\'aa\'bf\'a1 \'b5\'fb\'b6\'f3 \'b4\'c3\'be\'ee\'b3\'aa\'b4\'c2 \'c5\'a9\'b1\'e2\'b8\'a6 \'bc\'b3\'c1\'a4\'c7\'d1\'b4\'d9.\par
+\par
+\par
+\par
+.item1 \{\par
+  flex-grow: 1; /* default 0 */\par
+\}\par
+.item2 \{\par
+  flex-grow: 2; /* default 0 , \'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca\'b0\'a1 \'c4\'bf\'c1\'fa\'b6\'a7 \'b4\'d9\'b8\'a5 \'c7\'d7\'b8\'f1\'bf\'a1 \'ba\'f1\'c7\'d8  2\'b9\'e8\'b7\'ce \'c4\'bf\'c1\'f8\'b4\'d9.*/\par
+\}\par
+.item3 \{\par
+  flex-grow: 1; /* default 0 */\par
+\}\par
+\par
+\par
+(3) flex-shrink\par
+- \'c7\'c3\'b7\'ba\'bd\'ba \'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca\'b0\'a1 \'c1\'d9\'be\'ee\'b5\'e9\'b6\'a7 \'c7\'d7\'b8\'f1\'c0\'c7 \'bc\'b3\'c1\'a4\'b0\'aa\'bf\'a1 \'b5\'fb\'b6\'f3 \'c3\'e0\'bc\'d2\'b5\'c7\'b4\'c2 \'c5\'a9\'b1\'e2\'b8\'a6 \'bc\'b3\'c1\'a4\'c7\'d1\'b4\'d9.\par
+\par
+.item1 \{\par
+  flex-shrink: 2; /* default 1, \'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca\'b0\'a1 \'c1\'d9\'be\'ee\'b5\'e9\'b6\'a7 \'c7\'d7\'b8\'f12,3\'bf\'a1 \'ba\'f1\'c7\'d8 2\'b9\'e8\'b7\'ce \'c1\'d9\'be\'ee\'b5\'e7\'b4\'d9. */\par
+\}\par
+.item2 \{\par
+  flex-shrink: 1; /* default 1 */\par
+\}\par
+.item3 \{\par
+  flex-shrink: 1; /* default 1 */\par
+\}\par
+\par
+\par
+(4) flex-basis\par
+- \'be\'c6\'c0\'cc\'c5\'db\'b5\'e9\'c0\'cc \'b0\'f8\'b0\'a3\'c0\'bb \'be\'f3\'b8\'b6\'b3\'aa \'c2\'f7\'c1\'f6\'c7\'d8\'be\'df \'b5\'c7\'b4\'c2\'c1\'f6 \'c1\'b6\'b1\'dd \'b4\'f5 \'bc\'bc\'ba\'ce\'c0\'fb\'c0\'b8\'b7\'ce \'b8\'ed\'bd\'c3\'c7\'d2 \'bc\'f6\'c0\'d6\'b0\'d4\'c7\'d1\'b4\'d9.\par
+- auto\'c0\'b8\'b7\'ce \'bc\'b3\'c1\'a4\'c7\'cf\'b8\'e9 flex-grow,flex-shirnk\'b0\'aa\'bf\'a1 \'b5\'fb\'b6\'f3 \'b0\'f8\'b0\'a3\'c0\'cc \'ba\'d0\'b9\'e8\'b5\'c8\'b4\'d9.\par
+\par
+.item1 \{\par
+  flex-basis:   60%; \par
+\}\par
+\par
+.item2 \{\par
+  flex-basis:  30%; /* default auto */\par
+\}\par
+\par
+.item1 \{\par
+  flex-basis:  10%; /* default auto */\par
+\}\par
+\par
+(5) flex\par
+- lex-grow, flex-shrink \'b9\'d7 flex-basis\'b0\'a1 \'b0\'e1\'c7\'d5\'b5\'c8 \'bc\'b3\'c1\'a4\'c0\'cc\'b4\'d9.\par
+- \'b5\'ce \'b9\'f8\'c2\'b0 \'b9\'d7 \'bc\'bc \'b9\'f8\'c2\'b0 \'b8\'c5\'b0\'b3\'ba\'af\'bc\'f6(flex-shrink \'b9\'d7 flex-basis)\'b4\'c2 \'bc\'b1\'c5\'c3 \'bb\'e7\'c7\'d7\'c0\'cc\'b8\'e7,\par
+  \'b1\'e2\'ba\'bb\'b0\'aa\'c0\'ba 0 1 auto \'c0\'cc\'b4\'d9.\par
+\par
+.item1 \{\par
+     flex: 2 2 auto;\par
+\}\par
+\par
+\par
+(6) align-self\par
+- container \'bc\'b3\'c1\'a4\'b0\'fa \'b9\'ab\'b0\'fc\'c7\'cf\'b0\'d4 \'b0\'b3\'ba\'b0 \'c7\'c3\'b7\'ba\'bd\'ba \'c7\'d7\'b8\'f1\'bf\'a1 \'b4\'eb\'c7\'d8 \'b1\'e2\'ba\'bb \'c1\'a4\'b7\'c4(\'b6\'c7\'b4\'c2 align-items\'b7\'ce \'c1\'f6\'c1\'a4\'b5\'c8 \'c1\'a4\'b7\'c4)\'c0\'bb\par
+  \'c0\'e7\'c1\'a4\'c0\'c7\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+\par
+\par
+.item1 \{\par
+  align-self:  center;\par
+\}\par
+\par
+\par
+ \par
+\par
+\par
+4. \'bd\'c7\'bd\'c0 - item \'bc\'d3\'bc\'ba\par
+\par
+(1) html\par
+<!DOCTYPE html>\par
+<html>\par
+<head>\par
+  <meta charset="utf-8">\par
+  <meta name="viewport" content="width=device-width">\par
+  <title>JS Bin</title>\par
+</head>\par
+<body>\par
+ \par
+ <div class="container">\par
+   <div class="item item1">1</div>\par
+   <div class="item item2">2</div>\par
+   <div class="item item3">3</div>\par
+ </div> \par
+</body>\par
+</html>\par
+\par
+(2) css\par
+.container \{\par
+   padding-top:100px;\par
+   background: beige;\par
+   height:100vh;\par
+   display : flex;\par
+    \par
+\}\par
+ \par
+.item \{\par
+  \par
+  width:40px;\par
+  height:40px;\par
+  border: 1px solid black;\par
+\}\par
+ \par
+.item1 \{\par
+  background:#ef9a9a;\par
+ \par
+  flex-grow: 2;\par
+  flex-shrink: 2; \par
+  \par
+  /* flex-basis:   30%; */ /* default auto */\par
+  /* flex: 2 2 auto; */\par
+  align-self:  center; /* \'b0\'b3\'ba\'b0 \'c1\'a4\'b7\'c4\'b5\'ca */\par
+\}\par
+.item2 \{\par
+  background:#f48fb1;\par
+  flex-grow: 1;\par
+  flex-shrink: 1;\par
+   /* flex-basis:   60%; */  \par
+\}\par
+.item3 \{\par
+  background:#ce93d8;\par
+  flex-grow: 1;\par
+  flex-shrink: 1; \par
+   /* flex-basis:   10%; */  \par
+\}\par
+ \par
+(3) output\par
+\par
+\par
+\'a1\'d8 FlexBox Froggy (\'bf\'ac\'bd\'c0\'bb\'e7\'c0\'cc\'c6\'ae) \par
+- {{\field{\*\fldinst{HYPERLINK https://flexboxfroggy.com/#ko }}{\fldrslt{https://flexboxfroggy.com/#ko\ul0\cf0}}}}\f0\fs20\par
+}
+ 
