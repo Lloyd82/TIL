@@ -11,7 +11,7 @@ import utility.DBClose;
 import utility.Open;
 
 public class AddressDAO {
-  
+  //조회
   public List<AddressDTO> list(){
     List<AddressDTO> list = new ArrayList<AddressDTO>();
     Connection con = Open.getConnection();
@@ -49,7 +49,8 @@ public class AddressDAO {
     // TODO Auto-generated method stub
     return null;
   }
-
+  
+  //삭제
   public boolean delete(int addressnum) {
     boolean flag = false;
     Connection con = Open.getConnection();
@@ -77,11 +78,7 @@ public class AddressDAO {
 
   }
 
-  /**
-   * 레코드 수정
-   * 
-   */
-
+  //수정
   public boolean update(AddressDTO dto) {
     Boolean flag = false;
     Connection con = Open.getConnection();
@@ -113,12 +110,7 @@ public class AddressDAO {
 
   }
 
-  /**
-   * 레코드 하나를 가져옵니다
-   * 
-   * @param addressnum -primary key
-   * @return AddressDTO -레코드 하나
-   */
+  //읽기
   public AddressDTO read(int addressnum) {
     AddressDTO dto = null;
     Connection con = Open.getConnection();
@@ -137,7 +129,7 @@ public class AddressDAO {
 
       if (rs.next()) {
         dto = new AddressDTO();
-        dto.setAddress(rs.getInt("addressnum")); // rs에서 꺼내와서 DTO에 저장
+        dto.setAddress(rs.getInt("addressnum")); // rs�뿉�꽌 爰쇰궡���꽌 DTO�뿉 ���옣
         dto.setName(rs.getString("name"));
         dto.setHandphone(rs.getString("handphone"));
         dto.setAddress(rs.getString("address"));
@@ -151,12 +143,7 @@ public class AddressDAO {
     return dto;
   }
 
-  /**
-   * 레코드 생성
-   * 
-   * @param dto - 생성될 데이터
-   * @return true - 생성 성공, false- 생성 실패
-   */
+  //등록
   public boolean create(AddressDTO dto) {
     boolean flag = false;
     Connection con = Open.getConnection();
