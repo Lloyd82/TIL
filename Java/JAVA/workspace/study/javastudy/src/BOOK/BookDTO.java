@@ -9,6 +9,7 @@ public class BookDTO {
 	private int price; //가격
 	private String detail; //상세
 	private String publish_date; //발행일
+//	private String studunt;
 	
 	//기본생성자
 	public BookDTO() {

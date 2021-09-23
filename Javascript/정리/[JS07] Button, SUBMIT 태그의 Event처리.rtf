@@ -1,0 +1,430 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset129 \'b8\'bc\'c0\'ba \'b0\'ed\'b5\'f1;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs24\lang18 [01] Event\'c0\'c7 \'c3\'b3\'b8\'ae(BUTTON, SUBMIT) \par
+- <a href="javascript:sendit();">\'bf\'a1\'bc\'ad javascript \'bb\'fd\'b7\'ab \'ba\'d2\'b0\'a1\'b4\'c9.\par
+ \par
+1. Anchor \'c5\'c2\'b1\'d7\'bf\'a1\'bc\'ad click \'c0\'cc\'ba\'a5\'c6\'ae\'b8\'a6 \'b9\'de\'b4\'c2 \'bc\'d2\'bd\'ba\par
+ \par
+>>>>> /WebContent/event/click.html\par
+----------------------------------------------------------------------\par
+<!DOCTYPE html>\par
+<html>\par
+<head>\par
+<meta charset="utf-8">\par
+<title>Insert title here</title>\par
+<style type="text/css"> \par
+*\{ \par
+  font-family: gulim; \par
+  font-size: 22px; \par
+\} \par
+</style>\par
+ \par
+<script type="text/javascript">\par
+function sendit()\{\par
+  /*\par
+  document: \'ba\'ea\'b7\'af\'bf\'ec\'c0\'fa\'bf\'a1 \'c3\'e2\'b7\'c2\'b5\'c8 \'b9\'ae\'bc\'ad\'b8\'a6 \'b3\'aa\'c5\'b8\'b3\'bb\'b4\'c2 \'b0\'b4\'c3\'bc, \'b9\'ae\'bc\'ad \'c0\'fc\'c3\'bc \'c1\'a2\'b1\'d9\par
+  regiform: \'c6\'fb \'b0\'b4\'c3\'bc\par
+  url: INPUT\'b0\'fc\'b7\'c3 \'b0\'b4\'c3\'bc\par
+  value: INPUT\'b0\'fc\'b7\'c3 \'b0\'b4\'c3\'bc\'c0\'c7 \'bc\'d3\'bc\'ba\par
+  */\par
+  // str = document.frm.url.value;\par
+  str = document.getElementById("url").value;\par
+  alert(str);\par
+   \par
+  if(str == "" ) \{\par
+    alert("\'c1\'d6\'bc\'d2\'b8\'a6 \'c0\'d4\'b7\'c2\'c7\'d8 \'c1\'d6\'bc\'bc\'bf\'e4");\par
+    document.regiform.url.focus(); // \'b8\'b6\'bf\'ec\'bd\'ba \'c4\'bf\'bc\'ad \'c0\'cc\'b5\'bf \'bf\'b9) \'c0\'fc\'c8\'ad\'b9\'f8\'c8\'a3 \'c0\'d4\'b7\'c2: 000 0000 0000\par
+  \}else\{\par
+    location.href = str;     // location \'b0\'b4\'c3\'bc: \'c1\'d6\'bc\'d2 \'b0\'fc\'b7\'c3 \'b0\'b4\'c3\'bc, href: \'c1\'d6\'bc\'d2 \'b0\'aa, \'c0\'cc\'b5\'bf\par
+  \}\par
+\}\par
+</script>\par
+ \par
+</head>\par
+<body>\par
+  <form name="frm" method="post">\par
+    <!-- id  : \'c5\'c2\'b1\'d7 \'b0\'cb\'bb\'f6\'bd\'c3 \'c0\'da\'b9\'d9 \'bd\'ba\'c5\'a9\'b8\'b3\'c6\'ae\'b0\'a1 \'bb\'e7\'bf\'eb, document.getElementById('url');\par
+         name: request.getParameter("url") -->\par
+    <INPUT type="text" id="url" name="url" size="50">\par
+    <A href="javascript: sendit();">\'c1\'d6\'bc\'d2 \'c0\'cc\'b5\'bf</a>\par
+  </form> \par
+</body>\par
+</html>\par
+\par
+----------------------------------------------------------------------\par
+\par
+ \par
+\par
+\par
+>>> Upgrade: [\'c1\'d6\'bc\'d2 \'c0\'cc\'b5\'bf] \'b9\'f6\'c6\'b0\'c0\'bb \'c3\'df\'b0\'a1\'c7\'cf\'bf\'a9 \'c1\'d6\'bc\'d2 \'c0\'cc\'b5\'bf\'c0\'bb \'c7\'cf\'b4\'c2 \'b1\'e2\'b4\'c9\'c0\'bb \'b1\'b8\'c7\'f6\'c7\'cf\'bc\'bc\'bf\'e4.\par
+\par
+\par
+\par
+\par
+>>> Upgrade: 'http://' \'c0\'cc \'b9\'ae\'c0\'da\'bf\'ad\'c0\'cc \'be\'f8\'c0\'b8\'b8\'e9 \'c1\'d6\'bc\'d2 \'c0\'cc\'b5\'bf\'c0\'cc \'be\'c8\'b5\'ca\'c0\'b8\'b7\'ce, \'c0\'d4\'b7\'c2\'c0\'cc \'be\'f8\'c0\'bb\'bd\'c3 \'c0\'da\'b5\'bf\'c0\'b8\'b7\'ce \'c1\'d6\'bc\'d2\'b0\'a1\par
+      \'c3\'df\'b0\'a1\'b5\'c7\'b5\'b5\'b7\'ce \'c7\'d8\'c1\'d6\'bc\'bc\'bf\'e4\par
+\par
+>>> Upgrade:  \'b9\'cc\'b8\'ae \'b9\'f6\'c6\'b0\'bf\'a1 [DAUM], [\'b1\'e2\'bb\'f3\'c3\'bb], [\'b1\'b3\'ba\'b8\'b9\'ae\'b0\'ed]\'b8\'a6 \'c1\'d8\'ba\'f1\'c7\'cf\'bf\'a9 \'c5\'ac\'b8\'af\'bd\'c3 \'c1\'d6\'bc\'d2\'b0\'a1 \'c0\'da\'b5\'bf\'c0\'b8\'b7\'ce\par
+       \'c0\'d4\'b7\'c2\'c3\'a2\'bf\'a1  \'c7\'d2\'b4\'e7 \'b5\'c7\'b5\'b5\'b7\'cf \'c7\'d8\'c1\'d6\'bc\'bc\'bf\'e4.\par
+\par
+\par
+\par
+ \par
+ \par
+2. \'c0\'d4\'b7\'c2\'b0\'aa\'c0\'bb \'b0\'cb\'bb\'e7\'c7\'cf\'b4\'c2 \'b1\'e2\'ba\'bb \'c0\'da\'b9\'d9 \'bd\'ba\'c5\'a9\'b8\'b3\'c6\'ae\par
+   - button \'c5\'c2\'b1\'d7\'b4\'c2 \'c7\'d7\'bb\'f3 \'c0\'da\'b9\'d9\'bd\'ba\'c5\'a9\'b8\'b3\'c6\'ae \'c7\'d4\'bc\'f6\'bf\'cd \'b0\'b0\'c0\'cc \'bb\'e7\'bf\'eb\'b5\'cb\'b4\'cf\'b4\'d9.\par
+   - onClick='check(this.form)': this.form\'c0\'ba \'c6\'fb \'c5\'c2\'b1\'d7\'b8\'a6 \'b8\'bb\'c7\'d5\'b4\'cf\'b4\'d9.\par
+ \par
+>>> /event/input.html\par
+----------------------------------------------------------------------\par
+<!DOCTYPE html>\par
+<html>\par
+<head>\par
+<meta charset="UTF-8">\par
+<title>Insert title here</title>\par
+<style type="text/css"> \par
+*\{ \par
+  font-family: gulim; \par
+  font-size: 22px; \par
+\} \par
+</style>\par
+<Script type="text/javascript">\par
+ \par
+  // \'c6\'fb\'c0\'c7 input\'c5\'c2\'b1\'d7\'b0\'a1 \'c0\'d4\'b7\'c2\'c0\'bb \'b9\'de\'be\'d2\'b4\'c2\'c1\'f6 \'b0\'cb\'bb\'e7\par
+  function check(f)\{\par
+    // this.form --> document.myform --> f\par
+    if (f.wname.value=="" || f.wname.value.length==0)\{\par
+      // window \'b0\'b4\'c3\'bc \'bb\'fd\'b7\'ab \'b0\'a1\'b4\'c9\par
+      window.alert("\'c0\'cc\'b8\'a7\'c0\'bb \'c0\'d4\'b7\'c2\'c7\'d8 \'c1\'d6\'bd\'ca\'bd\'c3\'bf\'c0.");\par
+      f.wname.focus();\par
+    \}else if(f.subject.value.length==0)\{\par
+      window.alert("\'c1\'a6\'b8\'f1\'c0\'bb \'c0\'d4\'b7\'c2\'c7\'d8 \'c1\'d6\'bd\'ca\'bd\'c3\'bf\'c0.");\par
+      f.subject.focus();\par
+    \}else if (f.wcontent.value=="" || f.wcontent.value.length==0)\{\par
+      alert("\'b3\'bb\'bf\'eb\'c0\'bb \'c0\'d4\'b7\'c2\'c7\'d8 \'c1\'d6\'bd\'ca\'bd\'c3\'bf\'c0.");\par
+      f.wcontent.focus();\par
+    \}\par
+    else \{\par
+      // \'b8\'f0\'b5\'e7 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6 \'c0\'d4\'b7\'c2 \'c7\'d1 \'b0\'e6\'bf\'ec \'bc\'ad\'b9\'f6\'b7\'ce \'c0\'fc\'bc\'db\par
+      alert("\'b5\'a5\'c0\'cc\'c5\'cd \'c1\'a4\'bb\'f3 \'c0\'d4\'b7\'c2, \'b0\'e8\'bc\'d3 \'c1\'f8\'c7\'e0\'c7\'d5\'b4\'cf\'b4\'d9.");\par
+      f.submit();\par
+    \}\par
+  \}\par
+</Script>\par
+</head>\par
+ \par
+<body>\par
+<!-- \'b5\'a5\'c0\'cc\'c5\'cd \'c0\'d4\'b7\'c2 \'c7\'fc\'bd\'c4 \'c1\'a6\'b0\'f8 -->\par
+<form method='post' action='' name='myform'>\par
+    <table width="70%" border="0" align="center">\par
+      <tr> \par
+        <td height="22" colspan="2" align="center">\'b9\'e6 \'b8\'ed \'b7\'cf</td>\par
+      </tr>\par
+      <tr> \par
+        <td width="20%" height="23">\'c0\'cc\'b8\'a7</td>\par
+        <td width="80%">\par
+            <input type="text" name="wname"> <!-- \'c7\'d1\'c1\'d9 \'c0\'d4\'b7\'c2 -->\par
+        </td>\par
+      </tr>\par
+      <tr> \par
+        <td>\'c1\'a6\'b8\'f1</td>\par
+        <td><input type="text" name="subject" size=50></td>\par
+      </tr>\par
+      <tr> \par
+        <td>\'b3\'bb\'bf\'eb</td>\par
+        <td>\par
+            <!-- \'bf\'a9\'b7\'af\'c1\'d9 \'c0\'d4\'b7\'c2 -->\par
+            <textarea name="wcontent" rows='8' cols='54' ></textarea>\par
+            </td>\par
+      </tr>\par
+      <tr align="center" valign="middle"> \par
+        <td colspan="2">\par
+            <!-- \'be\'c6\'b9\'ab\'b7\'b1 \'c0\'db\'b5\'bf\'c0\'bb \'be\'c8\'c7\'cf\'b4\'c2 \'c4\'da\'b5\'e5, Button\'c0\'ba onclick\'c0\'cc\'ba\'a5\'c6\'ae\'b8\'a6 \'bc\'b1\'be\'f0\'c7\'d8\'be\'df\'c7\'d4.  \par
+            <input type="button" name="Submit" value="\'c0\'fa\'c0\'e5">\par
+             -->\par
+            <input type="button" value="\'c0\'fa\'c0\'e5" onclick='check(this.form)'>\par
+          </td>\par
+      </tr>\par
+    </table>\par
+</form>\par
+</body>\par
+</html>\par
+ \par
+ \par
+----------------------------------------------------------------------\par
+ \par
+ \par
+ \par
+3. SUBMIT \'b9\'f6\'c6\'b0\'c0\'c7 \'bb\'e7\'bf\'eb\par
+   - reset: \'c5\'c2\'b1\'d7\'c0\'c7 \'b1\'e2\'ba\'bb \'b0\'aa\'c0\'b8\'b7\'ce \'b5\'b9\'be\'c6\'b0\'a8.\par
+   - submit: \'bc\'ad\'b9\'f6\'b7\'ce \'c6\'fb\'c0\'c7 \'b3\'bb\'bf\'eb\'c0\'bb \'c0\'fc\'bc\'db\'c7\'d4.\par
+   - onsubmit: submit \'b9\'f6\'c6\'b0\'c0\'cc \'c0\'db\'b5\'bf\'b5\'c7\'b8\'e9 \'c0\'da\'b5\'bf\'c0\'b8\'b7\'ce \'c8\'a3\'c3\'e2\'b5\'ca.\par
+    \par
+>>> /event/input2.html \par
+----------------------------------------------------------------------\par
+<!DOCTYPE html>\par
+<html>\par
+<head>\par
+<meta charset="UTF-8">\par
+<title>Insert title here</title>\par
+<style type="text/css">\par
+* \{\par
+font-family: gulim;\par
+font-size: 22px;\par
+\}\par
+</style>\par
+<Script type="text/javascript">\par
+// \'c6\'fb\'c0\'c7 input\'c5\'c2\'b1\'d7\'b0\'a1 \'c0\'d4\'b7\'c2\'c0\'bb \'b9\'de\'be\'d2\'b4\'c2\'c1\'f6 \'b0\'cb\'bb\'e7\par
+function check(f) \{\par
+// f = document.myform\par
+if (f.wname.value == "" || f.wname.value.length == 0) \{\par
+window.alert("\'c0\'cc\'b8\'a7\'c0\'bb \'c0\'d4\'b7\'c2\'c7\'d8 \'c1\'d6\'bd\'ca\'bd\'c3\'bf\'c0.");\par
+f.wname.focus();\par
+return false;\par
+\} else if (f.subject.value.length == 0) \{\par
+window.alert("\'c1\'a6\'b8\'f1\'c0\'bb \'c0\'d4\'b7\'c2\'c7\'d8 \'c1\'d6\'bd\'ca\'bd\'c3\'bf\'c0.");\par
+f.subject.focus();\par
+return false;\par
+\} else if (f.wcontent.value == "" || f.wcontent.value.length == 0) \{\par
+alert("\'b3\'bb\'bf\'eb\'c0\'bb \'c0\'d4\'b7\'c2\'c7\'d8 \'c1\'d6\'bd\'ca\'bd\'c3\'bf\'c0.");\par
+f.wcontent.focus();\par
+return false;\par
+\} else \{\par
+return true;\par
+\}\par
+\}\par
+</Script>\par
+</head>\par
+ \par
+<body>\par
+<!-- this\'b4\'c2 \'c0\'da\'b9\'d9\'bd\'ba\'c5\'a9\'b8\'b3\'c6\'ae \'c7\'d4\'bc\'f6\'b0\'a1 \'c0\'a7\'c4\'a1\'c7\'d1 \'c5\'c2\'b1\'d7\'b7\'ce \'bf\'a9\'b1\'e2\'bc\'ad\'b4\'c2 this\'b4\'c2 form \'c5\'c2\'b1\'d7\'c0\'d3,\par
+       return true: submit \'c1\'f8\'c7\'e0, return false: submit \'c1\'f8\'c7\'e0 \'be\'c8\'c7\'d4, \par
+   -->\par
+ \par
+<form method='post' action='write_f.jsp' name='myform'\par
+onsubmit="return check(this);">\par
+<table width="63%" border="0" align="center">\par
+<tr>\par
+<td height="22" colspan="2">\'b9\'e6 \'b8\'ed \'b7\'cf</td>\par
+</tr>\par
+<tr>\par
+<td width="15%" height="23">\'c0\'cc\'b8\'a7</td>\par
+<td width="85%"><input type="text" name="wname"></td>\par
+</tr>\par
+<tr>\par
+<td>\'c1\'a6\'b8\'f1</td>\par
+<td><input type="text" name="subject" size=50></td>\par
+</tr>\par
+<tr>\par
+<td>\'b3\'bb\'bf\'eb</td>\par
+<td><textarea name="wcontent" cols=54 rows=8></textarea></td>\par
+</tr>\par
+<tr align="center" valign="middle">\par
+<td colspan="2">\par
+<!-- submit \'b9\'f6\'c6\'b0\'c0\'ba onclick \'c0\'cc\'ba\'a5\'c6\'ae\'b8\'a6 \'b0\'a1\'c1\'f6\'b0\'ed \'c0\'d6\'be\'ee\'bc\'ad \'ba\'b0\'b4\'d9\'b8\'a5 \'bc\'b1\'be\'f0\'c0\'cc \'c7\'ca\'bf\'e4 \'be\'f8\'c0\'bd --> <input\par
+type="submit" value="\'c0\'fa\'c0\'e5"> <input type="reset" value="\'b4\'d9\'bd\'c3\'be\'b2\'b1\'e2">\par
+</td>\par
+</tr>\par
+</table>\par
+</form>\par
+</body>\par
+</html>\par
+ \par
+----------------------------------------------------------------------\par
+ \par
+ \par
+ \par
+>>> /event/input3.html\par
+- image\'c5\'c2\'b1\'d7\'b4\'c2 submit \'c5\'c2\'b1\'d7\'bf\'cd \'b0\'b0\'c0\'ba \'b1\'e2\'b4\'c9\'c0\'bb\'c7\'cf\'b3\'aa \'b9\'f6\'c6\'b0 \'c0\'cc\'b9\'cc\'c1\'f6\'b8\'a6 \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'c0\'d6\'c0\'bd.\par
+ \par
+----------------------------------------------------------------------\par
+<!DOCTYPE html>\par
+<html>\par
+<head>\par
+<meta charset="UTF-8">\par
+<title>Insert title here</title>\par
+<style type="text/css">\par
+* \{\par
+font-family: gulim;\par
+font-size: 22px;\par
+\}\par
+</style>\par
+<Script type="text/javascript">\par
+ \par
+  // \'c6\'fb\'c0\'c7 input\'c5\'c2\'b1\'d7\'b0\'a1 \'c0\'d4\'b7\'c2\'c0\'bb \'b9\'de\'be\'d2\'b4\'c2\'c1\'f6 \'b0\'cb\'bb\'e7\par
+  function check(f)\{\par
+    // f = document.myform\par
+    if (f.wname.value=="" || f.wname.value.length==0)\{\par
+        window.alert("\'c0\'cc\'b8\'a7\'c0\'bb \'c0\'d4\'b7\'c2\'c7\'d8 \'c1\'d6\'bd\'ca\'bd\'c3\'bf\'c0.");\par
+        f.wname.focus();\par
+        return false;\par
+    \}else if(f.subject.value.length==0)\{\par
+        window.alert("\'c1\'a6\'b8\'f1\'c0\'bb \'c0\'d4\'b7\'c2\'c7\'d8 \'c1\'d6\'bd\'ca\'bd\'c3\'bf\'c0.");\par
+        f.subject.focus();\par
+        return false;\par
+    \}\par
+    else if (f.wcontent.value=="" || f.wcontent.value.length==0)\{\par
+        alert("\'b3\'bb\'bf\'eb\'c0\'bb \'c0\'d4\'b7\'c2\'c7\'d8 \'c1\'d6\'bd\'ca\'bd\'c3\'bf\'c0.");\par
+        f.wcontent.focus();\par
+        return false;\par
+    \}\par
+    else \{\par
+        return true;\par
+    \}\par
+  \}\par
+</Script>\par
+</head>\par
+ \par
+<body>\par
+<!-- return false: submit \'c1\'f8\'c7\'e0 \'be\'c8\'c7\'d4, \par
+    return true: submit \'c1\'f8\'c7\'e0-->\par
+<form method='post' action='write_f.jsp' name='frm' onsubmit="return check(this);">\par
+<table width="70%" border="0" align="center">\par
+<tr>\par
+<td height="22" colspan="2">\'b9\'e6 \'b8\'ed \'b7\'cf</td>\par
+</tr>\par
+<tr>\par
+<td width="20%" height="23">\'c0\'cc\'b8\'a7</td>\par
+<td width="80%"><input type="text" name="wname"></td>\par
+</tr>\par
+<tr>\par
+<td>\'c1\'a6\'b8\'f1</td>\par
+<td><input type="text" name="subject" size=50></td>\par
+</tr>\par
+<tr>\par
+<td>\'b3\'bb\'bf\'eb</td>\par
+<td><textarea name="wcontent" cols=54 rows=8></textarea></td>\par
+</tr>\par
+<tr align="center" valign="middle">\par
+<td colspan="2">\par
+<!-- Image\'c5\'c2\'b1\'d7\'b4\'c2 Submit \'b1\'e2\'b4\'c9\'c0\'bb \'b0\'a1\'c1\'f6\'b0\'ed \'c0\'d6\'c0\'bd, Submit \'b9\'f6\'c6\'b0\'b0\'fa \'b8\'c5\'bf\'ec \'c0\'af\'bb\'e7  --> \par
+<input type="image" src="./images/disks.png">\par
+</td>\par
+</tr>\par
+</table>\par
+</form>\par
+</body>\par
+</html>\par
+ \par
+----------------------------------------------------------------------\par
+ \par
+ \par
+ \par
+>>> /event/input4.html\par
+ \par
+----------------------------------------------------------------------\par
+<!DOCTYPE html>\par
+<html>\par
+<head>\par
+<meta charset="UTF-8">\par
+<title>Insert title here</title>\par
+<style type="text/css"> \par
+*\{ \par
+  font-family: gulim; \par
+  font-size: 22px; \par
+\} \par
+</style>\par
+<Script type="text/javascript">\par
+ \par
+// \'c6\'fb\'c0\'c7 input\'c5\'c2\'b1\'d7\'b0\'a1 \'c0\'d4\'b7\'c2\'c0\'bb \'b9\'de\'be\'d2\'b4\'c2\'c1\'f6 \'b0\'cb\'bb\'e7\par
+function check(f)\{\par
+    // f = document.myform\par
+    if (f.wname.value=="" || f.wname.value.length==0)\{\par
+        window.alert("\'c0\'cc\'b8\'a7\'c0\'bb \'c0\'d4\'b7\'c2\'c7\'d8 \'c1\'d6\'bd\'ca\'bd\'c3\'bf\'c0.");\par
+        f.wname.focus();\par
+    \}else if(f.subject.value.length==0)\{\par
+        window.alert("\'c1\'a6\'b8\'f1\'c0\'bb \'c0\'d4\'b7\'c2\'c7\'d8 \'c1\'d6\'bd\'ca\'bd\'c3\'bf\'c0.");\par
+        f.subject.focus();\par
+    \}\par
+    else if (f.wcontent.value=="" || f.wcontent.value.length==0)\{\par
+        alert("\'b3\'bb\'bf\'eb\'c0\'bb \'c0\'d4\'b7\'c2\'c7\'d8 \'c1\'d6\'bd\'ca\'bd\'c3\'bf\'c0.");\par
+        f.wcontent.focus();\par
+    \}\par
+    else \{\par
+            f.submit();\par
+    \}\par
+\}\par
+</Script>\par
+</head>\par
+ \par
+<body>\par
+<!-- return false: submit \'c1\'f8\'c7\'e0 \'be\'c8\'c7\'d4, \par
+    return true: submit \'c1\'f8\'c7\'e0-->\par
+<form method='post' action='write_f.jsp' name='frm'>\par
+    <table width="63%" border="0" align="center">\par
+      <tr> \par
+        <td height="22" colspan="2">\'b9\'e6 \'b8\'ed \'b7\'cf</td>\par
+      </tr>\par
+      <tr> \par
+        <td width="15%" height="23">\'c0\'cc\'b8\'a7</td>\par
+        <td width="85%"><input type="text" name="wname"></td>\par
+      </tr>\par
+      <tr> \par
+        <td>\'c1\'a6\'b8\'f1</td>\par
+        <td><input type="text" name="subject" size=50></td>\par
+      </tr>\par
+      <tr> \par
+        <td>\'b3\'bb\'bf\'eb</td>\par
+        <td><textarea name="wcontent" cols=54 rows=8></textarea></td>\par
+      </tr>\par
+      <tr align="center" valign="middle"> \par
+        <td colspan="2">\par
+            <!-- A\'c5\'c2\'b1\'d7\'b4\'c2 Form \'c5\'c2\'b1\'d7\'b0\'a1 \'be\'c6\'b4\'d4\'c0\'b8\'b7\'ce this\'b8\'a6 \'bb\'e7\'bf\'eb\'b8\'f8\'c7\'d4. \'b5\'fb\'b6\'f3\'bc\'ad\par
+                  \'c6\'fb\'c0\'bb \'c0\'fc\'b4\'de\'bd\'c3 \'c6\'fb\'c0\'c7 \'c0\'cc\'b8\'a7\'c0\'bb \'c1\'f7\'c1\'a2 \'b8\'ed\'bd\'c3\'c7\'d2\'b0\'cd. -->\par
+            <a href="javascript:check(frm)">\par
+              <img src = "./images/disks.png" border='0'>\par
+            </a>\par
+          </td>\par
+      </tr>\par
+    </table>\par
+</form>\par
+</body>\par
+</html>\par
+ \par
+----------------------------------------------------------------------\par
+ \par
+ \par
+\par
+ \par
+[\'b0\'fa\'c1\'a6 1] Input \'c5\'c2\'b1\'d7\'bf\'a1\'bc\'ad \'c7\'e0\'c0\'c7 \'bc\'f6\'bf\'cd \'bf\'ad\'c0\'c7 \'bc\'f6\'b8\'a6 \'c0\'d4\'b7\'c2\'b9\'de\'be\'c6 \'c0\'da\'b9\'d9\'bd\'ba\'c5\'a9\'b8\'b3\'c6\'ae\'b7\'ce \par
+         \'c5\'d7\'c0\'cc\'ba\'ed\'c0\'bb \'bb\'fd\'bc\'ba\'c7\'cf\'b4\'c2 \'bf\'b9\'c1\'a6\'b8\'a6 \'c0\'db\'bc\'ba\'c7\'cf\'bc\'bc\'bf\'e4. \par
+         \'c0\'d4\'b7\'c2\'b5\'c7\'b4\'c2 \'b0\'aa\'c0\'ba \'bc\'f6\'b8\'b8 \'c0\'d4\'b7\'c2\'b0\'a1\'b4\'c9\'c7\'cf\'b8\'e7, \'b9\'ae\'c0\'da\'bf\'ad \'c0\'d4\'b7\'c2\'bd\'c3\par
+         \'bf\'a1\'b7\'af \'b8\'de\'bd\'c3\'c1\'f6\'b8\'a6 \'c3\'e2\'b7\'c2\'c7\'cf\'bc\'bc\'bf\'e4. \'c0\'d4\'b7\'c2 \'b0\'a1\'b4\'c9 \'b0\'aa\'c0\'c7 \'b9\'fc\'c0\'a7\'b4\'c2 3 ~ 10 \'b8\'b8 \'b0\'a1\'b4\'c9\'c7\'cf\'b8\'e7\par
+         \'c0\'cc \'b0\'aa\'c0\'c7 \'b9\'fc\'c0\'a7\'b8\'a6 \'b9\'fe\'be\'ee\'b3\'aa\'b8\'e9 \'bf\'aa\'bd\'c3 \'bf\'a1\'b7\'af\'b8\'de\'bc\'bc\'c1\'f6\'b8\'a6 \'c3\'e2\'b7\'c2\'c7\'cf\'bc\'bc\'bf\'e4.\par
+ \par
+         \'c1\'b6\'b0\'c7: 1) \'bc\'fd\'c0\'da \'c0\'d4\'b7\'c2 \'bf\'a9\'ba\'ce \'b0\'cb\'bb\'e7, 2) \'c0\'d4\'b7\'c2\'b5\'c7\'b4\'c2 \'bc\'f6\'c0\'c7 \'b9\'fc\'c0\'a7 \'b0\'cb\'bb\'e7\par
+         \'c8\'f9\'c6\'ae: \'c7\'d4\'bc\'f6 \'be\'c8\'bf\'a1\'bc\'ad \'b4\'d9\'b8\'a5 \'c7\'d4\'bc\'f6\'b8\'a6 \'c8\'a3\'c3\'e2\'c7\'d2 \'bc\'f6 \'c0\'d6\'bd\'c0\'b4\'cf\'b4\'d9. \par
+ \par
+ \par
+>>> /event/funexam01.html\par
+----------------------------------------------------------------------\par
+<!DOCTYPE html>\par
+<html>\par
+<head>\par
+<meta charset="UTF-8">\par
+<title>Insert title here</title>\par
+<style type="text/css">\par
+* \{\par
+font-family: gulim;\par
+font-size: 22px;\par
+\}\par
+</style>\par
+<SCRIPT LANGUAGE="JavaScript">\par
+  function makeTable()\{\par
+     \par
+  \}\par
+</SCRIPT>\par
+</HEAD>\par
+ \par
+<BODY>\par
+<FORM>\par
+\'c7\'e0\'c0\'c7\'bc\'f6: <Input type="text" name="row" id="row" value="5" size="20"><br>\par
+\'bf\'ad\'c0\'c7\'bc\'f6: <Input type="text" name="col" id="col" value="5" size="20"><br>\par
+</FORM>\par
+ \par
+<DIV id='panel'></DIV>\par
+ \par
+</BODY>\par
+</HTML>\par
+}
+ 

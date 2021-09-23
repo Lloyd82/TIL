@@ -1,0 +1,578 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset129 \'b8\'bc\'c0\'ba \'b0\'ed\'b5\'f1;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs24\lang18 1. \'b0\'b4\'c3\'bc\par
+- \'c0\'da\'b9\'d9\'bd\'ba\'c5\'a9\'b8\'b3\'c6\'ae\'bf\'a1\'bc\'ad\'b4\'c2 \'b0\'c5\'c0\'c7 \'b8\'f0\'b5\'e7\'b0\'cd\'c0\'cc \'b0\'b4\'c3\'bc\'c0\'cc\'b4\'d9.\par
+- \'b9\'e8\'bf\'ad\'b5\'b5 \'b0\'b4\'c3\'bc\'c0\'c7 \'c5\'b8\'c0\'d4\'c0\'b8\'b7\'ce \'c0\'ce\'bd\'c4\'c7\'d2 \'b8\'b8\'c5\'ad \'b0\'b4\'c3\'bc\'bf\'cd \'c0\'af\'bb\'e7\'c7\'cf\'b4\'d9.\par
+- \'b4\'d9\'b8\'a5\'c1\'a1\'c0\'cc \'c0\'d6\'b4\'d9\'b8\'e9 \'b9\'e8\'bf\'ad\'c0\'ba \'c0\'ce\'b5\'a6\'bd\'ba\'bf\'cd \'bf\'e4\'bc\'d2\'b0\'a1 \'c0\'d6\'b0\'ed, \'b0\'b4\'c3\'bc\'b4\'c2 \'c0\'cc\'b8\'a7\'b0\'fa \'b0\'aa\'c0\'cc \'c0\'d6\'b4\'d9.\par
+- \'c0\'cc\'b8\'a7\'c0\'c7 \'c5\'b0\'b8\'a6 \'bb\'e7\'bf\'eb\'c7\'cf\'bf\'a9 \'b0\'b4\'c3\'bc\'c0\'c7 \'b0\'aa\'bf\'a1 \'c1\'a2\'b1\'d9\'c7\'d1\'b4\'d9.\par
+- \'b0\'b4\'c3\'bc\'b4\'c2 \'b9\'e8\'bf\'ad\'c3\'b3\'b7\'b3 \'c7\'cf\'b3\'aa \'c0\'cc\'bb\'f3\'c0\'c7 \'b0\'aa\'c0\'bb \'b0\'a1\'c1\'fa \'bc\'f6 \'c0\'d6\'bd\'c0\'b4\'cf\'b4\'d9.\par
+\par
+(1) \'b0\'b4\'c3\'bc\'b0\'aa \'c1\'a2\'b1\'d9\par
+\par
+<!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Document</title>\par
+</head>\par
+<body>\par
+ \par
+<p>Creating a JavaScript Object.</p>\par
+ \par
+<p id="demo"></p>\par
+ \par
+<script>\par
+let person = \{\par
+    firstName : "John",\par
+    lastName  : "Doe",\par
+    age       : 50,\par
+    eyeColor  : "blue"\par
+\};\par
+ \par
+    document.getElementById('demo').innerHTML = \par
+    // `$\{person.firstName\} is $\{person.age\}  years old.`;\par
+    `$\{person['firstName']\} is $\{person['age']\} years old`;\par
+</script>\par
+ \par
+</body>\par
+</html>\par
+\par
+\par
+(2) \'b0\'b4\'c3\'bc\'c0\'c7 \'b9\'dd\'ba\'b9\'b9\'ae for ( key in obj)\par
+\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Document</title>\par
+</head>\par
+<body>\par
+<p>Creating a JavaScript Object.</p>\par
+ \par
+<p id="demo"></p>\par
+\par
+<script>\par
+        // \'ba\'af\'bc\'f6\'b8\'a6 \'bc\'b1\'be\'f0\'c7\'d5\'b4\'cf\'b4\'d9.\par
+       let person = \{\par
+           firstName : "John",\par
+           lastName  : "Doe",\par
+           age       : 50,\par
+           eyeColor  : "blue"\par
+        \};\par
+ \par
+    let output = '';\par
+    for (let key in person)\{\par
+        output += `\'a1\'dc $\{key\} : $\{person[key]\} <br>`;\par
+        //output += `\'a1\'dc $\{key\} : $\{person.key\} <br>`; //undifined\par
+    \}\par
+ \par
+    document.getElementById('demo').innerHTML = output;\par
+    </script>\par
+</body>\par
+</html>\par
+----------------------------------------------------------------------------------------------------\par
+(3) in \'c5\'b0\'bf\'f6\'b5\'e5\'bf\'cd with \'c5\'b0\'bf\'f6\'b5\'e5\par
+- in : \'bc\'d3\'bc\'ba\'c0\'cc \'b0\'b4\'c3\'bc\'be\'c8\'bf\'a1 \'c0\'d6\'b4\'c2\'c1\'f6\'b8\'a6 \'c8\'ae\'c0\'ce\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9. \'c1\'b8\'c0\'e7\'c7\'cf\'b8\'e9 true\'b0\'aa\'c0\'bb \'b8\'ae\'c5\'cf\'c7\'d1\'b4\'d9.\par
+- with : \'b0\'b4\'c3\'bc\'c0\'c7 \'bc\'d3\'bc\'ba\'c0\'bb \'c3\'e2\'b7\'c2\'c7\'d2 \'b6\'a7 \'bf\'a9\'b7\'af\'b9\'f8 \'bb\'e7\'bf\'eb\'b5\'c7\'b4\'c2 \'b0\'b4\'c3\'bc\'b8\'ed\'c0\'bb \'c1\'d9\'bf\'a9\'c1\'d8\'b4\'d9.\par
+\par
+\par
+<!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Document</title>\par
+    <script>\par
+        let output = ''\par
+        let student = \{\par
+             \'c0\'cc\'b8\'a7 :'\'bf\'ac\'c7\'cf\'c1\'f8',\par
+             \'b1\'b9\'be\'ee : 92, \par
+             \'bc\'f6\'c7\'d0 : 98,\par
+             \'bf\'b5\'be\'ee : 96,\par
+             \'b0\'fa\'c7\'d0 : 98\par
+        \};\par
+ \par
+        output += `\'c0\'cc\'b8\'a7 in student ($\{'\'c0\'cc\'b8\'a7' in student\}) \\n`;\par
+        output += `\'bc\'ba\'ba\'b0 in student ($\{'\'bc\'ba\'ba\'b0' in student\}) `;\par
+        console.log(output);\par
+    </script>\par
+</head>\par
+<body>\par
+ \par
+</body>\par
+</html>\par
+\par
+--------------------------------------------------------------------------------------------------------------\par
+ \par
+<!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Document</title>\par
+    <script>\par
+        let student = \{\par
+             \'c0\'cc\'b8\'a7 :'\'bf\'ac\'c7\'cf\'c1\'f8',\par
+             \'b1\'b9\'be\'ee : 92, \par
+             \'bc\'f6\'c7\'d0 : 98,\par
+             \'bf\'b5\'be\'ee : 96,\par
+             \'b0\'fa\'c7\'d0 : 98\par
+        \};\par
+ \par
+       //with \'bb\'e7\'bf\'eb\'be\'c8\'c7\'d1 \'b0\'e6\'bf\'ec \'c3\'e2\'b7\'c2\par
+        let output2 = '';\par
+        output2 += `\'c0\'cc\'b8\'a7: $\{student.\'c0\'cc\'b8\'a7\} \\n`;\par
+        output2 += `\'b1\'b9\'be\'ee: $\{student.\'b1\'b9\'be\'ee\} \\n`;\par
+        output2 += `\'bc\'f6\'c7\'d0: $\{student.\'bc\'f6\'c7\'d0\} \\n`;\par
+        output2 += `\'bf\'b5\'be\'ee: $\{student.\'bf\'b5\'be\'ee\} \\n`;\par
+        output2 += `\'b0\'fa\'c7\'d0: $\{student.\'b0\'fa\'c7\'d0\} \\n`;\par
+        output2 += `\'c3\'d1\'c1\'a1: $\{(student.\'b1\'b9\'be\'ee + student.\'bc\'f6\'c7\'d0 + student.\'bf\'b5\'be\'ee + student.\'b0\'fa\'c7\'d0)\} \\n`;\par
+        \par
+        console.log(output2);\par
+ \par
+    </script>\par
+</head>\par
+<body>\par
+ \par
+</body>\par
+</html>\par
+ \par
+---------------------------------------------------------------------------------------------------------------\par
+\par
+<!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Document</title>\par
+    <script>\par
+        let student = \{\par
+             \'c0\'cc\'b8\'a7 :'\'bf\'ac\'c7\'cf\'c1\'f8',\par
+             \'b1\'b9\'be\'ee : 92, \par
+             \'bc\'f6\'c7\'d0 : 98,\par
+             \'bf\'b5\'be\'ee : 96,\par
+             \'b0\'fa\'c7\'d0 : 98\par
+        \};\par
+ \par
+      let output3 = '';\par
+        with(student)\{\par
+            output3 += `\'c0\'cc\'b8\'a7: $\{\'c0\'cc\'b8\'a7\} \\n`;\par
+            output3 += `\'b1\'b9\'be\'ee: $\{\'b1\'b9\'be\'ee\} \\n`;\par
+            output3 += `\'bc\'f6\'c7\'d0: $\{\'bc\'f6\'c7\'d0\} \\n`;\par
+            output3 += `\'bf\'b5\'be\'ee: $\{\'bf\'b5\'be\'ee\} \\n`;\par
+            output3 += `\'b0\'fa\'c7\'d0: $\{\'b0\'fa\'c7\'d0\} \\n`;\par
+            output3 += `\'c3\'d1\'c1\'a1: $\{(\'b1\'b9\'be\'ee + \'bc\'f6\'c7\'d0 + \'bf\'b5\'be\'ee + \'b0\'fa\'c7\'d0)\} \\n`;\par
+        \}\par
+        console.log(output3)\par
+\par
+</head>\par
+</body>\par
+</html>\par
+ \par
+-------------------------------------------------------------------------------------------------------------------\par
+ \par
+(4) push \'c7\'d4\'bc\'f6\'b8\'a6 \'bb\'e7\'bf\'eb\'c7\'cf\'bf\'a9 \'b0\'b4\'c3\'bc \'bb\'fd\'bc\'ba\par
+- \'b9\'e8\'bf\'ad\'be\'c8\'bf\'a1 \'b0\'b4\'c3\'bc\'b8\'a6 \'c7\'cf\'b3\'aa\'be\'bf \'b8\'b8\'b5\'e9\'be\'ee \'b3\'d6\'b4\'c2\'b4\'d9.\par
+- \'bc\'ad\'b7\'ce \'b4\'d9\'b8\'a5 \'c7\'fc\'c5\'c2\'c0\'c7 \'b0\'b4\'c3\'bc\'b8\'a6 \'b9\'e8\'bf\'ad\'bf\'a1 \'b4\'e3\'b4\'c2\'b4\'d9.\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+<head>\par
+    <script>\par
+        let students = [];\par
+        students.push(\{\par
+            \'c0\'cc\'b8\'a7: '\'c8\'ab\'b1\'e6\'b5\'bf', \'b1\'b9\'be\'ee: 87,\par
+            \'bc\'f6\'c7\'d0: 98, \'bf\'b5\'be\'ee: 88, \'b0\'fa\'c7\'d0: 95,\par
+            \'c0\'e5\'b7\'a1\'c8\'f1\'b8\'c1: '\'bb\'fd\'b8\'ed\'b0\'f8\'c7\'d0\'c0\'da'\par
+        \});\par
+        students.push(\{\par
+            \'c0\'cc\'b8\'a7: '\'b1\'e8\'b1\'e6\'bc\'f8', \'b1\'b9\'be\'ee: 92,\par
+            \'bc\'f6\'c7\'d0: 98, \'bf\'b5\'be\'ee: 96, \'b0\'fa\'c7\'d0: 98,\par
+            \'c6\'af\'b1\'e2: '\'bf\'e4\'b8\'ae', \'c3\'eb\'b9\'cc: '\'c0\'cf\'b7\'ba \'b1\'e2\'c5\'b8'\par
+        \});\par
+        students.push(\{\par
+            \'c0\'cc\'b8\'a7: '\'c0\'cc\'b1\'e6\'b5\'bf', \'b1\'b9\'be\'ee: 76,\par
+            \'bc\'f6\'c7\'d0: 96, \'bf\'b5\'be\'ee: 94, \'b0\'fa\'c7\'d0: 90,\par
+            \'c0\'e5\'b7\'a1\'c8\'f1\'b8\'c1: '\'c7\'c1\'b7\'ce\'b1\'d7\'b7\'a1\'b8\'d3'\par
+        \});\par
+\par
+        console.log(students);\par
+     \par
+    </script>\par
+</head>\par
+<body>\par
+ \par
+</body>\par
+</html>\par
+\par
+\par
+(5) \'b0\'b4\'c3\'bc \'ba\'b9\'bb\'e7\par
+>>> index.html\par
+<!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Document</title>\par
+    <script src='object.js'></script>\par
+</head>\par
+<body>\par
+    \par
+</body>\par
+</html>\par
+ \par
+>>> object.js\par
+\par
+const user = \{ name : 'clare', age : 20 \}\par
+const user2 = user;\par
+console.log(user);\par
+user2.name = 'coder';\par
+console.log(user)\par
+ \par
+//\'ba\'b9\'bb\'e71\par
+const user3 = \{\};\par
+for (key in user) \{\par
+    user3[key] = user[key];\par
+\}\par
+console.clear();\par
+console.log(user3)\par
+//\'ba\'b9\'bb\'e7 2  Object.assign(dest, [obj1, obj2, obj3....])\par
+// assign\'c0\'a7\'bf\'a1\'bc\'ad Ctrl + \'c5\'ac\'b8\'af -> assign \'bb\'e7\'bf\'eb\'b9\'fd \'c8\'ae\'c0\'ce\par
+// const user4 = \{\};\par
+// Object.assign(user4, user);\par
+const user4 = Object.assign(\{\}, user)\par
+console.log(user4);\par
+ \par
+const fruit1 = \{color : 'red'\};\par
+const fruit2 = \{color : 'blue', size : 'big'\};\par
+const mixed = Object.assign(\{\}, fruit1, fruit2);//\'b0\'b0\'c0\'ba \'b0\'aa\'c0\'ba \'b5\'da\'bf\'a1\'bc\'ad \'be\'d5\'c0\'b8\'b7\'ce \'b5\'a4\'be\'ee\'be\'b8\par
+console.log(mixed.color);\par
+console.log(mixed.size);\par
+---------------------------------------------------------------------------------------------------\par
+\par
+2. \'bc\'d3\'bc\'ba\'b0\'fa \'b8\'de\'bc\'d2\'b5\'e5\par
+- \'b9\'e8\'bf\'ad \'b3\'bb\'ba\'ce\'bf\'a1 \'c0\'d6\'b4\'c2 \'b0\'aa\'c0\'bb \'bf\'e4\'bc\'d2\'b6\'f3\'b0\'ed \'c7\'cf\'b8\'e7, \'b0\'b4\'c3\'bc \'b3\'bb\'ba\'ce\'c0\'c7 \'b0\'aa\'c0\'bb \'bc\'d3\'bc\'ba\'c0\'cc\'b6\'f3 \'c7\'d1\'b4\'d9.\par
+- \'b0\'b4\'c3\'bc\'c0\'c7 \'bc\'d3\'bc\'ba\'c1\'df \'c0\'da\'b7\'e1\'c0\'c7 \'c3\'b3\'b8\'ae\'c7\'cf\'b4\'c2 \'bc\'d3\'bc\'ba\'c0\'bb \'b8\'de\'bc\'ad\'b5\'e5\'b6\'f3 \'ba\'ce\'b8\'a5\'b4\'d9.\par
+- \'b8\'de\'bc\'d2\'b5\'e5 \'b3\'bb\'bf\'a1\'bc\'ad \'c0\'da\'bd\'c5\'c0\'c7 \'bc\'d3\'bc\'ba\'c0\'bb \'c3\'e2\'b7\'c2\'c7\'cf\'b0\'ed \'bd\'cd\'c0\'bb \'b6\'a7\'b4\'c2 this \'c5\'b0\'bf\'f6\'b5\'e5\'b8\'a6 \'bb\'e7\'bf\'eb\'c7\'d1\'b4\'d9.\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+<head>\par
+    <script>\par
+         let object = \{ //\'bc\'d3\'bc\'ba\'b0\'fa \'b8\'de\'bc\'d2\'b5\'e5 \'bc\'b1\'be\'f0\par
+            number: 273,\par
+            string: 'RintIanTta',\par
+            boolean: true,\par
+            array: [52, 273, 103, 32],\par
+            method: function () \{\par
+ \par
+            \}\par
+        \};\par
+    </script>\par
+</head>\par
+<body>\par
+ \par
+</body>\par
+</html>\par
+\par
+--------------------------------------------------------------------------------------------------------\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+<body>\par
+ \par
+ \par
+<p id="demo"></p>\par
+ \par
+<script>\par
+let person = \{\par
+    firstName: "John",\par
+    lastName : "Doe",\par
+    id       : 5566,\par
+    fullName : function() \{\par
+       return this.firstName + " " + this.lastName;\par
+    \}\par
+\};\par
+ \par
+document.getElementById("demo").innerHTML = person.fullName();\par
+</script>\par
+</body>\par
+</html>\par
+\par
+------------------------------------------------------------------------------------------------\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+<head>\par
+    <script>\par
+        // \'ba\'af\'bc\'f6\'b8\'a6 \'bc\'b1\'be\'f0\'c7\'d5\'b4\'cf\'b4\'d9.\par
+        var person = \{\par
+            name: '\'c8\'ab\'b1\'e6\'b5\'bf',\par
+            eat: function (food) \{\par
+                alert(this.name + '\'c0\'cc ' + food + '\'c0\'bb/\'b8\'a6 \'b8\'d4\'bd\'c0\'b4\'cf\'b4\'d9.');\par
+            \}\par
+        \};\par
+ \par
+        // \'b8\'de\'bc\'ad\'b5\'e5\'b8\'a6 \'c8\'a3\'c3\'e2\'c7\'d5\'b4\'cf\'b4\'d9.\par
+        person.eat('\'b9\'e4');\par
+    </script>\par
+</head>\par
+<body>\par
+ \par
+</body>\par
+</html>\par
+ \par
+\par
+3. \'bb\'fd\'bc\'ba\'c0\'da \'c7\'d4\'bc\'f6\par
+- new \'c5\'b0\'bf\'f6\'b5\'e5\'b7\'ce \'b0\'b4\'c3\'bc\'b8\'a6 \'bb\'fd\'bc\'ba\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'c2 \'c7\'d4\'bc\'f6\'b8\'a6 \'c0\'c7\'b9\'cc\'c7\'d1\'b4\'d9.\par
+- new \'c5\'b0\'bf\'f6\'b5\'e5 \'be\'f8\'c0\'cc \'b0\'b4\'c3\'bc\'b8\'a6 \'bb\'fd\'bc\'ba\'c7\'cf\'b8\'e9 \'bb\'fd\'bc\'ba\'c0\'da \'c7\'d4\'bc\'f6\'b6\'f3 \'c7\'d2 \'bc\'f6 \'be\'f8\'b4\'d9.\par
+- this \'c5\'b0\'bf\'f6\'b5\'e5\'b7\'ce \'b0\'b4\'c3\'bc\'c0\'c7 \'bc\'d3\'bc\'ba\'b0\'fa \'c7\'d4\'bc\'f6\'bf\'a1 \'c1\'a2\'b1\'d9\'c7\'d1\'b4\'d9.\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+<body>\par
+ \par
+<p id="demo"></p>\par
+ \par
+<script>\par
+function person(first, last, age, eye) \{\par
+    this.firstName = first;\par
+    this.lastName = last;\par
+    this.age = age;\par
+    this.eyeColor = eye;\par
+\}\par
+ \par
+var myFather = new person("John", "Doe", 50, "blue");\par
+var myMother = new person("Sally", "Rally", 48, "green");\par
+ \par
+document.getElementById("demo").innerHTML =\par
+"My father is " + myFather.age + ". My mother is " + myMother.age; \par
+</script>\par
+ \par
+</body>\par
+</html>\par
+------------------------------------------------------------------\par
+- \'b0\'b4\'c3\'bc\'bf\'a1 \'bc\'d3\'bc\'ba\'b0\'fa \'c7\'d4\'bc\'f6 \'c3\'df\'b0\'a1\par
+- \'b5\'ce\'b0\'b3\'c0\'c7 \'b0\'b4\'c3\'bc\'b8\'a6 \'bb\'fd\'bc\'ba\'c7\'d2 \'b0\'e6\'bf\'ec \'c7\'cf\'b3\'aa\'c0\'c7 \'b0\'b4\'c3\'bc\'bf\'a1\'b8\'b8 \'c3\'df\'b0\'a1\'b5\'c9 \'bc\'f6\'c0\'d6\'b4\'d9.\par
+  \'be\'c6\'b7\'a1 \'bf\'b9\'c1\'a6\'bf\'a1\'bc\'ad\'b4\'c2 myFather\'b0\'b4\'c3\'bc\'bf\'a1\'b8\'b8 \'c3\'df\'b0\'a1\'b5\'c8\'b4\'d9.\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+<body>\par
+ \par
+<p id="demo"></p>\par
+ \par
+<script>\par
+function Person(first, last, age, eye) \{\par
+    this.firstName = first;\par
+    this.lastName = last;\par
+    this.age = age;\par
+    this.eyeColor = eye;\par
+\}\par
+ \par
+var myFather = new Person("John", "Doe", 50, "blue");\par
+var myMother = new Person("Sally", "Rally", 48, "green");\par
+ \par
+myFather.nationality = "English";\par
+ \par
+document.getElementById("demo").innerHTML =\par
+"My father is " + myFather.nationality; \par
+</script>\par
+ \par
+</body>\par
+</html>\par
+ \par
+-----------------------------------------------------------------\par
+<!DOCTYPE html>\par
+<html>\par
+<body>\par
+ \par
+<p id="demo"></p>\par
+ \par
+<script>\par
+function Person(first, last, age, eye) \{\par
+    this.firstName = first;\par
+    this.lastName = last;\par
+    this.age = age;\par
+    this.eyeColor = eye;\par
+\}\par
+ \par
+var myFather = new Person("John", "Doe", 50, "blue");\par
+var myMother = new Person("Sally", "Rally", 48, "green");\par
+ \par
+myFather.name = function() \{\par
+    return this.firstName + " " + this.lastName;\par
+\};\par
+ \par
+document.getElementById("demo").innerHTML =\par
+"My father is " + myFather.name(); \par
+</script>\par
+ \par
+</body>\par
+</html>\par
+ \par
+\par
+4. \'c7\'c1\'b7\'ce\'c5\'e4 \'c5\'b8\'c0\'d4\par
+- \'c7\'c1\'b7\'ce\'c5\'e4\'c5\'b8\'c0\'d4\'c0\'ba \'bb\'fd\'bc\'ba\'c0\'da\'c7\'d4\'bc\'f6\'b7\'ce \'bb\'fd\'bc\'ba\'b5\'c8 \'b0\'b4\'c3\'bc\'b0\'a1 \'b0\'f8\'c5\'eb\'c0\'b8\'b7\'ce \'b0\'a1\'c1\'f6\'b4\'c2 \'b0\'f8\'b0\'a3\'c0\'cc\'b4\'d9.\par
+- \'c7\'c1\'b7\'ce\'c5\'e4\'c5\'b8\'c0\'d4\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'cf\'c1\'f6 \'be\'ca\'b0\'ed \'b8\'de\'bc\'d2\'b5\'e5\'b8\'a6 \'b8\'b8\'b5\'e9\'b0\'e6\'bf\'ec\'b4\'c2 \'b0\'b4\'c3\'bc\'b0\'a1 \'bb\'fd\'bc\'ba\'b5\'c9\'b6\'a7 \'b8\'b6\'b4\'d9\par
+  \'bc\'d3\'bc\'ba\'b0\'fa \'b5\'bf\'c0\'cf\'c7\'d1 \'c7\'d4\'bc\'f6\'b8\'a6 \'b0\'e8\'bc\'d3 \'b8\'b8\'b5\'e9\'be\'ee \'c0\'da\'b7\'e1\'bc\'f6\'b0\'a1 \'b8\'b9\'be\'c6\'c1\'f6\'b8\'e9 \'be\'b5\'b5\'a5\'be\'f8\'c0\'cc\par
+  \'b8\'de\'b8\'f0\'b8\'ae\'b8\'a6 \'c0\'e2\'be\'c6 \'ba\'f1\'c8\'bf\'c0\'b2\'c0\'cc \'b5\'c8\'b4\'d9.\par
+\par
+- \'c7\'c1\'b7\'ce\'c5\'e4\'c5\'b8\'c0\'d4\'be\'f8\'c0\'cc \'bc\'d3\'bc\'ba \'b9\'d7 \'b8\'de\'bc\'d2\'b5\'e5 \'bb\'fd\'bc\'ba\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+<head>\par
+    <script>\par
+        function Student(name, korean, math, english, science) \{\par
+            // \'bc\'d3\'bc\'ba\par
+            this.\'c0\'cc\'b8\'a7 = name;\par
+            this.\'b1\'b9\'be\'ee = korean;\par
+            this.\'bc\'f6\'c7\'d0 = math;\par
+            this.\'bf\'b5\'be\'ee = english;\par
+            this.\'b0\'fa\'c7\'d0 = science;\par
+ \par
+            // \'b8\'de\'bc\'ad\'b5\'e5\par
+            this.getSum = function () \{\par
+                return this.\'b1\'b9\'be\'ee + this.\'bc\'f6\'c7\'d0 + this.\'bf\'b5\'be\'ee + this.\'b0\'fa\'c7\'d0;\par
+            \};\par
+            this.getAverage = function () \{\par
+                return this.getSum() / 4;\par
+            \};\par
+            this.toString = function () \{\par
+                return this.\'c0\'cc\'b8\'a7 + '\\t' + this.getSum() + '\\t' + this.getAverage();\par
+            \};\par
+        \}\par
+ \par
+        var student = new Student('\'b1\'e8\'b1\'e6\'bc\'f8', 96, 98, 92, 98);\par
+    </script>\par
+</head>\par
+<body>\par
+ \par
+</body>\par
+</html>\par
+ \par
+\par
+- \'c7\'c1\'b7\'ce\'c5\'e4\'c5\'b8\'c0\'d4\'c0\'b8\'b7\'ce \'bc\'d3\'bc\'ba \'b9\'d7 \'b8\'de\'bc\'d2\'b5\'e5 \'bb\'fd\'bc\'ba \par
+\par
+<!DOCTYPE html>\par
+<html>\par
+<body>\par
+ \par
+<p id="demo"></p>\par
+ \par
+<script>\par
+function Person(first, last, age, eye) \{\par
+    this.firstName = first;\par
+    this.lastName = last;\par
+    this.age = age;\par
+    this.eyeColor = eye;\par
+\}\par
+Person.prototype.nationality = "English";\par
+ \par
+var myFather = new Person("John", "Doe", 50, "blue");\par
+document.getElementById("demo").innerHTML =\par
+"My father is " + myFather.nationality; \par
+</script>\par
+ \par
+</body>\par
+</html>\par
+------------------------------------------------------------------------------\par
+<!DOCTYPE html>\par
+<html>\par
+<body>\par
+ \par
+<p id="demo"></p>\par
+ \par
+<script>\par
+function Person(first, last, age, eye) \{\par
+    this.firstName = first;\par
+    this.lastName = last;\par
+    this.age = age;\par
+    this.eyeColor = eye;\par
+\}\par
+Person.prototype.name = function() \{\par
+    return this.firstName + " " + this.lastName\par
+\};\par
+ \par
+var myFather = new Person("John", "Doe", 50, "blue");\par
+document.getElementById("demo").innerHTML =\par
+"My father is " + myFather.name(); \par
+</script>\par
+ \par
+</body>\par
+</html>\par
+ \par
+----------------------------------------------------------------------------\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+<head>\par
+    <script>\par
+        // \'bb\'fd\'bc\'ba\'c0\'da \'c7\'d4\'bc\'f6\'b8\'a6 \'bc\'b1\'be\'f0\'c7\'d5\'b4\'cf\'b4\'d9.\par
+        function Student(name, korean, math, english, science) \{\par
+            this.\'c0\'cc\'b8\'a7 = name;\par
+            this.\'b1\'b9\'be\'ee = korean;\par
+            this.\'bc\'f6\'c7\'d0 = math;\par
+            this.\'bf\'b5\'be\'ee = english;\par
+            this.\'b0\'fa\'c7\'d0 = science;\par
+        \}\par
+        Student.prototype.getSum = function () \{ \};\par
+        Student.prototype.getAverage = function () \{ \};\par
+        Student.prototype.toString = function () \{ \};\par
+    </script>\par
+</head>\par
+<body>\par
+ \par
+</body>\par
+</html>\par
+\par
+5. \'c5\'ac\'b7\'a1\'bd\'ba \'bb\'e7\'bf\'eb\par
+>>> index.html\par
+<!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Document</title>\par
+    <script src='class.js'></script>\par
+</head>\par
+<body>\par
+    \par
+</body>\par
+</html>\par
+\par
+>>> class.js\par
+'use strict';\par
+//class : template\par
+//object : instance of a class\par
+ \par
+//class declarations\par
+class Person\{\par
+    //constructor\par
+    constructor(name, age)\{\par
+        //fields\par
+        this.name = name;\par
+        this.age = age;\par
+    \}\par
+ \par
+    //methods\par
+    speak()\{\par
+        console.log(`$\{this.name\}: hello! `);\par
+    \}\par
+\}\par
+ \par
+const hong = new Person('hong', 20);\par
+console.log(hong.name)\par
+console.log(hong.age);\par
+console.log(hong.speak());\par
+}
+ 

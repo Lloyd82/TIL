@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import utility.DBClose;
 import utility.Open;
 
@@ -14,10 +15,10 @@ public class BookTest {
 	
 
 	public static void main(String[] args) {
-		StringBuffer sql = new StringBuffer();
-
+//		StringBuffer sql = new StringBuffer();
 		BookTest bookTest = new BookTest();
-		bookTest. printAllBooks();
+		bookTest.printAllBooks();
+		
 
 	}
 
@@ -63,35 +64,70 @@ public class BookTest {
 	}
 
 	
-
-	public boolean insertStudent(BookDTO book) {
-		Boolean flag = false;
-		Connection con = Open.getConnection();
-		PreparedStatement pstmt = null;
-		StringBuffer sql = new StringBuffer();
-
-		sql.append(" ARTER TABLE BOOKLIST");
-		sql.append(" ADD STUDUNT VARCHAR(10) NOT NULL");
-		
-
-		try {
-			pstmt = con.prepareStatement(sql.toString());
-//			pstmt.setInt(1, book.getIsbn());
-//			pstmt.setString(2, book.getTitle());
-//			pstmt.setString(3, book.getAuthor());
-//			pstmt.setString(4, book.getPublisher());
-//			pstmt.setString(5, book.getAuthor());
-//			pstmt.setInt(6, book.getPrice());
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			DBClose.close(pstmt, con);
-		}
-//		private void p(BookDTO book) {
-//			System.out.println(book);
-		return flag;
-		}
+////컬럼으로 추가
+//	public boolean insertStudent(BookDTO book) {
+//		Boolean flag = false;
+//		Connection con = Open.getConnection();
+//		PreparedStatement pstmt = null;
+//		StringBuffer sql = new StringBuffer();
+//
+//		sql.append(" ARTER TABLE BOOKLIST");
+//		sql.append(" ADD STUDUNT VARCHAR(10) NOT NULL");
+//		
+//
+//		try {
+//			pstmt = con.prepareStatement(sql.toString());
+//			pstmt.setString(1, "강백호");
+//    		pstmt.setString(2, "서태웅");
+//    		pstmt.setString(3, "정대만");			
+//    		pstmt.setString(4, "송태섭");			
+//    		pstmt.setString(5, "채치수");			
+//
+//			
+//			int cnt = pstmt.executeUpdate();
+//			System.out.println("추가 되었습니다 ");
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			DBClose.close(pstmt, con);
+//		}
+//		return flag;
+//		}
+//	}
+//	
+//레코드로 추가?
+//	public boolean insertStudent(BookDTO book) {
+//	    boolean flag = false;
+//	    Connection con = Open.getConnection(); // 연결
+//	    PreparedStatement pstmt = null;
+//	    StringBuffer sql = new StringBuffer();
+//
+//	    sql.append(" INSERT INTO STUDENT ");
+//	    sql.append(" VALUES(?,?,?,?,?,?,?) ");
+//	    try {
+//	      pstmt = con.prepareStatement(sql.toString());
+//	      pstmt.setString(1, "강백호");
+//		  pstmt.setString(2, "서태웅");
+//		  pstmt.setString(3, "정대만");			
+// 		  pstmt.setString(4, "송태섭");			
+//		  pstmt.setString(5, "채치수");	
+//
+//	      int cnt = pstmt.executeUpdate();
+//
+//	      if (cnt > 0)
+//	        flag = true;
+//
+//	    } catch (SQLException e) {
+//	      // TODO Auto-generated catch block
+//	      e.printStackTrace();
+//	    } finally {
+//	      DBClose.close(pstmt, con);
+//	    }
+//
+//	    return flag;
+//	  }
 	}
+	
+	
 
 
