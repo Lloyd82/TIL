@@ -1,0 +1,59 @@
+SELECT bbsno, wname, title, viewcnt, wdate, grpno, indent, ansnum 
+FROM bbs  
+WHERE wname LIKE '%왕눈이%' 
+ORDER BY grpno DESC, ansnum ASC; 
+
+INSERT INTO bbs(bbsno, wname, title, content, passwd, wdate,grpno)  
+VALUES((SELECT NVL(MAX(bbsno), 0) + 1 as bbsno FROM bbs), 
+'왕눈이', '제목', '내용', '123', sysdate,
+(SELECT NVL(MAX(grpno), 0) + 1  FROM bbs)
+);
+
+select * from bbs;
+
+SELECT bbsno, wname, title, viewcnt, wdate, grpno, indent, ansnum, R
+FROM(
+    SELECT bbsno, wname, title, viewcnt, wdate, grpno, indent, ansnum, ROWNUM R
+    FROM(
+        SELECT bbsno, wname, title, viewcnt, wdate, grpno, indent, ansnum
+        FROM bbs  
+--        WHERE WNAME LIKE '%왕%'
+        ORDER BY grpno DESC, ansnum ASC
+        )
+    )
+WHERE R >=6 AND R <=12; 
+
+1) 모든 레코드 삭제 
+DELETE FROM bbs; 
+ 
+where bbsno =2 --부모의 글
+      
+ 
+ 
+ BBSNO      TITLE                   		GRPNO     INDENT    	ANSNUM 
+  -------   ------                  	--------  	--------   ---------- 
+    4    부모글4                      	   	4	         0 		      0    
+    5    부모글4의 답변1               		4          		2     		2 <-답변 :부모의 grpno,
+    9    부모글4의 답변2               		4          1       1   	 INDENT, ANSNUM 기존 답변에 대한 순서 업데이트,
+    3    부모글3                      		3          0      0
+    6    부모글3의 답변1               		2          1       1
+    2    부모글2                      2          0      0 
+    7    부모글2의 답변1               2          1       3
+    14   부모글2의 답변2               2          1       4
+    10   부모글2의 답변1의 답변2         2         3       2
+    8    부모글2의 답변1의 답변1         2         2       1
+    1    부모글1                      1         0      0 
+    11   부모글1의 답변1                1         1       1
+    13   부모글1의 답변2                1         1       3
+    12   부모글1의 답변2의 답변1           1       2       2
+
+INSERT INTO bbs(bbsno, wname, title, content, passwd, wdate, 
+grpno)  
+VALUES((SELECT NVL(MAX(bbsno), 0) + 1 as bbsno FROM bbs), 
+'왕눈이', '부모글3', '내용', '123', sysdate,
+(SELECT NVL(MAX(grpno), 0) + 1 as grpno FROM bbs)
+);                 
+
+
+);                 
+
