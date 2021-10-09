@@ -1,6 +1,0 @@
-class First{
-	public static void main(string[] arg){
-		string str="Java 수업입니다.";
-		system.out.println(str);
-	}
-}
