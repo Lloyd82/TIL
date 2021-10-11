@@ -1,0 +1,180 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset129 \'b8\'bc\'c0\'ba \'b0\'ed\'b5\'f1;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs20\lang18 [01] Spring Boot bbs \'b8\'b8\'b5\'e9\'b1\'e2\par
+1. Spring Starter Project \'bd\'c7\'c7\'e0\par
+\par
+\par
+\par
+\par
+2. build.gradle, application.properties \'bc\'b3\'c1\'a4\par
+- jsp \'bb\'e7\'bf\'eb\'c0\'bb \'c0\'a7\'c7\'d1 \'c0\'c7\'c1\'b8\'bc\'ba \'c3\'df\'b0\'a1\par
+- Annotation\'b1\'e2\'b9\'dd Form\'b0\'cb\'c1\'f5 validation \'c0\'c7\'c1\'b8\'bc\'ba \'c3\'df\'b0\'a1\par
+-> Gradle -> Refresh Gradle Project\par
+\par
+>>> build.gradle \'c6\'ed\'c1\'fd \par
+......\par
+  implementation 'javax.servlet:jstl'  \par
+  implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'  \par
+  implementation 'org.springframework.boot:spring-boot-starter-validation' \par
+ \par
+\}\par
+......\par
+\par
+- \'bc\'ad\'b9\'f6\'c6\'f7\'c6\'ae \'ba\'af\'b0\'e6\par
+- JSP view path\par
+- oracle \'bc\'b3\'c1\'a4, Conntion pool \'bc\'b3\'c1\'a4\par
+\par
+>>> application.properties\par
+server.port = 8000 //\lang1042\'bf\'a9\'b7\'af\'b0\'b3\'b8\'a6 \'c6\'f7\'c6\'ae\'ba\'b0\'b7\'ce \'bc\'b3\'c1\'a4\'b0\'a1\'b4\'c9\lang18\par
+# JSP View path \lang1042\'bb\'e7\'bf\'eb\'bc\'b3\'c1\'a4\lang18\par
+spring.mvc.view.prefix=/WEB-INF/views/\par
+spring.mvc.view.suffix=.jsp\par
+\par
+# DEVTOOLS (DevToolsProperties) \lang1042\'bb\'e7\'bf\'eb\'bc\'b3\'c1\'a4\lang18\par
+spring.devtools.livereload.enabled=true\par
+ \par
+# mybatis\lang1042\'bf\'a1\'bc\'ad \'bb\'e7\'bf\'eb\'c7\'d2 \lang18 Oracle DB \lang1042\'b1\'e2\'ba\'bb\'bc\'b3\'c1\'a4\lang18  = property\par
+spring.datasource.hikari.driver-class-name=oracle.jdbc.driver.OracleDriver\line spring.datasource.hikari.jdbc-url: jdbc:oracle:thin:@localhost:1521:XE\line spring.datasource.hikari.username=user1234\line spring.datasource.hikari.password=1234\par
+ \par
+# All DBMS (\lang1042\'c0\'cc\'b9\'cc \'b8\'b8\'b5\'e9\'be\'ee\'c1\'f8 \'b0\'cd\'c0\'bb \'bb\'e7\'bf\'eb\'c8\'c4 \'b4\'d9\'bd\'c3 \'c0\'fa\'c0\'e5 \'c4\'bf\'b3\'bc\'bc\'c7\'b0\'fa \'bf\'ac\'b0\'e1\'c0\'cc \'bf\'c0\'b7\'a1\'b0\'c9\'b8\'ae\'b4\'c2 \'b0\'e6\'bf\'ec \'bb\'e7\'bf\'eb )\line # MyBatis\'bf\'a1\'bc\'b1 pool\'c0\'cc \'b1\'e2\'ba\'bb\'c0\'b8\'b7\'ce \'c1\'d6\'be\'ee\'c1\'fc(10\'b0\'b3\'c1\'a4\'b5\'b5), \'bc\'ba\'b4\'c9 \'c7\'e2\'bb\'f3\lang18\par
+spring.datasource.hikari.maximum-pool-size=10\line spring.datasource.hikari.minimum-idle=5\line spring.datasource.hikari.connection-timeout=5000\par
+ \par
+\par
+3. Component scan \'c6\'d0\'c5\'b0\'c1\'f6 \'bc\'b3\'c1\'a4\par
+>>> SpringBbsApplication.java\par
+package com.study.notice;\par
+ \par
+import org.springframework.boot.SpringApplication;\par
+import org.springframework.boot.autoconfigure.SpringBootApplication;\par
+import org.springframework.context.annotation.ComponentScan;\par
+ \par
+@SpringBootApplication\par
+@ComponentScan(basePackages = \{"com.study.*"\}) // com.study.* =\lang1042\'b8\'f0\'b5\'e5 \'b3\'bb\'bf\'eb \'bb\'e7\'bf\'eb\lang18\par
+public class SpringBbsApplication\{\par
+ \par
+        public static void main(String[] args) \{\par
+                SpringApplication.run(SpringBbsApplication.class, args);\par
+        \}\par
+\}\par
+\par
+\par
+\par
+4. JSP Views, images \'c6\'fa\'b4\'f5 \'bb\'fd\'bc\'ba\par
+(1) jsp views\par
+ - /src/main/\'c6\'fa\'b4\'f5\'bf\'a1 webapp/WEB-INF/views \'bb\'fd\'bc\'ba\par
+(2) images \par
+- /src/main/resources/static \'c6\'fa\'b4\'f5\'bf\'a1 images \'bb\'fd\'bc\'ba\par
+\par
+\par
+5. Mybatis \'bc\'b3\'c1\'a4\par
+(1) DatabaseConfiguration \'c5\'ac\'b7\'a1\'bd\'ba \'bb\'fd\'bc\'ba\par
+ - @PropertySource("classpath:/application.properties")\'b4\'c2\par
+   \'c0\'cc \'c5\'ac\'b7\'a1\'bd\'ba\'bf\'a1\'bc\'ad application.properties\'b8\'a6 \'bb\'e7\'bf\'eb\par
+ - Hikari\'b8\'a6 \'bb\'e7\'bf\'eb\'c7\'d1 datasource\'b8\'a6 \'bb\'fd\'bc\'ba\'c7\'cf\'b1\'e2 \'c0\'a7\'c7\'d1 \'b8\'de\'bc\'d2\'b5\'e5 \'bc\'b1\'be\'f0\par
+ - \'bc\'b3\'c1\'a4 \'c6\'c4\'c0\'cf\'c0\'c7 \'c1\'a2\'b5\'ce\'bb\'e7 \'bc\'b1\'be\'f0 spring.datasource.hikari....\par
+ - spring mybatis\'bf\'a1\'bc\'ad \'c7\'ca\'bf\'e4\'c7\'d1 SqlSessionFactory\'bf\'cd SqlSessionTemplate\'b8\'a6\par
+   \'bb\'fd\'bc\'ba \'c7\'cf\'b1\'e2 \'c0\'a7\'c7\'d1 \'b8\'de\'bc\'d2\'b5\'e5 \'bc\'b1\'be\'f0\par
+ - /src/main/resources/mybatis \'c6\'fa\'b4\'f5\'c0\'c7 \'c6\'c4\'c0\'cf\'b8\'ed\'c0\'cc "xml"\'b7\'ce \'b3\'a1\'b3\'aa\'b4\'c2 \'c6\'c4\'c0\'cf \'b8\'c5\'c7\'ce\par
+ - MapperScan\'c0\'c7 basePackages \'bc\'b1\'be\'f0\par
+\par
+>>> DatabaseConfiguration.java\par
+package com.study.bbs;\par
+ \par
+import javax.sql.DataSource;\par
+ \par
+import org.apache.ibatis.session.SqlSessionFactory;\par
+import org.mybatis.spring.SqlSessionFactoryBean;\par
+import org.mybatis.spring.SqlSessionTemplate;\par
+import org.mybatis.spring.annotation.MapperScan;\par
+import org.springframework.beans.factory.annotation.Autowired;\par
+import org.springframework.boot.context.properties.ConfigurationProperties;\par
+import org.springframework.context.ApplicationContext;\par
+import org.springframework.context.annotation.Bean;\par
+import org.springframework.context.annotation.Configuration;\par
+import org.springframework.context.annotation.PropertySource;\par
+ \par
+import com.zaxxer.hikari.HikariConfig;\par
+import com.zaxxer.hikari.HikariDataSource;\par
+ \par
+@Configuration\par
+@PropertySource("classpath:/application.properties")  // \'bc\'b3\'c1\'a4 \'c6\'c4\'c0\'cf \'c0\'a7\'c4\'a1\par
+@MapperScan(basePackages= \{"com.study.model"\})\par
+public class DatabaseConfiguration \{\par
+  @Autowired\par
+  private ApplicationContext applicationContext;\par
+  \par
+  @Bean\par
+  @ConfigurationProperties(prefix="spring.datasource.hikari") // \'bc\'b3\'c1\'a4 \'c6\'c4\'c0\'cf\'c0\'c7 \'c1\'a2\'b5\'ce\'bb\'e7 \'bc\'b1\'be\'f0 \par
+  public HikariConfig hikariConfig() \{\par
+      return new HikariConfig();\par
+  \}\par
+  \par
+  @Bean\par
+  public DataSource dataSource() throws Exception\{\par
+      DataSource dataSource = new HikariDataSource(hikariConfig());\par
+      System.out.println(dataSource.toString());  // \'c1\'a4\'bb\'f3\'c0\'fb\'c0\'b8\'b7\'ce \'bf\'ac\'b0\'e1 \'b5\'c7\'be\'fa\'b4\'c2\'c1\'f6 \'c7\'d8\'bd\'c3\'c4\'da\'b5\'e5\'b7\'ce \'c8\'ae\'c0\'ce\par
+      return dataSource;\par
+  \}\par
+  \par
+  @Bean\par
+  public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception\{\par
+      SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();\par
+      sqlSessionFactoryBean.setDataSource(dataSource);\par
+      sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:/mybatis/**/*.xml"));   \par
+      return sqlSessionFactoryBean.getObject();\par
+  \}\par
+  \par
+  @Bean\par
+  public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory)\{\par
+      return new SqlSessionTemplate(sqlSessionFactory);\par
+  \}\par
+\}\par
+\par
+ \par
+(2) oracle\'bc\'b3\'c1\'a4 JUnit \'c5\'d7\'bd\'ba\'c6\'ae\par
+ - Oracle Driver \'c0\'ce\'bd\'c4\'c0\'cc \'ba\'d2\'b1\'d4\'c4\'a2\'c7\'cf\'b8\'e9 WEB-INF/lib/ojdbc8.jar\'b7\'ce \'c0\'fa\'c0\'e5\'c7\'d1\'b4\'d9.\par
+ - /src/main/resources/mybatis \'c6\'fa\'b4\'f5 \'bb\'fd\'bc\'ba\par
+ - /src/test/java \'c6\'fa\'b4\'f5\'bf\'a1 \'c5\'d7\'bd\'ba\'c6\'ae \'b1\'e2\'c3\'ca \'c6\'c4\'c0\'cf\'c0\'cc \'bb\'fd\'bc\'ba\'b5\'c7\'be\'ee \'c0\'d6\'c0\'bd\par
+ - SqlSessionTemplate \'b0\'b4\'c3\'bc \'b0\'aa \'c8\'ae\'c0\'ce\'c0\'bb \'c0\'a7\'c7\'d8\'bc\'ad \'be\'c6\'b7\'a1\'b3\'bb\'bf\'eb \'c0\'db\'bc\'ba\par
+ - \'c5\'d7\'bd\'ba\'c6\'ae \'bd\'c7\'c7\'e0: SpringBbsApplicationTests.java \'c6\'c4\'c0\'cf \'bc\'b1\'c5\'c3 -> Debug as -> JUnit test\par
+\par
+>>> SpringBbsApplicationTests.java\par
+package com.study.bbs;\par
+ \par
+import org.junit.jupiter.api.Test;\par
+import org.mybatis.spring.SqlSessionTemplate;\par
+import org.springframework.beans.factory.annotation.Autowired;\par
+import org.springframework.boot.test.context.SpringBootTest;\par
+ \par
+@SpringBootTest\par
+class SpringBbsApplicationTests \{\par
+  @Autowired\par
+  private SqlSessionTemplate sqlSession;\par
+ \par
+  @Test\par
+  void contextLoads() \{\par
+  \}\par
+ \par
+ @Test\par
+  public void testSqlSession() throws Exception\{\par
+    System.out.println(sqlSession.toString());\par
+  \}\par
+\}\par
+\par
+-----------------------------------------------------\par
+ .   ____          _            __ _ _\par
+ /\\\\ / ___'_ __ _ _(_)_ __  __ _ \\ \\ \\ \\\par
+( ( )\\___ | '_ | '_| | '_ \\/ _` | \\ \\ \\ \\\par
+ {{\field{\*\fldinst{HYPERLINK "\\\\\\\\/"}}{\fldrslt{\\\\/\ul0\cf0}}}}\f0\fs20   ___)| |_)| | | | | || (_| |  ) ) ) )\par
+  '  |____| .__|_| |_|_| |_\\__, | / / / /\par
+ =========|_|==============|___/=/_/_/_/\par
+ :: Spring Boot ::                (v2.4.3)\par
+ \par
+------------------\par
+HikariDataSource (HikariPool-1)\par
+------------------\par
+org.mybatis.spring.SqlSessionTemplate@2dd3d39d\par
+-----------------\par
+}
+ 
