@@ -1,0 +1,279 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset129 \'b8\'bc\'c0\'ba \'b0\'ed\'b5\'f1;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs20\lang18 [01] Spring Boot Controller JUnit4 \'c5\'d7\'bd\'ba\'c6\'ae\par
+\par
+\par
+1. ReplyControllerTest  \'bb\'fd\'bc\'ba\par
+\par
+- ReplyController  \'c5\'ac\'b7\'a1\'bd\'ba  ->  New -> JUnit Test Case(ReplyController \lang1042\'bf\'ec\'c5\'ac\'b8\'af new >other >java>junit\lang18\par
+\par
+\par
+\par
+\par
+>>> ReplyControllerTest.java\par
+ \par
+@ExtendWith(SpringExtension.class)\par
+@WebMvcTest(controllers = ReplyController.class)\par
+@ContextConfiguration(classes=SpringBbsApplication.class)\par
+class ReplyControllerTest \{\par
+        \par
+        @Autowired\par
+        private MockMvc mvc;\par
+\par
+    ...............\par
+\par
+\}\par
+\par
+\par
+- @ContextConfiguration(classes=SpringBbsApplication.class)\par
+  SpringBbsApplication \'c5\'ac\'b7\'a1\'bd\'ba\'b4\'c2  @SpringBootApplication\'c0\'cc \'bc\'b1\'be\'f0\'b5\'c8 \'b8\'de\'c0\'ce \'c5\'ac\'b7\'a1\'bd\'ba\'c0\'cc\'b4\'d9.\par
+  \'c0\'cc \'c5\'ac\'b7\'a1\'bd\'ba\'b4\'c2 \'bd\'ba\'c7\'c1\'b8\'b5 \'ba\'ce\'c6\'ae\'c0\'c7 \'c0\'da\'b5\'bf \'bc\'b3\'c1\'a4, \'bd\'ba\'c7\'c1\'b8\'b5 \'ba\'f3 \'c0\'d0\'b1\'e2\'bf\'cd \'bb\'fd\'bc\'ba\'c0\'bb \'b8\'f0\'b5\'ce \'c0\'da\'b5\'bf\'c0\'b8\'b7\'ce \'bc\'b3\'c1\'a4\'b5\'c8\'b4\'d9.\par
+\par
+- @WebMvcTest\par
+   Web(Spring MVC)\'bf\'a1 \'c1\'fd\'c1\'df\'c7\'d2 \'bc\'f6 \'c0\'d6\'c0\'b8\'b8\'e7,  \'c4\'c1\'c6\'ae\'b7\'d1\'b7\'af\'b8\'b8 \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+   @Controller\'b8\'b8 \'bb\'e7\'bf\'eb\'c7\'cf\'b0\'ed  @Service, @Component, @Repository\'b5\'ee\'c0\'ba \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'be\'f8\'b4\'d9.\par
+\par
+- private MockMvc mvc;\par
+  \'c0\'a5 API \'c5\'d7\'bd\'ba\'c6\'ae\'c7\'d1\'b4\'d9.\par
+  HTTP GET, POST \'b5\'ee\'bf\'a1 \'b4\'eb\'c7\'d1 API\'b8\'a6 \'c5\'d7\'bd\'ba\'c6\'ae \'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+\par
+2. Spring Boot\'bf\'a1\'bc\'ad \'c1\'a6\'b0\'f8\'c7\'cf\'b4\'c2 MockMvc \'b8\'de\'bc\'d2\'b5\'e5\par
+\par
+ >>> build.gradle \'bf\'a1 \'c0\'da\'b5\'bf\'c0\'b8\'b7\'ce \'bc\'b1\'be\'f0\'b5\'c7\'be\'ee \'c0\'d6\'b4\'d9.\par
+  \par
+   testImplementation 'org.springframework.boot:spring-boot-starter-test'\par
+\par
+ (1) perform()\par
+ - \'bf\'e4\'c3\'bb\'c0\'bb \'c0\'fc\'bc\'db\'c7\'cf\'b4\'c2 \'bf\'aa\'c7\'d2\'c0\'bb \'c7\'d5\'b4\'cf\'b4\'d9. \'b0\'e1\'b0\'fa\'b7\'ce ResultActions \'b0\'b4\'c3\'bc\'b8\'a6 \'b9\'de\'b4\'c2\'b4\'d9.\par
+ - ResultActions \'b0\'b4\'c3\'bc\'b4\'c2 \'b8\'ae\'c5\'cf \'b0\'aa\'c0\'bb \'b0\'cb\'c1\'f5\'c7\'cf\'b0\'ed \'c8\'ae\'c0\'ce\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'c2 andExpect() \'b8\'de\'bc\'d2\'b5\'e5\'b8\'a6 \'c1\'a6\'b0\'f8\'c7\'d1\'b4\'d9.\par
+ \par
+ (2) get("/bbs/reply/list") \par
+ -  HTTP \'b8\'de\'bc\'d2\'b5\'e5\'b8\'a6 \'b0\'e1\'c1\'a4\'c7\'d1\'b4\'d9. (get(), post(), put(), delete())\par
+ -  \'c0\'ce\'c0\'da\'b4\'c2 \'b0\'e6\'b7\'ce\'b0\'a1 \'b5\'c8\'b4\'d9.\par
+ (3) params(info)\par
+ - \'bf\'e4\'c3\'bb\'c6\'c4\'b6\'f3\'b9\'cc\'c5\'cd\'b8\'a6 \'bc\'b3\'c1\'a4\'c7\'d1\'b4\'d9. \'b0\'aa\'c0\'ba String \'b8\'b8 \'c7\'e3\'bf\'eb\'c7\'d1\'b4\'d9. \par
+ - \'bc\'fd\'c0\'da/\'b3\'af\'c2\'a5 \'b5\'ee\'c0\'c7 \'b5\'a5\'c0\'cc\'c5\'cd\'b5\'b5 \'b5\'ee\'b7\'cf\'c7\'d2 \'b6\'a7\'b4\'c2 \'b9\'ae\'c0\'da\'bf\'ad\'b7\'ce \'ba\'af\'b0\'e6\'c7\'d8\'be\'df \'c7\'d1\'b4\'d9.(String.valueOf( \'bc\'fd\'c0\'da))\par
+ - info\'b4\'c2 \'c5\'b0,\'b0\'aa\'c0\'c7 \'b0\'aa\'c0\'bb \'b0\'a1\'c1\'f8\'b4\'d9.\par
+ - \'bf\'a9\'b7\'af\'b0\'b3 \'c0\'cf\'b6\'a7\'b4\'c2  params()\'b8\'a6, \'c7\'cf\'b3\'aa\'b4\'c2 param()\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'d1\'b4\'d9.\par
+\par
+ (4) andExpect()\par
+  - \'c0\'c0\'b4\'e4\'c0\'bb \'b0\'cb\'c1\'f5\'c7\'cf\'b4\'c2 \'bf\'aa\'c7\'d2\'c0\'bb \'c7\'d1\'b4\'d9.\par
+  - .andExpect(state().isOk()) : \'bb\'f3\'c5\'c2\'c4\'da\'b5\'e5\'b8\'a6 \'c8\'ae\'c0\'ce\'c7\'d1\'b4\'d9. (200:\'bc\'ba\'b0\'f8 \'c0\'ce\'c1\'f6 \'be\'c6\'b4\'d1\'c1\'f6 \'b0\'cb\'c1\'f5)\par
+    isNotFound() : 404 \par
+    isMethodNotAllowed() : 405\par
+    isInternalServerError() : 500\par
+    is(int status) : status \'bb\'f3\'c5\'c2 \'c4\'da\'b5\'e5\par
+\par
+  - .andExpect(content().string(hello)) :  \'c0\'c0\'b4\'e4 \'ba\'bb\'b9\'ae\'c0\'c7 \'b3\'bb\'bf\'eb\'c0\'bb \'b0\'cb\'c1\'f5\par
+    Controller\'bf\'a1\'bc\'ad "hello"\'b8\'a6 \'b8\'ae\'c5\'cf\'c7\'df\'b4\'c2\'c1\'f6 \'b0\'cb\'bb\'e7\par
+\par
+ - .andExpect(jsonPath("$.name", is(name))) : JSON \'c0\'c0\'b4\'e4\'b0\'aa\'c0\'bb \'c7\'ca\'b5\'e5\'ba\'b0\'b7\'ce \'b0\'cb\'c1\'f5\par
+    $\'b8\'a6 \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce \'c7\'ca\'b5\'e5\'b8\'ed\'c0\'bb \'b8\'ed\'bd\'c3\'c7\'d1\'b4\'d9.\par
+\par
+(5) andDo(print())\par
+- \'bf\'e4\'c3\'bb/\'c0\'c0\'b4\'e4 \'c0\'fc\'c3\'bc \'b8\'de\'bc\'bc\'c1\'f6\'b8\'a6 \'c8\'ae\'c0\'ce\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+\par
+3. RestController ReplyController \'c5\'d7\'bd\'ba\'c6\'ae \'c7\'cf\'b1\'e2\par
+- \'b0\'e6\'b7\'ce\'bf\'a1 \'c0\'fc\'b4\'de \'b8\'c5\'b0\'b3\'ba\'af\'bc\'f6\'b0\'a1 \'c0\'d6\'b4\'c2 \'b0\'e6\'bf\'ec\'bf\'a1 MockMvcRequestBuilders\'b8\'a6 \'bb\'e7\'bf\'eb\'c7\'cf\'bf\'a9\par
+  \'b0\'e6\'b7\'ce \'b8\'c5\'b0\'b3\'ba\'af\'bc\'f6\'b8\'a6 \'c0\'fc\'b4\'de\'c7\'d1\'b4\'d9.\par
+-  MockMvcResultMatchers\'b8\'a6 \'bb\'e7\'bf\'eb\'c7\'cf\'bf\'a9 \'bb\'f3\'c5\'c2 \'c0\'c0\'b4\'e4\'c4\'da\'b5\'e5\'b8\'a6 \'c8\'ae\'c0\'ce\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+(1) HTTP GET\par
+ \par
+ >>> ReplyController.java\par
+\par
+        @GetMapping("/bbs/reply/\{rnum\}") //\lang1042\'b0\'e6\'b7\'ce\'be\'c8\'bf\'a1 \'b8\'c5\'b0\'d4\'ba\'af\'bc\'f6 \'bb\'e7\'bf\'eb \{\'b8\'c5\'b0\'b3\'ba\'af\'bc\'f6\}\lang18\par
+        public ResponseEntity<ReplyDTO> get(@PathVariable("rnum") int rnum)\{\par
+                log.info("get:"+rnum);\par
+                \par
+                return new ResponseEntity<ReplyDTO>(mapper.read(rnum),HttpStatus.OK);\par
+                \par
+        \}\par
+ \par
+ \par
+ \par
+        @GetMapping("/bbs/reply/list/\{bbsno\}/\{sno\}/\{eno\}")\par
+        public ResponseEntity<List<ReplyDTO>> getList(@PathVariable("bbsno") int bbsno,\par
+                        @PathVariable("sno") int sno,\par
+                        @PathVariable("eno") int eno)\{\par
+                \par
+                Map map = new HashMap();\par
+                map.put("sno", sno);\par
+                map.put("eno", eno);\par
+                map.put("bbsno", bbsno);                \par
+                \par
+                return new ResponseEntity<List<ReplyDTO>>(mapper.list(map),HttpStatus.OK);\par
+                \par
+        \}\par
+\par
+\par
+      @GetMapping("/bbs/reply/page")\par
+         public ResponseEntity<String> getPage(@RequestParam("nPage") int nPage,\par
+                        @RequestParam("nowPage") int nowPage,\par
+                        @RequestParam("bbsno") int bbsno,\par
+                        @RequestParam("col") String col,\par
+                        @RequestParam("word") String word)\{\par
+                \par
+                int total = mapper.total(bbsno);\par
+                String url = "read";\par
+                int recordPerPage = 3;\par
+                \par
+                String pageing = Utility.rpaging(total,nowPage,recordPerPage,col,word,url,nPage,bbsno);\par
+                \par
+                return new ResponseEntity<String>(pageing, HttpStatus.OK);\par
+                \par
+        \}\par
+ \par
+\par
+>>> ReplyControllerTest.java\par
+\par
+        @Test\par
+        @DisplayName("\'b4\'f1\'b1\'db \'c1\'b6\'c8\'b8-json\'b0\'e1\'b0\'fa")\par
+        public void testGet() throws Exception \{\par
+        \par
+                mvc.perform(MockMvcRequestBuilders \par
+                        .get("/bbs/reply/\{rnum\}",2)\par
+                        .accept(MediaType.APPLICATION_JSON))\par
+                        .andDo(print())\par
+                        .andExpect(status().isOk())     \par
+                        .andExpect(MockMvcResultMatchers.jsonPath("$.rnum").value(2));\par
+                \par
+        \}\par
+ \par
+        @Test\par
+        @DisplayName("\'b4\'f1\'b1\'db \'b8\'f1\'b7\'cf")\par
+        public void testGetList() throws Exception \{\par
+          mvc.perform( MockMvcRequestBuilders\par
+              .get("/bbs/reply/list/\{bbsno\}/\{sno\}/\{eno\}",5,1,3)\par
+              .accept(MediaType.APPLICATION_JSON))\par
+              .andDo(print())\par
+              .andExpect(status().isOk())\par
+              .andExpect(MockMvcResultMatchers.jsonPath("$.[*].rnum").exists())\par
+              .andExpect(MockMvcResultMatchers.jsonPath("$.[*].rnum").isNotEmpty());\par
+        \}\par
+\par
+\par
+        @Test\par
+        @DisplayName("\'b4\'f1\'b1\'db \'c6\'e4\'c0\'cc\'c2\'a1")\par
+        public void testGetPage() throws Exception      \{\par
+            MultiValueMap<String, String> info = new LinkedMultiValueMap<>();\par
+ \par
+            info.add("nPage", "1");\par
+            info.add("nowPage", "1");\par
+            info.add("bbsno", "5");\par
+            info.add("col", "");\par
+            info.add("word", "");\par
+ \par
+            mvc.perform(get("/bbs/reply/page")\par
+              .params(info))\par
+              .andDo(print())\par
+              .andExpect(status().isOk());\par
+        \}\par
+ \par
+\par
+(2) HTTP POST\par
+\par
+ >>> ReplyController.java\par
+        @PostMapping("/bbs/reply/create")\par
+        public ResponseEntity<String> create(@RequestBody ReplyDTO dto)\{\par
+                log.info("ReplyDTO:"+dto.getContent());\par
+                log.info("ReplyDTO:"+dto.getId());\par
+                log.info("ReplyDTO:"+dto.getBbsno());\par
+                \par
+                dto.setContent(dto.getContent().replaceAll("/n/r", "<br>"));\par
+                \par
+                int flag = mapper.create(dto);\par
+                log.info("flag:"+flag);\par
+                \par
+                return flag==1?new ResponseEntity<String>("success",HttpStatus.OK)\par
+                                :new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);\par
+        \}\par
+ \par
+>>> ReplyControllerTest.java \par
+ \par
+        @Test\par
+        @DisplayName("\'b4\'f1\'b1\'db \'bb\'fd\'bc\'ba")\par
+        void testCreate() throws Exception \{\par
+                mvc.perform( MockMvcRequestBuilders\par
+                              .post("/bbs/reply/create")\par
+                              .content(asJsonString(new ReplyDTO(0, "content4", "", "user1", 1)))\par
+                              .contentType(MediaType.APPLICATION_JSON)\par
+                              .accept(MediaType.APPLICATION_JSON))\par
+                                  .andDo(print())\par
+                              .andExpect(status().isOk());\par
+        \}\par
+         \par
+        public static String asJsonString(final Object obj) \{\par
+            try \{\par
+                return new ObjectMapper().writeValueAsString(obj);\par
+            \} catch (Exception e) \{\par
+                throw new RuntimeException(e);\par
+            \}\par
+        \}\par
+ \par
+        \par
+(3) HTTP PUT\par
+\par
+ >>> ReplyController.java\par
+\par
+        @PutMapping("/bbs/reply/\{rnum\}")\par
+        public ResponseEntity<String> modify(@RequestBody ReplyDTO dto,\par
+                        @PathVariable("rnum") int rnum)\{\par
+                log.info("rnum:"+rnum);\par
+                log.info("modify:"+dto);\par
+                return mapper.update(dto)==1?new ResponseEntity<String>("success",HttpStatus.OK)        \par
+                                :new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);\par
+                \par
+        \}\par
+ \par
+ \par
+>>> ReplyControllerTest.java \par
+ \par
+        @Test\par
+        @DisplayName("\'b4\'f1\'b1\'db \'bc\'f6\'c1\'a4")\par
+        public void testModify() throws Exception \par
+        \{\par
+          mvc.perform( MockMvcRequestBuilders\par
+              .put("/bbs/reply/\{rnum\}", 2)\par
+              .content(asJsonString(new ReplyDTO(2, "test1", "", "user1", 1)))\par
+              .contentType(MediaType.APPLICATION_JSON)\par
+              .accept(MediaType.APPLICATION_JSON))\par
+              .andDo(print())\par
+              .andExpect(status().isOk());\par
+        \}\par
+ \par
+\par
+\par
+(4) HTTP DELETE\par
+\par
+ >>> ReplyController.java\par
+        @DeleteMapping("/bbs/reply/\{rnum\}")\par
+        public ResponseEntity<String> remove(@PathVariable("rnum") int rnum)\{\par
+                log.info("remove:"+rnum);\par
+                \par
+                return mapper.delete(rnum)==1?new ResponseEntity<String>("success", HttpStatus.OK)\par
+                                :new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);\par
+        \}\par
+ \par
+\par
+>>> ReplyControllerTest.java \par
+ \par
+        @Test\par
+        @DisplayName("\'b4\'f1\'b1\'db \'bb\'e8\'c1\'a6")\par
+        public void testRemove() throws Exception \par
+        \{\par
+          mvc.perform( MockMvcRequestBuilders\par
+                        .delete("/bbs/reply/\{rnum\}", 12) )\par
+                .andExpect(status().isOk());\par
+        \}\par
+\par
+\par
+\par
+4. \'bd\'c7\'c7\'e0\par
+ - ReplyControllerTest -> RunAs -> JUnit Test\par
+\par
+  \par
+}
+ 
