@@ -1,0 +1,173 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset129 \'b8\'bc\'c0\'ba \'b0\'ed\'b5\'f1;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs20\lang18 [01] Category \'c5\'d7\'c0\'cc\'ba\'ed \'b8\'f0\'b5\'a8\'b8\'b5\par
+\par
+1. \'bc\'f8\'c8\'af\'b0\'fc\'b0\'e8 \'b8\'f0\'b5\'a8\'b8\'b5 \'c7\'cf\'b1\'e2\par
+ - \'bc\'f8\'c8\'af\'b0\'fc\'b0\'e8\'b8\'a6 \'c1\'a4\'c0\'c7\'c7\'d2\'b6\'a7\'b4\'c2 \'b9\'dd\'b5\'e5\'bd\'c3 \'ba\'f1\'bd\'c4\'ba\'b0\'b0\'fc\'b0\'e8\'b7\'ce \'c1\'a4\'c0\'c7 \'c7\'d8\'be\'df \'c7\'d1\'b4\'d9. \par
+ - \'c3\'d6\'c3\'ca\'b7\'ce \'c0\'d4\'b7\'c2\'b5\'c7\'b4\'c2 \'c3\'d6\'bb\'f3\'c0\'c7 \'c4\'da\'b5\'e5\'c0\'c7 FK\'bf\'a1\'b4\'c2 NULL\'b0\'aa\'c0\'cc \'b5\'e9\'be\'ee\'b0\'a3\'b4\'d9.\par
+ - \'c0\'da\'bd\'c4 \'bf\'a3\'c6\'bc\'c6\'bc\'b7\'ce \'c0\'fc\'c0\'cc\'b5\'c7\'b4\'c2 \'c6\'f7\'b8\'b0\'c5\'b0 \'c4\'c3\'b7\'b3\'c0\'c7 \'c0\'cc\'b8\'a7\'c0\'bb \'b9\'d9\'b2\'e3\'c1\'d8\'b4\'d9.\par
+ \par
+        \'bb\'f3\'c7\'b0\'ba\'d0\'b7\'f9\par
+        -------------\par
+        \'ba\'d0\'b7\'f9\'c4\'da\'b5\'e5(PK)\par
+        \'ba\'d0\'b7\'f9\'b8\'ed\par
+        \'bb\'f3\'c0\'a7\'c4\'da\'b5\'e5(FK)\par
+ \par
+ \par
+        \'ba\'d0\'b7\'f9\'c4\'da\'b5\'e5(PK)        \'ba\'d0\'b7\'f9\'b8\'ed         \'bb\'f3\'c0\'a7\'c4\'da\'b5\'e5(FK)\par
+        ---------------       --------       -------------- \par
+           A01                 \'b0\'a1\'c0\'fc               null\par
+           A02                 \'c8\'ad\'c0\'e5\'c7\'b0             null\par
+           A03                 \'c0\'c7\'b7\'f9                null\par
+           A01_01             \'bf\'a1\'be\'ee\'c4\'dc             A01\par
+           A01_02             \'bc\'bc\'c5\'b9\'b1\'e2             A01\par
+           A01_03             \'c4\'c4\'c7\'bb\'c5\'cd             A01\par
+ \par
+           A02_01             \'b1\'e2\'c3\'ca\'c8\'ad\'c0\'e5\'c7\'b0        A02\par
+           A02_02             \'bb\'f6\'bc\'d2\'c8\'ad\'c0\'e5\'c7\'b0        A02\par
+           A02_03             \'b1\'e2\'b4\'c9\'bc\'ba\'c8\'ad\'c0\'e5\'c7\'b0     A02    \par
+            \par
+           A03_01             \'bf\'a9\'bc\'ba\'c0\'c7\'b7\'f9           A03\par
+           A03_02             \'b3\'b2\'bc\'ba\'c0\'c7\'b7\'f9           A03\par
+           A03_03             \'be\'c6\'b5\'bf\'c0\'c7\'b7\'f9           A03\par
+ \par
+ \par
+ \par
+         \'bb\'e7\'bf\'f8                         \par
+        -----------\par
+        \'bb\'e7\'bf\'f8\'b9\'f8\'c8\'a3(PK)\par
+        \'c0\'cc\'b8\'a7\par
+        \'c0\'fc\'c8\'ad\'b9\'f8\'c8\'a3\par
+        \'c7\'da\'b5\'e5\'c6\'f9\'b9\'f8\'c8\'a3\par
+        \'bf\'ec\'c6\'ed\'b9\'f8\'c8\'a3\par
+        \'c1\'d6\'bc\'d2\par
+        \'c1\'f7\'bc\'d3\'bb\'f3\'bb\'e7\'b9\'f8\'c8\'a3(FK)     \par
+ \par
+\par
+2. \'c4\'ab\'c5\'d7\'b0\'ed\'b8\'ae \'b9\'d7 \'bb\'f3\'c7\'b0 \'c5\'d7\'c0\'cc\'ba\'ed \par
+(1) AmaterasERD Table\'bf\'a1\'bc\'ad \'c4\'c3\'b7\'b3 \'c3\'df\'b0\'a1\'c7\'cf\'b1\'e2\par
+\par
+\par
+\par
+\par
+(2) \'b3\'ed\'b8\'ae\'c0\'fb \'b8\'f0\'b5\'a8\'b8\'b5, \'b9\'b0\'b8\'ae\'c0\'fb \'b8\'f0\'b5\'a8\'b8\'b5 \'c8\'ae\'c0\'ce\par
+\par
+\par
+\par
+(3) shopping.erp \'b1\'d7\'b8\'b2\'bf\'a1\'bc\'ad \'ba\'f3\'bf\'a9\'b9\'e9 \'c5\'ac\'b8\'af -> Export -> DDL \'bc\'b1\'c5\'c3\par
+- \'c0\'cc\'b8\'a7\'c0\'bb shopping.ddl \'c6\'c4\'c0\'cf \'bb\'fd\'bc\'ba\'c7\'d1\'b4\'d9.\par
+\par
+\par
+\par
+(4) shopping.ddl  \'bc\'b1\'c5\'c3 -> Open With -> Text Editor \'bc\'b1\'c5\'c3 \'c8\'c4 \'c8\'ae\'c0\'ce\par
+ - \'bc\'f8\'c8\'af\'b8\'f0\'b5\'a8\'c0\'c7 category ddl \'ba\'af\'b0\'e6\par
+\par
+/**********************************/\par
+/* Table Name: \'bb\'f3\'c7\'b0\'ba\'d0\'b7\'f9 */\par
+/**********************************/\par
+CREATE TABLE category(\par
+                cateno                                  NUMBER(10)     NOT NULL,\par
+                catename                              VARCHAR2(50)     NOT NULL,\par
+                categrpno                              NUMBER(10)      NULL,\par
+        PRIMARY KEY (cateno),\par
+        FOREIGN KEY (categrpno) REFERENCES category     \par
+);\par
+ \par
+COMMENT ON TABLE category is '\'bb\'f3\'c7\'b0\'ba\'d0\'b7\'f9';\par
+COMMENT ON COLUMN category.cateno is '\'ba\'d0\'b7\'f9\'b9\'f8\'c8\'a3';\par
+COMMENT ON COLUMN category.catename is '\'ba\'d0\'b7\'f9\'b8\'ed';\par
+COMMENT ON COLUMN category.categrpno is '\'bb\'f3\'c0\'a7\'b9\'f8\'c8\'a3';\par
+\par
+insert into category(cateno, catename, categrpno)\par
+values((select nvl(max(cateno),0)+1 from category),\par
+        'Jean', null);\par
+insert into category(cateno, catename, categrpno)\par
+values((select nvl(max(cateno),0)+1 from category),\par
+        'Bag', null);\par
+insert into category(cateno, catename, categrpno)\par
+values((select nvl(max(cateno),0)+1 from category),\par
+        'Shoes', null);\par
+        \par
+select cateno, catename\par
+from category\par
+where categrpno is null;\par
+ \par
+ \par
+/**********************************/\par
+/* Table Name: \'c4\'c1\'c5\'d9\'c3\'f7 */\par
+/**********************************/\par
+CREATE TABLE contents(\par
+                contentsno                            NUMBER(10)         NOT NULL    PRIMARY KEY,\par
+                cateno                                  NUMBER(10)         NULL ,\par
+                pname                                 VARCHAR2(50)       NOT NULL,\par
+                price                                   NUMBER(10)           NOT NULL,\par
+                filename                                VARCHAR2(100)     NULL ,\par
+                detail                                  CLOB             NOT NULL,\par
+                rdate                                   DATE             NOT NULL,\par
+                stock                                   NUMBER(10)    DEFAULT 0      NOT NULL,\par
+  FOREIGN KEY (cateno) REFERENCES category (cateno)\par
+);\par
+ \par
+COMMENT ON TABLE contents is '\'c4\'c1\'c5\'d9\'c3\'f7';\par
+COMMENT ON COLUMN contents.contentsno is '\'bb\'f3\'c7\'b0\'b9\'f8\'c8\'a3';\par
+COMMENT ON COLUMN contents.cateno is '\'ba\'d0\'b7\'f9\'b9\'f8\'c8\'a3';\par
+COMMENT ON COLUMN contents.pname is '\'bb\'f3\'c7\'b0\'b8\'ed';\par
+COMMENT ON COLUMN contents.price is '\'b0\'a1\'b0\'dd';\par
+COMMENT ON COLUMN contents.filename is '\'bb\'f3\'c7\'b0\'c0\'cc\'b9\'cc\'c1\'f6';\par
+COMMENT ON COLUMN contents.detail is '\'bb\'f3\'bc\'bc\'b3\'bb\'bf\'eb';\par
+COMMENT ON COLUMN contents.rdate is '\'b5\'ee\'b7\'cf\'c0\'cf';\par
+COMMENT ON COLUMN contents.stock is '\'c0\'e7\'b0\'ed\'b7\'ae';\par
+\par
+insert into contents(contentsno, cateno, pname, price, filename, detail, rdate, stock)\par
+values((select nvl(max(contentsno),0)+1 from contents), 1, 'Ripped Skinny Jeans', \par
+50000, 'jean.jpg','\'c2\'f5\'be\'ee\'c1\'f8 \'bd\'ba\'c5\'b0\'b4\'cf \'c3\'bb\'b9\'d9\'c1\'f6 \'c0\'d4\'b4\'cf\'b4\'d9.',sysdate,10);\par
+ \par
+select contentsno, cateno, pname, price, filename, detail, stock \par
+from contents \par
+where contentsno = 1;\par
+ \par
+update contents\par
+set pname ='Ripped Skinny Jeans2',\par
+    price = 55000,\par
+    filename = 'jean1.jpg',\par
+    detail = '\'c3\'bb\'b9\'d9\'c1\'f6'\par
+where contentsno = 1;\par
+ \par
+delete from contents\par
+where contentsno = 1;\par
+ \par
+select contentsno, cateno, pname, price, filename, stock, r\par
+from (\par
+    select contentsno, cateno, pname, price, filename, stock, rownum r\par
+    from(\par
+        select contentsno, cateno,pname, price, filename, stock\par
+        from contents\par
+        order by contentsno desc\par
+    )\par
+)where r >= 1 and r <= 12;\par
+\par
+ \par
+\par
+3. ContentsDTO \'b1\'b8\'c7\'f6\par
+\par
+>>>ContentsDTO.java\par
+package com.study.contents;\par
+ \par
+import org.springframework.web.multipart.MultipartFile;\par
+import lombok.Data;\par
+ \par
+@Data\par
+public class ContentsDTO \{\par
+ \par
+  private int contentsno                  ;\par
+  private int cateno                      ;\par
+  private String pname                    ;\par
+  private int price                       ;\par
+  private String filename                 ;\par
+  private MultipartFile filenameMF        ;\par
+  private String detail                   ;\par
+  private String rdate                    ;\par
+  private int stock                       ;\par
+\}\par
+}
+ 

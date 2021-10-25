@@ -1,0 +1,455 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset129 \'b8\'bc\'c0\'ba \'b0\'ed\'b5\'f1;}}
+{\colortbl ;\red0\green0\blue255;\red255\green0\blue0;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs32\lang18 1. \'b3\'bb\'c0\'e5\'c7\'d4\'bc\'f6(bulit-in function)\fs16\par
+- \'c6\'c4\'c0\'cc\'bd\'e3\'c0\'cc \'c1\'a6\'b0\'f8\'c7\'d8\'c1\'d6\'b4\'c2 \'c7\'d4\'bc\'f6\'b8\'a6 \'b3\'bb\'c0\'e5\'c7\'d4\'bc\'f6\'b6\'f3 \'c7\'d1\'b4\'d9.\par
+- \'c6\'af\'ba\'b0\'c8\'f7 \'b8\'f0\'b5\'e2\'c0\'bb \'c3\'df\'b0\'a1\'c7\'cf\'c1\'f6 \'be\'ca\'be\'c6\'b5\'b5 \'be\'f0\'c1\'a6\'b5\'e7\'c1\'f6 \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'c0\'cc\'b4\'d9.\par
+- bulit-in function\'c0\'c7 \'c1\'a4\'ba\'b8\'b8\'a6 \'be\'f2\'c0\'bb \'bc\'f6 \'c0\'d6\'b4\'c2 \'c1\'d6\'bc\'d2 \par
+- \'c6\'c4\'c0\'cc\'bd\'e3 \'b9\'ae\'bc\'ad(\'bf\'b5\'b9\'ae) : {{\field{\*\fldinst{HYPERLINK https://docs.python.org/3/library/functions.html }}{\fldrslt{https://docs.python.org/3/library/functions.html\ul0\cf0}}}}\f0\fs16  \par
+\par
+\fs24 (1) abs(), bool()\fs16\par
+- abs() : \'c0\'fd\'b4\'eb\'b0\'aa\'c0\'bb \'b1\'b8\'c7\'d8\'c1\'d6\'b4\'c2 \'b3\'bb\'c0\'e5\'c7\'d4\'bc\'f6\par
+\par
+pos = 10\par
+neg = -10\par
+ \par
+print(abs(pos))\par
+print(abs(neg))\par
+ \par
+if neg > 0 :\par
+    print('\'b5\'de \'b0\'c9\'c0\'bd\'c1\'fa \'c4\'a1\'b4\'d9')\par
+if abs(neg) > 0 :\par
+    print('\'c0\'fc\'c1\'f8\'c7\'cf\'b4\'d9')\par
+\par
+\par
+ 10\par
+ 10 \'c0\'fc\'c1\'f8\'c7\'cf\'b4\'d9\par
+\par
+- bool() : \'c1\'d6\'be\'ee\'c1\'f8 \'b0\'aa\'c0\'cc \'c2\'fc\'c0\'ce\'c1\'f6 \'b0\'c5\'c1\'fe\'c0\'ce\'c1\'f6 \'be\'cb\'b7\'c1\'c1\'d6\'b4\'c2 \'c7\'d4\'bc\'f6\par
+ \par
+num0 = 0\line num1 = 1\line empty_list = []\line full_list = [1, 2, 3]\line empty_str = ""\line full_str = "\'c6\'c4\'c0\'cc\'bd\'e3"\par
+ \par
+print(bool(num0))\line print(bool(empty_list))\line print(bool(empty_str))\line print(bool(num1))\line print(bool(full_list))\line print(bool(full_str))\par
+\par
+False\line False\line False\line True\line True\line True\par
+ \par
+color = input('\'c1\'c1\'be\'c6\'c7\'cf\'b4\'c2 \'bb\'f6\'c0\'bb \'c0\'d4\'b7\'c2\'c7\'cf\'bc\'bc\'bf\'e4: ')\line if not bool(color):\tab\tab #bool =boolean\line     print('\'bb\'f6\'c0\'bb \'b9\'dd\'b5\'e5\'bd\'c3 \'c0\'d4\'b7\'c2\'c7\'d8\'be\'df \'c7\'d5\'b4\'cf\'b4\'d9.')\line else:\line     print(color + '\'bb\'f6\'c0\'bb \'c1\'c1\'be\'c6\'c7\'cf\'b4\'c2 \'b1\'ba\'bf\'e4.')\par
+\par
+\'c1\'c1\'be\'c6\'c7\'cf\'b4\'c2 \'bb\'f6\'c0\'bb \'c0\'d4\'b7\'c2\'c7\'cf\'bc\'bc\'bf\'e4: yellow\par
+yellow\'bb\'f6\'c0\'bb \'c1\'c1\'be\'c6\'c7\'cf\'b4\'c2 \'b1\'ba\'bf\'e4.\par
+\par
+\par
+\fs24 (2) dir(), help()\fs16\par
+- dir() : \'c7\'f6\'c0\'e7 \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'c2 \'ba\'af\'bc\'f6\'b5\'e9\'c0\'bb \'ba\'b8\'bf\'a9\'c1\'d8\'b4\'d9.\par
+- dir(\'b0\'b4\'c3\'bc) : \'b0\'b4\'c3\'bc\'b0\'a1 \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'b1\'e2\'b4\'c9\'b5\'e9\'c0\'bb \'ba\'b8\'bf\'a9\'c1\'d8\'b4\'d9.\par
+- help() : \'c1\'d6\'be\'ee\'c1\'f8 \'b0\'aa\'bf\'a1 \'b4\'eb\'c7\'d1 \'b5\'b5\'bf\'f2\'b8\'bb \'b1\'e2\'b4\'c9\'c0\'cc\'b4\'d9.\par
+- input()\'b4\'c2 \'bb\'e7\'bf\'eb\'c0\'da\'c0\'c7 \'c5\'b0\'ba\'b8\'b5\'e5 \'c0\'d4\'b7\'c2\'c0\'bb \'b1\'e2\'b4\'d9\'b8\'ae\'b1\'e2 \'b6\'a7\'b9\'ae\'bf\'a1 \'c8\'ad\'b8\'e9\'c0\'bb \'c0\'e1\'bd\'c3 \'c1\'a4\'c1\'f6\'bd\'c3\'c5\'b3 \'bc\'f6 \'c0\'d6\'b4\'d9. \'bf\'a3\'c5\'cd\'b8\'a6 \'c4\'a1\'b8\'e9 \'b4\'d9\'c0\'bd \'c4\'da\'b5\'e5\'b8\'a6 \'bd\'c7\'c7\'e0\par
+ \par
+myList = [1, 2, 3]\par
+ \par
+print(dir())  #\'c7\'f6\'c0\'e7 \'bb\'f3\'c5\'c2\'bf\'a1\'bc\'ad \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'c2 \'ba\'af\'bc\'f6\'b5\'e9\'c0\'bb \'ba\'b8\'bf\'a9\'c1\'dc\par
+input()\par
+print('-' * 50)\par
+ \par
+print(dir(myList)) #\'b8\'ae\'bd\'ba\'c6\'ae\'c7\'fc\'c0\'ce myList\'ba\'af\'bc\'f6\'b7\'ce \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'c2 \'c7\'d4\'bc\'f6\'b5\'e9\'c0\'bb \'ba\'b8\'bf\'a9\'c1\'dc\par
+input()\par
+print('-' * 50)\par
+ \par
+print(help(myList.append)) # append()\'c0\'c7 \'bb\'e7\'bf\'eb\'b9\'fd\'c0\'bb \'ba\'b8\'bf\'a9\'c1\'d8\'b4\'d9.\par
+input()\par
+print('-' * 50)\par
+ \par
+print(help(myList))\par
+\par
+\fs24 (3) eval(), exec(), compile()\fs16\par
+- eval() : \ul\b\'c6\'c4\'c0\'cc\'bd\'e3 \'bc\'f6\'bd\'c4\'c7\'fc\'c5\'c2\'c0\'c7 \'b9\'ae\'c0\'da\'bf\'ad\'c0\'bb \'c0\'ce\'bc\'f6\'b7\'ce \'b9\'de\'be\'c6\'bc\'ad \'bd\'c7\'c1\'a6\'b7\'ce \'bd\'c7\'c7\'e0\'bd\'c3\'c5\'b3 \'bc\'f6 \'c0\'d6\'b4\'c2 \'c6\'c4\'c0\'cc\'bd\'e3\'c0\'c7 \'bc\'f6\'bd\'c4\ulnone\b0\'c0\'b8\'b7\'ce \'ba\'af\'c8\'af\'c7\'cf\'bf\'a9 \line            \'bd\'c7\'c7\'e0\'b1\'ee\'c1\'f6 \'c7\'d8\'c1\'d8\'b4\'d9.\par
+- eval()\'bf\'a1\'b4\'c2 \'c6\'c4\'c0\'cc\'bd\'e3 \'bc\'f6\'bd\'c4\'c0\'cc \'be\'c6\'b4\'d1 \'c6\'c4\'c0\'cc\'bd\'e3 \'b9\'ae\'c0\'e5\'c0\'bb \'b3\'d6\'c0\'b8\'b8\'e9 \'bf\'c0\'b7\'f9\'b0\'a1 \'b9\'df\'bb\'fd\'c7\'d1\'b4\'d9.\par
+\par
+print(eval('1000 * 2'))\par
+ \par
+number = 1\par
+exp = 'print(number + 1)'\par
+eval(exp)\par
+ \par
+2000\par
+2\par
+---------------------------------------------------\par
+print(eval('\'be\'c8\'b3\'e7'))\par
+ \par
+----> 1 print(eval('\'be\'c8\'b3\'e7'))\par
+      2 \par
+      3 number = 1\par
+      4 exp = 'print(number + 1)'\par
+      5 eval(exp)\par
+ \par
+<string> in <module>\par
+ \par
+NameError: name '\'be\'c8\'b3\'e7' is not defined\par
+\par
+ \par
+- exec() : \ul\b\'b9\'ae\'c0\'e5\'c0\'bb \'b9\'de\'be\'c6 \'c6\'c4\'c0\'cc\'bd\'e3 \'c4\'da\'b5\'e5\'b7\'ce \'ba\'af\'c8\'af\'c7\'cf\'b0\'ed \'bd\'c7\'c7\'e0\'c7\'d8 \'c1\'d6\'b4\'c2 \'c7\'d4\'bc\'f6\ulnone\b0  \'c0\'cc\'b4\'d9.\par
+- \b\'bc\'f6\'bd\'c4\'c0\'ba \'ba\'af\'bc\'f6, \'bf\'ac\'bb\'ea\'c0\'da, \'c7\'d4\'bc\'f6 \'c8\'a3\'c3\'e2 \'b5\'ee \'c3\'d6\'c1\'be\'b0\'aa\'c0\'bb \'b8\'b8\'b5\'e9 \'bc\'f6 \'c0\'d6\'b4\'c2 \'b0\'cd\b0\'c0\'bb \'b8\'bb\'c7\'d1\'b4\'d9.\par
+  1+2+3+4+5\par
+  10 * 3.14\par
+  int("1")\par
+  4/2-1\par
+\par
+- \b\'b9\'ae\'c0\'e5\'c0\'ba \'bc\'f6\'bd\'c4\'c0\'bb \'c6\'f7\'c7\'d4\'c7\'d8 \'c7\'d1 \'c1\'d9\'c0\'bb \'b1\'b8\'bc\'ba\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'c2 \'b8\'f0\'b5\'e7 \'b0\'cd\b0\'c0\'bb \'b8\'bb\'c7\'d1\'b4\'d9.\par
+  num = 10\par
+  age = 1 + 2 + 3+ 4+5\par
+  print("Hello, World")\par
+  for item in range(10): \tab #for \lang1042\'b9\'ae\lang18\par
+\par
+state1 = 'print("I Love Python")'\par
+exec(state1)\par
+ \par
+state2 = '''\par
+number = 1\par
+for item in [1, 2, 3]:\par
+    number = number + 1\par
+    if item%2: #0:false, 1\'c0\'cc\'bb\'f3:true\par
+        break\par
+print(number)\par
+'''\par
+exec(state2)\par
+ \par
+I Love Python\par
+2\par
+\par
+- compile() : \'b9\'ae\'c0\'da\'bf\'ad\'c0\'bb \'b9\'cc\'b8\'ae \'c6\'c4\'c0\'cc\'bd\'e3 \'c4\'da\'b5\'e5\'b7\'ce \'ba\'af\'c8\'af\'c7\'d8 \'c1\'d6\'b4\'c2 \'c7\'d4\'bc\'f6\par
+- \'b9\'cc\'b8\'ae \'ba\'af\'c8\'af\'c7\'d8 \'b5\'ce\'b1\'e2 \'b6\'a7\'b9\'ae\'bf\'a1 \'bd\'c7\'c1\'a6 \'bc\'d3\'b5\'b5\'bf\'a1\'bc\'ad \'ba\'fc\'b8\'a3\'b4\'d9.\par
+- \'ba\'af\'c8\'af\'b8\'b8 \'c7\'d8\'c1\'d6\'b1\'e2 \'b6\'a7\'b9\'ae\'bf\'a1 \'bd\'c7\'c7\'e0\'c7\'cf\'b1\'e2 \'c0\'a7\'c7\'d8\'bc\'ad eval()\'b0\'fa exec()\'bf\'cd \'c7\'d4\'b2\'b2 \'bb\'e7\'bf\'eb\'c7\'d1\'b4\'d9.\par
+- eval : \'bc\'f6\'bd\'c4\'c0\'bb \'ba\'af\'c8\'af\'c7\'d2 \'b6\'a7 \'bc\'b1\'c5\'c3\'c7\'cf\'b4\'c2 \'b8\'f0\'b5\'e5\'c0\'cc\'b4\'d9. \'c0\'cc\'b8\'f0\'b5\'e5\'b7\'ce \'ba\'af\'c8\'af\'c7\'cf\'b8\'e9 \'b9\'dd\'c8\'af\'b0\'aa\'c0\'cc \'bb\'fd\'b1\'e8, \'bc\'f6\'bd\'c4\'c0\'cc\'b6\'f5 \'c3\'d6\'c1\'be\'b0\'aa\'c0\'bb \'b8\'b8\'b5\'e9 \'bc\'f6 \'c0\'d6\'b4\'c2\'b0\'cd\par
+- single : \'b4\'dc \'c7\'d1\'c1\'d9\'c0\'c7 \'b9\'ae\'c0\'e5\'c0\'bb \'ba\'af\'c8\'af\'c7\'d2 \'b6\'a7 \'bc\'b1\'c5\'c3\'c7\'cf\'b4\'c2 \'b8\'f0\'b5\'e5\'b7\'ce \'b9\'dd\'c8\'af\'b0\'aa\'c0\'cc \'be\'f8\'b4\'d9.\par
+- exec : \'bf\'a9\'b7\'af\'c1\'d9\'c0\'c7 \'b9\'ae\'c0\'e5\'c0\'bb \'ba\'af\'c8\'af\'c7\'d2 \'b6\'a7 \'bc\'b1\'c5\'c3\'c7\'cf\'b4\'c2 \'b8\'f0\'b5\'e5\'b7\'ce \'bf\'aa\'bd\'c3 \'b9\'dd\'c8\'af\'b0\'aa\'c0\'cc \'be\'f8\'b4\'d9.\par
+\par
+number = 0\par
+ \par
+exp = 'number + 1'\tab\par
+code1 = compile(exp, '<string>', 'eval') #<string> \'b4\'eb\'bd\'c5, \'bc\'f6\'bd\'c4/\'b9\'ae\'c0\'e5\'c0\'cc \'c0\'fa\'c0\'e5\'b5\'c8 \'c6\'c4\'c0\'cf\'b8\'ed\'c0\'cc \'bf\'c3\'bc\'f6 \'c0\'d6\'b4\'d9.\par
+for h in range(100):\par
+    number = eval(code1)\par
+print('1', number)\par
+ \par
+ \par
+state1 = 'number = number + 1' \tab #'number = number + 1' \lang1042\'c0\'ba \'b9\'ae\'c0\'e5\lang18\par
+code2 = compile(state1, '<string>', 'single')\tab #single \lang1042\'c7\'d1\'c1\'d9\'c0\'c7 \'b9\'ae\'c0\'e5\'c0\'bb \'ba\'af\'b0\'e6\lang18\par
+for h in range(100):\par
+    exec(code2)\par
+print('2', number)\par
+  \par
+state2 = '''\par
+for item in [1, 2, 3]:\par
+    number = number + 1\par
+    if item == 2:\par
+        break;\par
+print('3', number)\par
+'''\par
+code3 = compile(state2, '<string>', 'exec') \tab #exec \lang1042\'bf\'a9\'b7\'af\'c1\'d9\'c0\'c7 \'b9\'ae\'c0\'e5\'c0\'bb \'ba\'af\'b0\'e6\lang18\par
+exec(code3)\par
+ \par
+\par
+1 100\par
+2 200\par
+3 202\par
+----------------------------------------------------------------\par
+\fs24 (4) float(), int(), len()\fs16\par
+- float() : \b\'c1\'d6\'be\'ee\'c1\'f8\'b0\'aa\'c0\'bb \'bd\'c7\'bc\'f6\'b7\'ce \'ba\'af\'c8\'af\b0\'c7\'d8 \'c1\'d8\'b4\'d9.\par
+- \ul\b\'c1\'d6\'be\'ee\'c1\'f8 \'b0\'aa\'c0\'cc \'b9\'ae\'c0\'da\'bf\'ad\'c0\'cf \'b0\'e6\'bf\'ec \'bc\'fd\'c0\'da\'b7\'ce \'b1\'b8\'bc\'ba\'b5\'c8 \'b9\'ae\'c0\'da\'bf\'ad\ulnone\b0\'c0\'cc\'be\'ee\'be\'df \'c7\'d1\'b4\'d9.\par
+- float() \'c0\'c7 \'b0\'fd\'c8\'a3\'bf\'a1 \'b0\'aa\'c0\'bb \'bb\'fd\'b7\'ab\'c7\'cf\'b8\'e9 \'bd\'c7\'bc\'f6 0.0\'b8\'a6 \'b5\'b9\'b7\'c1\'c1\'d8\'b4\'d9.\par
+\par
+print(float())\par
+ \par
+print(float(-10))\par
+print(float('10'))\par
+ \par
+print(float('3.14'))\par
+\par
+0.0\par
+-10.0\par
+10.0\par
+3.14\par
+\par
+\par
+- int() : \b\'c1\'d6\'be\'ee\'c1\'f8\'b0\'aa\'c0\'bb \'c1\'a4\'bc\'f6\'b7\'ce \'ba\'af\'c8\'af\b0\'c7\'d8\'c1\'d8\'b4\'d9.\par
+- \ul\'c1\'d6\'be\'ee\'c1\'f8 \'b0\'aa\'c0\'cc \'b9\'ae\'c0\'da\'bf\'ad\'c0\'cf \'b0\'e6\'bf\'ec \'c1\'a4\'bc\'f6\'b7\'ce \'b1\'b8\'bc\'ba\'b5\'c8 \'b9\'ae\'c0\'da\'bf\'ad\ulnone\'c0\'cc\'be\'ee\'be\'df \'c7\'d1\'b4\'d9.\par
+- int() \'c0\'c7 \'b0\'fd\'c8\'a3\'b8\'a6 \'bb\'fd\'b7\'ab\'c7\'cf\'b8\'e9 \'c1\'a4\'bc\'f6 0\'c0\'bb \'b5\'b9\'b7\'c1\'c1\'d8\'b4\'d9.\par
+\par
+print(int())\par
+print(int(10))\par
+ \par
+print(int(3.74))\par
+print(int('1234'))\par
+ \par
+0\par
+10\par
+3\par
+1234\par
+\par
+- len() : \b\'c7\'d4\'bc\'f6\'bf\'a1 \'b9\'ae\'c0\'da\'bf\'ad\'c0\'bb \'b3\'d6\'c0\'b8\'b8\'e9 \'b9\'ae\'c0\'da\'bf\'ad\'c0\'c7 \'b1\'e6\'c0\'cc\b0\'b8\'a6 \'be\'cb\'b7\'c1\'c1\'d6\'b8\'e7, \b\'bd\'c3\'c4\'f6\'bd\'ba\'c7\'fc \'b0\'b4\'c3\'bc\'b8\'a6 \'b3\'d6\'c0\'b8\'b8\'e9 \'c7\'d7\'b8\'f1\'c0\'c7 \'b0\'b3\'bc\'f6\b0\'b8\'a6 \'be\'cb\'b7\'c1\'c1\'d8\'b4\'d9.\line          length() \lang1042\'bf\'cd \'b0\'b0\'c0\'bd\lang18\par
+- range() \'bf\'cd \'c7\'d4\'b2\'b2 \'bb\'e7\'bf\'eb\'c7\'cf\'b8\'e9 \'bd\'c3\'c4\'f6\'bd\'ba\'c7\'fc \'b0\'b4\'c3\'bc\'c0\'c7 \'c7\'d7\'b8\'f1 \'b0\'b3\'bc\'f6\'b8\'a6 \'c0\'cf\'c0\'cf\'c0\'cc \'bc\'bf \'c7\'ca\'bf\'e4\'b0\'a1 \'be\'f8\'be\'ee\'bc\'ad \'c6\'ed\'b8\'ae\'c7\'cf\'b4\'d9.\par
+\par
+print('\'b9\'ae\'c0\'da\'bf\'ad:', len('python'))\par
+myList = [1, 2, 3, 4, 5, 6, 7]\line print('\'b8\'ae\'bd\'ba\'c6\'ae:', len(myList))\par
+myDict = \{0:'\'c8\'a3\'b3\'af\'b5\'ce', 1:'\'b8\'de\'bd\'c3', 2:'\'bc\'d5\'c8\'ef\'b9\'ce'\}\line for item in range(len(myDict)):\line     print('\'bb\'e7\'c0\'fc',item,':', myDict[item])\par
+\par
+\'b9\'ae\'c0\'da\'bf\'ad: 6\par
+\'b8\'ae\'bd\'ba\'c6\'ae: 7\par
+\'bb\'e7\'c0\'fc 0 : \'c8\'a3\'b3\'af\'b5\'ce\par
+\'bb\'e7\'c0\'fc 1 : \'b8\'de\'bd\'c3\par
+\'bb\'e7\'c0\'fc 2 : \'bc\'d5\'c8\'ef\'b9\'ce\par
+\par
+ \par
+\fs24 (5) pow(), round(), sum()\par
+\fs16 - pow() : \'c1\'f6\'bc\'f6\'bd\'c2\'c0\'bb \'b1\'b8\'c7\'d8\'c1\'d6\'b4\'c2 \'c7\'d4\'bc\'f6\'c0\'cc\'b4\'d9. ** \'bf\'ac\'bb\'ea\'b0\'fa \'b0\'b0\'b4\'d9. \'b4\'f5 \'b3\'aa\'c0\'ba \'c1\'a1\'c0\'cc \'c0\'d6\'b4\'d9\'b8\'e9 pow()\'c0\'c7 \'bc\'bc\'b9\'f8\'c2\'b0 \'c0\'ce\'c0\'da\'b0\'a1 \'c0\'d6\'b4\'c2\'b5\'a5 \line             pow(10, 2, 2) \'b4\'c2 10\'c0\'bb 2\'c1\'a6\'b0\'f6\'bd\'c2 \'c7\'d8\'c1\'d6\'b0\'ed 2\'b7\'ce \'b3\'aa\'b4\'ab \'b3\'aa\'b8\'d3\'c1\'f6\'b8\'a6 \'b1\'b8\'c7\'d8\'c1\'d8\'b4\'d9.\par
+- round(\'bc\'fd\'c0\'da) : \'b9\'dd\'bf\'c3\'b8\'b2 \'c7\'d4\'bc\'f6\'b7\'ce \'b0\'a1\'c0\'e5 \'b0\'a1\'b1\'ee\'bf\'ee \'c1\'a4\'bc\'f6\'b8\'a6 \'b1\'b8\'c7\'d8\'c1\'d8\'b4\'d9.\line   \tab         2.3 --> 2, 4.6 --> 5, 3.1 --> 3\par
+- round(\'bc\'fd\'c0\'da, n) \'b5\'ce\'b9\'f8\'c2\'b0 \'c0\'ce\'c0\'da n\'c0\'ba \'b9\'dd\'bf\'c3\'b8\'b2 \'c7\'cf\'b4\'c2 \'c0\'a7\'c4\'a1\'b8\'a6 \'be\'cb\'b7\'c1\'c1\'d8\'b4\'d9. \b n\'c0\'cc \'be\'e7\'bc\'f6\'c0\'cc\'b8\'e9 \'ba\'b8\'bf\'a9\'c1\'d9 \'bc\'d2\'bc\'f6\'c1\'a1 \'c0\'da\'b8\'ae\b0 , \b\'c0\'bd\'bc\'f6\'c0\'cc\'b8\'e9 \line   \'b9\'dd\'bf\'c3\'b8\'b2\'c7\'d2 \'c1\'a4\'bc\'f6 \'c0\'da\'b8\'ae\b0\par
+\par
+print(round(367.5254, 2)) # \'bc\'d2\'bc\'f6\'c1\'a1 \'bc\'bc\'c2\'b0\'c0\'da\'b8\'ae\'bf\'a1\'bc\'ad \'b9\'dd\'bf\'c3\'b8\'b2 \'c7\'d8\'bc\'ad, \'bc\'d2\'bc\'f6\'c1\'a1 \'b5\'d1\'c2\'b0 \'c0\'da\'b8\'ae\'b1\'ee\'c1\'f6 \'ba\'b8\'bf\'a9\'c1\'dc\par
+print(round(367.5454, 1))  # \'bc\'d2\'bc\'f6\'c1\'a1 \'b5\'d1\'c2\'b0\'c0\'da\'b8\'ae\'bf\'a1\'bc\'ad \'b9\'dd\'bf\'c3\'b8\'b2 \'c7\'d8\'bc\'ad, \'bc\'d2\'bc\'f6\'c1\'a1 \'c3\'b9\'c2\'b0 \'c0\'da\'b8\'ae\'b1\'ee\'c1\'f6 \'ba\'b8\'bf\'a9\'c1\'dc  \par
+print(round(367.5254, -1)) #\'c1\'a4\'bc\'f6 \'c0\'cf\'c0\'c7\'c0\'da\'b8\'ae\'bf\'a1\'bc\'ad \'b9\'dd\'bf\'c3\'b8\'b2 \'c7\'d8\'bc\'ad \'bd\'ca\'c0\'c7\'c0\'da\'b8\'ae\'b1\'ee\'c1\'f6 \'ba\'b8\'bf\'a9\'c1\'dc \par
+print(round(367.5254, -2)) #\'c1\'a4\'bc\'f6 \'bd\'ca\'c0\'c7\'c0\'da\'b8\'ae\'bf\'a1\'bc\'ad \'b9\'dd\'bf\'c3\'b8\'b2 \'c7\'d8\'bc\'ad \'b9\'e9\'c0\'c7\'c0\'da\'b8\'ae\'b1\'ee\'c1\'f6 \'ba\'b8\'bf\'a9\'c1\'dc\par
+ \par
+367.53\par
+367.5\par
+370.0\par
+400.0\par
+\par
+- sum() : \b\'c7\'d7\'b8\'f1\'b5\'e9\'c0\'c7 \'c7\'d5\b0\'c0\'bb \'b1\'b8\'c7\'d8\'c1\'d8\'b4\'d9.\par
+\par
+print(pow(10, 2))\par
+ \par
+print(round(2.3), round(4.6))\par
+ \par
+myList = [1, 2, 3, 4, 5, 6]\par
+print(sum(myList))\par
+\par
+100\par
+2 5\par
+21\par
+ \par
+\fs24 (6) max(), min()\fs16\par
+\par
+- max() : \'c3\'d6\'b4\'eb\'b0\'aa, min : \'c3\'d6\'bc\'d2\'b0\'aa\par
+- \cf2\'be\'c6\'bd\'ba\'c5\'b0 \'c4\'da\'b5\'e5\'bf\'a1\'bc\'ad \'bc\'fd\'c0\'da < \'bf\'b5\'be\'ee \'b4\'eb\'b9\'ae\'c0\'da < \'bf\'b5\'be\'ee \'bc\'d2\'b9\'ae\'c0\'da \'bc\'f8\'c0\'b8\'b7\'ce \'c5\'a9\'b1\'e2\'b0\'a1 \'c1\'a4\'c7\'d8\'c1\'ae \'c0\'d6\'b4\'d9.\cf0\par
+- \'b9\'ae\'c0\'da\'bf\'ad\'b0\'fa \'bc\'fd\'c0\'da\'b4\'c2 \'c5\'a9\'b1\'e2 \'ba\'f1\'b1\'b3\'b8\'a6 \'c7\'d2 \'bc\'f6 \'be\'f8\'b4\'d9.\par
+- \'be\'c6\'bd\'ba\'c5\'b0 \'c4\'da\'b5\'e5\'bf\'a1\'bc\'ad \'b0\'f8\'b9\'e9\'c0\'ba 32\'b9\'f8, \'bc\'fd\'c0\'da\'b4\'c2 48~57\'b9\'f8, \'bf\'b5\'be\'ee \'b4\'eb\'b9\'ae\'c0\'da 65~90\'b9\'f8, \par
+  \'bf\'b5\'be\'ee \'bc\'d2\'b9\'ae\'c0\'da 97~ 122\'b9\'f8 \'c0\'cc\'b4\'d9.\par
+- \'b4\'d9\'c0\'bd \'bf\'b9\'c1\'a6\'c0\'c7 \'b8\'b6\'c1\'f6\'b8\'b7 \'c1\'d9\'c0\'c7 \'b9\'ae\'c0\'e5 \'bc\'d3 \'c3\'d6\'bc\'d2\'b0\'aa\'c0\'ba \'b0\'f8\'b9\'e9\'c0\'cc \'c3\'e2\'b7\'c2\'b5\'c7\'be\'fa\'b4\'d9. \par
+\par
+myTup = (56, 79, 82, 1, 22, 99)\par
+print(max(myTup), min(myTup))\par
+ \par
+print('\'bf\'b5\'b9\'ae\'c0\'da \'c1\'df \'b0\'a1\'c0\'e5 \'c5\'ab \'b9\'ae\'c0\'da:', max('abcde'))\par
+print('\'bc\'ad\'b7\'ce \'b4\'d9\'b8\'a5 \'b9\'ae\'c0\'da\'b5\'e9 \'c1\'df \'c5\'ab \'b9\'ae\'c0\'da:', max('0Aa'))\par
+ \par
+print('\'b9\'ae\'c0\'e5 \'bc\'d3 \'c3\'d6\'b4\'f1\'b0\'aa \'b9\'ae\'c0\'da:', max('I went to the zoo yesterday, 27 March.'))\par
+print('\'b9\'ae\'c0\'e5 \'bc\'d3 \'c3\'d6\'bc\'da\'b0\'aa \'b9\'ae\'c0\'da:', min('I went to the zoo yesterday, 27 March.'))\par
+ \par
+99 1\par
+\'bf\'b5\'b9\'ae\'c0\'da \'c1\'df \'b0\'a1\'c0\'e5 \'c5\'ab \'b9\'ae\'c0\'da: e\par
+\'bc\'ad\'b7\'ce \'b4\'d9\'b8\'a5 \'b9\'ae\'c0\'da\'b5\'e9 \'c1\'df \'c5\'ab \'b9\'ae\'c0\'da: a\par
+\'b9\'ae\'c0\'e5 \'bc\'d3 \'c3\'d6\'b4\'f1\'b0\'aa \'b9\'ae\'c0\'da: z\par
+\'b9\'ae\'c0\'e5 \'bc\'d3 \'c3\'d6\'bc\'da\'b0\'aa \'b9\'ae\'c0\'da: # \lang1042\'b0\'f8\'b9\'e9\lang18\par
+\par
+\fs24 (7) any(), all()\fs16\par
+\par
+- \'be\'ee\'b6\'b2 \'b0\'b4\'c3\'bc\'c0\'c7 \'b3\'bb\'ba\'ce \'b0\'aa\'c0\'bb \'c8\'ae\'c0\'ce\'c7\'cf\'bf\'a9 \'c2\'fc\'b0\'fa \'b0\'c5\'c1\'fe\'c0\'bb \'c7\'a5\'bd\'c3\'c7\'d1\'b4\'d9.\par
+- any() : \ul\b\'b3\'bb\'ba\'ce \'bf\'f8\'bc\'d2\'c0\'c7 \'b0\'aa\'c0\'cc \'c7\'cf\'b3\'aa\'b6\'f3\'b5\'b5 \'c2\'fc\ulnone\b0\'c0\'cc\'b8\'e9 \'c2\'fc\'b0\'aa\'c0\'b8\'b7\'ce \'c3\'b3\'b8\'ae\'c7\'d1\'b4\'d9.\par
+- all() : \ul\b\'b3\'bb\'ba\'ce \'bf\'f8\'bc\'d2\'c0\'c7 \'b0\'aa\'c0\'cc \'b8\'f0\'b5\'ce \'c2\'fc\ulnone\b0\'c0\'cf \'b0\'e6\'bf\'ec\'b8\'e9 \'c2\'fc\'b0\'aa\'c0\'b8\'b7\'ce \'c3\'b3\'b8\'ae\'c7\'d1\'b4\'d9.\par
+\par
+i = [1,2,3,4,5]\par
+j = [1,2,None,4,5]\par
+any(j)\par
+\par
+True\par
+\par
+- \'b0\'e1\'c3\'f8\'b0\'aa None\'b4\'c2 \'c7\'d7\'bb\'f3 \'b0\'c5\'c1\'fe\'c0\'cc\'b4\'d9. \par
+bool(None)\par
+\par
+False\par
+all(j)  #None\'c0\'cc \'b0\'c5\'c1\'fe\'c0\'bb \'b3\'aa\'c5\'b8\'b3\'bb\'b9\'c7\'b7\'ce all()\'c0\'c7 \'b0\'e1\'b0\'fa\'b4\'c2 \'b0\'c5\'c1\'fe\'c0\'b8\'b7\'ce \'c3\'b3\'b8\'ae\'b5\'c8\'b4\'d9.\par
+False\par
+\par
+- \'ba\'f3 \'b8\'ae\'bd\'ba\'c6\'ae \'b0\'b4\'c3\'bc\'b5\'b5 \'b0\'c5\'c1\'fe\'c0\'cc\'b4\'d9.\par
+bool([])\par
+False\par
+\par
+- any()\'bf\'a1 \'ba\'f3\'b0\'b4\'c3\'bc\'b8\'a6 \'b3\'d6\'be\'ee\'bc\'ad \'bd\'c7\'c7\'e0\'c7\'cf\'b8\'e9 False\'b0\'a1 \'b5\'c7\'b0\'ed all()\'bf\'a1 \'ba\'f3 \'b0\'b4\'c3\'bc\'b8\'a6 \'c0\'fc\'b4\'de\'c7\'cf\'b8\'e9 \'c2\'fc\'c0\'cc \'b3\'aa\'bf\'c2\'b4\'d9.\par
+\par
+any([])\par
+False\par
+all([])\par
+True \par
+\par
+\fs32 2. \'c7\'d4\'bc\'f6\'c7\'a5\'c7\'f6\'bd\'c4\fs16\par
+- \'c7\'d4\'bc\'f6\'b4\'c2 \'c1\'a4\'c0\'c7\'c7\'d1 \'c8\'c4\'bf\'a1 \'c8\'a3\'c3\'e2\'c7\'d8\'bc\'ad \'bb\'e7\'bf\'eb\'c7\'d1\'b4\'d9. \par
+- \'c7\'d4\'bc\'f6\'c7\'a5\'c7\'f6\'bd\'c4\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'cf\'b8\'e9 \'c7\'d4\'bc\'f6\'b8\'a6 \'c0\'cf\'b9\'dd\'c0\'fb\'c0\'ce \'c7\'a5\'c7\'f6\'bd\'c4\'c0\'b8\'b7\'ce \'b3\'aa\'c5\'b8\'b3\'bb\'b0\'ed \'b9\'d9\'b7\'ce \'bd\'c7\'c7\'e0\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+- \'c7\'d4\'bc\'f6\'b8\'a6 \'b5\'fc \'c7\'d1\'c1\'d9\'b7\'ce \'b8\'b8\'b5\'e9\'be\'ee \'c1\'d6\'b4\'c2 \'b8\'da\'c1\'f8 \'b9\'e6\'b9\'fd\'c0\'cc\'b4\'d9.\par
+- \'c7\'d4\'bc\'f6 \'c1\'a4\'c0\'c7\'b9\'ae\'b0\'fa \'b4\'de\'b8\'ae, \'c7\'d4\'bc\'f6 \'c0\'cc\'b8\'a7\'c0\'cc \'be\'f8\'be\'ee\'bc\'ad \'c7\'d4\'bc\'f6 \'c7\'a5\'c7\'f6\'bd\'c4\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'cf\'b8\'e9 \'c0\'cc\'b8\'a7\'b0\'f8\'b0\'a3\'bf\'a1 \'c0\'fa\'c0\'e5\'b5\'c7\'c1\'f6 \'be\'ca\'b4\'c2\'b4\'d9.\par
+- \'c7\'d4\'bc\'f6\'c7\'a5\'c7\'f6\'bd\'c4\'c0\'bb \'b4\'d9\'bd\'c3 \'bb\'e7\'bf\'eb\'c7\'cf\'b7\'c1\'b8\'e9 \'ba\'af\'bc\'f6\'bf\'a1 \'c0\'fa\'c0\'e5\'c7\'d8\'be\'df \'c7\'d1\'b4\'d9.\par
+- \'b0\'a3\'b4\'dc\'c7\'d1 \'b1\'e2\'b4\'c9\'c0\'bb \'c0\'db\'bc\'ba\'c7\'d8\'bc\'ad \'c7\'d4\'bc\'f6 \'b8\'c5\'b0\'b3\'ba\'af\'bc\'f6\'bf\'a1 \'c0\'ce\'c0\'da\'b7\'ce \'c0\'fc\'b4\'de\'c7\'cf\'b0\'c5\'b3\'aa \'b0\'aa\'c0\'bb \'b0\'a3\'b4\'dc\'c8\'f7 \'c3\'b3\'b8\'ae\'c7\'d2 \'b6\'a7 \'c7\'d4\'bc\'f6\'c7\'a5\'c7\'f6\'bd\'c4\'c0\'cc \'b8\'b9\'c0\'cc \'bb\'e7\'bf\'eb\'b5\'c8\'b4\'d9.\par
+- \'c7\'d4\'bc\'f6\'c7\'a5\'c7\'f6\'bd\'c4\'c0\'ba lambda \'c5\'b0\'bf\'f6\'b5\'e5\'b8\'a6 \'be\'b4 \'b4\'d9\'c0\'bd\'bf\'a1 \'b8\'c5\'b0\'b3\'ba\'af\'bc\'f6\'b8\'a6 \'c1\'a4\'c7\'d1\'b4\'d9. \'b8\'c5\'b0\'b3\'ba\'af\'bc\'f6\'b0\'a1 \'bf\'a9\'b7\'af\'b0\'b3\'b8\'e9 \'bd\'b0\'c7\'a5\'b7\'ce \'b1\'b8\'ba\'d0\'c7\'d1\'b4\'d9.\par
+- \'c7\'d4\'bc\'f6\'c7\'a5\'c7\'f6\'bd\'c4\'c0\'c7 \'c3\'b3\'b8\'ae\'b0\'e1\'b0\'fa\'b4\'c2 \'c4\'dd\'b7\'d0\'c0\'bb \'be\'b4 \'c8\'c4\'bf\'a1 \'c7\'a5\'c7\'f6\'bd\'c4\'c0\'b8\'b7\'ce \'c0\'db\'bc\'ba\'c7\'d1\'b4\'d9. \par
+- \'c7\'d4\'bc\'f6\'c7\'a5\'c7\'f6\'bd\'c4\'bf\'a1\'b4\'c2 \'b9\'dd\'c8\'af\'b9\'ae(return)\'c0\'cc \'be\'f8\'b4\'d9.\par
+\par
+\fs24 (1) \'b6\'f7\'b4\'d9 \'c7\'d4\'bc\'f6 \'c1\'a4\'c0\'c7\fs16\par
+- \'b6\'f7\'b4\'d9\'c7\'a5\'c7\'f6\'bd\'c4\'c0\'ba \'c0\'cc\'b8\'a7\'c0\'cc \'be\'f8\'be\'ee\'bc\'ad '\'c0\'cd\'b8\'ed(\'c0\'cc\'b8\'a7\'c0\'cc \'be\'f8\'b4\'c2) \'c7\'d4\'bc\'f6(Anonymous function)' \'b6\'f3\'b0\'ed \'c7\'d1\'b4\'d9.\par
+- \'b6\'f7\'b4\'d9\'c7\'d4\'bc\'f6\'b8\'a6 \'c1\'a4\'c0\'c7\'c7\'cf\'bf\'a9 \'bd\'c7\'c7\'e0\'c7\'cf\'b8\'e9 \'b6\'f7\'b4\'d9\'c7\'d4\'bc\'f6 \'b0\'b4\'c3\'bc\'b0\'a1 \'b8\'b8\'b5\'e9\'be\'ee\'c1\'f8\'b4\'d9.\par
+\par
+  lambda  x : x  # x \'b8\'c5\'b0\'b3\'ba\'af\'bc\'f6\'b8\'a6 \'b9\'de\'be\'c6\'bc\'ad \'b1\'d7\'b4\'eb\'b7\'ce \'b9\'dd\'c8\'af\'c7\'d1\'b4\'d9.\par
+ <function __main__.<lambda>(x)>\par
+\par
+- \'b6\'f7\'b4\'d9\'c7\'d4\'bc\'f6 \'bd\'c7\'c7\'e0\'c7\'cf\'b7\'c1\'b8\'e9 \'b6\'f7\'b4\'d9\'c7\'a5\'c7\'f6\'bd\'c4\'c0\'bb \'c0\'fc\'c3\'bc\'b8\'a6 () \'b7\'ce \'b9\'ad\'b0\'ed ()\'be\'c8\'bf\'a1 \'c0\'ce\'c0\'da\'b0\'aa\'c0\'bb \'c0\'fc\'b4\'de\'c7\'d1\'b4\'d9.\par
+  \par
+  (lambda x : x)(5) \tab # \lang1042\'b6\'f7\'b4\'d9\'bd\'c4 = \lang18 lambda x : x \lang1042\'bd\'c7\'c7\'e0\'c0\'bb\'c7\'cf\'b1\'e2\'c0\'a7\'c7\'d8  ()\'b7\'ce \'b9\'ad\'c0\'bd\lang18\par
+  5\par
+\par
+- \'b8\'c5\'b0\'b3\'ba\'af\'bc\'f6 \'b5\'ce\'b0\'b3\'b8\'a6 \'bc\'b1\'be\'f0\'c7\'cf\'bf\'a9, \'b8\'c5\'b0\'b3\'ba\'af\'bc\'f6 2\'b0\'b3\'b8\'a6 \'b4\'f5\'c7\'d8\'bc\'ad \'b0\'e1\'b0\'fa\'b8\'a6 \'b9\'dd\'c8\'af\'c7\'d1\'b4\'d9.\par
+- \'c7\'d4\'bc\'f6\'b8\'a6 \'ba\'af\'bc\'f6\'bf\'a1 \'b4\'e3\'b0\'ed \'b1\'d7 \'ba\'af\'bc\'f6\'b8\'a6 \'bd\'c7\'c7\'e0\'c7\'cf\'b4\'d9.\par
+ x =  lambda x, y : x+y\tab # \lang1042\'b6\'f7\'b4\'d9 \'c7\'a5\'c7\'f6\'bd\'c4 \'c0\'da\'c3\'bc\'b8\'a6 x\'b7\'ce \'c0\'fa\'c0\'e5, (lambda x,y : x+y)(5,5) \'bf\'cd \'b0\'b0\'c0\'bd\lang18\line  x(5, 5)\par
+ 10\par
+\par
+- __name__ \'bc\'d3\'bc\'ba\'c0\'bb \'c0\'cc\'bf\'eb\'c7\'cf\'bf\'a9 \'c7\'d4\'bc\'f6 \'c0\'cc\'b8\'a7\'c0\'bb \'c8\'ae\'c0\'ce\'c7\'d1\'b4\'d9.\par
+\par
+ x.__name__\par
+\par
+ '<lambda>'\par
+\par
+- \'c7\'d4\'bc\'f6\'b5\'b5 \'b0\'b4\'c3\'bc\'c0\'cc\'b4\'d9. \'be\'ee\'b6\'b2 \'c5\'ac\'b7\'a1\'bd\'ba\'b7\'ce \'b8\'b8\'b5\'e9\'be\'ee\'c1\'b3\'b4\'c2\'c1\'f6 \'c8\'ae\'c0\'ce\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+\tab - tpyes \'b8\'f0\'b5\'e2\'c0\'bb import\'c7\'d1\'c8\'c4 \'c8\'ae\'c0\'ce\'c7\'d1\'b4\'d9.\par
+\par
+\tab - \'c0\'cd\'b8\'ed\'c7\'d4\'bc\'f6 \'b0\'b4\'c3\'bc\'b4\'c2 types.LambdaType \'c5\'ac\'b7\'a1\'bd\'ba\'b7\'ce \'b8\'b8\'b5\'e7\'b4\'d9.\par
+\par
+\tab - \'c0\'cf\'b9\'dd\'c7\'d4\'bc\'f6\'b0\'b4\'c3\'bc\'b4\'c2 types.FunctionType \'c5\'ac\'b7\'a1\'b7\'ce \'b8\'b8\'b5\'e9\'be\'ee\'c1\'f8\'b4\'d9.\par
+\par
+\tab - LambdaType\'bf\'cd FunctionType \'c5\'ac\'b7\'a1\'bd\'ba\'b4\'c2 \'b5\'d1\'b4\'d9 \'c7\'d4\'bc\'f6\'b8\'a6 \'b8\'b8\'b5\'e5\'b4\'c2 \'c5\'ac\'b7\'a1\'bd\'ba \'c0\'cc\'b9\'c7\'b7\'ce \'b0\'b0\'b4\'d9\'b0\'ed \'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\par
+def add(x,y) : \par
+    return x+y\par
+\par
+ add(10, 10)\par
+\par
+ 20\par
+\par
+ type(add)\par
+\par
+ function\par
+\par
+ type(x)\par
+\par
+ function\par
+\par
+ import types\par
+ types.LambdaType == type(x)\par
+ True\par
+\par
+ import types\par
+ types.FunctionType == type(add)\par
+ True\par
+\par
+ types.LambdaType == types.FunctionType\par
+ True\par
+ \par
+\fs24 (2) \'b6\'f7\'b4\'d9\'c7\'d4\'bc\'f6\'b8\'a6 \'c7\'d4\'bc\'f6\'c0\'c7 \'c0\'ce\'c0\'da\'b7\'ce \'c0\'fc\'b4\'de\par
+\fs16  \par
+- \'c0\'a7\'bf\'a1 \'b8\'b8\'b5\'e7 add()\'bf\'a1 \'b6\'f7\'b4\'d9\'c7\'d4\'bc\'f6 \'c0\'ce\'c0\'da\'b7\'ce \'c0\'fc\'b4\'de\par
+- z -> lambda \'c0\'c7 \'b8\'c5\'b0\'b3\'ba\'af\'bc\'f6\par
+- z * z -> lambda\'c7\'d4\'bc\'f6 \'c3\'b3\'b8\'ae\'b0\'e1\'b0\'fa\par
+ \par
+x= 10\par
+add((lambda z : z * z)(x), 200)  \par
+ \par
+300\par
+ \par
+- \'bb\'f5\'b7\'ce\'bf\'ee \'c7\'d4\'bc\'f6 apply\'b8\'a6 \'c1\'a4\'c0\'c7\'c7\'cf\'bf\'a9 lambda\'c7\'d4\'bc\'f6\'b8\'a6 \'c0\'ce\'c0\'da\'b7\'ce \'c0\'fc\'b4\'de\par
+- x <-- \'b6\'f7\'b4\'d9\'c7\'d4\'bc\'f6\'c0\'c7 \'b8\'c5\'b0\'b3\'ba\'af\'bc\'f6\par
+-  [i*i for i in x] <- \'b6\'f7\'b4\'d9\'c7\'d4\'bc\'f6\'c0\'c7 \'c3\'b3\'b8\'ae\'b0\'e1\'b0\'fa => list\lang1042\'be\'c8\'bf\'a1\'bc\'ad for \'b9\'ae\'c0\'cc \'bb\'e7\'bf\'eb\'b5\'ca\lang18\par
+\par
+def apply(func, obj):\par
+     return func(obj)\tab\tab #func() \lang1042\'b7\'ce \'bd\'c7\'c7\'e0\lang18\par
+ll = [1,2,3,4]\par
+apply(lambda x : [i*i for i in x], ll)   \tab #[i*i for i in x] = \'c7\'d4\'bc\'f6(func)\par
+\par
+[1, 4, 9, 16]\par
+\par
+\lang1042\'b6\'f7\'b4\'d9\'bd\'c4\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'cf\'c1\'f6 \'be\'ca\'c0\'bb\'b0\'e6\'bf\'ec \par
+\lang18 def f2(x):\par
+\tab result = [\par
+\tab for i in x :\par
+\tab\tab result.append(i*i)\par
+\tab return result\par
+\par
+\par
+\fs24 (3) \'c7\'d4\'bc\'f6 map\'b0\'fa filter\'bf\'a1 \'c7\'d4\'bc\'f6\'c7\'a5\'c7\'f6\'bd\'c4(\'b6\'f7\'b4\'d9\'c7\'a5\'c7\'f6) \'c0\'ce\'c0\'da\'b7\'ce \'c0\'fc\'b4\'de\fs16\par
+\par
+1) map - \ul\b\'c7\'d4\'bc\'f6\'b8\'a6 \'b9\'de\'be\'c6 \'b5\'e9\'be\'ee\'bf\'c2 \'b0\'b4\'c3\'bc\'c0\'c7 \'bf\'f8\'bc\'d2\'b8\'a6 \'ba\'af\'c7\'fc\ulnone\b0\'c7\'cf\'b4\'c2 \'c0\'cf\'c0\'bb \'c7\'d1\'b4\'d9.\par
+\par
+l=[1,2,3,4]\par
+for i in map(lambda x: x*x, l) :\tab #map \lang1042\'bf\'f8\'bc\'d2\'b8\'b8 \'ba\'af\'c7\'fc\lang18\par
+     print(i)\par
+\par
+1\par
+4\par
+9\par
+16\par
+\par
+- \'b8\'ae\'bd\'ba\'c6\'ae \'b3\'bb\'ba\'ce\'bf\'a1 map \'c7\'d4\'bc\'f6\'b8\'a6 \'c1\'a4\'c0\'c7\'c7\'cf\'b0\'ed \'c0\'cc\'b8\'a7\'be\'d5\'bf\'a1 *\'b8\'a6 \'ba\'d9\'c0\'cc\'b8\'e9 \'c3\'b3\'b8\'ae\'b5\'c8 \'bf\'f8\'bc\'d2\'b0\'a1 \'b8\'ae\'bd\'ba\'c6\'ae \'b0\'b4\'c3\'bc \'be\'c8\'bf\'a1 \'bf\'f8\'bc\'d2\'b7\'ce \'b5\'e9\'be\'ee\'b0\'a3\'b4\'d9.\par
+- \'c0\'a7\'bf\'a1 \'bf\'b9\'c1\'a6\'b8\'a6 \'b0\'a3\'b4\'dc\'c8\'f7 \'c0\'db\'bc\'ba\'c7\'df\'b4\'d9\par
+\par
+ [*map(lambda x : x*x, l)]\tab #apply(lambda x : [i*i for i in x] , ll) \lang1042\'bf\'cd \'b0\'b0\'c0\'bd\lang18\par
+\par
+ [1,4,9,16]\par
+\par
+2) filter\par
+- \ul\b\'bf\'f8\'bc\'d2\'b0\'a1 \'b8\'b9\'c0\'ba \'b0\'b4\'c3\'bc\'b8\'a6 \'c0\'ce\'c0\'da\'b7\'ce \'b9\'de\'be\'c6 \'c7\'d4\'bc\'f6\'c0\'c7 \'b0\'e1\'b0\'fa\'b0\'a1 \'c2\'fc\'c0\'ce \'b0\'e6\'bf\'ec\'b8\'b8 \'b9\'dd\'c8\'af\ulnone\b0\'c7\'cf\'b5\'b5\'b7\'cf \'c3\'b3\'b8\'ae\'c7\'d1\'b4\'d9.\par
+- \ul\b\'c7\'d4\'bc\'f6\'c7\'a5\'c7\'f6\'bd\'c4 \b0\'ba\'ce\'ba\'d0\'bf\'a1 \'c3\'b3\'b8\'ae\'b5\'c8 \'b0\'e1\'b0\'fa\'b0\'a1 \'c2\'fc\'b0\'fa \'b0\'c5\'c1\'fe\'c0\'bb \'c7\'a5\'bd\'c3\'c7\'cf\'b8\'e9 \b\'b3\'bb\'ba\'ce\'c0\'fb\'c0\'b8\'b7\'ce \'c2\'fc\'c0\'ce \'b0\'e6\'bf\'ec\'b8\'b8\b0  \b\'c3\'e2\'b7\'c2\ulnone\b0\'c7\'d1\'b4\'d9.\par
+\par
+ for i in filter(lambda x : (x % 2==0), l) :\par
+    print(i)\par
+\par
+ 2\par
+ 4\par
+ \par
+ [*filter(lambda x : ( x % 2==0),l)]\par
+\par
+ [2, 4]\par
+\par
+\par
+\fs24 (4) \'b6\'f7\'b4\'d9\'c7\'d4\'bc\'f6\'b7\'ce \'c7\'d4\'bc\'f6\'c3\'bc\'c0\'ce \'b8\'b8\'b5\'e9\'b1\'e2\fs16\par
+- \cf2\'c7\'d4\'bc\'f6\'b8\'a6 \'bf\'ac\'bc\'d3\'c7\'d8\'bc\'ad \'c8\'a3\'c3\'e2\'c7\'cf\'b4\'c2 \'b0\'cd\'c0\'bb \'c7\'d4\'bc\'f6 \'c3\'bc\'c0\'ce\cf0\'c0\'cc\'b6\'f3\'b0\'ed \'c7\'d1\'b4\'d9.\par
+- \cf2\'c7\'d4\'bc\'f6 \'c3\'bc\'c0\'ce\'c0\'bb \'b8\'b8\'b5\'e9\'b1\'e2 \'c0\'a7\'c7\'d8\'bc\'ad \'b6\'f7\'b4\'d9\'c7\'d4\'bc\'f6 \'c7\'a5\'c7\'f6\'bd\'c4\'bf\'a1 \'b4\'d9\'b8\'a5 \'c7\'d4\'bc\'f6\'b8\'a6 \'c8\'a3\'c3\'e2\cf0\'c7\'d1\'b4\'d9.\par
+\par
+_list = []\par
+def compose(x, func) :\par
+    _list.append(x)\par
+    return func\par
+\par
+def add(x) :\par
+    result = 0\par
+    for i in _list :\par
+        result += i\par
+    return result + x\par
+\par
+- \'bc\'bc\'b0\'b3\'c0\'c7 \'b6\'f7\'b4\'d9 \'c7\'d4\'bc\'f6\'b8\'a6 \'b8\'b8\'b5\'e9\'be\'ee\'bc\'ad \'bc\'bc\'b0\'b3\'c0\'c7 \'ba\'af\'bc\'f6 a, b, c\'bf\'a1 \'b0\'a2\'b0\'a2 \'c0\'fa\'c0\'e5\'c7\'d1\'b4\'d9.\par
+- a\'b8\'a6 \'bd\'c7\'c7\'e0\'c7\'cf\'b8\'e9 \'bf\'ac\'bc\'d3\'c0\'fb\'c0\'b8\'b7\'ce \'c7\'d4\'bc\'f6\'b8\'a6 \'b9\'dd\'c8\'af\'c7\'d1\'b4\'d9.\par
+- \'b0\'e8\'bc\'d3 \'c7\'d4\'bc\'f6\'b8\'a6 \'bd\'c7\'c7\'e0\'c7\'cf\'bf\'a9 \'c3\'b3\'b8\'ae\'c7\'cf\'b0\'ed, \'c3\'d6\'c1\'be\'b0\'e1\'b0\'fa\'b4\'c2 \'c0\'ce\'c0\'da\'b0\'aa\'b5\'e9\'c0\'c7 \'c7\'d5\'c0\'d4\'b4\'cf\'b4\'d9.\par
+\par
+a = lambda x : compose(x, b)\par
+b = lambda y : compose(y, c)\par
+c = lambda z : add(z)\par
+\par
+a(5)(5)(5) \tab #\lang1042\'bd\'c7\'c7\'e0\lang18\par
+\par
+15\par
+\par
+a(5)(5)(5) \par
+\par
+25\par
+\par
+_list  #\'c0\'fc\'bf\'aa\'ba\'af\'bc\'f6\'b7\'ce \'c3\'df\'b0\'a1\'b5\'c7\'be\'ee\'c1\'f6\'b4\'c2 \'c0\'ce\'c0\'da\'b0\'aa\'c0\'cc \'c0\'fa\'c0\'e5\'b5\'c8\'b4\'d9.\par
+\par
+[5, 5, 5, 5]\par
+}
+ 

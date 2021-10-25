@@ -1,0 +1,195 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset129 \'b8\'bc\'c0\'ba \'b0\'ed\'b5\'f1;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs16\lang18 1. \'bf\'b9\'bf\'dc\'c3\'b3\'b8\'ae\par
+ - \'c6\'c4\'c0\'cc\'bd\'e3\'bf\'a1\'bc\'ad \'bf\'b9\'bf\'dc\'b4\'c2 \'b9\'ae\'b9\'fd\'c0\'fb\'c0\'b8\'b7\'ce \'b9\'ae\'c1\'a6\'b0\'a1 \'be\'f8\'b4\'c2 \'c4\'da\'b5\'e5\'b8\'a6 \'bd\'c7\'c7\'e0\'c1\'df\'bf\'a1 \'b9\'df\'bb\'fd\'c7\'cf\'b4\'c2 \'bf\'c0\'b7\'f9\'c0\'cc\'b4\'d9.\par
+ - \'c6\'c4\'c0\'cc\'bd\'e3\'bf\'a1\'bc\'ad \'bf\'b9\'bf\'dc\'c3\'b3\'b8\'ae\'b4\'c2 try~except \'b1\'b8\'b9\'ae\'c0\'bb \'c0\'cc\'bf\'eb\'c7\'d1\'b4\'d9\par
+ - \'bf\'b9\'bf\'dc\'b8\'a6 \'c0\'cf\'c0\'b8\'c5\'b0\'b1\'e2\'c0\'a7\'c7\'d8 raise\'b9\'ae\'c0\'bb \'bd\'c7\'c7\'e0\'c7\'d1\'b4\'d9.\par
+ - \'bf\'b9\'bf\'dc \'c5\'ac\'b7\'a1\'bd\'ba\'c0\'c7 \'c3\'d6\'bb\'f3\'c0\'c7\'b4\'c2 BaseException \'c5\'ac\'b7\'a1\'bd\'ba\'c0\'cc\'b4\'d9.\par
+ - \'c6\'c4\'c0\'cc\'bd\'e3\'c0\'c7 \'b8\'f0\'b5\'e7 \'bf\'b9\'bf\'dc \'c7\'fc\'bd\'c4\'c0\'ba BaseException\'c5\'ac\'b7\'a1\'bd\'ba\'b7\'ce \'ba\'ce\'c5\'cd \'bb\'f3\'bc\'d3\'b9\'de\'b4\'c2\'b4\'d9.\par
+ - BaseException\'c0\'c7 \'c0\'da\'bd\'c4\'c5\'ac\'b7\'a1\'bd\'ba  Exception \lang1042\'c0\'b8\'b7\'ce\lang18   \'b8\'f0\'b5\'e7 \'c6\'c4\'c0\'cc\'bd\'e3 \'bf\'b9\'bf\'dc\'b8\'a6 \'b9\'de\'c0\'bb \'bc\'f6 \'c0\'d6\'b4\'d9.   \par
+\par
+try:\par
+   print('\'be\'c8\'b3\'e7\'c7\'cf\'bc\'bc\'bf\'e4.')\par
+   print(param)\tab #param\lang1042\'c0\'cc \'c1\'a4\'c0\'c7 \'b5\'c7\'c1\'f6 \'be\'ca\'be\'d2\'b1\'e2\'bf\'a1 error\lang18\par
+except:\par
+   print('\'bf\'b9\'bf\'dc\'b0\'a1 \'b9\'df\'bb\'fd\'c7\'df\'bd\'c0\'b4\'cf\'b4\'d9!')\par
+ \par
+\par
+###############################################\par
+ \par
+try:\par
+    print(1/0)\par
+except:\par
+    print("\'bf\'b9\'bf\'dc\'b0\'a1 \'b9\'df\'bb\'fd\'c7\'df\'bd\'c0\'b4\'cf\'b4\'d9.")\par
+ \par
+\par
+\par
+########################################################\par
+# \'b4\'d9\'c0\'bd \'c7\'d4\'bc\'f6\'b4\'c2 try-except \'b9\'ae\'c0\'bb \'c5\'eb\'c7\'cf\'bf\'a9 \'bb\'e7\'bf\'eb\'c0\'da\'b0\'a1 0\'c0\'bb \'ba\'d0\'b8\'f0\'b7\'ce \'c0\'fc\'b4\'de\'c7\'cf\'b8\'e9\par
+# \'c4\'a3\'c0\'fd\'c7\'d1 \'bf\'a1\'b7\'af \'b8\'de\'bc\'bc\'c1\'f6\'b8\'a6 \'c1\'a6\'b0\'f8\'c7\'d1\'b4\'d9.\par
+\par
+def divide_numbers(x, y):\par
+    try:\par
+            return x/y\par
+    except ZeroDivisionError:\par
+            return 'You cannot divide by zero, try again'\par
+ \par
+ # 8 \'b3\'aa\'b4\'a9\'b1\'e2 3\'c0\'bb \'bd\'c3\'b5\'b5\par
+print(divide_numbers(8,3))\par
+ \par
+# 8 \'b3\'aa\'b4\'a9\'b1\'e2 0\'c0\'bb \'bd\'c3\'b5\'b5\par
+print(divide_numbers(8, 0))\par
+\par
+#######################################################\par
+\par
+- \'c6\'c4\'c0\'cc\'bd\'e3\'bf\'a1\'bc\'ad\'b4\'c2 \'b6\'c7\'c7\'d1 else \'c0\'fd\'c0\'bb \'c1\'a6\'b0\'f8\'c7\'cf\'bf\'a9 try-except-else \'b3\'ed\'b8\'ae\'b8\'a6 \'b1\'b8\'bc\'ba\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+- else\'b4\'c2 \'bc\'b1\'c5\'c3\'bb\'e7\'c7\'d7\'c0\'b8\'b7\'ce\'bc\'ad \ul\b\'be\'c6\'b9\'ab\'b7\'b1 \'bf\'b9\'bf\'dc\'b5\'b5 \'c3\'a3\'c0\'bb \'bc\'f6 \'be\'f8\'c0\'bb \'b0\'e6\'bf\'ec\'bf\'a1 \'bc\'f6\'c7\'e0\'c7\'d2 \'c4\'da\'b5\'e5\'b8\'a6 \'b3\'d6\'c0\'bb \'bc\'f6 \'c0\'d6\'b4\'d9\ulnone\b0 .\par
+- \'be\'c6\'b9\'ab\'b7\'b1 \'bf\'b9\'bf\'dc\'b0\'a1 \'b9\'df\'bb\'fd\'c7\'cf\'c1\'f6 \'be\'ca\'c0\'bb \'b0\'e6\'bf\'ec\'bf\'a1\'b8\'b8 \'bc\'f6\'c7\'e0\'c7\'cf\'bf\'a9\'be\'df \'c7\'cf\'b4\'c2 \'c0\'db\'be\'f7\'b0\'fa \'b0\'b0\'c0\'ba \'bf\'b9\'bf\'dc \'c3\'b3\'b8\'ae \'b3\'ed\'b8\'ae\'b8\'a6 \'b4\'d9\'b7\'e7\'b1\'e2 \'c0\'a7\'c7\'cf\'bf\'a9  else \'c0\'fd\'c0\'bb\line   \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+- else \'c0\'fd \'b3\'bb\'c0\'c7 \'c4\'da\'b5\'e5\'b4\'c2 \'be\'c6\'b9\'ab\'b7\'b1 \'bf\'b9\'bf\'dc\'b5\'b5 \'b4\'f8\'c1\'ae\'c1\'f6\'c1\'f6 \'be\'ca\'be\'d2\'c0\'bb \'b6\'a7\'bf\'a1\'b8\'b8 \'bd\'c3\'c0\'db\'b5\'c7\'b8\'e7, else \'c0\'fd \'b3\'bb\'bf\'a1\'bc\'ad \'be\'ee\'b6\'b0\'c7\'d1 \'bf\'b9\'bf\'dc\'b0\'a1 \'b9\'df\'bb\'fd\'c7\'cf\'b0\'d4 \line   \'b5\'c7\'b8\'e9 except\'b7\'ce \'b5\'b9\'be\'c6\'b0\'a1\'c1\'f6 \'b8\'f8\'c7\'d1\'b4\'d9.\par
+\par
+########################################################\par
+try:\par
+   print('\'be\'c8\'b3\'e7\'c7\'cf\'bc\'bc\'bf\'e4.')\par
+   param = 100\par
+   print(param)\par
+ except:\par
+   print('\'bf\'b9\'bf\'dc\'b0\'a1 \'b9\'df\'bb\'fd\'c7\'df\'bd\'c0\'b4\'cf\'b4\'d9!')\par
+else:\par
+   print('\'bf\'b9\'bf\'dc\'b0\'a1 \'b9\'df\'bb\'fd\'c7\'cf\'c1\'f6 \'be\'ca\'be\'d2\'bd\'c0\'b4\'cf\'b4\'d9.')\par
+\par
+\par
+\par
+#################################################################\par
+\par
+- try-except \'ba\'ed\'b7\'cf\'c0\'ba \'bf\'f8\'c7\'cf\'b4\'c2 \'b8\'b8\'c5\'ad \'b0\'e3\'c4\'a5 \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+- \'b0\'e3\'c3\'c4\'c1\'f8 \'bf\'b9\'bf\'dc \'c3\'b3\'b8\'ae \'ba\'ed\'b7\'cf\'c0\'c7 \'b0\'e6\'bf\'ec, \'b8\'b8\'be\'e0 \'bf\'b9\'bf\'dc\'b0\'a1 \'b4\'f8\'c1\'ae\'c1\'f6\'b8\'e9 \'bf\'c0\'b7\'f9\'b8\'a6 \'b9\'de\'b4\'c2 \'b0\'a1\'c0\'e5 \'be\'c8\'c2\'ca\'c0\'c7 \'ba\'ed\'b7\'cf\'c0\'b8\'b7\'ce\'ba\'ce\'c5\'cd\par
+  \'c7\'c1\'b7\'ce\'b1\'d7\'b7\'a5 \'c1\'a6\'be\'ee\'b0\'a1 \'b9\'d9\'b7\'ce \'c0\'ad \'ba\'ed\'b7\'cf\'c0\'b8\'b7\'ce \'b0\'c7\'b3\'ca\'b6\'d9\'b0\'d4 \'b5\'c8\'b4\'d9. \par
+ \par
+# \'c5\'b0\'ba\'b8\'b5\'e5 \'c0\'d4\'b7\'c2\'c0\'bb \'c5\'eb\'c7\'cf\'bf\'a9 \'b9\'de\'c0\'ba \'bc\'fd\'c0\'da\'bf\'a1 \'b4\'eb\'c7\'cf\'bf\'a9 \'b3\'aa\'b4\'b0\'bc\'c0\'c0\'bb \'bc\'f6\'c7\'e0\par
+# \'ba\'f3\'b0\'aa\'c0\'cc\'b3\'aa \'b9\'ae\'c0\'da\'b8\'a6 \'c0\'d4\'b7\'c2\'c7\'cf\'b8\'e9 ValueError,TypeError \'b9\'df\'c7\'e0\par
+try:\par
+    # \'c0\'db\'be\'f7\'c0\'bb \'bc\'f6\'c7\'e0\par
+    try:\par
+        x = input ('Enter a number for the dividend:  ')\par
+        y = input('Enter a number to divisor: ')\par
+        x = int(x)\par
+        y = int(y)\par
+    except ValueError:\par
+        # \'bf\'b9\'bf\'dc\'b8\'a6 \'c3\'b3\'b8\'ae\'c7\'cf\'b0\'ed \'b9\'d9\'b1\'f9\'c0\'c7 try-except\'b7\'ce \'c0\'cc\'b5\'bf\par
+        print ('You must enter a numeric value!')\par
+    z = x / y\par
+except ZeroDivisionError:\par
+    # handle exception\par
+    print ('You cannot divide by zero!')\par
+except TypeError:\par
+    print ('Retry and only use numeric values this time!')\par
+else:\par
+    print ('Your quotient is: %d' % (z)) \tab #\lang1042\'b0\'e8\'bb\'ea\'b5\'c8 \'b0\'e1\'b0\'fa\'b0\'aa \lang18\par
+\par
+\par
+#############################################################\par
+# \'ba\'b9\'bc\'f6\'b0\'b3\'c0\'c7 except\'c0\'fd\par
+ my_list = [1, 2, 3]\par
+ try:\par
+    print("\'c3\'b7\'c0\'da\'b8\'a6 \'c0\'d4\'b7\'c2\'c7\'cf\'bc\'bc\'bf\'e41:")\par
+    index = int(input())\par
+    print(my_list[index]/0)\par
+except ZeroDivisionError:\par
+    print("0\'c0\'b8\'b7\'ce \'b3\'aa\'b4\'ad \'bc\'f6 \'be\'f8\'bd\'c0\'b4\'cf\'b4\'d9.")\par
+except IndexError:\par
+    print("\'c0\'df\'b8\'f8\'b5\'c8 \'c3\'b7\'c0\'da\'c0\'d4\'b4\'cf\'b4\'d9.")\par
+\par
+\par
+#####################################################\par
+# as\'b7\'ce \'bf\'b9\'bf\'dc\'c7\'fc\'bd\'c4\'c0\'bb \'b9\'de\'be\'c6\'bf\'c2\'b4\'d9.\par
+ \par
+my_list = [1, 2, 3]\par
+try:\par
+    print("\'c3\'b7\'c0\'da\'b8\'a6 \'c0\'d4\'b7\'c2\'c7\'cf\'bc\'bc\'bf\'e42:")\par
+    index = int(input())\par
+    print(my_list[index]/0)\par
+except ZeroDivisionError as err: \tab #'as' err  \lang1042\'be\'cb\'b8\'ae\'be\'c6\'bd\'ba\lang18\par
+    print("0\'c0\'b8\'b7\'ce \'b3\'aa\'b4\'ad \'bc\'f6 \'be\'f8\'bd\'c0\'b4\'cf\'b4\'d9. (\{0\})".format(err)) \tab #format(err) %\lang1042\'bf\'cd \'b0\'b0\'c0\'bd\lang18\par
+except IndexError as err:\par
+    print("\'c0\'df\'b8\'f8\'b5\'c8 \'c3\'b7\'c0\'da\'c0\'d4\'b4\'cf\'b4\'d9. (\{0\})".format(err))\par
+\par
+=\par
+my_list = [1, 2, 3]\par
+try:\par
+    print("\'c3\'b7\'c0\'da\'b8\'a6 \'c0\'d4\'b7\'c2\'c7\'cf\'bc\'bc\'bf\'e42:")\par
+    index = int(input())\par
+    print(my_list[index]/0)\par
+except ZeroDivisionError as err: \tab #'as' err  \'be\'cb\'b8\'ae\'be\'c6\'bd\'ba\par
+    print("0\'c0\'b8\'b7\'ce \'b3\'aa\'b4\'ad \'bc\'f6 \'be\'f8\'bd\'c0\'b4\'cf\'b4\'d9. (\{0\})".format(err)) \tab #format(err) %s\'bf\'cd \'b0\'b0\'c0\'bd\par
+except IndexError as err:\par
+    print("\'c0\'df\'b8\'f8\'b5\'c8 \'c3\'b7\'c0\'da\'c0\'d4\'b4\'cf\'b4\'d9. (%s)" %err)\par
+ \par
+ \par
+\par
+########################################################\par
+#\ul Exception \'c5\'ac\'b7\'a1\'bd\'ba\'b4\'c2 \'b8\'f0\'b5\'e7 \'bf\'b9\'bf\'dc\'b8\'a6 \'b4\'d9 \'b9\'de\'c0\'bb \'bc\'f6 \'c0\'d6\'b4\'d9.\par
+\ulnone  \par
+my_list = [1, 2, 3]\par
+ \par
+try:\par
+    print("\'c3\'b7\'c0\'da\'b8\'a6 \'c0\'d4\'b7\'c2\'c7\'cf\'bc\'bc\'bf\'e43:")\par
+    index = int(input())\par
+    print(my_list[index]/0)\par
+except ZeroDivisionError as err:\par
+    print("0\'c0\'b8\'b7\'ce \'b3\'aa\'b4\'ad \'bc\'f6 \'be\'f8\'bd\'c0\'b4\'cf\'b4\'d9. (\{0\})".format(err))\par
+except Exception as err :\tab  #\ul Exception \'c5\'ac\'b7\'a1\'bd\'ba\'b4\'c2 \'b8\'f0\'b5\'e7 \'bf\'b9\'bf\'dc\'b8\'a6 \'b4\'d9 \'b9\'de\'c0\'bb \'bc\'f6 \'c0\'d6\'b4\'d9\ulnone\par
+    print("\'bf\'b9\'bf\'dc\'b0\'a1 \'b9\'df\'bb\'fd\'c7\'df\'bd\'c0\'b4\'cf\'b4\'d9.(\{0\})".format(err))\par
+ \par
+ \par
+ \par
+################################################################\par
+#else\'b4\'c2 except\'c0\'fd\'c0\'bb \'b8\'b8\'b3\'aa\'c1\'f6 \'be\'ca\'c0\'b8\'b8\'e9 \'bd\'c7\'c7\'e0\'b5\'c7\'b4\'c2 \'ba\'ed\'b7\'b0\'c0\'cc\'b0\'ed, finally\'b4\'c2 \'b9\'ab\'c1\'b6\'b0\'c7 \'bd\'c7\'c7\'e0\'b5\'c7\'b4\'c2 \'ba\'ed\'b7\'b0\'c0\'cc\'b4\'d9.\par
+ \par
+my_list = [1, 2, 3]\par
+ \par
+try:\par
+    print("\'c3\'b7\'c0\'da\'b8\'a6 \'c0\'d4\'b7\'c2\'c7\'cf\'bc\'bc\'bf\'e4:")\par
+    index = int(input())\par
+    print("my_list[\{0\}]: \{1\}".format(index, my_list[index])) \tab #format\lang1042\'c0\'ba \'c7\'d7\'bb\'f3 \'b9\'ae\'c0\'da\'bf\'ad\'bf\'a1\'bc\'ad \'bb\'e7\'bf\'eb\'c7\'d4\lang18\par
+except Exception as err:\tab #\lang1042\'bf\'a1\'b7\'af\'b9\'df\'bb\'fd\'bd\'c3\lang18\par
+    print("\'bf\'b9\'bf\'dc\'b0\'a1 \'b9\'df\'bb\'fd\'c7\'df\'bd\'c0\'b4\'cf\'b4\'d9 (\{0\})".format(err))\par
+else:\tab #\lang1042\'bf\'a1\'b7\'af \'b9\'cc\'b9\'df\'bb\'fd\lang18\par
+    print("\'b8\'ae\'bd\'ba\'c6\'ae\'c0\'c7 \'bf\'e4\'bc\'d2 \'c3\'e2\'b7\'c2\'bf\'a1 \'bc\'ba\'b0\'f8\'c7\'df\'bd\'c0\'b4\'cf\'b4\'d9.")\par
+finally:\tab #\lang1042\'bf\'a1\'b7\'af\'b0\'a1 \'c0\'d6\'b4\'f8 \'be\'f8\'b4\'f8 \'b9\'ab\'c1\'b6\'b0\'c7 \'c3\'e2\'b7\'c2\lang18\par
+    print("\'be\'ee\'b6\'b2 \'c0\'cf\'c0\'cc \'c0\'d6\'be\'ee\'b5\'b5 \'b8\'b6\'b9\'ab\'b8\'ae\'c7\'d5\'b4\'cf\'b4\'d9.")\par
+\par
+\par
+##############################################################\par
+# \'bf\'b9\'bf\'dc \'c0\'cf\'c0\'b8\'c5\'b0\'b1\'e2 (raise)\par
+def some_function():\line     print("1~10 \'bb\'e7\'c0\'cc\'c0\'c7 \'bc\'f6\'b8\'a6 \'c0\'d4\'b7\'c2\'c7\'cf\'bc\'bc\'bf\'e4:")\line     num = int(input())\line     if num < 1 or num > 10:\line         raise Exception("\'c0\'af\'c8\'bf\'c7\'cf\'c1\'f6 \'be\'ca\'c0\'ba \'bc\'fd\'c0\'da\'c0\'d4\'b4\'cf\'b4\'d9.: \{0\}".format(num))\line     else:\line         print("\'c0\'d4\'b7\'c2\'c7\'d1 \'bc\'f6\'b4\'c2 \{0\}\'c0\'d4\'b4\'cf\'b4\'d9.".format(num))\line try:\line     some_function()\line except Exception as err:\line     print("\'bf\'b9\'bf\'dc\'b0\'a1 \'b9\'df\'bb\'fd\'c7\'df\'bd\'c0\'b4\'cf\'b4\'d9. \{0\}".format(err))\par
+= \lang1042\'c0\'a7 \'bf\'b9\'b9\'ae\'c0\'bb \'be\'c6\'b7\'a1\'c3\'b3\'b7\'b3 \'be\'b5\'bc\'f6 \'c0\'d6\'c0\'bd\par
+\lang18 def some_function():\line     print("1~10 \'bb\'e7\'c0\'cc\'c0\'c7 \'bc\'f6\'b8\'a6 \'c0\'d4\'b7\'c2\'c7\'cf\'bc\'bc\'bf\'e4:")\line     num = int(input())\line     if num < 1 or num >10:\line         raise Exception("\'c0\'af\'c8\'bf\'c7\'cf\'c1\'f6 \'be\'ca\'c0\'ba \'bc\'fd\'c0\'da\'c0\'d4\'b4\'cf\'b4\'d9.: \{\}".format(num))\line     else:\line         print("\'c0\'d4\'b7\'c2\'c7\'d1 \'bc\'f6\'b4\'c2 \{\}\'c0\'d4\'b4\'cf\'b4\'d9.".format(num))\line try:\line     some_function()\line except Exception as err:\line     print ("\'bf\'b9\'bf\'dc\'b0\'a1 \'b9\'df\'bb\'fd\'c7\'df\'bd\'c0\'b4\'cf\'b4\'d9. \{\}".format(err))\par
+\par
+###########################################################\par
+def some_function2():\par
+    print("1~10 \'bb\'e7\'c0\'cc\'c0\'c7 \'bc\'f6\'b8\'a6 \'c0\'d4\'b7\'c2\'c7\'cf\'bc\'bc\'bf\'e4:")\par
+    num = int(input())\par
+    if num < 1 or num > 10:\par
+        raise Exception("\'c0\'af\'c8\'bf\'c7\'cf\'c1\'f6 \'be\'ca\'c0\'ba \'bc\'fd\'c0\'da\'c0\'d4\'b4\'cf\'b4\'d9.: \{0\}".format(num))\par
+    else:\par
+        print("\'c0\'d4\'b7\'c2\'c7\'d1 \'bc\'f6\'b4\'c2 \{0\}\'c0\'d4\'b4\'cf\'b4\'d9.".format(num))\par
+ \par
+def some_function_caller():\par
+    try:\par
+        some_function2()\par
+    except Exception as err:\par
+        print("1) \'bf\'b9\'bf\'dc\'b0\'a1 \'b9\'df\'bb\'fd\'c7\'df\'bd\'c0\'b4\'cf\'b4\'d9. \{0\}".format(err))\par
+        raise \par
+ \par
+try:\par
+    some_function_caller()\par
+except Exception as err:\par
+    print("2) \'bf\'b9\'bf\'dc\'b0\'a1 \'b9\'df\'bb\'fd\'c7\'df\'bd\'c0\'b4\'cf\'b4\'d9. \{0\}".format(err))\par
+\par
+#\par
+1~10 \'bb\'e7\'c0\'cc\'c0\'c7 \'bc\'f6\'b8\'a6 \'c0\'d4\'b7\'c2\'c7\'cf\'bc\'bc\'bf\'e4:\par
+12\par
+1) \'bf\'b9\'bf\'dc\'b0\'a1 \'b9\'df\'bb\'fd:\'c0\'af\'c8\'bf\'c7\'cf\'c1\'f6 \'be\'ca\'c0\'ba \'bc\'fd\'c0\'da\'c0\'d4\'b4\'cf\'b4\'d9.: 12\par
+2) \'bf\'b9\'bf\'dc\'b0\'a1 \'b9\'df\'bb\'fd\'c7\'df\'bd\'c0\'b4\'cf\'b4\'d9. \'c0\'af\'c8\'bf\'c7\'cf\'c1\'f6 \'be\'ca\'c0\'ba \'bc\'fd\'c0\'da\'c0\'d4\'b4\'cf\'b4\'d9.: 12\par
+}
+ 
